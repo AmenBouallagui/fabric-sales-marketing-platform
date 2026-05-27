@@ -62,6 +62,11 @@ Initial repository scaffold created. Documentation and project structure are in 
 
 ## How To Run The Data Generator
 
-Coming next.
+Install the Python dependencies and generate local synthetic source files:
 
-The future data generator will live under `data_generation/` and will create synthetic sales and marketing source files for local development and Fabric ingestion examples.
+```bash
+pip install -r requirements.txt
+python data_generation/generate_source_data.py
+```
+
+By default, generated CSV files are written to `data/source/`. The `data/` folder and `*.csv` files are ignored by Git.

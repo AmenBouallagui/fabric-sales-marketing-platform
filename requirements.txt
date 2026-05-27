@@ -1,2 +1,3 @@
-# Runtime dependencies will be added with the data generator.
-# Planned baseline: pandas, faker, pyarrow, pytest.
+pandas>=2.0
+numpy>=1.24
+faker>=24.0
