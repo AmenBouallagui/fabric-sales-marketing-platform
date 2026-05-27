@@ -216,3 +216,28 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project environment and secrets
+!.env.example
+*.pem
+*.key
+secrets/
+
+# Generated data and local outputs
+data/
+generated_data/
+output/
+outputs/
+*.parquet
+*.csv
+*.xlsx
+
+# Microsoft Fabric and Power BI local artifacts
+*.pbix
+*.pbit
+*.abf
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
