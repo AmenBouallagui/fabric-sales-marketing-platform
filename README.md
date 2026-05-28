@@ -71,6 +71,19 @@ python data_generation/generate_source_data.py
 
 By default, generated CSV files are written to `data/source/`. The `data/` folder and `*.csv` files are ignored by Git.
 
+## Run The Local Prototype
+
+Run the local medallion prototype to validate source-to-Bronze-to-Silver-to-Gold logic before future Microsoft Fabric implementation:
+
+```bash
+pip install -r requirements.txt
+python data_generation/generate_source_data.py
+python local_pipeline/run_local_medallion.py
+pytest
+```
+
+The local prototype writes parquet outputs under `data/bronze/`, `data/silver/`, `data/gold/`, and `data/observability/`. These generated folders remain ignored by Git.
+
 ## Bronze Ingestion Design
 
 The next layer after data generation is the Bronze ingestion design. The current design documents how local synthetic CSV extracts under `data/source/` will later be landed into Microsoft Fabric Lakehouse Files and ingested into append-friendly Bronze Delta tables with metadata for lineage, validation, and future incremental loading.
