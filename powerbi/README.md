@@ -4,12 +4,25 @@ This folder will contain Power BI planning notes, report screenshots, and semant
 
 ## Planned Report Pages
 
-- Executive sales overview.
-- Pipeline health.
+- Executive revenue overview.
 - Campaign performance.
-- Lead conversion funnel.
-- Revenue by segment, region, and product.
+- Customer and segment analysis.
+- Product performance.
+- Support quality.
 - Data quality summary.
+
+## Future Operations / Data Health Dashboard
+
+A future operations dashboard should help reviewers and operators monitor platform health. Planned visuals include:
+
+- Pipeline success rate.
+- Failed checks.
+- Freshness status.
+- Failed critical checks.
+- Warning checks.
+- Row count reconciliation.
+- Latest successful load.
+- Tables with repeated failures.
 
 ## Screenshot Storage
 
