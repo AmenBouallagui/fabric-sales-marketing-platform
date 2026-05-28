@@ -2,34 +2,37 @@
 
 ## Purpose
 
-This document defines the first set of sales and marketing metrics for the Power BI semantic model. Definitions should remain consistent across SQL, notebooks, and report visuals.
+This document defines the first set of KPI definitions for the future Power BI semantic model. Measures should be implemented from Gold tables so calculations remain consistent across reports.
 
-## Sales Metrics
+## Revenue And Customer Metrics
 
-- Pipeline value: total open opportunity amount.
-- Weighted pipeline: opportunity amount multiplied by probability.
-- Closed won revenue: total value of opportunities with a closed won status.
-- Win rate: closed won opportunities divided by all closed opportunities.
-- Average deal size: closed won revenue divided by count of won opportunities.
-- Sales cycle length: days between opportunity created date and close date.
-- Forecasted revenue: expected revenue based on open opportunities and probability.
+- Revenue: sum of `fact_orders.total_amount`.
+- Net Revenue: sum of `fact_orders.net_revenue`, calculated as order total less tax.
+- Gross Margin: sum of `fact_orders.gross_margin`, calculated as net revenue less estimated product cost.
+- Gross Margin %: gross margin divided by net revenue.
+- Average Order Value: revenue divided by order count.
+- Orders: distinct count of `fact_orders.order_id`.
+- Customers: distinct count of `dim_customer.customer_id`.
+- New Customers: count of customers by `dim_customer.signup_date` within the selected date period.
 
 ## Marketing Metrics
 
-- Campaign spend: total budget or actual spend assigned to campaigns.
-- Marketing generated leads: leads sourced from marketing campaigns.
-- Lead conversion rate: converted leads divided by total leads.
-- Cost per lead: campaign spend divided by generated leads.
-- Campaign influenced pipeline: open and closed opportunity value linked to campaign-sourced or campaign-influenced leads.
-- Engagement rate: interactions divided by reachable contacts or delivered messages, depending on channel.
+- Ad Spend: sum of `fact_ad_spend.spend_amount`.
+- Impressions: sum of `fact_ad_spend.impressions`.
+- Clicks: sum of `fact_ad_spend.clicks`.
+- Conversions: sum of `fact_ad_spend.conversions`.
+- Conversion Rate: conversions divided by clicks.
+- Cost Per Click: ad spend divided by clicks.
+- Cost Per Acquisition: ad spend divided by conversions.
+- ROAS: revenue attributed to campaigns divided by ad spend.
 
-## Customer Metrics
+## Support Metrics
 
-- Revenue by segment: booked revenue grouped by customer segment.
-- Revenue by region: booked revenue grouped by sales region.
-- Product mix: revenue share by product category.
-- Account penetration: number of active products or opportunities per account.
+- Ticket Count: distinct count of `fact_support_tickets.ticket_id`.
+- Average First Response Minutes: average of `fact_support_tickets.first_response_minutes`.
+- Average Resolution Time: average of `fact_support_tickets.resolution_minutes`.
+- Customer Satisfaction Score: average of `fact_support_tickets.satisfaction_score`.
 
 ## Metric Governance
 
-Each metric should include a definition, grain, filters, exclusions, and owner before being promoted to portfolio-ready status.
+Each metric should include a definition, source table, calculation logic, filters, exclusions, and owner before being promoted to portfolio-ready status in Power BI.
