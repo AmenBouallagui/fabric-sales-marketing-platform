@@ -32,6 +32,20 @@ Data quality checks ensure the platform produces trustworthy reporting outputs a
 - Every campaign interaction campaign identifier should exist in the campaign domain.
 - Every revenue transaction product identifier should exist in the product domain.
 
+## Silver Quality Rules
+
+Silver quality rules focus on producing trusted current records from Bronze:
+
+- Customers require non-null `customer_id`, `customer_name`, and `signup_date`.
+- Products require non-null `product_id`, positive `unit_price`, and non-negative `unit_cost`.
+- Campaigns require non-null `campaign_id`, `channel`, and `campaign_start_date`.
+- Orders require non-null `order_id`, valid `customer_id`, valid `product_id`, non-negative `total_amount`, and valid `payment_status`.
+- Ad spend requires non-null `spend_id`, valid `campaign_id`, non-negative `spend_amount`, and non-negative `impressions`, `clicks`, and `conversions`.
+- Support tickets require non-null `ticket_id`, valid `customer_id`, valid `created_at`, and valid `status`.
+- Silver deduplication keeps one current record per source business key using `source_updated_at`, then `ingested_at`, then `row_hash`.
+- Silver records should include `dq_status` and `dq_issue_reason` so rejected or warning records are visible before Gold modeling.
+- Referential checks should confirm orders, ad spend, and support tickets link to valid Silver parent entities.
+
 ## Monitoring Approach
 
 Quality checks should produce pass/fail counts, failed row samples, and run timestamps. Critical failures should block Gold table publication once orchestration is introduced.

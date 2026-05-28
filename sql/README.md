@@ -5,6 +5,7 @@ This folder will contain SQL scripts for curated models, validation checks, and 
 ## Planned Assets
 
 - `bronze_validation_queries.sql`: validation queries for future Bronze Delta tables, including row counts, duplicate IDs, null keys, source update coverage, load dates, ingestion run IDs, and simple reconciliation.
+- `silver_validation_queries.sql`: validation queries for future Silver Delta tables, including row counts, duplicate business keys, required fields, invalid values, referential integrity, quality status, and Bronze-to-Silver comparison.
 - Gold table creation examples.
 - Business metric SQL definitions.
 - Data quality queries.

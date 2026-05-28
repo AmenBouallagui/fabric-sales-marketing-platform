@@ -76,3 +76,9 @@ By default, generated CSV files are written to `data/source/`. The `data/` folde
 The next layer after data generation is the Bronze ingestion design. The current design documents how local synthetic CSV extracts under `data/source/` will later be landed into Microsoft Fabric Lakehouse Files and ingested into append-friendly Bronze Delta tables with metadata for lineage, validation, and future incremental loading.
 
 See `docs/bronze_ingestion_design.md`, `notebooks/01_bronze_ingestion.md`, and `sql/bronze_validation_queries.sql`.
+
+## Silver Transformation Design
+
+The next layer after Bronze is Silver transformations. The Silver design documents how Bronze raw tables will later be cleaned, standardized, type-cast, deduplicated, validated, and prepared for Gold dimensional modeling.
+
+See `docs/silver_transformation_design.md`, `notebooks/02_silver_transformations.md`, and `sql/silver_validation_queries.sql`.
