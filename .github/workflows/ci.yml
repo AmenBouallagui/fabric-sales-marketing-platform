@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Local medallion validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Generate small source dataset
+        run: |
+          python data_generation/generate_source_data.py \
+            --customers 50 \
+            --orders 250 \
+            --seed 123 \
+            --start-date 2024-01-01 \
+            --end-date 2024-03-31
+
+      - name: Run local medallion prototype
+        run: |
+          python local_pipeline/run_local_medallion.py \
+            --load-date 2024-04-01 \
+            --run-id ci-run
+
+      - name: Verify generated data is not tracked
+        run: test -z "$(git ls-files data)"
+
+      - name: Run tests
+        run: python -m pytest

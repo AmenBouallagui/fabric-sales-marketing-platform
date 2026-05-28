@@ -84,6 +84,12 @@ pytest
 
 The local prototype writes parquet outputs under `data/bronze/`, `data/silver/`, `data/gold/`, and `data/observability/`. These generated folders remain ignored by Git.
 
+## Continuous Integration
+
+GitHub Actions CI runs on pull requests and pushes to `main`. The workflow validates dependency installation, synthetic source data generation, local medallion execution, generated-data Git ignore behavior, and pytest.
+
+Generated CSV and parquet outputs remain under the ignored `data/` folder and are not uploaded as CI artifacts.
+
 ## Bronze Ingestion Design
 
 The next layer after data generation is the Bronze ingestion design. The current design documents how local synthetic CSV extracts under `data/source/` will later be landed into Microsoft Fabric Lakehouse Files and ingested into append-friendly Bronze Delta tables with metadata for lineage, validation, and future incremental loading.

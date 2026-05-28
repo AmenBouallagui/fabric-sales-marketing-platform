@@ -32,6 +32,8 @@ The pipeline writes local parquet outputs under:
 
 The `data/` folder is ignored by Git, so generated outputs should not be committed.
 
+The local prototype is also validated by GitHub Actions CI using a small generated dataset.
+
 ## Run
 
 ```bash
