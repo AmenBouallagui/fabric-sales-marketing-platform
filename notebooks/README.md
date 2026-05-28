@@ -4,7 +4,7 @@ This folder will contain Microsoft Fabric notebook examples for ingestion, trans
 
 ## Planned Notebooks
 
-- Bronze ingestion walkthrough.
+- `01_bronze_ingestion.md`: future Fabric notebook outline for reading source CSVs, adding ingestion metadata, validating required columns, and writing Bronze Delta tables.
 - Silver standardization and cleansing.
 - Data quality validation.
 - Gold dimensional model creation.
