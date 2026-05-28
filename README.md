@@ -4,7 +4,7 @@
 
 This portfolio project demonstrates how a growing B2B organization can build a Microsoft Fabric data platform that unifies sales, marketing, customer, product, and campaign activity into an analytics-ready and AI-ready foundation.
 
-The scenario assumes fragmented operational systems: CRM opportunities, marketing campaign engagement, website lead capture, customer accounts, products, and revenue transactions. The platform is designed to help commercial teams understand pipeline health, campaign performance, customer conversion, and revenue trends while preparing governed data products for AI-assisted analysis.
+The scenario assumes fragmented operational systems for customers, products, campaigns, orders, ad spend, and support tickets. The platform is designed to help commercial teams understand revenue, campaign efficiency, customer behavior, and service quality while preparing governed data products for AI-assisted analysis.
 
 ## Architecture Summary
 
@@ -21,7 +21,7 @@ The target architecture follows a medallion-style lakehouse pattern in Microsoft
 The MVP focuses on creating a realistic synthetic dataset and a clean analytics foundation for sales and marketing reporting. It will include:
 
 - Synthetic source data generation.
-- Core entity modeling for accounts, contacts, leads, opportunities, products, campaigns, and activities.
+- Core entity modeling for customers, products, campaigns, orders, ad spend, and support tickets.
 - Initial data quality rules.
 - SQL and notebook transformation examples.
 - Power BI-ready metric definitions.
@@ -29,12 +29,12 @@ The MVP focuses on creating a realistic synthetic dataset and a clean analytics 
 
 ## Data Domains
 
-- Sales pipeline and opportunities.
-- Marketing campaigns and engagement.
-- Customer accounts and contacts.
-- Products and revenue.
-- Lead lifecycle and conversion.
-- Commercial activity history.
+- Customers and segments.
+- Products and pricing.
+- Campaigns and channels.
+- Orders and revenue.
+- Ad spend and conversions.
+- Support tickets and satisfaction.
 
 ## Planned Microsoft Fabric Components
 
@@ -58,7 +58,7 @@ The MVP focuses on creating a realistic synthetic dataset and a clean analytics 
 
 ## Current Status
 
-Initial repository scaffold created. Documentation and project structure are in place. Generated data files have not been created yet.
+Repository scaffold, synthetic data generator, Bronze ingestion design, and Silver transformation design are in place. Generated data files are intentionally not committed.
 
 ## How To Run The Data Generator
 
@@ -82,3 +82,9 @@ See `docs/bronze_ingestion_design.md`, `notebooks/01_bronze_ingestion.md`, and `
 The next layer after Bronze is Silver transformations. The Silver design documents how Bronze raw tables will later be cleaned, standardized, type-cast, deduplicated, validated, and prepared for Gold dimensional modeling.
 
 See `docs/silver_transformation_design.md`, `notebooks/02_silver_transformations.md`, and `sql/silver_validation_queries.sql`.
+
+## Gold Dimensional Model Design
+
+The next layer after Silver is Gold dimensional modeling. The Gold design documents how cleaned Silver tables will later become business-ready dimensions, facts, KPI definitions, and a Power BI-ready semantic model structure.
+
+See `docs/gold_dimensional_model_design.md`, `notebooks/03_gold_modeling.md`, `sql/gold_model_ddl.sql`, and `sql/gold_validation_queries.sql`.

@@ -80,6 +80,16 @@ Bronze rules verify source capture and lineage. Silver rules verify cleaned, typ
 - Measures used in Power BI should have documented definitions and expected filters.
 - Records rejected in Silver should not feed Gold tables without explicit review.
 
+## Gold Validation Rules
+
+- Gold dimension surrogate keys should be unique.
+- Gold fact business keys should be unique at the documented grain.
+- Gold fact foreign keys should resolve to valid dimension rows or documented unknown members.
+- Unknown dimension key usage should be monitored and explainable.
+- Gold fact row counts should reconcile to valid/current Silver records.
+- Additive measures such as revenue, net revenue, gross margin, ad spend, impressions, clicks, conversions, response minutes, and resolution minutes should pass sanity checks.
+- KPI calculations such as ROAS and gross margin percentage should avoid divide-by-zero errors.
+
 ## Monitoring Approach
 
 - Quality checks should produce pass/fail counts by entity and rule.
