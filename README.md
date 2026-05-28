@@ -70,3 +70,9 @@ python data_generation/generate_source_data.py
 ```
 
 By default, generated CSV files are written to `data/source/`. The `data/` folder and `*.csv` files are ignored by Git.
+
+## Bronze Ingestion Design
+
+The next layer after data generation is the Bronze ingestion design. The current design documents how local synthetic CSV extracts under `data/source/` will later be landed into Microsoft Fabric Lakehouse Files and ingested into append-friendly Bronze Delta tables with metadata for lineage, validation, and future incremental loading.
+
+See `docs/bronze_ingestion_design.md`, `notebooks/01_bronze_ingestion.md`, and `sql/bronze_validation_queries.sql`.
