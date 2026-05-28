@@ -6,31 +6,38 @@ Data quality checks ensure the platform produces trustworthy reporting outputs a
 
 ## Completeness Rules
 
-- Accounts must have an account identifier, account name, segment, and region.
-- Opportunities must have an opportunity identifier, account identifier, stage, amount, created date, and expected close date.
-- Campaign interactions must have a campaign identifier, contact or lead identifier, interaction type, and interaction timestamp.
-- Revenue transactions must have an account identifier, product identifier, transaction date, and revenue amount.
+- Customers must have `customer_id`, `customer_name`, and `signup_date`.
+- Products must have `product_id`, `product_name`, `unit_price`, and `unit_cost`.
+- Campaigns must have `campaign_id`, `channel`, and `campaign_start_date`.
+- Orders must have `order_id`, `customer_id`, `product_id`, `order_date`, `total_amount`, and `payment_status`.
+- Ad spend records must have `spend_id`, `campaign_id`, `spend_date`, and `spend_amount`.
+- Support tickets must have `ticket_id`, `customer_id`, `created_at`, and `status`.
 
 ## Validity Rules
 
-- Opportunity amount must be greater than or equal to zero.
-- Probability must be between 0 and 1 or between 0 and 100, depending on the chosen standard.
-- Close date must not be earlier than opportunity created date.
-- Campaign start date must not be later than campaign end date.
+- Product `unit_price` must be greater than zero.
+- Product `unit_cost` must be greater than or equal to zero.
+- Order `total_amount`, `unit_price`, `discount_amount`, and `tax_amount` must be greater than or equal to zero.
+- Ad spend `spend_amount`, `impressions`, `clicks`, and `conversions` must be greater than or equal to zero.
+- Campaign start date must not be later than campaign end date when an end date is present.
+- Support ticket closed timestamp must not be earlier than created timestamp when a closed timestamp is present.
 - Email addresses must follow a valid email-like pattern when present.
 
 ## Consistency Rules
 
-- Lead status values must map to an approved lifecycle list.
-- Opportunity stages must map to an approved sales stage list.
-- Currency values must use a consistent ISO currency code.
-- Region and country values must use standardized reference values.
+- Customer status values must map to `Active`, `Inactive`, or `Churned`.
+- Payment status values must map to `Paid`, `Failed`, or `Pending`.
+- Campaign channel values must map to `Paid Search`, `Paid Social`, `Organic`, `Email`, `Referral`, `Partner`, or `Direct`.
+- Support ticket status values must map to `Closed`, `Resolved`, `Open`, or `In Progress`.
+- Country, city, segment, industry, priority, and category values should use standardized reference values.
 
 ## Referential Integrity Rules
 
-- Every opportunity account identifier should exist in the account domain.
-- Every campaign interaction campaign identifier should exist in the campaign domain.
-- Every revenue transaction product identifier should exist in the product domain.
+- `silver_orders.customer_id` exists in `silver_customers.customer_id`.
+- `silver_orders.product_id` exists in `silver_products.product_id`.
+- `silver_orders.campaign_id`, when not null, exists in `silver_campaigns.campaign_id`.
+- `silver_ad_spend.campaign_id` exists in `silver_campaigns.campaign_id`.
+- `silver_support_tickets.customer_id` exists in `silver_customers.customer_id`.
 
 ## Silver Quality Rules
 
