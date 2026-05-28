@@ -98,3 +98,14 @@ Bronze rules verify source capture and lineage. Silver rules verify cleaned, typ
 - `dq_status` distribution should be monitored by Silver table.
 - Referential integrity failures should be reported before Gold publication.
 - Critical failures should block Gold publication once orchestration is introduced.
+
+## Observability Result Tables
+
+The rule definitions in this document should feed future observability tables:
+
+- `data_quality_results` captures check outcomes, severity, status, expected values, actual values, failed row counts, and issue reasons.
+- `pipeline_run_log` captures run status, duration, row counts, and errors.
+- `dataset_freshness` captures freshness status by dataset and layer.
+- `row_count_reconciliation` captures row movement between Bronze, Silver, and Gold.
+
+These tables will support future operational reporting and make quality outcomes visible before downstream publication.

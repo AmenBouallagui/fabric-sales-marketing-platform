@@ -88,3 +88,9 @@ See `docs/silver_transformation_design.md`, `notebooks/02_silver_transformations
 The next layer after Silver is Gold dimensional modeling. The Gold design documents how cleaned Silver tables will later become business-ready dimensions, facts, KPI definitions, and a Power BI-ready semantic model structure.
 
 See `docs/gold_dimensional_model_design.md`, `notebooks/03_gold_modeling.md`, `sql/gold_model_ddl.sql`, and `sql/gold_validation_queries.sql`.
+
+## Data Quality And Observability
+
+Data quality and observability make the platform production-ready by documenting how future Fabric runs will track validation outcomes, pipeline status, dataset freshness, row count reconciliation, and operational health.
+
+See `docs/data_quality_observability_design.md`, `notebooks/04_data_quality_checks.md`, `notebooks/05_observability_logging.md`, `sql/observability_model_ddl.sql`, and `sql/observability_validation_queries.sql`.
