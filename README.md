@@ -58,7 +58,7 @@ The MVP focuses on creating a realistic synthetic dataset and a clean analytics 
 
 ## Current Status
 
-Repository scaffold, synthetic data generator, Bronze ingestion design, and Silver transformation design are in place. Generated data files are intentionally not committed.
+Repository scaffold, synthetic data generator, Bronze ingestion design, Silver transformation design, and Gold dimensional model design are in place. Generated data files are intentionally not committed.
 
 ## How To Run The Data Generator
 
