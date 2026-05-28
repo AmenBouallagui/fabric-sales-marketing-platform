@@ -1,34 +1,53 @@
 # Data Quality Rules
 
-## Purpose
+## Overview
 
-Data quality checks ensure the platform produces trustworthy reporting outputs and AI-ready data products. These rules will be implemented first as test definitions and later as automated validation steps in notebooks or pipelines.
+Data quality rules ensure that Bronze, Silver, and future Gold outputs are trustworthy, explainable, and ready for reporting. The current project focuses on customers, products, campaigns, orders, ad spend, and support tickets.
 
-## Completeness Rules
+Bronze rules verify source capture and lineage. Silver rules verify cleaned, typed, deduplicated, and relationship-aware records. Gold readiness rules verify that curated tables can support Power BI reporting.
 
-- Customers must have `customer_id`, `customer_name`, and `signup_date`.
-- Products must have `product_id`, `product_name`, `unit_price`, and `unit_cost`.
-- Campaigns must have `campaign_id`, `channel`, and `campaign_start_date`.
-- Orders must have `order_id`, `customer_id`, `product_id`, `order_date`, `total_amount`, and `payment_status`.
-- Ad spend records must have `spend_id`, `campaign_id`, `spend_date`, and `spend_amount`.
-- Support tickets must have `ticket_id`, `customer_id`, `created_at`, and `status`.
+## Bronze Quality Rules
 
-## Validity Rules
+- Each expected source file should produce a corresponding Bronze table.
+- Bronze rows should preserve source identifiers and source values.
+- Bronze rows should include `ingestion_run_id`, `source_file_name`, `source_file_path`, `source_system`, `entity_name`, `load_date`, `ingested_at`, `source_updated_at`, and `row_hash`.
+- Required source identifier columns should not be null.
+- `source_updated_at` should be populated from the source `updated_at` column.
+- Row counts should be greater than zero for expected source extracts.
+- Duplicate source identifiers should be reported by entity, load date, and ingestion run.
+- Repeated loads should be identifiable through file metadata, `ingestion_run_id`, and `row_hash`.
+
+## Silver Completeness Rules
+
+- Customers require `customer_id`, `customer_name`, and `signup_date`.
+- Products require `product_id`, `product_name`, `unit_price`, and `unit_cost`.
+- Campaigns require `campaign_id`, `channel`, and `campaign_start_date`.
+- Orders require `order_id`, `customer_id`, `product_id`, `order_date`, `total_amount`, and `payment_status`.
+- Ad spend records require `spend_id`, `campaign_id`, `spend_date`, and `spend_amount`.
+- Support tickets require `ticket_id`, `customer_id`, `created_at`, and `status`.
+
+## Silver Validity Rules
 
 - Product `unit_price` must be greater than zero.
 - Product `unit_cost` must be greater than or equal to zero.
-- Order `total_amount`, `unit_price`, `discount_amount`, and `tax_amount` must be greater than or equal to zero.
+- Order `quantity` must be greater than zero.
+- Order `unit_price`, `discount_amount`, `tax_amount`, and `total_amount` must be greater than or equal to zero.
 - Ad spend `spend_amount`, `impressions`, `clicks`, and `conversions` must be greater than or equal to zero.
 - Campaign start date must not be later than campaign end date when an end date is present.
 - Support ticket closed timestamp must not be earlier than created timestamp when a closed timestamp is present.
-- Email addresses must follow a valid email-like pattern when present.
+- Support ticket response and resolution minute values must be greater than or equal to zero when present.
+- Satisfaction score should be within the accepted scoring range when present.
+- Email values should follow a valid email-like pattern when present.
 
-## Consistency Rules
+## Silver Consistency Rules
 
 - Customer status values must map to `Active`, `Inactive`, or `Churned`.
 - Payment status values must map to `Paid`, `Failed`, or `Pending`.
 - Campaign channel values must map to `Paid Search`, `Paid Social`, `Organic`, `Email`, `Referral`, `Partner`, or `Direct`.
 - Support ticket status values must map to `Closed`, `Resolved`, `Open`, or `In Progress`.
+- Boolean-like fields such as `refund_flag` and `is_subscription` should be converted to consistent boolean values.
+- Monetary fields should use consistent numeric precision.
+- Date and timestamp fields should use consistent typed values.
 - Country, city, segment, industry, priority, and category values should use standardized reference values.
 
 ## Referential Integrity Rules
@@ -39,20 +58,33 @@ Data quality checks ensure the platform produces trustworthy reporting outputs a
 - `silver_ad_spend.campaign_id` exists in `silver_campaigns.campaign_id`.
 - `silver_support_tickets.customer_id` exists in `silver_customers.customer_id`.
 
-## Silver Quality Rules
+## Silver Deduplication Rules
 
-Silver quality rules focus on producing trusted current records from Bronze:
+- Silver should contain one current record per source business key for the MVP.
+- Customers deduplicate by `customer_id`.
+- Products deduplicate by `product_id`.
+- Campaigns deduplicate by `campaign_id`.
+- Orders deduplicate by `order_id`.
+- Ad spend deduplicates by `spend_id`.
+- Support tickets deduplicate by `ticket_id`.
+- Latest-record selection should use highest `source_updated_at`, then highest `ingested_at`, then a stable tie-breaker using `row_hash`.
+- Current Silver rows should be marked with `is_current_record = true`.
+- Silver rows should include `dq_status` and `dq_issue_reason` to make quality outcomes visible before Gold modeling.
 
-- Customers require non-null `customer_id`, `customer_name`, and `signup_date`.
-- Products require non-null `product_id`, positive `unit_price`, and non-negative `unit_cost`.
-- Campaigns require non-null `campaign_id`, `channel`, and `campaign_start_date`.
-- Orders require non-null `order_id`, valid `customer_id`, valid `product_id`, non-negative `total_amount`, and valid `payment_status`.
-- Ad spend requires non-null `spend_id`, valid `campaign_id`, non-negative `spend_amount`, and non-negative `impressions`, `clicks`, and `conversions`.
-- Support tickets require non-null `ticket_id`, valid `customer_id`, valid `created_at`, and valid `status`.
-- Silver deduplication keeps one current record per source business key using `source_updated_at`, then `ingested_at`, then `row_hash`.
-- Silver records should include `dq_status` and `dq_issue_reason` so rejected or warning records are visible before Gold modeling.
-- Referential checks should confirm orders, ad spend, and support tickets link to valid Silver parent entities.
+## Gold Readiness Rules
+
+- Silver records feeding Gold should have `dq_status = 'valid'` unless a documented warning rule allows inclusion.
+- Gold dimensions should have stable keys and descriptive attributes.
+- Gold facts should have clearly defined grains and additive measures.
+- Order, spend, and ticket date fields should be compatible with `dim_date`.
+- Measures used in Power BI should have documented definitions and expected filters.
+- Records rejected in Silver should not feed Gold tables without explicit review.
 
 ## Monitoring Approach
 
-Quality checks should produce pass/fail counts, failed row samples, and run timestamps. Critical failures should block Gold table publication once orchestration is introduced.
+- Quality checks should produce pass/fail counts by entity and rule.
+- Validation outputs should include failed row counts and sample failed keys where practical.
+- Runs should track row counts from Bronze to Silver and, later, from Silver to Gold.
+- `dq_status` distribution should be monitored by Silver table.
+- Referential integrity failures should be reported before Gold publication.
+- Critical failures should block Gold publication once orchestration is introduced.
