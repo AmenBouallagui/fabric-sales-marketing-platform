@@ -2,6 +2,13 @@
 
 This folder will contain Power BI planning notes, report screenshots, and semantic model documentation.
 
+## Design Files
+
+- `semantic_model_notes.md`: semantic model table, field, relationship, formatting, display folder, and future security notes.
+- `report_design.md`: planned report pages, visuals, measures, slicers, and reviewer talking points.
+
+See also `docs/powerbi_semantic_model_design.md` for the full semantic model and report design plan.
+
 ## Planned Report Pages
 
 - Executive revenue overview.
@@ -27,3 +34,5 @@ A future operations dashboard should help reviewers and operators monitor platfo
 ## Screenshot Storage
 
 Report screenshots should be stored in `powerbi/report_screenshots/` when the report is ready for portfolio presentation.
+
+No `.pbix`, `.pbit`, screenshot, or generated report assets are included yet.

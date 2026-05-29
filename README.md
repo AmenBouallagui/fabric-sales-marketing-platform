@@ -108,6 +108,12 @@ The next layer after Silver is Gold dimensional modeling. The Gold design docume
 
 See `docs/gold_dimensional_model_design.md`, `notebooks/03_gold_modeling.md`, `sql/gold_model_ddl.sql`, and `sql/gold_validation_queries.sql`.
 
+## Power BI Semantic Model Design
+
+The Gold model is intended to feed a future Power BI semantic model and dashboard. The design documents relationships, measures, report pages, and a future screenshot/demo plan without creating `.pbix`, `.pbit`, or generated image assets.
+
+See `docs/powerbi_semantic_model_design.md`, `powerbi/semantic_model_notes.md`, `powerbi/report_design.md`, and `sql/business_metric_queries.sql`.
+
 ## Data Quality And Observability
 
 Data quality and observability make the platform production-ready by documenting how future Fabric runs will track validation outcomes, pipeline status, dataset freshness, row count reconciliation, and operational health.
