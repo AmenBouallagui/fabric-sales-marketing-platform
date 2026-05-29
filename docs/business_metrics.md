@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This document defines the first set of KPI definitions for the future Power BI semantic model. Measures should be implemented from Gold tables so calculations remain consistent across reports.
+This document defines KPI definitions for the future Power BI semantic model. Measures should be implemented from Gold tables so calculations remain consistent across reports.
 
 ## Revenue And Customer Metrics
 
@@ -35,19 +35,17 @@ This document defines the first set of KPI definitions for the future Power BI s
 
 ## Divide-By-Zero Handling
 
-Ratio measures should use safe division logic so blank or zero denominators return blank rather than an error. Examples include Gross Margin %, Average Order Value, Conversion Rate, Cost Per Click, Cost Per Acquisition, and ROAS.
+Ratio measures should use safe division logic so blank or zero denominators return blank instead of errors.
 
 ## Metric Governance
 
-Each metric should include:
+Each metric should document:
 
-- Metric owner.
-- Business definition.
-- Grain.
-- Source table.
-- Calculation logic.
-- Filters.
-- Exclusions.
-- Validation query.
-
-These details should be documented before a metric is promoted to portfolio-ready status in Power BI.
+- Metric owner
+- Business definition
+- Grain
+- Source table
+- Calculation logic
+- Filters
+- Exclusions
+- Validation query
