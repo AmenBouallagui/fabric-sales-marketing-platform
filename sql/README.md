@@ -10,6 +10,7 @@ This folder will contain SQL scripts for curated models, validation checks, and 
 - `gold_validation_queries.sql`: validation queries for future Gold tables, including key uniqueness, referential checks, row reconciliation, unknown key usage, date coverage, and KPI sanity checks.
 - `observability_model_ddl.sql`: representative DDL for future pipeline run, data quality, freshness, and row count reconciliation tables.
 - `observability_validation_queries.sql`: monitoring queries for latest runs, failures, freshness, pass rates, reconciliation issues, and repeated failures.
+- `business_metric_queries.sql`: representative SQL queries for previewing and validating future Power BI business metrics.
 - Future business metric SQL definitions.
 - Future data quality queries.
 - Future Power BI support views.
