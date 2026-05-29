@@ -2,35 +2,63 @@
 
 ## Overview
 
-The AI-Ready Sales & Marketing Data Platform is designed as a Microsoft Fabric portfolio implementation that turns fragmented commercial data into governed analytics products. The architecture uses a lakehouse-first pattern so raw files, transformed tables, curated metrics, and Power BI consumption can be managed in one coherent environment.
+This is a Microsoft Fabric portfolio project with a local executable prototype. It turns synthetic customers, products, campaigns, orders, ad spend, and support tickets into governed analytics outputs.
 
-## Target Flow
+The local prototype exists today and runs with pandas and parquet files so the medallion logic can be tested before Fabric implementation. The Microsoft Fabric implementation is planned for a future phase, including OneLake / Lakehouse Files, Delta tables, notebooks, Data Factory pipelines, and Warehouse or SQL endpoint access. Power BI and AI/Data Agent extensions are also planned future layers, not currently deployed assets.
 
-1. Source-like synthetic files are generated locally for CRM, marketing, product, and revenue domains.
-2. Raw files are landed into a Bronze area with minimal transformation.
-3. Silver transformations standardize schemas, clean values, enforce keys, and apply data quality checks.
-4. Gold tables expose dimensional models and business metrics for reporting.
-5. Power BI consumes curated Gold tables through a semantic model.
-6. AI-ready documentation, metadata, and quality rules make curated data easier to search, explain, and safely reuse.
+## Architecture Diagram
 
-## Logical Layers
+See the Mermaid architecture diagram in [architecture_diagram.md](../assets/architecture_diagram.md).
+
+## Current Local Prototype Flow
+
+1. Synthetic source CSVs are generated locally.
+2. The local medallion pipeline reads source CSVs.
+3. Bronze parquet outputs preserve source records and ingestion metadata.
+4. Silver parquet outputs clean, type-cast, deduplicate, and validate records.
+5. Gold parquet outputs build dimensions, facts, and KPI-ready fields.
+6. Observability outputs capture run logs, quality results, and row count reconciliation.
+7. GitHub Actions validates generation, local pipeline execution, and tests.
+
+## Planned Microsoft Fabric Flow
+
+1. Source extracts are uploaded to OneLake / Lakehouse Files.
+2. Fabric notebooks or Data Factory pipelines ingest files to Bronze Delta tables.
+3. Silver transformations standardize, validate, and deduplicate records.
+4. Gold tables or Warehouse objects expose dimensions and facts.
+5. Observability tables track pipeline runs, quality results, freshness, and reconciliation.
+6. Power BI consumes Gold and observability tables through a semantic model.
+7. A future AI/Data Agent can be grounded on curated Gold data, metric definitions, and quality metadata.
+
+## Layer Responsibilities
+
+### Source
+
+Synthetic CSV extracts for customers, products, campaigns, orders, ad spend, and support tickets.
 
 ### Bronze
 
-Bronze stores raw source extracts in their original shape. Files should be partitioned by domain and load date where useful. This layer preserves traceability and supports replaying transformations.
+Raw records plus ingestion metadata.
 
 ### Silver
 
-Silver stores conformed business entities. It standardizes identifiers, dates, status values, currencies, and relationships across sales and marketing processes.
+Cleaned, typed, deduplicated, validated current records.
 
 ### Gold
 
-Gold stores analytics-ready facts and dimensions. These tables are designed for Power BI, KPI definitions, and future AI-assisted analysis.
+Business-ready dimensions, facts, KPI-ready fields, and Power BI-friendly structures.
 
-## Key Design Principles
+### Observability
 
-- Separate raw, cleaned, and curated data responsibilities.
-- Keep business metric definitions close to the semantic model.
-- Treat data quality as a first-class platform capability.
-- Avoid secrets and environment-specific configuration in the repository.
-- Make every dataset explainable enough for portfolio review and AI grounding.
+Pipeline run logs, data quality results, dataset freshness, and row count reconciliation.
+
+### Consumption
+
+Future Power BI semantic model, reports, and AI/Data Agent extension.
+
+## Current Limitations
+
+- Fabric items are not deployed yet.
+- Power BI report is not created yet.
+- AI/Data Agent extension is planned but not implemented.
+- Local outputs are generated under ignored `data/` folders and are not committed.

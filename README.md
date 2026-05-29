@@ -60,6 +60,12 @@ The MVP focuses on creating a realistic synthetic dataset and a clean analytics 
 
 Repository scaffold, synthetic data generator, Bronze ingestion design, Silver transformation design, and Gold dimensional model design are in place. Generated data files are intentionally not committed.
 
+## Reviewer Quick Start
+
+- Start with the [project roadmap](docs/project_roadmap.md), [portfolio review checklist](docs/portfolio_review_checklist.md), and [architecture diagram](assets/architecture_diagram.md).
+- Run the local prototype commands below to generate source data, build local medallion outputs, and execute tests.
+- Review the Bronze, Silver, Gold, observability, and Power BI design docs to understand the planned Microsoft Fabric implementation.
+
 ## How To Run The Data Generator
 
 Install the Python dependencies and generate local synthetic source files:
