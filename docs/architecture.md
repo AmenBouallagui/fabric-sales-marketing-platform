@@ -2,11 +2,13 @@
 
 ## Overview
 
-The AI-Ready Sales & Marketing Data Platform is designed as a Microsoft Fabric portfolio implementation that turns fragmented commercial data into governed analytics products. The architecture uses a lakehouse-first pattern so raw files, transformed tables, curated metrics, and Power BI consumption can be managed in one coherent environment.
+The AI-Ready Sales & Marketing Data Platform is designed as a Microsoft Fabric portfolio implementation that turns synthetic customers, products, campaigns, orders, ad spend, and support tickets into governed analytics products. The architecture uses a lakehouse-first pattern so raw files, transformed tables, curated metrics, and Power BI consumption can be managed in one coherent environment.
+
+See `assets/architecture_diagram.md` for the Mermaid architecture diagram.
 
 ## Target Flow
 
-1. Source-like synthetic files are generated locally for CRM, marketing, product, and revenue domains.
+1. Synthetic source files are generated locally for customers, products, campaigns, orders, ad spend, and support tickets.
 2. Raw files are landed into a Bronze area with minimal transformation.
 3. Silver transformations standardize schemas, clean values, enforce keys, and apply data quality checks.
 4. Gold tables expose dimensional models and business metrics for reporting.
@@ -21,11 +23,15 @@ Bronze stores raw source extracts in their original shape. Files should be parti
 
 ### Silver
 
-Silver stores conformed business entities. It standardizes identifiers, dates, status values, currencies, and relationships across sales and marketing processes.
+Silver stores conformed business entities. It standardizes identifiers, dates, status values, monetary values, categorical fields, and relationships across customers, products, campaigns, orders, ad spend, and support tickets.
 
 ### Gold
 
 Gold stores analytics-ready facts and dimensions. These tables are designed for Power BI, KPI definitions, and future AI-assisted analysis.
+
+### Observability
+
+Observability outputs capture pipeline run status, data quality results, freshness signals, and row count reconciliation. These outputs support production-style monitoring and future operations reporting.
 
 ## Key Design Principles
 
