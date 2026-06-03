@@ -33,6 +33,8 @@ The project is designed to be understandable to reviewers while still showing pr
 
 ## Planned Fabric Implementation Milestones
 
+- Create Fabric workspace and Lakehouses.
+- Land generated source CSVs into Lakehouse Files.
 - Implement and execute Fabric Bronze ingestion notebook.
 - Validate Bronze tables using the SQL endpoint and `sql/bronze_validation_queries.sql`.
 - Evaluate Data Factory orchestration for repeatable Bronze ingestion.
