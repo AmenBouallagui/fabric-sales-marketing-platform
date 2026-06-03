@@ -100,6 +100,10 @@ Generated CSV and parquet outputs remain under the ignored `data/` folder and ar
 
 The repository includes setup guides under [fabric_implementation](fabric_implementation/) for moving from the local prototype toward a real Microsoft Fabric workspace. The guides cover workspace setup, Lakehouse setup, source file upload, Bronze notebook setup, and SQL endpoint validation for the planned Fabric Bronze implementation.
 
+## Fabric Notebook Source
+
+The repository includes [fabric_notebooks/nb_01_bronze_ingestion.py](fabric_notebooks/nb_01_bronze_ingestion.py) as version-controlled source for the planned Fabric Bronze notebook. This source can be copied into a future Fabric notebook named `nb_01_bronze_ingestion` or used as an implementation reference when Fabric notebook assets are created.
+
 ## Bronze Ingestion Design
 
 The next layer after data generation is the Bronze ingestion design. The current design documents how local synthetic CSV extracts under `data/source/` will later be landed into Microsoft Fabric Lakehouse Files and ingested into append-friendly Bronze Delta tables with metadata for lineage, validation, and future incremental loading.
