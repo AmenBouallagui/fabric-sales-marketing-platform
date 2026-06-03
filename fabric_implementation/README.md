@@ -22,7 +22,7 @@ These documents are setup and implementation planning guides only. They do not i
 - Bronze Delta tables created by a Fabric notebook or pipeline.
 - Silver Delta tables created by a Fabric notebook after Bronze validation.
 - SQL endpoint validation using the Bronze validation query library.
-- Later Gold, observability, and Power BI implementation.
+- Later Silver execution, Gold, observability, and Power BI implementation.
 
 Repo-friendly notebook source is available under [fabric_notebooks](../fabric_notebooks/) for the planned Bronze and Silver Fabric notebooks. These files are implementation starting points and do not indicate that Fabric execution has already happened.
 

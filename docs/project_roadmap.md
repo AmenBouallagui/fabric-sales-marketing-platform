@@ -38,12 +38,14 @@ The project is designed to be understandable to reviewers while still showing pr
 - Implement and execute Fabric Bronze ingestion notebook.
 - Validate Bronze tables using the SQL endpoint and `sql/bronze_validation_queries.sql`.
 - Evaluate Data Factory orchestration for repeatable Bronze ingestion.
-- Implement and execute Silver transformation notebook with validation and deduplication.
+- Implement and execute Fabric Silver transformation notebook with validation and deduplication.
 - Implement Gold dimensional modeling notebook or Warehouse objects.
 - Add observability tables and validation result logging.
 - Orchestrate layer execution with Data Factory pipelines.
 
 The Fabric setup guides prepare this milestone by documenting workspace setup, Lakehouse conventions, source file upload paths, Bronze notebook configuration, and SQL endpoint validation.
+
+Actual Fabric execution remains future/planned unless documented later.
 
 ## Planned Power BI Milestones
 

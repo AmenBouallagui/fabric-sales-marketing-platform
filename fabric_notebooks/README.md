@@ -38,8 +38,9 @@ To use it:
 ## Expected Fabric Setup
 
 - Fabric workspace created.
-- Bronze and Silver Lakehouses created or a single Lakehouse with clear layer conventions.
+- Bronze and Silver Lakehouses created, or a single Lakehouse with clear layer conventions.
 - Source CSV files uploaded to Lakehouse Files.
+- Bronze Delta tables created before running the Silver notebook source.
 - Notebook attached to the appropriate Lakehouse context.
 - No secrets, workspace IDs, tenant IDs, or credentials stored in this repository.
 
