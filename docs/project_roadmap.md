@@ -26,16 +26,20 @@ The project is designed to be understandable to reviewers while still showing pr
 - Validate the local prototype with pytest.
 - Run GitHub Actions CI on pull requests and pushes to `main`.
 - Review design documentation for future Fabric implementation.
+- Use Fabric setup guides under `fabric_implementation/` to prepare the next manual implementation step.
 
 ## Planned Fabric Implementation Milestones
 
 - Create Fabric workspace and Lakehouse.
 - Land generated source CSVs into Lakehouse Files.
-- Implement Bronze ingestion notebook or Data Factory pipeline.
+- Implement Fabric Bronze notebook.
+- Evaluate Data Factory orchestration for repeatable Bronze ingestion.
 - Implement Silver transformation notebook with validation and deduplication.
 - Implement Gold dimensional modeling notebook or Warehouse objects.
 - Add observability tables and validation result logging.
 - Orchestrate layer execution with Data Factory pipelines.
+
+The Fabric setup guides prepare this milestone by documenting workspace setup, Lakehouse conventions, source file upload paths, Bronze notebook configuration, and SQL endpoint validation.
 
 ## Planned Power BI Milestones
 

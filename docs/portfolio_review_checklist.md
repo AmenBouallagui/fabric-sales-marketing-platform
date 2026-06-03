@@ -38,8 +38,11 @@ Generated data is intentionally not committed.
 - `docs/gold_dimensional_model_design.md`
 - `docs/data_quality_observability_design.md`
 - `docs/powerbi_semantic_model_design.md`
+- `fabric_implementation/README.md`
 
 These documents explain how the local concepts map to future Microsoft Fabric Lakehouse, notebook, Data Factory, Warehouse, and Power BI work.
+
+Reviewer note: the local prototype is executable today. The Fabric implementation guides explain the planned manual setup path for the next implementation milestone. Fabric items are not deployed yet unless explicitly documented later.
 
 ## What Demonstrates Production Readiness
 
