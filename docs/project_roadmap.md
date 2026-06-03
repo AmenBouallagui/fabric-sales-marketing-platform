@@ -19,6 +19,7 @@ The project is designed to be understandable to reviewers while still showing pr
 - GitHub Actions CI.
 - Fabric Bronze notebook source prepared.
 - Fabric Silver notebook source prepared.
+- Fabric Gold notebook source prepared.
 
 ## Current Capabilities
 
@@ -39,7 +40,7 @@ The project is designed to be understandable to reviewers while still showing pr
 - Validate Bronze tables using the SQL endpoint and `sql/bronze_validation_queries.sql`.
 - Evaluate Data Factory orchestration for repeatable Bronze ingestion.
 - Implement and execute Fabric Silver transformation notebook with validation and deduplication.
-- Implement Gold dimensional modeling notebook or Warehouse objects.
+- Implement and execute Fabric Gold dimensional modeling notebook or Warehouse objects.
 - Add observability tables and validation result logging.
 - Orchestrate layer execution with Data Factory pipelines.
 

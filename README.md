@@ -102,7 +102,7 @@ The repository includes setup guides under [fabric_implementation](fabric_implem
 
 ## Fabric Notebook Source
 
-The repository includes version-controlled source for planned Fabric notebooks: [nb_01_bronze_ingestion.py](fabric_notebooks/nb_01_bronze_ingestion.py) for Bronze ingestion and [nb_02_silver_transformations.py](fabric_notebooks/nb_02_silver_transformations.py) for Silver transformations. These files can be copied into future Fabric notebooks or used as implementation references when Fabric notebook assets are created.
+The repository includes version-controlled source for planned Fabric notebooks: [nb_01_bronze_ingestion.py](fabric_notebooks/nb_01_bronze_ingestion.py) for Bronze ingestion, [nb_02_silver_transformations.py](fabric_notebooks/nb_02_silver_transformations.py) for Silver transformations, and [nb_03_gold_modeling.py](fabric_notebooks/nb_03_gold_modeling.py) for Gold dimensional modeling. These files can be copied into future Fabric notebooks or used as implementation references when Fabric notebook assets are created.
 
 ## Bronze Ingestion Design
 

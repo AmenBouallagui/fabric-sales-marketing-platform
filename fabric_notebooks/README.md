@@ -35,12 +35,26 @@ To use it:
 5. Set the notebook parameters for `silver_processed_at`, `write_mode`, and `fail_on_critical`.
 6. Run the notebook after Bronze validation has passed.
 
+## Gold Notebook Source
+
+`nb_03_gold_modeling.py` is source code for a future Fabric notebook named `nb_03_gold_modeling`.
+
+To use it:
+
+1. Confirm Silver Delta tables have been created and validated.
+2. Create a Fabric notebook named `nb_03_gold_modeling`.
+3. Attach the notebook to the Lakehouse or workspace context that can read Silver tables and write Gold tables.
+4. Copy the contents of `nb_03_gold_modeling.py` into the Fabric notebook, or use it as the source when implementing the notebook through Fabric Git integration.
+5. Set the notebook parameters for `gold_processed_at`, `write_mode`, and `unknown_key`.
+6. Run the notebook after Silver validation has passed.
+
 ## Expected Fabric Setup
 
 - Fabric workspace created.
-- Bronze and Silver Lakehouses created, or a single Lakehouse with clear layer conventions.
+- Bronze, Silver, and Gold Lakehouses created, or a single Lakehouse with clear layer conventions.
 - Source CSV files uploaded to Lakehouse Files.
 - Bronze Delta tables created before running the Silver notebook source.
+- Silver Delta tables created before running the Gold notebook source.
 - Notebook attached to the appropriate Lakehouse context.
 - No secrets, workspace IDs, tenant IDs, or credentials stored in this repository.
 
@@ -73,6 +87,23 @@ Files/source/synthetic_crm/customers/load_date=2026-01-01/customers.csv
 - `silver_orders`
 - `silver_ad_spend`
 - `silver_support_tickets`
+
+## Expected Gold Outputs
+
+Dimensions:
+
+- `dim_customer`
+- `dim_product`
+- `dim_campaign`
+- `dim_date`
+- `dim_customer_segment`
+- `dim_channel`
+
+Facts:
+
+- `fact_orders`
+- `fact_ad_spend`
+- `fact_support_tickets`
 
 ## Execution Status
 
