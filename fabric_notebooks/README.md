@@ -22,12 +22,26 @@ To use it:
 4. Set the notebook parameters for the target `load_date`, `source_base_path`, and `ingestion_run_id`.
 5. Run the notebook after source files have been uploaded to Lakehouse Files.
 
+## Silver Notebook Source
+
+`nb_02_silver_transformations.py` is source code for a future Fabric notebook named `nb_02_silver_transformations`.
+
+To use it:
+
+1. Confirm Bronze Delta tables have been created.
+2. Create a Fabric notebook named `nb_02_silver_transformations`.
+3. Attach the notebook to the Lakehouse or workspace context that can read Bronze tables and write Silver tables.
+4. Copy the contents of `nb_02_silver_transformations.py` into the Fabric notebook, or use it as the source when implementing the notebook through Fabric Git integration.
+5. Set the notebook parameters for `silver_processed_at`, `write_mode`, and `fail_on_critical`.
+6. Run the notebook after Bronze validation has passed.
+
 ## Expected Fabric Setup
 
 - Fabric workspace created.
-- Bronze Lakehouse created.
+- Bronze and Silver Lakehouses created, or a single Lakehouse with clear layer conventions.
 - Source CSV files uploaded to Lakehouse Files.
-- Notebook attached to the Bronze Lakehouse.
+- Bronze Delta tables created before running the Silver notebook source.
+- Notebook attached to the appropriate Lakehouse context.
 - No secrets, workspace IDs, tenant IDs, or credentials stored in this repository.
 
 ## Source File Path Convention
@@ -51,6 +65,15 @@ Files/source/synthetic_crm/customers/load_date=2026-01-01/customers.csv
 - `bronze_ad_spend_raw`
 - `bronze_support_tickets_raw`
 
+## Expected Silver Outputs
+
+- `silver_customers`
+- `silver_products`
+- `silver_campaigns`
+- `silver_orders`
+- `silver_ad_spend`
+- `silver_support_tickets`
+
 ## Execution Status
 
-This notebook source has not been executed in Fabric unless a later implementation note or pull request explicitly documents that run.
+These notebook sources have not been executed in Fabric unless a later implementation note or pull request explicitly documents that run.
