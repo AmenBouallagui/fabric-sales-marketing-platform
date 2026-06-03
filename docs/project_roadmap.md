@@ -17,6 +17,7 @@ The project is designed to be understandable to reviewers while still showing pr
 - Data quality and observability design.
 - Power BI semantic model and report design.
 - GitHub Actions CI.
+- Fabric Bronze notebook source prepared.
 
 ## Current Capabilities
 
@@ -27,12 +28,13 @@ The project is designed to be understandable to reviewers while still showing pr
 - Run GitHub Actions CI on pull requests and pushes to `main`.
 - Review design documentation for future Fabric implementation.
 - Use Fabric setup guides under `fabric_implementation/` to prepare the next manual implementation step.
+- Review repo-friendly Fabric notebook source under `fabric_notebooks/`.
 
 ## Planned Fabric Implementation Milestones
 
 - Create Fabric workspace and Lakehouses.
 - Land generated source CSVs into Lakehouse Files.
-- Implement Fabric Bronze ingestion notebook.
+- Implement and execute Fabric Bronze ingestion notebook.
 - Validate Bronze tables using the SQL endpoint and `sql/bronze_validation_queries.sql`.
 - Evaluate Data Factory orchestration for repeatable Bronze ingestion.
 - Implement Silver transformation notebook with validation and deduplication.

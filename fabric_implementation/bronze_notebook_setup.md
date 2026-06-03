@@ -18,6 +18,12 @@ Use the existing notebook design as the implementation reference:
 
 [notebooks/01_bronze_ingestion.md](../notebooks/01_bronze_ingestion.md)
 
+Use the repo-friendly notebook source as the starting implementation:
+
+[fabric_notebooks/nb_01_bronze_ingestion.py](../fabric_notebooks/nb_01_bronze_ingestion.py)
+
+The source file can be copied into the Fabric notebook or used as the source of truth when implementing the notebook through Fabric Git integration. It is not an `.ipynb` artifact and does not indicate that the notebook has already run in Fabric.
+
 ## Suggested Parameters
 
 - `source_base_path`: base Files path for landed source extracts.
