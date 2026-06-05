@@ -6,6 +6,8 @@ The AI-Ready Sales & Marketing Data Platform demonstrates how customers, product
 
 The project is designed to be understandable to reviewers while still showing production-oriented thinking: medallion architecture, local validation, data quality, observability, Gold dimensional modeling, and future Power BI reporting.
 
+For portfolio review, the repository is meant to show Analytics Engineering, BI Engineering, and Microsoft Fabric readiness in one cohesive project: executable local logic today, plus practical implementation designs for Fabric and Power BI later.
+
 ## Completed Milestones
 
 - Initial repository scaffold.
@@ -28,9 +30,10 @@ The project is designed to be understandable to reviewers while still showing pr
 - Produce local Bronze, Silver, Gold, and observability parquet outputs under ignored `data/` folders.
 - Validate the local prototype with pytest.
 - Run GitHub Actions CI on pull requests and pushes to `main`.
+- Review business-facing KPI definitions and Power BI report planning.
 - Review design documentation for future Fabric implementation.
 - Use Fabric setup guides under `fabric_implementation/` to prepare the next manual implementation step.
-- Review repo-friendly Fabric notebook source under `fabric_notebooks/`.
+- Review repo-friendly Fabric notebook source for Bronze, Silver, and Gold under `fabric_notebooks/`.
 
 ## Planned Fabric Implementation Milestones
 
@@ -79,3 +82,4 @@ Actual Fabric execution remains future/planned unless documented later.
 - Add a one-page architecture summary for hiring managers.
 - Add sample business questions answered by the Gold model.
 - Add a demo narrative connecting data engineering, analytics, and AI readiness.
+- Add a short README badge or link summary after future Fabric or Power BI assets are actually deployed.
