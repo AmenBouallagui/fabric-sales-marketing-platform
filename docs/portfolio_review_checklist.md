@@ -18,7 +18,7 @@ python local_pipeline/run_local_medallion.py
 python -m pytest
 ```
 
-These commands generate synthetic source data, run the local medallion prototype, and execute tests.
+These commands generate deterministic source CSVs, run the local Bronze/Silver/Gold prototype, create local observability outputs, and execute tests.
 
 ## What Outputs Are Generated
 
@@ -34,18 +34,18 @@ Generated data is intentionally not committed.
 
 ## What Demonstrates Analytics Engineering Skill
 
-- Deterministic source data generation.
+- Deterministic Python source data generation.
 - Local executable medallion pipeline.
-- Bronze metadata and lineage fields.
+- Bronze ingestion metadata and lineage fields.
 - Silver standardization, type casting, deduplication, and validation.
-- Gold dimensional model with dimensions, facts, and KPI-ready calculations.
+- Gold dimensional modeling with dimensions, facts, and KPI-ready calculations.
 - Tests and CI validation.
 
 ## What Demonstrates BI And Power BI Skill
 
 - Business metric definitions for revenue, margin, marketing, customer, support, and data health.
 - Gold star schema designed for Power BI relationships.
-- Semantic model notes with field visibility, formatting, measure organization, and relationship strategy.
+- Semantic model notes for field visibility, formatting, measure organization, and relationship strategy.
 - Report design plan for executive, revenue, marketing, customer, product, support, and operations pages.
 
 ## What Demonstrates Microsoft Fabric Readiness
@@ -53,7 +53,7 @@ Generated data is intentionally not committed.
 - Fabric setup guides for workspace, Lakehouse, source upload, Bronze notebook setup, and SQL endpoint validation.
 - Repo-friendly PySpark source for planned Bronze, Silver, and Gold Fabric notebooks.
 - SQL validation queries for Bronze, Silver, Gold, business metrics, and observability.
-- Clear distinction between local executable prototype and future Fabric deployment.
+- Clear distinction between the executable local prototype and future Fabric deployment.
 
 ## What Demonstrates Production-Style Thinking
 

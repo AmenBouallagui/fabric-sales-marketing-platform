@@ -2,11 +2,9 @@
 
 ## Project Vision
 
-The AI-Ready Sales & Marketing Data Platform demonstrates how customers, products, campaigns, orders, ad spend, and support tickets can be shaped into a governed Microsoft Fabric-style analytics platform.
+The AI-Ready Sales & Marketing Data Platform shows how sales, marketing, customer, product, ad spend, and support data can be shaped into a governed analytics platform.
 
-The project is designed to be understandable to reviewers while still showing production-oriented thinking: medallion architecture, local validation, data quality, observability, Gold dimensional modeling, and future Power BI reporting.
-
-For portfolio review, the repository is meant to show Analytics Engineering, BI Engineering, and Microsoft Fabric readiness in one cohesive project: executable local logic today, plus practical implementation designs for Fabric and Power BI later.
+For portfolio review, the repository demonstrates Analytics Engineering, BI Engineering, and Microsoft Fabric readiness in one cohesive project: executable local logic today, plus practical implementation designs for Fabric and Power BI later.
 
 ## Completed Milestones
 
@@ -22,6 +20,7 @@ For portfolio review, the repository is meant to show Analytics Engineering, BI 
 - Fabric Bronze notebook source prepared.
 - Fabric Silver notebook source prepared.
 - Fabric Gold notebook source prepared.
+- Portfolio review documentation and architecture diagram.
 
 ## Current Capabilities
 
@@ -31,8 +30,7 @@ For portfolio review, the repository is meant to show Analytics Engineering, BI 
 - Validate the local prototype with pytest.
 - Run GitHub Actions CI on pull requests and pushes to `main`.
 - Review business-facing KPI definitions and Power BI report planning.
-- Review design documentation for future Fabric implementation.
-- Use Fabric setup guides under `fabric_implementation/` to prepare the next manual implementation step.
+- Review future Fabric implementation designs and setup guides.
 - Review repo-friendly Fabric notebook source for Bronze, Silver, and Gold under `fabric_notebooks/`.
 
 ## Planned Fabric Implementation Milestones
@@ -64,7 +62,7 @@ Actual Fabric execution remains future/planned unless documented later.
 - Document table and column metadata for AI grounding.
 - Add curated business glossary terms.
 - Add sample prompts for revenue, marketing, support, and data health questions.
-- Explore a future data agent that answers questions from Gold and observability outputs.
+- Explore a future data agent grounded on Gold and observability outputs.
 - Keep synthetic data and governance notes clear so AI usage remains safe for portfolio demonstration.
 
 ## Suggested Next Engineering Tasks
@@ -82,4 +80,4 @@ Actual Fabric execution remains future/planned unless documented later.
 - Add a one-page architecture summary for hiring managers.
 - Add sample business questions answered by the Gold model.
 - Add a demo narrative connecting data engineering, analytics, and AI readiness.
-- Add a short README badge or link summary after future Fabric or Power BI assets are actually deployed.
+- Add README badges or links only after future Fabric or Power BI assets are actually deployed.
