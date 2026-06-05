@@ -2,12 +2,9 @@
 
 ## What To Look At First
 
-1. `README.md` for the portfolio summary, skills demonstrated, and run commands.
-2. `assets/architecture_diagram.md` for the end-to-end local and planned Fabric architecture.
-3. `local_pipeline/README.md` for the executable local medallion prototype.
-4. `fabric_notebooks/README.md` for repo-friendly Fabric notebook source.
-5. `docs/powerbi_semantic_model_design.md` for the future reporting and semantic model layer.
-6. `docs/project_roadmap.md` for completed milestones and planned Fabric work.
+Start with `README.md` for the portfolio summary, skills demonstrated, and local run commands. Then review `assets/architecture_diagram.md` for the end-to-end view of the local prototype and planned Microsoft Fabric path.
+
+The most useful technical entry points are `local_pipeline/README.md` for the executable local medallion prototype, `fabric_notebooks/README.md` for repo-friendly Fabric notebook source, `docs/powerbi_semantic_model_design.md` for BI and semantic model planning, and `docs/project_roadmap.md` for completed milestones and planned work.
 
 ## How To Run The Project Locally
 
@@ -18,50 +15,61 @@ python local_pipeline/run_local_medallion.py
 python -m pytest
 ```
 
-These commands generate deterministic source CSVs, run the local Bronze/Silver/Gold prototype, create local observability outputs, and execute tests.
+These commands generate synthetic source data, run the local Bronze/Silver/Gold medallion prototype, create local observability outputs, and execute tests. Generated CSV and parquet outputs are written under ignored `data/` folders and are intentionally not committed.
 
-## What Outputs Are Generated
+## 10-Minute Reviewer Walkthrough
 
-Generated outputs are written under ignored `data/` folders:
+1. Read the README summary and current status.
+2. Open the architecture diagram.
+3. Review the local pipeline README.
+4. Skim the Fabric notebook source README.
+5. Review the Power BI semantic model and report design.
+6. Skim the Bronze, Silver, Gold, data quality, and observability design docs.
+7. Run the local commands if time allows.
+8. Check the roadmap for future Fabric, Power BI, and AI/Data Agent milestones.
 
-- `data/source/`: source CSV extracts.
-- `data/bronze/`: local Bronze parquet outputs.
-- `data/silver/`: local Silver parquet outputs.
-- `data/gold/`: local Gold parquet outputs.
-- `data/observability/`: local run log, quality result, and row count reconciliation outputs.
+## Skills Demonstrated
 
-Generated data is intentionally not committed.
+### Analytics Engineering
 
-## What Demonstrates Analytics Engineering Skill
+- Medallion architecture from source extracts through Bronze, Silver, and Gold.
+- Silver standardization, type casting, deduplication, and validation design.
+- Gold dimensional modeling with dimensions, facts, surrogate keys, unknown members, and KPI-ready fields.
+- Business metric definitions aligned to reporting and semantic model needs.
+
+### BI / Power BI
+
+- Power BI semantic model design with relationship strategy and measure planning.
+- Business-facing report page design for executive, revenue, marketing, customer, product, support, and operations views.
+- KPI definitions for revenue, margin, marketing performance, customer analysis, support quality, and data health.
+
+### Data Engineering Foundations
 
 - Deterministic Python source data generation.
-- Local executable medallion pipeline.
-- Bronze ingestion metadata and lineage fields.
-- Silver standardization, type casting, deduplication, and validation.
-- Gold dimensional modeling with dimensions, facts, and KPI-ready calculations.
-- Tests and CI validation.
+- Local pandas/parquet medallion pipeline.
+- Data quality checks, row count reconciliation, and observability outputs.
+- Pytest coverage and GitHub Actions CI.
 
-## What Demonstrates BI And Power BI Skill
-
-- Business metric definitions for revenue, margin, marketing, customer, support, and data health.
-- Gold star schema designed for Power BI relationships.
-- Semantic model notes for field visibility, formatting, measure organization, and relationship strategy.
-- Report design plan for executive, revenue, marketing, customer, product, support, and operations pages.
-
-## What Demonstrates Microsoft Fabric Readiness
+### Microsoft Fabric Readiness
 
 - Fabric setup guides for workspace, Lakehouse, source upload, Bronze notebook setup, and SQL endpoint validation.
-- Repo-friendly PySpark source for planned Bronze, Silver, and Gold Fabric notebooks.
-- SQL validation queries for Bronze, Silver, Gold, business metrics, and observability.
-- Clear distinction between the executable local prototype and future Fabric deployment.
+- Repo-friendly PySpark notebook source for planned Bronze, Silver, and Gold Fabric notebooks.
+- SQL validation and DDL artifacts for Bronze, Silver, Gold, business metrics, and observability.
 
-## What Demonstrates Production-Style Thinking
+### Production Readiness
 
-- Data quality rules and validation strategy.
-- Observability model for pipeline run logs, quality results, freshness, and reconciliation.
-- Unknown member handling in Gold design.
-- CI workflow that validates generation, local pipeline execution, Git ignore behavior, and tests.
-- Documentation that separates implemented local behavior from planned Fabric and Power BI work.
+- Clear separation between implemented local prototype and planned Fabric deployment.
+- Generated data excluded from Git.
+- No secrets, credentials, tenant IDs, workspace IDs, `.pbix`, `.pbit`, or `.ipynb` files included.
+- Documentation for validation, observability, idempotency, unknown members, and future operational monitoring.
+
+## What Demonstrates Business Value
+
+- Unified sales, marketing, customer, product, ad spend, and support domains.
+- Gold facts and dimensions designed for business-ready analytics.
+- KPI planning for revenue, net revenue, margin, campaign performance, support quality, and data health.
+- Power BI report design aimed at executive and operational decision-making.
+- AI-readiness framing through governed data, documented metrics, and quality metadata.
 
 ## What Is Not Implemented Yet
 
@@ -71,15 +79,3 @@ Generated data is intentionally not committed.
 - Power BI `.pbix` or `.pbit` file.
 - Report screenshots.
 - AI/Data Agent extension.
-
-## Suggested 10-Minute Reviewer Walkthrough
-
-1. Read the README summary and current status.
-2. Open the architecture diagram.
-3. Review the local prototype README.
-4. Skim the Fabric notebook source README.
-5. Skim the Bronze, Silver, and Gold design docs.
-6. Review the Power BI semantic model and report design.
-7. Review data quality and observability design.
-8. Run the local prototype commands if time allows.
-9. Check the roadmap for planned Fabric, Power BI, and AI/Data Agent milestones.
