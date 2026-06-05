@@ -2,9 +2,9 @@
 
 ## Project Vision
 
-The AI-Ready Sales & Marketing Data Platform demonstrates how customers, products, campaigns, orders, ad spend, and support tickets can be shaped into a governed Microsoft Fabric-style analytics platform.
+This project demonstrates an Analytics Engineering and BI platform pattern using a Microsoft Fabric-style medallion architecture. It combines an executable local prototype with practical design and implementation guides for future Fabric, Power BI, and AI/Data Agent work.
 
-The project is designed to be understandable to reviewers while still showing production-oriented thinking: medallion architecture, local validation, data quality, observability, Gold dimensional modeling, and future Power BI reporting.
+The project is designed for portfolio review: it shows local working code today and a realistic path toward Fabric lakehouse implementation later.
 
 ## Completed Milestones
 
@@ -17,65 +17,73 @@ The project is designed to be understandable to reviewers while still showing pr
 - Data quality and observability design.
 - Power BI semantic model and report design.
 - GitHub Actions CI.
-- Fabric Bronze notebook source prepared.
-- Fabric Silver notebook source prepared.
-- Fabric Gold notebook source prepared.
+- Portfolio roadmap, review checklist, and architecture diagram.
+- Microsoft Fabric implementation setup guides.
+- Repo-friendly Fabric notebook source for Bronze, Silver, and Gold.
 
 ## Current Capabilities
 
-- Generate deterministic synthetic source CSV files under `data/source/`.
-- Run a local pandas-based medallion prototype.
-- Produce local Bronze, Silver, Gold, and observability parquet outputs under ignored `data/` folders.
+- Generate deterministic synthetic source CSVs.
+- Run a local medallion pipeline with Bronze, Silver, Gold, and observability outputs.
 - Validate the local prototype with pytest.
-- Run GitHub Actions CI on pull requests and pushes to `main`.
-- Review design documentation for future Fabric implementation.
-- Use Fabric setup guides under `fabric_implementation/` to prepare the next manual implementation step.
-- Review repo-friendly Fabric notebook source under `fabric_notebooks/`.
+- Run CI on pull requests and pushes to main.
+- Review Fabric setup guides for workspace, Lakehouse, source upload, notebook setup, and SQL validation.
+- Review repo-friendly Fabric notebook source under fabric_notebooks/.
+- Review Power BI semantic model and report design documentation.
+
+## Prepared But Not Executed In Fabric
+
+- Fabric workspace setup guide.
+- Lakehouse setup guide.
+- Source file upload guide.
+- Bronze notebook setup guide.
+- SQL endpoint validation guide.
+- Fabric Bronze notebook source.
+- Fabric Silver notebook source.
+- Fabric Gold notebook source.
+
+Actual Fabric execution remains future/planned unless documented later.
 
 ## Planned Fabric Implementation Milestones
 
 - Create Fabric workspace and Lakehouses.
 - Land generated source CSVs into Lakehouse Files.
 - Implement and execute Fabric Bronze ingestion notebook.
-- Validate Bronze tables using the SQL endpoint and `sql/bronze_validation_queries.sql`.
+- Validate Bronze tables using the SQL endpoint and sql/bronze_validation_queries.sql.
 - Evaluate Data Factory orchestration for repeatable Bronze ingestion.
 - Implement and execute Fabric Silver transformation notebook with validation and deduplication.
 - Implement and execute Fabric Gold dimensional modeling notebook or Warehouse objects.
 - Add observability tables and validation result logging.
 - Orchestrate layer execution with Data Factory pipelines.
 
-The Fabric setup guides prepare this milestone by documenting workspace setup, Lakehouse conventions, source file upload paths, Bronze notebook configuration, and SQL endpoint validation.
-
-Actual Fabric execution remains future/planned unless documented later.
-
 ## Planned Power BI Milestones
 
 - Build Power BI semantic model over Gold tables.
-- Configure relationships, date table, formatting, and measure table.
-- Implement KPI measures from documented definitions.
-- Build report pages for executive, revenue, marketing, customer, product, support, and operations views.
-- Capture portfolio screenshots in `powerbi/report_screenshots/`.
+- Create measures for revenue, margin, marketing, customer, support, and data health KPIs.
+- Build report pages for executive overview, revenue, marketing, customer, product, support, and operations.
+- Capture report screenshots for portfolio presentation.
+- Add a short demo walkthrough.
 
 ## Planned AI/Data Agent Extension
 
-- Document table and column metadata for AI grounding.
-- Add curated business glossary terms.
-- Add sample prompts for revenue, marketing, support, and data health questions.
-- Explore a future data agent that answers questions from Gold and observability outputs.
-- Keep synthetic data and governance notes clear so AI usage remains safe for portfolio demonstration.
+- Document business glossary and metric definitions.
+- Create a question-and-answer evaluation set.
+- Connect an AI/Data Agent to curated Gold data once Fabric implementation exists.
+- Validate natural-language answers against SQL or Power BI measures.
+- Document limitations, permissions, and governance assumptions.
+
+## Recommended Next Portfolio Tasks
+
+- Record a 3-5 minute demo video.
+- Add terminal output examples or screenshots showing the local prototype running.
+- Add future Power BI mockup or screenshots once available.
+- Document real Fabric execution once completed.
+- Prepare outreach materials for Analytics Engineer, BI Developer, and Data Analyst roles.
 
 ## Suggested Next Engineering Tasks
 
-- Add local data quality result detail exports for failed Silver records.
-- Add a small local semantic model validation script for KPI queries.
-- Add Makefile or task runner commands for common workflows.
-- Add schema contracts for source, Bronze, Silver, and Gold tables.
-- Expand tests for deduplication, unknown keys, and quality failures.
-
-## Suggested Portfolio/Demo Tasks
-
-- Record a short walkthrough of source generation and local medallion execution.
-- Add screenshots after Power BI report pages are built.
-- Add a one-page architecture summary for hiring managers.
-- Add sample business questions answered by the Gold model.
-- Add a demo narrative connecting data engineering, analytics, and AI readiness.
+- Execute the Bronze notebook in an actual Fabric workspace.
+- Validate Bronze tables using SQL endpoint queries.
+- Execute Silver and Gold notebook sources in Fabric.
+- Add observability notebook sources.
+- Add Data Factory orchestration design or implementation notes.

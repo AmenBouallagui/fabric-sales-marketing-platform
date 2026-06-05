@@ -2,57 +2,75 @@
 
 ## What To Look At First
 
-1. `README.md` for the project overview and run commands.
-2. `assets/architecture_diagram.md` for the end-to-end architecture.
-3. `local_pipeline/README.md` for the executable local prototype.
-4. `docs/project_roadmap.md` for completed and planned milestones.
-5. `docs/powerbi_semantic_model_design.md` for the future reporting layer.
+1. README.md for the portfolio summary, skills demonstrated, and run commands.
+2. assets/architecture_diagram.md for the end-to-end local and planned Fabric architecture.
+3. local_pipeline/README.md for the executable local medallion prototype.
+4. fabric_notebooks/README.md for repo-friendly Fabric notebook source.
+5. docs/powerbi_semantic_model_design.md for the future reporting and semantic model layer.
+6. docs/project_roadmap.md for completed milestones and planned Fabric work.
 
 ## How To Run The Project Locally
 
-```bash
-pip install -r requirements.txt
-python data_generation/generate_source_data.py
-python local_pipeline/run_local_medallion.py
-pytest
-```
+- pip install -r requirements.txt
+- python data_generation/generate_source_data.py
+- python local_pipeline/run_local_medallion.py
+- python -m pytest
 
-The commands generate synthetic source data, run the local medallion prototype, and execute tests.
+These commands generate synthetic source data, run the local medallion prototype, and execute tests.
 
-## What Outputs Are Generated
+Generated data is written under ignored data/ folders and is intentionally not committed.
 
-Generated outputs are written under ignored `data/` folders:
+## 10-Minute Reviewer Walkthrough
 
-- `data/source/`: source CSV extracts.
-- `data/bronze/`: local Bronze parquet outputs.
-- `data/silver/`: local Silver parquet outputs.
-- `data/gold/`: local Gold parquet outputs.
-- `data/observability/`: local run log, quality result, and row count reconciliation outputs.
+1. Read the README summary and current status.
+2. Open the architecture diagram.
+3. Review the local prototype README.
+4. Skim the Fabric notebook source README.
+5. Skim the Bronze, Silver, and Gold design docs.
+6. Review the Power BI semantic model and report design.
+7. Review the data quality and observability design.
+8. Run the local prototype commands if time allows.
+9. Check the roadmap for planned Fabric, Power BI, and AI/Data Agent milestones.
 
-Generated data is intentionally not committed.
+## Skills Demonstrated
 
-## Fabric Implementation Design Docs
+### Analytics Engineering
 
-- `docs/bronze_ingestion_design.md`
-- `docs/silver_transformation_design.md`
-- `docs/gold_dimensional_model_design.md`
-- `docs/data_quality_observability_design.md`
-- `docs/powerbi_semantic_model_design.md`
-- `fabric_implementation/README.md`
+- Deterministic source data generation.
+- Local executable medallion pipeline.
+- Bronze ingestion metadata and lineage fields.
+- Silver standardization, type casting, deduplication, and validation.
+- Gold dimensional model with dimensions, facts, and KPI-ready calculations.
 
-These documents explain how the local concepts map to future Microsoft Fabric Lakehouse, notebook, Data Factory, Warehouse, and Power BI work.
+### BI / Power BI
 
-Reviewer note: the local prototype is executable today. The Fabric implementation guides explain the planned manual setup path for the next implementation milestone. Fabric items are not deployed yet unless explicitly documented later.
+- Business metric definitions for revenue, margin, marketing, customer, support, and data health.
+- Gold star schema designed for Power BI relationships.
+- Semantic model notes with field visibility, formatting, measure organization, and relationship strategy.
+- Report design plan for executive, revenue, marketing, customer, product, support, and operations pages.
 
-## What Demonstrates Production Readiness
+### Data Engineering Foundations
 
-- Medallion architecture design.
-- Local executable prototype.
-- Deterministic synthetic data generation.
-- Data quality rules and observability design.
-- Run logging and row count reconciliation concepts.
+- Layered medallion architecture.
+- Parquet-based local outputs.
+- Data quality rules.
+- Row count reconciliation.
+- Validation queries.
+- Basic test coverage.
+
+### Microsoft Fabric Readiness
+
+- Fabric setup guides for workspace, Lakehouse, source upload, Bronze notebook setup, and SQL endpoint validation.
+- Repo-friendly PySpark source for planned Bronze, Silver, and Gold Fabric notebooks.
+- SQL validation queries for Bronze, Silver, Gold, business metrics, and observability.
+- Clear distinction between local executable prototype and future Fabric deployment.
+
+### Production Readiness
+
+- Observability model for pipeline run logs, quality results, freshness, and reconciliation.
 - GitHub Actions CI.
 - Tests for local medallion outputs and key relationships.
+- Documentation that separates implemented local behavior from planned Fabric and Power BI work.
 
 ## What Demonstrates Business Value
 
@@ -64,19 +82,10 @@ Reviewer note: the local prototype is executable today. The Fabric implementatio
 ## What Is Not Implemented Yet
 
 - Deployed Microsoft Fabric workspace.
-- Fabric Lakehouse tables.
+- Fabric Lakehouse Delta tables executed in a real workspace.
 - Data Factory pipeline orchestration.
-- Power BI `.pbix` or `.pbit` file.
+- Power BI .pbix or .pbit file.
 - Report screenshots.
 - AI/Data Agent extension.
 
-## Suggested 10-Minute Reviewer Walkthrough
-
-1. Read the README summary and current status.
-2. Open the architecture diagram.
-3. Review the local prototype README.
-4. Skim the Bronze, Silver, and Gold design docs.
-5. Review the data quality and observability design.
-6. Review the Power BI report design.
-7. Run the local prototype commands if time allows.
-8. Check the roadmap for planned Fabric and demo milestones.
+Reviewer note: the local prototype is executable today. Fabric implementation guides and notebook source explain the planned manual setup path. Fabric, Power BI, and AI/Data Agent items are not deployed unless explicitly documented later.

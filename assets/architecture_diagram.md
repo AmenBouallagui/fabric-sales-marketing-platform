@@ -1,6 +1,6 @@
 # Architecture Diagram
 
-This Mermaid diagram summarizes the current local prototype and the planned Microsoft Fabric implementation path.
+This Mermaid diagram summarizes what runs locally today and how the same medallion pattern is planned to move into Microsoft Fabric, Power BI, and a future AI/Data Agent extension.
 
 ```mermaid
 flowchart LR

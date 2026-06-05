@@ -1,31 +1,74 @@
 # AI-Ready Sales & Marketing Data Platform
 
-## Business Scenario
+This project demonstrates an end-to-end Microsoft Fabric-style analytics platform for sales, marketing, customer, product, and support data. It includes a synthetic data generator, a local executable medallion pipeline, Bronze/Silver/Gold modeling, data quality and observability design, Power BI semantic model planning, CI validation, and repo-friendly Fabric notebook source.
 
-This portfolio project demonstrates how a growing B2B organization can build a Microsoft Fabric data platform that unifies sales, marketing, customer, product, and campaign activity into an analytics-ready and AI-ready foundation.
+The repository is built as a portfolio project for Analytics Engineering, BI Engineering, and Microsoft Fabric review. The local prototype runs today with Python, pandas, and parquet; the Fabric workspace, Lakehouse items, Power BI report, and AI/Data Agent extension are planned future implementation steps.
 
-The scenario assumes fragmented operational systems for customers, products, campaigns, orders, ad spend, and support tickets. The platform is designed to help commercial teams understand revenue, campaign efficiency, customer behavior, and service quality while preparing governed data products for AI-assisted analysis.
+## Why This Project Matters
 
-## Architecture Summary
+This project shows how analytics work moves from raw operational extracts to trusted, business-facing data products. It demonstrates analytics engineering, Power BI semantic modeling, Microsoft Fabric lakehouse architecture, data quality and observability, production-style thinking, and business-facing KPI design.
 
-The target architecture follows a medallion-style lakehouse pattern in Microsoft Fabric:
+## What This Demonstrates
 
-- Bronze layer for raw ingested source data.
-- Silver layer for cleaned, standardized, and quality-checked entities.
-- Gold layer for business-friendly star-schema tables and curated metrics.
-- Semantic model and Power BI reports for executive and operational analytics.
-- Data quality tests and documentation to support trust, repeatability, and AI readiness.
+- Python data generation.
+- Local medallion pipeline with parquet outputs.
+- Bronze ingestion metadata.
+- Silver standardization, deduplication, and validation.
+- Gold dimensional modeling.
+- Data quality and observability design.
+- Power BI semantic model and report design.
+- GitHub Actions CI.
+- Fabric-ready notebook source for Bronze, Silver, and Gold.
 
-## MVP Scope
+## Reviewer Quick Start
 
-The MVP focuses on creating a realistic synthetic dataset and a clean analytics foundation for sales and marketing reporting. It will include:
+```bash
+pip install -r requirements.txt
+python data_generation/generate_source_data.py
+python local_pipeline/run_local_medallion.py
+python -m pytest
+```
 
-- Synthetic source data generation.
-- Core entity modeling for customers, products, campaigns, orders, ad spend, and support tickets.
-- Initial data quality rules.
-- SQL and notebook transformation examples.
-- Power BI-ready metric definitions.
-- Documentation for architecture, deployment, and AI readiness.
+These commands generate synthetic source CSVs, run the local Bronze/Silver/Gold prototype, create local observability outputs, and run tests. Generated CSV and parquet outputs are written under ignored `data/` folders and are intentionally not committed.
+
+## Architecture At A Glance
+
+- Source: synthetic CSV extracts for customers, products, campaigns, orders, ad spend, and support tickets.
+- Bronze: raw records plus ingestion metadata.
+- Silver: cleaned, typed, deduplicated, validated current records.
+- Gold: dimensions, facts, KPI-ready fields, and Power BI-friendly structures.
+- Observability: run logs, quality results, freshness concepts, and row count reconciliation.
+- Consumption: planned Power BI semantic model, reports, and future AI/Data Agent extension.
+
+See the [architecture diagram](assets/architecture_diagram.md), [architecture overview](docs/architecture.md), and [project roadmap](docs/project_roadmap.md).
+
+## Current Status
+
+Implemented locally:
+
+- Synthetic source data generator.
+- Local executable medallion pipeline.
+- Local Bronze, Silver, Gold, and observability parquet outputs.
+- Pytest coverage for the local prototype.
+- GitHub Actions CI.
+- Repo-friendly Fabric notebook source for Bronze, Silver, and Gold.
+
+Designed for future Fabric and Power BI implementation:
+
+- Bronze ingestion design.
+- Silver transformation design.
+- Gold dimensional model design.
+- Data quality and observability design.
+- Power BI semantic model and report design.
+- Fabric workspace, Lakehouse, source upload, notebook, and SQL endpoint setup guides.
+
+Not deployed yet:
+
+- Microsoft Fabric workspace items.
+- Fabric Lakehouse Delta tables.
+- Data Factory pipeline orchestration.
+- Power BI `.pbix` or `.pbit` report.
+- AI/Data Agent extension.
 
 ## Data Domains
 
@@ -36,100 +79,53 @@ The MVP focuses on creating a realistic synthetic dataset and a clean analytics 
 - Ad spend and conversions.
 - Support tickets and satisfaction.
 
-## Planned Microsoft Fabric Components
+## Key Repository Areas
 
-- OneLake for centralized storage.
-- Fabric Lakehouse for raw and curated tables.
-- Data Factory pipelines for orchestration.
-- Fabric notebooks for transformation and validation logic.
-- Warehouse or SQL endpoint for serving curated relational models.
-- Power BI semantic model and reports.
-- Optional Data Activator or AI experiences in later phases.
+- [data_generation](data_generation/): deterministic synthetic source data generator.
+- [local_pipeline](local_pipeline/): executable local medallion prototype.
+- [fabric_notebooks](fabric_notebooks/): repo-friendly PySpark source for planned Fabric notebooks.
+- [fabric_implementation](fabric_implementation/): practical Fabric setup guides.
+- [docs](docs/): architecture, data model, quality, metrics, roadmap, and implementation designs.
+- [sql](sql/): representative DDL, validation, observability, and metric queries.
+- [powerbi](powerbi/): semantic model and report design notes.
+- [tests](tests/): local prototype tests.
 
-## Build Phases
+## Local Outputs
 
-1. Repository scaffold and documentation foundation.
-2. Synthetic data generator for realistic source tables.
-3. Bronze ingestion layout and raw file conventions.
-4. Silver transformations and data quality checks.
-5. Gold dimensional model and metric layer.
-6. Power BI semantic model and report screenshots.
-7. AI readiness enhancements, metadata, and governance notes.
+Running the local prototype writes generated outputs under ignored `data/` folders:
 
-## Current Status
+- `data/source/`: source CSV extracts.
+- `data/bronze/`: local Bronze parquet outputs.
+- `data/silver/`: local Silver parquet outputs.
+- `data/gold/`: local Gold parquet outputs.
+- `data/observability/`: local run log, quality result, and row count reconciliation outputs.
 
-Repository scaffold, synthetic data generator, Bronze ingestion design, Silver transformation design, and Gold dimensional model design are in place. Generated data files are intentionally not committed.
+## Microsoft Fabric Implementation Guides
 
-## Reviewer Quick Start
+The repository includes setup guides under [fabric_implementation](fabric_implementation/) for moving from the local prototype toward a real Microsoft Fabric workspace. The guides cover workspace setup, Lakehouse setup, source file upload, Bronze notebook setup, and SQL endpoint validation.
 
-- Start with the [project roadmap](docs/project_roadmap.md), [portfolio review checklist](docs/portfolio_review_checklist.md), and [architecture diagram](assets/architecture_diagram.md).
-- Run the local prototype commands below to generate source data, build local medallion outputs, and execute tests.
-- Review the Bronze, Silver, Gold, observability, and Power BI design docs to understand the planned Microsoft Fabric implementation.
+## Fabric Notebook Source
 
-## How To Run The Data Generator
+The repository includes version-controlled source for planned Fabric notebooks:
 
-Install the Python dependencies and generate local synthetic source files:
+- [nb_01_bronze_ingestion.py](fabric_notebooks/nb_01_bronze_ingestion.py): Bronze ingestion.
+- [nb_02_silver_transformations.py](fabric_notebooks/nb_02_silver_transformations.py): Silver transformations.
+- [nb_03_gold_modeling.py](fabric_notebooks/nb_03_gold_modeling.py): Gold dimensional modeling.
 
-```bash
-pip install -r requirements.txt
-python data_generation/generate_source_data.py
-```
+These files can be copied into future Fabric notebooks or used as implementation references when Fabric notebook assets are created. They have not been executed in Fabric unless documented later.
 
-By default, generated CSV files are written to `data/source/`. The `data/` folder and `*.csv` files are ignored by Git.
+## Design References
 
-## Run The Local Prototype
-
-Run the local medallion prototype to validate source-to-Bronze-to-Silver-to-Gold logic before future Microsoft Fabric implementation:
-
-```bash
-pip install -r requirements.txt
-python data_generation/generate_source_data.py
-python local_pipeline/run_local_medallion.py
-pytest
-```
-
-The local prototype writes parquet outputs under `data/bronze/`, `data/silver/`, `data/gold/`, and `data/observability/`. These generated folders remain ignored by Git.
+- [Bronze ingestion design](docs/bronze_ingestion_design.md)
+- [Silver transformation design](docs/silver_transformation_design.md)
+- [Gold dimensional model design](docs/gold_dimensional_model_design.md)
+- [Data quality and observability design](docs/data_quality_observability_design.md)
+- [Power BI semantic model design](docs/powerbi_semantic_model_design.md)
+- [Business metrics](docs/business_metrics.md)
+- [Portfolio review checklist](docs/portfolio_review_checklist.md)
 
 ## Continuous Integration
 
 GitHub Actions CI runs on pull requests and pushes to `main`. The workflow validates dependency installation, synthetic source data generation, local medallion execution, generated-data Git ignore behavior, and pytest.
 
 Generated CSV and parquet outputs remain under the ignored `data/` folder and are not uploaded as CI artifacts.
-
-## Microsoft Fabric Implementation Guides
-
-The repository includes setup guides under [fabric_implementation](fabric_implementation/) for moving from the local prototype toward a real Microsoft Fabric workspace. The guides cover workspace setup, Lakehouse setup, source file upload, Bronze notebook setup, and SQL endpoint validation for the planned Fabric Bronze implementation.
-
-## Fabric Notebook Source
-
-The repository includes version-controlled source for planned Fabric notebooks: [nb_01_bronze_ingestion.py](fabric_notebooks/nb_01_bronze_ingestion.py) for Bronze ingestion, [nb_02_silver_transformations.py](fabric_notebooks/nb_02_silver_transformations.py) for Silver transformations, and [nb_03_gold_modeling.py](fabric_notebooks/nb_03_gold_modeling.py) for Gold dimensional modeling. These files can be copied into future Fabric notebooks or used as implementation references when Fabric notebook assets are created.
-
-## Bronze Ingestion Design
-
-The next layer after data generation is the Bronze ingestion design. The current design documents how local synthetic CSV extracts under `data/source/` will later be landed into Microsoft Fabric Lakehouse Files and ingested into append-friendly Bronze Delta tables with metadata for lineage, validation, and future incremental loading.
-
-See `docs/bronze_ingestion_design.md`, `notebooks/01_bronze_ingestion.md`, and `sql/bronze_validation_queries.sql`.
-
-## Silver Transformation Design
-
-The next layer after Bronze is Silver transformations. The Silver design documents how Bronze raw tables will later be cleaned, standardized, type-cast, deduplicated, validated, and prepared for Gold dimensional modeling.
-
-See `docs/silver_transformation_design.md`, `notebooks/02_silver_transformations.md`, and `sql/silver_validation_queries.sql`.
-
-## Gold Dimensional Model Design
-
-The next layer after Silver is Gold dimensional modeling. The Gold design documents how cleaned Silver tables will later become business-ready dimensions, facts, KPI definitions, and a Power BI-ready semantic model structure.
-
-See `docs/gold_dimensional_model_design.md`, `notebooks/03_gold_modeling.md`, `sql/gold_model_ddl.sql`, and `sql/gold_validation_queries.sql`.
-
-## Power BI Semantic Model Design
-
-The Gold model is intended to feed a future Power BI semantic model and dashboard. The design documents relationships, measures, report pages, and a future screenshot/demo plan without creating `.pbix`, `.pbit`, or generated image assets.
-
-See `docs/powerbi_semantic_model_design.md`, `powerbi/semantic_model_notes.md`, `powerbi/report_design.md`, and `sql/business_metric_queries.sql`.
-
-## Data Quality And Observability
-
-Data quality and observability make the platform production-ready by documenting how future Fabric runs will track validation outcomes, pipeline status, dataset freshness, row count reconciliation, and operational health.
-
-See `docs/data_quality_observability_design.md`, `notebooks/04_data_quality_checks.md`, `notebooks/05_observability_logging.md`, `sql/observability_model_ddl.sql`, and `sql/observability_validation_queries.sql`.
