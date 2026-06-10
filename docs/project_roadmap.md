@@ -18,6 +18,7 @@ The project is designed for portfolio review: it shows local working code today 
 - Power BI semantic model and report design.
 - GitHub Actions CI.
 - Portfolio roadmap, review checklist, and architecture diagram.
+- Portfolio demo walkthrough prepared.
 - Microsoft Fabric implementation setup guides.
 - Repo-friendly Fabric notebook source for Bronze, Silver, and Gold.
 
@@ -30,6 +31,7 @@ The project is designed for portfolio review: it shows local working code today 
 - Review Fabric setup guides for workspace, Lakehouse, source upload, notebook setup, and SQL validation.
 - Review repo-friendly Fabric notebook source under fabric_notebooks/.
 - Review Power BI semantic model and report design documentation.
+- Review the portfolio demo walkthrough under docs/demo_walkthrough.md.
 
 ## Prepared But Not Executed In Fabric
 
