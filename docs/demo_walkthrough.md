@@ -19,7 +19,7 @@ The project follows a medallion architecture:
 - Observability captures run logs, quality checks, and row count reconciliation.
 - Power BI and AI/Data Agent layers are planned consumption paths.
 
-See `assets/architecture_diagram.md` for the visual architecture.
+See `assets/architecture_diagram.md` for the full architecture and `assets/demo/architecture_overview.md` for a demo-focused view that separates the local prototype from the planned Fabric, Power BI, and AI/Data Agent path.
 
 ## Local Pipeline
 
@@ -54,6 +54,8 @@ Planned facts:
 - `fact_support_tickets`
 
 The model supports KPIs such as revenue, net revenue, gross margin, average order value, ad spend, ROAS, conversion rate, ticket count, average resolution time, and customer satisfaction score.
+
+See `assets/demo/gold_model.md` for a visual summary of the Gold dimensions, facts, and relationships.
 
 ## Observability
 

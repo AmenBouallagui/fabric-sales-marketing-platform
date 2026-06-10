@@ -18,7 +18,12 @@ This project shows how analytics work moves from raw operational extracts to tru
 
 The demo proves that the repository can turn synthetic business source data into reviewable analytics outputs using a local Bronze/Silver/Gold pipeline. It also shows how that working local pattern maps to planned Microsoft Fabric Lakehouse notebooks, SQL validation, observability, and a future Power BI semantic model.
 
-Use [docs/demo_walkthrough.md](docs/demo_walkthrough.md) for a concise reviewer walkthrough. Planned screenshots and demo assets are tracked under [assets/demo](assets/demo/).
+Demo entry points:
+
+- [Architecture overview diagram](assets/demo/architecture_overview.md)
+- [Gold model diagram](assets/demo/gold_model.md)
+- [Demo walkthrough](docs/demo_walkthrough.md)
+- [Planned demo assets](assets/demo/README.md)
 
 ## What This Demonstrates
 

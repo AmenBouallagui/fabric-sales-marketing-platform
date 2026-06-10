@@ -4,6 +4,11 @@
 
 This folder is reserved for future portfolio demo screenshots and presentation assets. It documents what should be captured once the local prototype, Microsoft Fabric implementation, or Power BI report views are ready to show visually.
 
+## Current Demo Assets
+
+- [Architecture overview](architecture_overview.md): Mermaid diagram showing what runs locally today and what is planned for Fabric, Power BI, and AI/Data Agent work.
+- [Gold model](gold_model.md): Mermaid diagram showing Gold dimensions, facts, and reporting relationships.
+
 ## Planned Screenshots
 
 - README and architecture overview.
