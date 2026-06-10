@@ -4,9 +4,21 @@ This project demonstrates an end-to-end Microsoft Fabric-style analytics platfor
 
 The repository is built as a portfolio project for Analytics Engineering, BI Engineering, and Microsoft Fabric review. The local prototype runs today with Python, pandas, and parquet; the Fabric workspace, Lakehouse items, Power BI report, and AI/Data Agent extension are planned future implementation steps.
 
+## For Hiring Managers
+
+This repository is designed to be reviewed quickly as a portfolio checkpoint. It shows that the project owner can connect business requirements, data engineering patterns, analytics modeling, BI planning, documentation, testing, and CI into one coherent delivery story.
+
+The strongest signal is that the project is not only a set of diagrams: it includes a local prototype that generates data, runs a medallion pipeline, writes parquet outputs, and validates behavior with tests. Microsoft Fabric and Power BI execution are intentionally described as planned next steps unless a later update documents real deployment.
+
 ## Why This Project Matters
 
 This project shows how analytics work moves from raw operational extracts to trusted, business-facing data products. It demonstrates analytics engineering, Power BI semantic modeling, Microsoft Fabric lakehouse architecture, data quality and observability, production-style thinking, and business-facing KPI design.
+
+## Portfolio Demo
+
+The demo proves that the repository can turn synthetic business source data into reviewable analytics outputs using a local Bronze/Silver/Gold pipeline. It also shows how that working local pattern maps to planned Microsoft Fabric Lakehouse notebooks, SQL validation, observability, and a future Power BI semantic model.
+
+Use [docs/demo_walkthrough.md](docs/demo_walkthrough.md) for a concise reviewer walkthrough. Planned screenshots and demo assets are tracked under [assets/demo](assets/demo/).
 
 ## What This Demonstrates
 
@@ -123,6 +135,7 @@ These files can be copied into future Fabric notebooks or used as implementation
 - [Power BI semantic model design](docs/powerbi_semantic_model_design.md)
 - [Business metrics](docs/business_metrics.md)
 - [Portfolio review checklist](docs/portfolio_review_checklist.md)
+- [Demo walkthrough](docs/demo_walkthrough.md)
 
 ## Continuous Integration
 
