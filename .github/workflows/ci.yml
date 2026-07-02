@@ -41,8 +41,18 @@ jobs:
             --load-date 2024-04-01 \
             --run-id ci-run
 
-      - name: Verify generated data is not tracked
-        run: test -z "$(git ls-files data)"
+      - name: Build and test dbt warehouse (DuckDB)
+        env:
+          DBT_PROFILES_DIR: dbt
+        run: |
+          dbt deps --project-dir dbt
+          dbt build --project-dir dbt
+
+      - name: Verify generated data and dbt artifacts are not tracked
+        run: |
+          test -z "$(git ls-files data)"
+          test -z "$(git ls-files '**/*.duckdb')"
+          test -z "$(git ls-files dbt/target dbt/dbt_packages)"
 
       - name: Run tests
         run: python -m pytest

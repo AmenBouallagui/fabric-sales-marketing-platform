@@ -1,0 +1,10 @@
+# Local + CI profile. DuckDB needs no credentials, so this file is safe to commit.
+# The same project runs on Snowflake/BigQuery by adding a target here and swapping
+# the surrogate-key / date-spine macros (see dbt/README.md).
+sales_marketing:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('DBT_DUCKDB_PATH', 'dbt/target/sales_marketing.duckdb') }}"
+      threads: 4

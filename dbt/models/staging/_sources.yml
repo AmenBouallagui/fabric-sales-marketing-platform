@@ -1,0 +1,43 @@
+version: 2
+
+# These six CSV extracts are produced by data_generation/generate_source_data.py.
+# dbt-duckdb reads them directly via external_location, so no manual load step is
+# needed. Path is relative to the directory dbt is invoked from (repo root); override
+# with SOURCE_DATA_DIR if you run dbt from elsewhere.
+sources:
+  - name: raw
+    description: "Synthetic operational CRM and marketing extracts (CSV)."
+    meta:
+      external_location: "{{ env_var('SOURCE_DATA_DIR', 'data/source') }}/{name}.csv"
+    tables:
+      - name: customers
+        description: "Customer master records from the synthetic CRM."
+        columns:
+          - name: customer_id
+            description: "Business key for a customer."
+            data_tests: [not_null]
+      - name: products
+        description: "Product catalog with pricing and plan tiers."
+        columns:
+          - name: product_id
+            data_tests: [not_null]
+      - name: campaigns
+        description: "Marketing campaign definitions."
+        columns:
+          - name: campaign_id
+            data_tests: [not_null]
+      - name: orders
+        description: "Order line transactions."
+        columns:
+          - name: order_id
+            data_tests: [not_null]
+      - name: ad_spend
+        description: "Daily advertising spend and conversion metrics by campaign/channel."
+        columns:
+          - name: spend_id
+            data_tests: [not_null]
+      - name: support_tickets
+        description: "Customer support tickets with satisfaction and resolution times."
+        columns:
+          - name: ticket_id
+            data_tests: [not_null]

@@ -1,0 +1,68 @@
+table fct_support_tickets
+
+	column ticket_key
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: ticket_key
+
+	column ticket_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ticket_id
+
+	column customer_key
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: customer_key
+
+	column created_date_key
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: created_date_key
+
+	column closed_date_key
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: closed_date_key
+
+	column priority
+		dataType: string
+		summarizeBy: none
+		sourceColumn: priority
+
+	column category
+		dataType: string
+		summarizeBy: none
+		sourceColumn: category
+
+	column status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: status
+
+	column satisfaction_score
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: satisfaction_score
+
+	column first_response_minutes
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: first_response_minutes
+
+	column resolution_minutes
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: resolution_minutes
+
+	partition fct_support_tickets = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(GoldDataFolder & "\fct_support_tickets.parquet"))
+				in
+				    Source

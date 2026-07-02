@@ -1,0 +1,6 @@
+# Power BI Desktop generates these local-only artifacts when a .pbip is opened.
+.pbi/
+**/.pbi/
+*.pbix
+*.abf
+localSettings.json

@@ -1,0 +1,71 @@
+table dim_customer
+
+	column customer_key
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: customer_key
+
+	column customer_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: customer_id
+
+	column customer_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: customer_name
+
+	column email
+		dataType: string
+		summarizeBy: none
+		sourceColumn: email
+
+	column country
+		dataType: string
+		summarizeBy: none
+		sourceColumn: country
+
+	column city
+		dataType: string
+		summarizeBy: none
+		sourceColumn: city
+
+	column customer_segment
+		dataType: string
+		summarizeBy: none
+		sourceColumn: customer_segment
+
+	column company_size
+		dataType: string
+		summarizeBy: none
+		sourceColumn: company_size
+
+	column industry
+		dataType: string
+		summarizeBy: none
+		sourceColumn: industry
+
+	column acquisition_channel
+		dataType: string
+		summarizeBy: none
+		sourceColumn: acquisition_channel
+
+	column status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: status
+
+	column signup_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: signup_date
+
+	partition dim_customer = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(GoldDataFolder & "\dim_customer.parquet"))
+				in
+				    Source

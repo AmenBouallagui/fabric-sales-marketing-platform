@@ -36,4 +36,4 @@ Reference the existing validation query library:
 
 ## Future Extension
 
-Later phases can write validation results into the observability model described in `docs/data_quality_observability_design.md`, including check status, severity, failed row counts, and run identifiers.
+Later phases can write validation results into the observability model described in `docs/data_quality_observability.md`, including check status, severity, failed row counts, and run identifiers.

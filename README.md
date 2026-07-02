@@ -1,149 +1,127 @@
-# AI-Ready Sales & Marketing Data Platform
+# Sales & Marketing Analytics Platform
 
-This project demonstrates an end-to-end Microsoft Fabric-style analytics platform for sales, marketing, customer, product, and support data. It includes a synthetic data generator, a local executable medallion pipeline, Bronze/Silver/Gold modeling, data quality and observability design, Power BI semantic model planning, CI validation, and repo-friendly Fabric notebook source.
+An end-to-end analytics engineering portfolio project: synthetic sales and marketing data modeled through a Bronze → Silver → Gold medallion pipeline, a tested dbt + DuckDB warehouse, and a Power BI semantic model authored as code. Everything core runs locally with no cloud account.
 
-The repository is built as a portfolio project for Analytics Engineering, BI Engineering, and Microsoft Fabric review. The local prototype runs today with Python, pandas, and parquet; the Fabric workspace, Lakehouse items, Power BI report, and AI/Data Agent extension are planned future implementation steps.
+Built by **Amen Bouallagui** — BI Developer and Analytics Engineer with 2 years of hands-on experience in Microsoft Fabric, Power BI, and data migration on real client projects.
 
-## For Hiring Managers
+> See [docs/real_world_context.md](docs/real_world_context.md) for the professional background this portfolio extends.
 
-This repository is designed to be reviewed quickly as a portfolio checkpoint. It shows that the project owner can connect business requirements, data engineering patterns, analytics modeling, BI planning, documentation, testing, and CI into one coherent delivery story.
+---
 
-The strongest signal is that the project is not only a set of diagrams: it includes a local prototype that generates data, runs a medallion pipeline, writes parquet outputs, and validates behavior with tests. Microsoft Fabric and Power BI execution are intentionally described as planned next steps unless a later update documents real deployment.
-
-## Why This Project Matters
-
-This project shows how analytics work moves from raw operational extracts to trusted, business-facing data products. It demonstrates analytics engineering, Power BI semantic modeling, Microsoft Fabric lakehouse architecture, data quality and observability, production-style thinking, and business-facing KPI design.
-
-## Portfolio Demo
-
-The demo proves that the repository can turn synthetic business source data into reviewable analytics outputs using a local Bronze/Silver/Gold pipeline. It also shows how that working local pattern maps to planned Microsoft Fabric Lakehouse notebooks, SQL validation, observability, and a future Power BI semantic model.
-
-Demo entry points:
-
-- [Architecture overview diagram](assets/demo/architecture_overview.md)
-- [Gold model diagram](assets/demo/gold_model.md)
-- [Demo walkthrough](docs/demo_walkthrough.md)
-- [Planned demo assets](assets/demo/README.md)
-
-## What This Demonstrates
-
-- Python data generation.
-- Local medallion pipeline with parquet outputs.
-- Bronze ingestion metadata.
-- Silver standardization, deduplication, and validation.
-- Gold dimensional modeling.
-- Data quality and observability design.
-- Power BI semantic model and report design.
-- GitHub Actions CI.
-- Fabric-ready notebook source for Bronze, Silver, and Gold.
-
-## Reviewer Quick Start
+## Quick Start
 
 ```bash
 pip install -r requirements.txt
 python data_generation/generate_source_data.py
+
+# PowerShell
+$env:DBT_PROFILES_DIR = 'dbt'
+dbt deps  --project-dir dbt
+dbt build --project-dir dbt          # 21 models, ~38 tests — DuckDB, no cloud needed
+
 python local_pipeline/run_local_medallion.py
 python -m pytest
 ```
 
-These commands generate synthetic source CSVs, run the local Bronze/Silver/Gold prototype, create local observability outputs, and run tests. Generated CSV and parquet outputs are written under ignored `data/` folders and are intentionally not committed.
+---
 
-## Architecture At A Glance
+## What This Demonstrates
 
-- Source: synthetic CSV extracts for customers, products, campaigns, orders, ad spend, and support tickets.
-- Bronze: raw records plus ingestion metadata.
-- Silver: cleaned, typed, deduplicated, validated current records.
-- Gold: dimensions, facts, KPI-ready fields, and Power BI-friendly structures.
-- Observability: run logs, quality results, freshness concepts, and row count reconciliation.
-- Consumption: planned Power BI semantic model, reports, and future AI/Data Agent extension.
+### Analytics Engineering
+- dbt warehouse on DuckDB: sources → staging → intermediate → marts, all tested in CI
+- Dimensional modeling: surrogate keys, conformed dimensions with unknown members, date dimension, 3 fact tables
+- dbt tests: uniqueness, not-null, referential integrity, accepted values, and a singular business logic test
 
-See the [architecture diagram](assets/architecture_diagram.md), [architecture overview](docs/architecture.md), and [project roadmap](docs/project_roadmap.md).
+### Data Engineering
+- Bronze / Silver / Gold medallion pipeline in Python (pandas)
+- Bronze: raw records with ingestion metadata, row hashes, source lineage
+- Silver: type casting, string normalization, deduplication by business key, data quality flags
+- Gold: star schema with KPI-ready measures (net revenue, gross margin, ad conversion rates, support resolution times)
+- Observability: pipeline run log, data quality results, row count reconciliation
+
+### Power BI & BI Architecture
+- Semantic model authored as code (PBIP / TMDL): 8 tables, relationships, ~22 DAX measures
+- Star schema optimized for Power BI consumption
+- Business metric definitions for revenue, margin, marketing, customer, and support KPIs
+
+### Microsoft Fabric
+- Medallion architecture mapped to Fabric Lakehouse (OneLake, Delta tables, notebooks)
+- PySpark notebook source for Bronze, Silver, and Gold layers — ready to import into Fabric
+- Setup guides for workspace, Lakehouse, source upload, notebook configuration, SQL endpoint validation
+
+### Engineering Practices
+- GitHub Actions CI: generates data, runs local pipeline, runs `dbt build` with all tests, validates `.gitignore` hygiene
+- Deterministic synthetic data generator with relational integrity validation
+- No credentials, no client data — all data is synthetic and seeded
+
+---
+
+## Architecture
+
+```
+Source CSVs → Bronze (raw + metadata) → Silver (clean + validated) → Gold (star schema) → Power BI
+```
+
+The same medallion logic is implemented twice:
+- **dbt + DuckDB** — runs in CI on every push, no cloud account required
+- **Python / pandas** — local prototype with parquet outputs and observability tables
+
+See [docs/architecture.md](docs/architecture.md) and [docs/medallion_design.md](docs/medallion_design.md).
+
+---
 
 ## Current Status
 
-Implemented locally:
+**Runs in CI today:**
+- Synthetic data generation (6 CSV sources: customers, products, campaigns, orders, ad spend, support tickets)
+- Local medallion pipeline (Bronze / Silver / Gold + observability parquet outputs)
+- dbt warehouse: 21 models, ~38 tests, all passing
+- Pytest suite
 
-- Synthetic source data generator.
-- Local executable medallion pipeline.
-- Local Bronze, Silver, Gold, and observability parquet outputs.
-- Pytest coverage for the local prototype.
-- GitHub Actions CI.
-- Repo-friendly Fabric notebook source for Bronze, Silver, and Gold.
+**Defined, not yet executed in Fabric / Power BI Desktop:**
+- Power BI report visuals — semantic model and ~22 DAX measures are defined as code; pages are designed and ready to build
+- Microsoft Fabric workspace — setup guides and PySpark notebook source are ready; execution pending
 
-Designed for future Fabric and Power BI implementation:
+---
 
-- Bronze ingestion design.
-- Silver transformation design.
-- Gold dimensional model design.
-- Data quality and observability design.
-- Power BI semantic model and report design.
-- Fabric workspace, Lakehouse, source upload, notebook, and SQL endpoint setup guides.
+## Repository Areas
 
-Not deployed yet:
+| Folder | Contents |
+|--------|----------|
+| [`dbt/`](dbt/) | dbt + DuckDB warehouse — staging, intermediate, marts, tests, CI |
+| [`data_generation/`](data_generation/) | Deterministic synthetic source data generator |
+| [`local_pipeline/`](local_pipeline/) | Executable pandas medallion prototype with observability |
+| [`fabric_notebooks/`](fabric_notebooks/) | PySpark source for Fabric Bronze, Silver, and Gold notebooks |
+| [`fabric_implementation/`](fabric_implementation/) | Fabric workspace and Lakehouse setup guides |
+| [`powerbi/`](powerbi/) | Semantic model as code (PBIP / TMDL), DAX measures, design notes |
+| [`docs/`](docs/) | Architecture, medallion design, data quality, business metrics, roadmap |
+| [`sql/`](sql/) | Validation, observability, and business metric queries |
+| [`tests/`](tests/) | Pytest test suite |
 
-- Microsoft Fabric workspace items.
-- Fabric Lakehouse Delta tables.
-- Data Factory pipeline orchestration.
-- Power BI `.pbix` or `.pbit` report.
-- AI/Data Agent extension.
+---
 
-## Data Domains
+## Data Domain
 
-- Customers and segments.
-- Products and pricing.
-- Campaigns and channels.
-- Orders and revenue.
-- Ad spend and conversions.
-- Support tickets and satisfaction.
+Six source entities covering the full sales and marketing lifecycle:
 
-## Key Repository Areas
+| Entity | Key Fields |
+|--------|-----------|
+| Customers | segment, signup date, status, region |
+| Products | catalog, unit price, unit cost, subscription flag |
+| Campaigns | channel, start/end dates, budget targets |
+| Orders | quantity, discount, tax, net revenue, payment status, refund flag |
+| Ad Spend | daily spend, impressions, clicks, conversions by campaign and channel |
+| Support Tickets | priority, category, resolution time, first response time, satisfaction score |
 
-- [data_generation](data_generation/): deterministic synthetic source data generator.
-- [local_pipeline](local_pipeline/): executable local medallion prototype.
-- [fabric_notebooks](fabric_notebooks/): repo-friendly PySpark source for planned Fabric notebooks.
-- [fabric_implementation](fabric_implementation/): practical Fabric setup guides.
-- [docs](docs/): architecture, data model, quality, metrics, roadmap, and implementation designs.
-- [sql](sql/): representative DDL, validation, observability, and metric queries.
-- [powerbi](powerbi/): semantic model and report design notes.
-- [tests](tests/): local prototype tests.
-
-## Local Outputs
-
-Running the local prototype writes generated outputs under ignored `data/` folders:
-
-- `data/source/`: source CSV extracts.
-- `data/bronze/`: local Bronze parquet outputs.
-- `data/silver/`: local Silver parquet outputs.
-- `data/gold/`: local Gold parquet outputs.
-- `data/observability/`: local run log, quality result, and row count reconciliation outputs.
-
-## Microsoft Fabric Implementation Guides
-
-The repository includes setup guides under [fabric_implementation](fabric_implementation/) for moving from the local prototype toward a real Microsoft Fabric workspace. The guides cover workspace setup, Lakehouse setup, source file upload, Bronze notebook setup, and SQL endpoint validation.
-
-## Fabric Notebook Source
-
-The repository includes version-controlled source for planned Fabric notebooks:
-
-- [nb_01_bronze_ingestion.py](fabric_notebooks/nb_01_bronze_ingestion.py): Bronze ingestion.
-- [nb_02_silver_transformations.py](fabric_notebooks/nb_02_silver_transformations.py): Silver transformations.
-- [nb_03_gold_modeling.py](fabric_notebooks/nb_03_gold_modeling.py): Gold dimensional modeling.
-
-These files can be copied into future Fabric notebooks or used as implementation references when Fabric notebook assets are created. They have not been executed in Fabric unless documented later.
+---
 
 ## Design References
 
-- [Bronze ingestion design](docs/bronze_ingestion_design.md)
-- [Silver transformation design](docs/silver_transformation_design.md)
-- [Gold dimensional model design](docs/gold_dimensional_model_design.md)
-- [Data quality and observability design](docs/data_quality_observability_design.md)
-- [Power BI semantic model design](docs/powerbi_semantic_model_design.md)
-- [Business metrics](docs/business_metrics.md)
+- [Medallion design (Bronze → Silver → Gold)](docs/medallion_design.md)
+- [Data quality and observability](docs/data_quality_observability.md)
+- [Business metrics (~22 KPI definitions)](docs/business_metrics.md)
+- [Power BI semantic model notes](powerbi/semantic_model_notes.md)
+- [Power BI report design](powerbi/report_design.md)
+- [Project roadmap](docs/project_roadmap.md)
 - [Portfolio review checklist](docs/portfolio_review_checklist.md)
-- [Demo walkthrough](docs/demo_walkthrough.md)
-
-## Continuous Integration
-
-GitHub Actions CI runs on pull requests and pushes to `main`. The workflow validates dependency installation, synthetic source data generation, local medallion execution, generated-data Git ignore behavior, and pytest.
-
-Generated CSV and parquet outputs remain under the ignored `data/` folder and are not uploaded as CI artifacts.
+- [Real-world professional context](docs/real_world_context.md)

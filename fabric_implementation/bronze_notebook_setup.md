@@ -14,10 +14,6 @@ Attach the notebook to the Bronze Lakehouse:
 
 `lh_sales_marketing_bronze`
 
-Use the existing notebook design as the implementation reference:
-
-[notebooks/01_bronze_ingestion.md](../notebooks/01_bronze_ingestion.md)
-
 Use the repo-friendly notebook source as the starting implementation:
 
 [fabric_notebooks/nb_01_bronze_ingestion.py](../fabric_notebooks/nb_01_bronze_ingestion.py)

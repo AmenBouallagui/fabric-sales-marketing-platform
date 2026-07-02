@@ -1,0 +1,52 @@
+table dim_campaign
+
+	column campaign_key
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: campaign_key
+
+	column campaign_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: campaign_id
+
+	column campaign_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: campaign_name
+
+	column channel
+		dataType: string
+		summarizeBy: none
+		sourceColumn: channel
+
+	column campaign_start_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: campaign_start_date
+
+	column campaign_end_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: campaign_end_date
+
+	column target_segment
+		dataType: string
+		summarizeBy: none
+		sourceColumn: target_segment
+
+	column objective
+		dataType: string
+		summarizeBy: none
+		sourceColumn: objective
+
+	partition dim_campaign = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(GoldDataFolder & "\dim_campaign.parquet"))
+				in
+				    Source

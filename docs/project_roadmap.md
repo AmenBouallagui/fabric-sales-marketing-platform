@@ -2,90 +2,45 @@
 
 ## Project Vision
 
-This project demonstrates an Analytics Engineering and BI platform pattern using a Microsoft Fabric-style medallion architecture. It combines an executable local prototype with practical design and implementation guides for future Fabric, Power BI, and AI/Data Agent work.
+A portfolio analytics platform showing end-to-end data engineering and BI skills: medallion architecture, dbt modeling, dimensional design, Power BI semantic modeling, and Microsoft Fabric patterns. Built on a foundation of real professional experience (see [real_world_context.md](real_world_context.md)).
 
-The project is designed for portfolio review: it shows local working code today and a realistic path toward Fabric lakehouse implementation later.
+## Completed
 
-## Completed Milestones
+- Synthetic data generator (6 sources, deterministic, relational integrity validated)
+- Local medallion prototype in Python (Bronze / Silver / Gold + observability outputs)
+- dbt + DuckDB warehouse: 21 models, ~38 tests, all passing
+- Staging → intermediate → marts layering with surrogate keys and unknown members
+- Power BI semantic model as code (PBIP / TMDL): 8 tables, ~22 DAX measures, relationships
+- GitHub Actions CI (data generation → local pipeline → dbt build + tests → pytest)
+- Medallion design, data quality and observability design, business metrics definitions
+- Fabric setup guides (workspace, Lakehouse, source upload, Bronze setup, SQL endpoint)
+- PySpark notebook source for Bronze, Silver, and Gold layers
 
-- Initial repository scaffold.
-- Synthetic data generator.
-- Local medallion prototype.
-- Bronze ingestion design.
-- Silver transformation design.
-- Gold dimensional model design.
-- Data quality and observability design.
-- Power BI semantic model and report design.
-- GitHub Actions CI.
-- Portfolio roadmap, review checklist, and architecture diagram.
-- Portfolio demo walkthrough prepared.
-- Microsoft Fabric implementation setup guides.
-- Repo-friendly Fabric notebook source for Bronze, Silver, and Gold.
+## Priority: Power BI Report
 
-## Current Capabilities
+The semantic model is defined. Next step is building the actual report pages in Power BI Desktop:
 
-- Generate deterministic synthetic source CSVs.
-- Run a local medallion pipeline with Bronze, Silver, Gold, and observability outputs.
-- Validate the local prototype with pytest.
-- Run CI on pull requests and pushes to main.
-- Review Fabric setup guides for workspace, Lakehouse, source upload, notebook setup, and SQL validation.
-- Review repo-friendly Fabric notebook source under fabric_notebooks/.
-- Review Power BI semantic model and report design documentation.
-- Review the portfolio demo walkthrough under docs/demo_walkthrough.md.
+1. Connect Desktop to the exported Gold parquet files (`powerbi/export_gold.py`)
+2. Build report pages per [powerbi/report_build_guide.md](../powerbi/report_build_guide.md):
+   - Executive Summary (revenue trend, gross margin, campaign ROI, top products)
+   - Revenue & Orders (order volume, discount analysis, payment status breakdown)
+   - Marketing Performance (spend vs. conversions, cost per acquisition by channel)
+   - Customer Analytics (segment breakdown, churn indicators, lifetime value proxy)
+   - Support Operations (ticket volume, resolution time, satisfaction trends)
+3. Capture screenshots for portfolio presentation
+4. Publish to Power BI Service for public embed (optional)
 
-## Prepared But Not Executed In Fabric
+## Fabric Execution (Next After Power BI)
 
-- Fabric workspace setup guide.
-- Lakehouse setup guide.
-- Source file upload guide.
-- Bronze notebook setup guide.
-- SQL endpoint validation guide.
-- Fabric Bronze notebook source.
-- Fabric Silver notebook source.
-- Fabric Gold notebook source.
+- Create Fabric workspace and Lakehouses (Bronze, Silver, Gold separation)
+- Land source CSVs into OneLake / Lakehouse Files
+- Execute Bronze notebook (`fabric_notebooks/nb_01_bronze_ingestion.py`)
+- Validate Bronze tables via SQL endpoint
+- Execute Silver and Gold notebooks
+- Add Data Factory pipeline for orchestration
+- Connect Power BI semantic model to Fabric SQL endpoint instead of local parquet
 
-Actual Fabric execution remains future/planned unless documented later.
+## Ongoing
 
-## Planned Fabric Implementation Milestones
-
-- Create Fabric workspace and Lakehouses.
-- Land generated source CSVs into Lakehouse Files.
-- Implement and execute Fabric Bronze ingestion notebook.
-- Validate Bronze tables using the SQL endpoint and sql/bronze_validation_queries.sql.
-- Evaluate Data Factory orchestration for repeatable Bronze ingestion.
-- Implement and execute Fabric Silver transformation notebook with validation and deduplication.
-- Implement and execute Fabric Gold dimensional modeling notebook or Warehouse objects.
-- Add observability tables and validation result logging.
-- Orchestrate layer execution with Data Factory pipelines.
-
-## Planned Power BI Milestones
-
-- Build Power BI semantic model over Gold tables.
-- Create measures for revenue, margin, marketing, customer, support, and data health KPIs.
-- Build report pages for executive overview, revenue, marketing, customer, product, support, and operations.
-- Capture report screenshots for portfolio presentation.
-- Add a short demo walkthrough.
-
-## Planned AI/Data Agent Extension
-
-- Document business glossary and metric definitions.
-- Create a question-and-answer evaluation set.
-- Connect an AI/Data Agent to curated Gold data once Fabric implementation exists.
-- Validate natural-language answers against SQL or Power BI measures.
-- Document limitations, permissions, and governance assumptions.
-
-## Recommended Next Portfolio Tasks
-
-- Record a 3-5 minute demo video.
-- Add terminal output examples or screenshots showing the local prototype running.
-- Add future Power BI mockup or screenshots once available.
-- Document real Fabric execution once completed.
-- Prepare outreach materials for Analytics Engineer, BI Developer, and Data Analyst roles.
-
-## Suggested Next Engineering Tasks
-
-- Execute the Bronze notebook in an actual Fabric workspace.
-- Validate Bronze tables using SQL endpoint queries.
-- Execute Silver and Gold notebook sources in Fabric.
-- Add observability notebook sources.
-- Add Data Factory orchestration design or implementation notes.
+- Learn dbt well enough to extend the existing models and explain design decisions in interviews
+- Add German localization to README once German improves (broadens visibility on local job boards)

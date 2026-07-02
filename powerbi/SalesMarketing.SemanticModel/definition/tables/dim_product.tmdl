@@ -1,0 +1,64 @@
+table dim_product
+
+	column product_key
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: product_key
+
+	column product_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: product_id
+
+	column product_name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: product_name
+
+	column category
+		dataType: string
+		summarizeBy: none
+		sourceColumn: category
+
+	column plan_tier
+		dataType: string
+		summarizeBy: none
+		sourceColumn: plan_tier
+
+	column unit_price
+		dataType: double
+		formatString: \$#,0.00
+		summarizeBy: none
+		sourceColumn: unit_price
+
+	column unit_cost
+		dataType: double
+		formatString: \$#,0.00
+		summarizeBy: none
+		sourceColumn: unit_cost
+
+	column is_subscription
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: is_subscription
+
+	column valid_from
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: valid_from
+
+	column valid_to
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		summarizeBy: none
+		sourceColumn: valid_to
+
+	partition dim_product = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(GoldDataFolder & "\dim_product.parquet"))
+				in
+				    Source

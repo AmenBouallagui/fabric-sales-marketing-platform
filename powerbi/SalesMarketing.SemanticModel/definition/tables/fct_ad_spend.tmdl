@@ -1,0 +1,59 @@
+table fct_ad_spend
+
+	column ad_spend_key
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: ad_spend_key
+
+	column spend_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: spend_id
+
+	column campaign_key
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: campaign_key
+
+	column channel_key
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: channel_key
+
+	column spend_date_key
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: spend_date_key
+
+	column impressions
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: impressions
+
+	column clicks
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: clicks
+
+	column conversions
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: conversions
+
+	column spend_amount
+		dataType: double
+		formatString: \$#,0.00
+		summarizeBy: none
+		sourceColumn: spend_amount
+
+	partition fct_ad_spend = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(GoldDataFolder & "\fct_ad_spend.parquet"))
+				in
+				    Source

@@ -1,0 +1,25 @@
+table dim_channel
+
+	column channel_key
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: channel_key
+
+	column channel
+		dataType: string
+		summarizeBy: none
+		sourceColumn: channel
+
+	column channel_group
+		dataType: string
+		summarizeBy: none
+		sourceColumn: channel_group
+
+	partition dim_channel = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(GoldDataFolder & "\dim_channel.parquet"))
+				in
+				    Source

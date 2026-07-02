@@ -1,0 +1,35 @@
+relationship 8dd18b7d-5fc7-42e6-8bbc-993a8d0e15aa
+	fromColumn: fct_orders.customer_key
+	toColumn: dim_customer.customer_key
+
+relationship afa59125-2258-4ebe-8109-8642590baf4f
+	fromColumn: fct_orders.product_key
+	toColumn: dim_product.product_key
+
+relationship 1b5d3e9d-ad82-420d-8dd8-c8bc2a1128a6
+	fromColumn: fct_orders.campaign_key
+	toColumn: dim_campaign.campaign_key
+
+relationship bbe885b6-6e5e-4673-8a18-3e7559661af1
+	fromColumn: fct_orders.order_date_key
+	toColumn: dim_date.date_key
+
+relationship 18063439-1e4d-44f8-a3d8-3638444e9884
+	fromColumn: fct_ad_spend.campaign_key
+	toColumn: dim_campaign.campaign_key
+
+relationship 0b1d5f8d-093b-459d-987a-6f030cda4111
+	fromColumn: fct_ad_spend.channel_key
+	toColumn: dim_channel.channel_key
+
+relationship caca6dbb-b602-4e0f-85bc-9686b59a7321
+	fromColumn: fct_ad_spend.spend_date_key
+	toColumn: dim_date.date_key
+
+relationship 653598d7-1462-4836-a576-5126c3bf6bb5
+	fromColumn: fct_support_tickets.customer_key
+	toColumn: dim_customer.customer_key
+
+relationship f822062b-d243-41ee-92a6-a329586bd7aa
+	fromColumn: fct_support_tickets.created_date_key
+	toColumn: dim_date.date_key

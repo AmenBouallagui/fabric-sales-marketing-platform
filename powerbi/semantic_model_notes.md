@@ -1,5 +1,33 @@
 # Semantic Model Notes
 
+## Target Users & Scope
+
+- Executives: revenue, margin, campaign performance, customer health.
+- Marketing analysts: channel efficiency, campaign performance, conversion metrics.
+- Support managers: ticket volume, response/resolution time, satisfaction.
+- Platform reviewers: model structure, data-quality outcomes, operational health.
+
+The model exposes the curated Gold star schema and hides technical fields. Report
+pages are detailed in [report_design.md](report_design.md); metric definitions in
+[../docs/business_metrics.md](../docs/business_metrics.md).
+
+## Relationship Key Mapping
+
+Single-direction relationships from dimensions to facts:
+
+- `fct_orders.customer_key` → `dim_customer.customer_key`
+- `fct_orders.product_key` → `dim_product.product_key`
+- `fct_orders.campaign_key` → `dim_campaign.campaign_key`
+- `fct_orders.order_date_key` → `dim_date.date_key`
+- `fct_ad_spend.campaign_key` → `dim_campaign.campaign_key`
+- `fct_ad_spend.channel_key` → `dim_channel.channel_key`
+- `fct_ad_spend.spend_date_key` → `dim_date.date_key`
+- `fct_support_tickets.customer_key` → `dim_customer.customer_key`
+- `fct_support_tickets.created_date_key` → `dim_date.date_key`
+
+Mark `dim_date` as the official date table. Keep secondary date relationships
+(e.g. ticket closed date) inactive unless a page needs them.
+
 ## Table Descriptions
 
 - `dim_customer`: customer attributes for geography, segment, industry, acquisition channel, lifecycle status, and signup date.

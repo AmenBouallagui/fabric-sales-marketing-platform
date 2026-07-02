@@ -1,0 +1,127 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: "Customer dimension with an unknown member ('-1')."
+    columns:
+      - name: customer_key
+        description: "Surrogate primary key."
+        data_tests: [unique, not_null]
+      - name: customer_id
+        data_tests: [not_null]
+      - name: status
+        data_tests:
+          - accepted_values:
+              values: ["Active", "Inactive", "Churned", "Unknown"]
+
+  - name: dim_product
+    description: "Product dimension with an unknown member ('-1')."
+    columns:
+      - name: product_key
+        data_tests: [unique, not_null]
+      - name: product_id
+        data_tests: [not_null]
+
+  - name: dim_campaign
+    description: "Campaign dimension with an unknown member ('-1')."
+    columns:
+      - name: campaign_key
+        data_tests: [unique, not_null]
+
+  - name: dim_channel
+    description: "Conformed channel dimension."
+    columns:
+      - name: channel_key
+        data_tests: [unique, not_null]
+
+  - name: dim_customer_segment
+    description: "Conformed customer segment dimension."
+    columns:
+      - name: customer_segment_key
+        data_tests: [unique, not_null]
+
+  - name: dim_date
+    description: "Calendar date dimension covering the business date span."
+    columns:
+      - name: date_key
+        description: "YYYYMMDD integer key, -1 for unknown."
+        data_tests: [unique, not_null]
+
+  - name: fct_orders
+    description: "Order grain fact with revenue, cost, and margin measures."
+    columns:
+      - name: order_key
+        data_tests: [unique, not_null]
+      - name: customer_key
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_key
+      - name: product_key
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_product')
+              field: product_key
+      - name: campaign_key
+        data_tests:
+          - relationships:
+              to: ref('dim_campaign')
+              field: campaign_key
+      - name: order_date_key
+        data_tests:
+          - relationships:
+              to: ref('dim_date')
+              field: date_key
+      - name: payment_status
+        data_tests:
+          - accepted_values:
+              values: ["Paid", "Failed", "Pending"]
+
+  - name: fct_ad_spend
+    description: "Daily advertising spend fact by campaign and channel."
+    columns:
+      - name: ad_spend_key
+        data_tests: [unique, not_null]
+      - name: campaign_key
+        data_tests:
+          - relationships:
+              to: ref('dim_campaign')
+              field: campaign_key
+      - name: channel_key
+        data_tests:
+          - relationships:
+              to: ref('dim_channel')
+              field: channel_key
+
+  - name: fct_support_tickets
+    description: "Support ticket fact with satisfaction and resolution measures."
+    columns:
+      - name: ticket_key
+        data_tests: [unique, not_null]
+      - name: customer_key
+        data_tests:
+          - relationships:
+              to: ref('dim_customer')
+              field: customer_key
+
+exposures:
+  - name: sales_marketing_powerbi
+    type: dashboard
+    maturity: medium
+    description: >
+      Planned Power BI semantic model and executive sales & marketing dashboard.
+      Consumes the gold dimensions and facts as its star schema. See
+      powerbi/semantic_model_notes.md.
+    owner:
+      name: Amen Bouallagui
+      email: amen.bouallagui@birdt.de
+    depends_on:
+      - ref('dim_customer')
+      - ref('dim_product')
+      - ref('dim_campaign')
+      - ref('dim_date')
+      - ref('fct_orders')
+      - ref('fct_ad_spend')
+      - ref('fct_support_tickets')

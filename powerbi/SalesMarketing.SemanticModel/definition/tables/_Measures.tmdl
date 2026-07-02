@@ -1,0 +1,101 @@
+/// Dedicated, disconnected measure table. All report measures live here, grouped
+/// into display folders. The placeholder column is hidden.
+table _Measures
+
+	measure 'Revenue' = SUM(fct_orders[total_amount])
+		formatString: \$#,0
+		displayFolder: Revenue and Margin
+
+	measure 'Net Revenue' = SUM(fct_orders[net_revenue])
+		formatString: \$#,0
+		displayFolder: Revenue and Margin
+
+	measure 'Gross Margin' = SUM(fct_orders[gross_margin])
+		formatString: \$#,0
+		displayFolder: Revenue and Margin
+
+	measure 'Gross Margin %' = DIVIDE([Gross Margin], [Net Revenue])
+		formatString: 0.0%
+		displayFolder: Revenue and Margin
+
+	measure 'Estimated Cost' = SUM(fct_orders[estimated_cost])
+		formatString: \$#,0
+		displayFolder: Revenue and Margin
+
+	measure 'Orders' = DISTINCTCOUNT(fct_orders[order_id])
+		formatString: #,0
+		displayFolder: Revenue and Margin
+
+	measure 'Average Order Value' = DIVIDE([Revenue], [Orders])
+		formatString: \$#,0.00
+		displayFolder: Revenue and Margin
+
+	measure 'Customers' = DISTINCTCOUNT(dim_customer[customer_id])
+		formatString: #,0
+		displayFolder: Customer
+
+	measure 'New Customers' = CALCULATE(DISTINCTCOUNT(dim_customer[customer_id]), TREATAS(VALUES(dim_date[calendar_date]), dim_customer[signup_date]))
+		formatString: #,0
+		displayFolder: Customer
+
+	measure 'Ad Spend' = SUM(fct_ad_spend[spend_amount])
+		formatString: \$#,0
+		displayFolder: Marketing
+
+	measure 'Impressions' = SUM(fct_ad_spend[impressions])
+		formatString: #,0
+		displayFolder: Marketing
+
+	measure 'Clicks' = SUM(fct_ad_spend[clicks])
+		formatString: #,0
+		displayFolder: Marketing
+
+	measure 'Conversions' = SUM(fct_ad_spend[conversions])
+		formatString: #,0
+		displayFolder: Marketing
+
+	measure 'Click-Through Rate' = DIVIDE([Clicks], [Impressions])
+		formatString: 0.0%
+		displayFolder: Marketing
+
+	measure 'Conversion Rate' = DIVIDE([Conversions], [Clicks])
+		formatString: 0.0%
+		displayFolder: Marketing
+
+	measure 'Cost Per Click' = DIVIDE([Ad Spend], [Clicks])
+		formatString: \$#,0.00
+		displayFolder: Marketing
+
+	measure 'Cost Per Acquisition' = DIVIDE([Ad Spend], [Conversions])
+		formatString: \$#,0.00
+		displayFolder: Marketing
+
+	measure 'ROAS' = DIVIDE([Revenue], [Ad Spend])
+		formatString: 0.00
+		displayFolder: Marketing
+
+	measure 'Ticket Count' = DISTINCTCOUNT(fct_support_tickets[ticket_id])
+		formatString: #,0
+		displayFolder: Support
+
+	measure 'Avg First Response (min)' = AVERAGE(fct_support_tickets[first_response_minutes])
+		formatString: #,0.0
+		displayFolder: Support
+
+	measure 'Avg Resolution (min)' = AVERAGE(fct_support_tickets[resolution_minutes])
+		formatString: #,0.0
+		displayFolder: Support
+
+	measure 'Avg Satisfaction' = AVERAGE(fct_support_tickets[satisfaction_score])
+		formatString: 0.00
+		displayFolder: Support
+
+	column Placeholder
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: [Placeholder]
+
+	partition _Measures = calculated
+		mode: import
+		source = ROW("Placeholder", BLANK())

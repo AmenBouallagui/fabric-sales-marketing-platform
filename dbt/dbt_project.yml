@@ -1,0 +1,30 @@
+name: "sales_marketing"
+version: "1.0.0"
+config-version: 2
+
+profile: "sales_marketing"
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Staging and intermediate stay as ephemeral/views; marts are materialized as
+# physical tables so the warehouse mirrors a Fabric Gold layer that BI tools read.
+models:
+  sales_marketing:
+    staging:
+      +materialized: view
+      +schema: staging
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+    marts:
+      +materialized: table
+      +schema: marts

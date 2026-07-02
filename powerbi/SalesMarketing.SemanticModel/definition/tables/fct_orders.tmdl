@@ -1,0 +1,101 @@
+table fct_orders
+
+	column order_key
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: order_key
+
+	column order_id
+		dataType: string
+		summarizeBy: none
+		sourceColumn: order_id
+
+	column customer_key
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: customer_key
+
+	column product_key
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: product_key
+
+	column campaign_key
+		dataType: string
+		isHidden
+		summarizeBy: none
+		sourceColumn: campaign_key
+
+	column order_date_key
+		dataType: int64
+		isHidden
+		summarizeBy: none
+		sourceColumn: order_date_key
+
+	column quantity
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: quantity
+
+	column unit_price
+		dataType: double
+		formatString: \$#,0.00
+		summarizeBy: none
+		sourceColumn: unit_price
+
+	column discount_amount
+		dataType: double
+		formatString: \$#,0.00
+		summarizeBy: none
+		sourceColumn: discount_amount
+
+	column tax_amount
+		dataType: double
+		formatString: \$#,0.00
+		summarizeBy: none
+		sourceColumn: tax_amount
+
+	column total_amount
+		dataType: double
+		formatString: \$#,0.00
+		summarizeBy: none
+		sourceColumn: total_amount
+
+	column net_revenue
+		dataType: double
+		formatString: \$#,0.00
+		summarizeBy: none
+		sourceColumn: net_revenue
+
+	column estimated_cost
+		dataType: double
+		formatString: \$#,0.00
+		summarizeBy: none
+		sourceColumn: estimated_cost
+
+	column gross_margin
+		dataType: double
+		formatString: \$#,0.00
+		summarizeBy: none
+		sourceColumn: gross_margin
+
+	column payment_status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: payment_status
+
+	column refund_flag
+		dataType: boolean
+		summarizeBy: none
+		sourceColumn: refund_flag
+
+	partition fct_orders = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(GoldDataFolder & "\fct_orders.parquet"))
+				in
+				    Source

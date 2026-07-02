@@ -1,91 +1,75 @@
 # Portfolio Review Checklist
 
-## What To Look At First
+Target roles: **BI Developer**, **Analytics Engineer**, **Data Analyst (BI-focused)**
 
-1. README.md for the portfolio summary, skills demonstrated, and run commands.
-2. assets/architecture_diagram.md for the end-to-end local and planned Fabric architecture.
-3. local_pipeline/README.md for the executable local medallion prototype.
-4. fabric_notebooks/README.md for repo-friendly Fabric notebook source.
-5. docs/powerbi_semantic_model_design.md for the future reporting and semantic model layer.
-6. docs/project_roadmap.md for completed milestones and planned Fabric work.
+---
 
-## How To Run The Project Locally
+## Where To Start (5 minutes)
 
-- pip install -r requirements.txt
-- python data_generation/generate_source_data.py
-- python local_pipeline/run_local_medallion.py
-- python -m pytest
+1. [README.md](../README.md) — what runs, what's designed, tech stack overview
+2. [docs/real_world_context.md](real_world_context.md) — professional background this project extends
+3. [assets/architecture_diagram.md](../assets/architecture_diagram.md) — end-to-end architecture at a glance
+4. [dbt/README.md](../dbt/README.md) — the runnable dbt warehouse (the engineering core)
+5. [powerbi/semantic_model_notes.md](../powerbi/semantic_model_notes.md) — semantic model design and DAX measures
 
-These commands generate synthetic source data, run the local medallion prototype, and execute tests.
+---
 
-Generated data is written under ignored data/ folders and is intentionally not committed.
+## How To Run Locally (under 5 minutes)
 
-## 10-Minute Reviewer Walkthrough
+```bash
+pip install -r requirements.txt
+python data_generation/generate_source_data.py
+$env:DBT_PROFILES_DIR = 'dbt'   # PowerShell
+dbt deps  --project-dir dbt
+dbt build --project-dir dbt     # builds 21 models, runs ~38 tests
+python local_pipeline/run_local_medallion.py
+python -m pytest
+```
 
-1. Read the README summary and current status.
-2. Open the architecture diagram.
-3. Review the local prototype README.
-4. Skim the Fabric notebook source README.
-5. Skim the Bronze, Silver, and Gold design docs.
-6. Review the Power BI semantic model and report design.
-7. Review the data quality and observability design.
-8. Run the local prototype commands if time allows.
-9. Check the roadmap for planned Fabric, Power BI, and AI/Data Agent milestones.
+Generated data is written under ignored `data/` folders and is not committed.
+
+---
 
 ## Skills Demonstrated
 
 ### Analytics Engineering
+- dbt project: sources, staging, intermediate (Silver), marts (Gold) — all tested in CI
+- dbt testing: uniqueness, not-null, referential integrity, accepted values, singular business logic test
+- Surrogate keys via `dbt_utils.generate_surrogate_key()` — warehouse-agnostic
+- Dimensional modeling: unknown member rows, conformed dimensions, date dimension, 3 fact tables
 
-- Deterministic source data generation.
-- Local executable medallion pipeline.
-- Bronze ingestion metadata and lineage fields.
-- Silver standardization, type casting, deduplication, and validation.
-- Gold dimensional model with dimensions, facts, and KPI-ready calculations.
+### Data Engineering
+- Medallion pipeline: Bronze (ingestion metadata + row hash) → Silver (dedup, type casting, quality flags) → Gold (star schema + KPI measures)
+- Observability: pipeline run log, quality check results, row count reconciliation
+- Deterministic synthetic data generation with relational integrity validation
 
-### BI / Power BI
+### Power BI & BI
+- Semantic model as code (PBIP / TMDL): 8 tables, relationships, ~22 DAX measures
+- Business metrics definitions: revenue, gross margin, marketing ROI, customer, support
+- Report design across 5 domains (Executive, Revenue, Marketing, Customer, Support)
+- Star schema optimized for Power BI: correct relationship cardinality, hidden FK columns, display folders
 
-- Business metric definitions for revenue, margin, marketing, customer, support, and data health.
-- Gold star schema designed for Power BI relationships.
-- Semantic model notes with field visibility, formatting, measure organization, and relationship strategy.
-- Report design plan for executive, revenue, marketing, customer, product, support, and operations pages.
+### Microsoft Fabric
+- Medallion architecture mapped to Fabric (OneLake, Lakehouse, Delta tables, notebooks, SQL endpoint)
+- PySpark notebook source for all three layers — ready to import into Fabric
+- Practical setup guides covering workspace creation through SQL endpoint validation
 
-### Data Engineering Foundations
+### Engineering Practices
+- GitHub Actions CI validates the full local pipeline on every push
+- No secrets, no client data — all data is synthetic and seeded
 
-- Layered medallion architecture.
-- Parquet-based local outputs.
-- Data quality rules.
-- Row count reconciliation.
-- Validation queries.
-- Basic test coverage.
-
-### Microsoft Fabric Readiness
-
-- Fabric setup guides for workspace, Lakehouse, source upload, Bronze notebook setup, and SQL endpoint validation.
-- Repo-friendly PySpark source for planned Bronze, Silver, and Gold Fabric notebooks.
-- SQL validation queries for Bronze, Silver, Gold, business metrics, and observability.
-- Clear distinction between local executable prototype and future Fabric deployment.
-
-### Production Readiness
-
-- Observability model for pipeline run logs, quality results, freshness, and reconciliation.
-- GitHub Actions CI.
-- Tests for local medallion outputs and key relationships.
-- Documentation that separates implemented local behavior from planned Fabric and Power BI work.
-
-## What Demonstrates Business Value
-
-- Gold dimensional model for business-ready analytics.
-- KPI definitions for revenue, margin, marketing, customer, support, and data health.
-- Power BI semantic model and report design.
-- Reviewer-friendly architecture and roadmap documentation.
+---
 
 ## What Is Not Implemented Yet
 
-- Deployed Microsoft Fabric workspace.
-- Fabric Lakehouse Delta tables executed in a real workspace.
-- Data Factory pipeline orchestration.
-- Power BI .pbix or .pbit file.
-- Report screenshots.
-- AI/Data Agent extension.
+- Microsoft Fabric workspace (guides and notebook source are ready; not yet executed)
+- Power BI report visuals (semantic model defined; pages to be built in Desktop)
+- Data Factory pipeline orchestration
 
-Reviewer note: the local prototype is executable today. Fabric implementation guides and notebook source explain the planned manual setup path. Fabric, Power BI, and AI/Data Agent items are not deployed unless explicitly documented later.
+---
+
+## Reviewer Notes
+
+The local prototype is fully executable and CI-validated. Fabric and Power BI execution are the planned next phases, clearly separated from what works today.
+
+For professional context — real-world experience with Power BI, Fabric, and data migration — see [docs/real_world_context.md](real_world_context.md).
