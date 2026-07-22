@@ -2,109 +2,256 @@ version: 2
 
 models:
   - name: dim_customer
-    description: "Customer dimension with an unknown member ('-1')."
+    description: "Gold customer dimension with one row per valid customer plus an unknown member for unresolved fact relationships."
     columns:
       - name: customer_key
-        description: "Surrogate primary key."
+        description: "Deterministic surrogate key generated from customer_id; '-1' identifies the unknown customer member."
         data_tests: [unique, not_null]
       - name: customer_id
+        description: "Source-system customer business identifier preserved as the alternate key."
         data_tests: [not_null]
+      - name: customer_name
+        description: "Customer display name from the source extract."
+      - name: email
+        description: "Customer email address, retained for analytical segmentation and demo purposes."
+      - name: country
+        description: "Customer country after staging normalization."
+      - name: city
+        description: "Customer city after staging normalization."
+      - name: customer_segment
+        description: "Business segment assigned to the customer, such as SMB, Mid-Market, or Enterprise."
+      - name: company_size
+        description: "Company size band associated with the customer."
+      - name: industry
+        description: "Customer industry classification used for segment and revenue analysis."
+      - name: acquisition_channel
+        description: "Original acquisition channel used to connect customer growth to marketing performance."
       - name: status
+        description: "Current customer lifecycle status."
         data_tests:
           - accepted_values:
-              values: ["Active", "Inactive", "Churned", "Unknown"]
+              arguments:
+                values: ["Active", "Inactive", "Churned", "Unknown"]
+      - name: signup_date
+        description: "Date the customer signed up or entered the platform."
 
   - name: dim_product
-    description: "Product dimension with an unknown member ('-1')."
+    description: "Gold product dimension with one row per valid product plus an unknown member for unresolved product references."
     columns:
       - name: product_key
+        description: "Deterministic surrogate key generated from product_id; '-1' identifies the unknown product member."
         data_tests: [unique, not_null]
       - name: product_id
+        description: "Source-system product business identifier preserved as the alternate key."
         data_tests: [not_null]
+      - name: product_name
+        description: "Product display name used in reporting and slicers."
+      - name: category
+        description: "Product category used for revenue and margin analysis."
+      - name: plan_tier
+        description: "Commercial plan tier or package level for the product."
+      - name: unit_price
+        description: "Current source unit price for the product."
+      - name: unit_cost
+        description: "Estimated unit cost used to calculate order-level gross margin."
+      - name: is_subscription
+        description: "Boolean flag indicating whether the product is subscription-based."
+      - name: valid_from
+        description: "Start date for the product record validity window."
+      - name: valid_to
+        description: "End date for the product record validity window, when applicable."
 
   - name: dim_campaign
-    description: "Campaign dimension with an unknown member ('-1')."
+    description: "Gold campaign dimension with one row per valid campaign plus an unknown member for unresolved campaign references."
     columns:
       - name: campaign_key
+        description: "Deterministic surrogate key generated from campaign_id; '-1' identifies the unknown campaign member."
         data_tests: [unique, not_null]
+      - name: campaign_id
+        description: "Source-system campaign business identifier preserved as the alternate key."
+      - name: campaign_name
+        description: "Campaign display name used in marketing performance reporting."
+      - name: channel
+        description: "Marketing channel associated with the campaign."
+      - name: campaign_start_date
+        description: "Date the campaign began."
+      - name: campaign_end_date
+        description: "Date the campaign ended, when available."
+      - name: target_segment
+        description: "Customer segment targeted by the campaign."
+      - name: objective
+        description: "Primary marketing objective for the campaign."
 
   - name: dim_channel
-    description: "Conformed channel dimension."
+    description: "Conformed channel dimension built from acquisition, campaign, and ad spend channel values."
     columns:
       - name: channel_key
+        description: "Deterministic surrogate key generated from the channel value; '-1' identifies the unknown channel member."
         data_tests: [unique, not_null]
+      - name: channel
+        description: "Normalized marketing or acquisition channel name."
+      - name: channel_group
+        description: "Reporting group for the channel; currently mirrors channel and can be expanded later."
 
   - name: dim_customer_segment
-    description: "Conformed customer segment dimension."
+    description: "Conformed customer segment dimension built from valid customer records."
     columns:
       - name: customer_segment_key
+        description: "Deterministic surrogate key generated from the customer_segment value."
         data_tests: [unique, not_null]
+      - name: customer_segment
+        description: "Normalized customer segment used for slicing customer and revenue metrics."
 
   - name: dim_date
-    description: "Calendar date dimension covering the business date span."
+    description: "Calendar date dimension covering the full business date span present in orders, ad spend, customers, campaigns, and support tickets."
     columns:
       - name: date_key
-        description: "YYYYMMDD integer key, -1 for unknown."
+        description: "YYYYMMDD integer surrogate date key; -1 identifies the unknown date member."
         data_tests: [unique, not_null]
+      - name: calendar_date
+        description: "Calendar date represented by the date_key."
+      - name: calendar_year
+        description: "Calendar year number."
+      - name: calendar_quarter
+        description: "Calendar quarter number."
+      - name: calendar_month
+        description: "Calendar month number."
+      - name: month_name
+        description: "Full calendar month name."
+      - name: day_of_month
+        description: "Day number within the calendar month."
+      - name: day_of_week
+        description: "Full weekday name."
+      - name: is_weekend
+        description: "Boolean flag indicating whether the date falls on a weekend."
 
   - name: fct_orders
-    description: "Order grain fact with revenue, cost, and margin measures."
+    description: "Gold order fact at one row per valid order, with dimensional foreign keys and revenue, cost, and margin measures."
     columns:
       - name: order_key
+        description: "Deterministic surrogate fact key generated from order_id."
         data_tests: [unique, not_null]
+      - name: order_id
+        description: "Source-system order business identifier preserved for traceability."
       - name: customer_key
+        description: "Foreign key to dim_customer; unresolved customers map to the '-1' unknown member."
         data_tests:
           - not_null
           - relationships:
-              to: ref('dim_customer')
-              field: customer_key
+              arguments:
+                to: ref('dim_customer')
+                field: customer_key
       - name: product_key
+        description: "Foreign key to dim_product; unresolved products map to the '-1' unknown member."
         data_tests:
           - not_null
           - relationships:
-              to: ref('dim_product')
-              field: product_key
+              arguments:
+                to: ref('dim_product')
+                field: product_key
       - name: campaign_key
+        description: "Foreign key to dim_campaign; missing or unresolved campaigns map to the '-1' unknown member."
         data_tests:
           - relationships:
-              to: ref('dim_campaign')
-              field: campaign_key
+              arguments:
+                to: ref('dim_campaign')
+                field: campaign_key
       - name: order_date_key
+        description: "Foreign key to dim_date for the order date; missing dates map to -1."
         data_tests:
           - relationships:
-              to: ref('dim_date')
-              field: date_key
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: quantity
+        description: "Number of product units purchased in the order."
+      - name: unit_price
+        description: "Unit sale price captured on the order."
+      - name: discount_amount
+        description: "Discount amount applied to the order."
+      - name: tax_amount
+        description: "Tax amount applied to the order."
+      - name: total_amount
+        description: "Gross order amount including tax after discounts."
+      - name: net_revenue
+        description: "Revenue measure calculated as total_amount minus tax_amount."
+      - name: estimated_cost
+        description: "Estimated product cost calculated as quantity multiplied by product unit_cost."
+      - name: gross_margin
+        description: "Gross margin measure calculated as net_revenue minus estimated_cost."
       - name: payment_status
+        description: "Payment status for the order."
         data_tests:
           - accepted_values:
-              values: ["Paid", "Failed", "Pending"]
+              arguments:
+                values: ["Paid", "Failed", "Pending"]
+      - name: refund_flag
+        description: "Boolean flag indicating whether the order was refunded."
 
   - name: fct_ad_spend
-    description: "Daily advertising spend fact by campaign and channel."
+    description: "Gold advertising spend fact at one row per valid spend record, linked to campaign, channel, and spend date dimensions."
     columns:
       - name: ad_spend_key
+        description: "Deterministic surrogate fact key generated from spend_id."
         data_tests: [unique, not_null]
+      - name: spend_id
+        description: "Source-system ad spend business identifier preserved for traceability."
       - name: campaign_key
+        description: "Foreign key to dim_campaign; unresolved campaigns map to the '-1' unknown member."
         data_tests:
           - relationships:
-              to: ref('dim_campaign')
-              field: campaign_key
+              arguments:
+                to: ref('dim_campaign')
+                field: campaign_key
       - name: channel_key
+        description: "Foreign key to dim_channel; unresolved channels map to the '-1' unknown member."
         data_tests:
           - relationships:
-              to: ref('dim_channel')
-              field: channel_key
+              arguments:
+                to: ref('dim_channel')
+                field: channel_key
+      - name: spend_date_key
+        description: "Foreign key to dim_date for the spend date; missing dates map to -1."
+      - name: impressions
+        description: "Number of advertising impressions recorded for the spend row."
+      - name: clicks
+        description: "Number of advertising clicks recorded for the spend row."
+      - name: conversions
+        description: "Number of conversions attributed to the spend row."
+      - name: spend_amount
+        description: "Advertising spend amount for the campaign and channel on the spend date."
 
   - name: fct_support_tickets
-    description: "Support ticket fact with satisfaction and resolution measures."
+    description: "Gold support ticket fact at one row per valid ticket, with customer and date keys plus service quality measures."
     columns:
       - name: ticket_key
+        description: "Deterministic surrogate fact key generated from ticket_id."
         data_tests: [unique, not_null]
+      - name: ticket_id
+        description: "Source-system support ticket business identifier preserved for traceability."
       - name: customer_key
+        description: "Foreign key to dim_customer; unresolved customers map to the '-1' unknown member."
         data_tests:
           - relationships:
-              to: ref('dim_customer')
-              field: customer_key
+              arguments:
+                to: ref('dim_customer')
+                field: customer_key
+      - name: created_date_key
+        description: "Foreign key to dim_date for the ticket creation date; missing dates map to -1."
+      - name: closed_date_key
+        description: "Date key for the ticket close date when the ticket has been closed."
+      - name: priority
+        description: "Support ticket priority assigned by the source system."
+      - name: category
+        description: "Support ticket category used for service analysis."
+      - name: status
+        description: "Current support ticket status."
+      - name: satisfaction_score
+        description: "Customer satisfaction score associated with the ticket, when available."
+      - name: first_response_minutes
+        description: "Minutes between ticket creation and first support response."
+      - name: resolution_minutes
+        description: "Minutes between ticket creation and resolution, when available."
 
 exposures:
   - name: sales_marketing_powerbi
