@@ -81,7 +81,15 @@ table dim_customer
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents(GoldDataFolder & "\dim_customer.parquet"))
+				    Source = Snowflake.Databases("obbwcpp-nt11983.snowflakecomputing.com", "COMPUTE_WH", [Role="ACCOUNTADMIN"]),
+				    Db = Source{[Name="SALES_MARKETING",Kind="Database"]}[Data],
+				    Schema = Db{[Name="MARTS",Kind="Schema"]}[Data],
+				    Tbl = Schema{[Name="DIM_CUSTOMER",Kind="Table"]}[Data],
+				    Lowercase = Table.TransformColumnNames(Tbl, Text.Lower)
 				in
-				    Source
+				    Lowercase
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 

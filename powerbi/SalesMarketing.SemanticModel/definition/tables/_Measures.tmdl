@@ -4,23 +4,19 @@ table _Measures
 	lineageTag: 35e95426-060e-4a25-8c29-4e506c4f3fc8
 
 	measure Revenue = SUM(fct_orders[total_amount])
-		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		formatString: \$#,0
 		displayFolder: Revenue and Margin
 		lineageTag: 0a7efd21-b406-4fed-be73-b81c233dc6b3
 
 	measure 'Net Revenue' = SUM(fct_orders[net_revenue])
-		formatString: "0.00 "
+		formatString: \$#,0
 		displayFolder: Revenue and Margin
 		lineageTag: 4a94fa15-e00a-4470-9027-f569d888dadf
 
-		annotation PBI_FormatHint = {"isCustom":true}
-
 	measure 'Gross Margin' = SUM(fct_orders[gross_margin])
-		formatString: "0.00 "
+		formatString: \$#,0
 		displayFolder: Revenue and Margin
 		lineageTag: c66666ba-f977-41e5-a4c3-2814b3c441af
-
-		annotation PBI_FormatHint = {"isCustom":true}
 
 	measure 'Gross Margin %' = DIVIDE([Gross Margin], [Net Revenue])
 		formatString: 0%;-0%;0%

@@ -36,17 +36,23 @@ table fct_orders
 		sourceColumn: campaign_key
 
 	column order_date_key
-		dataType: int64
+		dataType: double
 		isHidden
 		lineageTag: 644197e1-885b-4e09-9dd0-3d020837b4d6
 		summarizeBy: none
 		sourceColumn: order_date_key
 
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column quantity
-		dataType: int64
+		dataType: double
 		lineageTag: 0357413f-77e3-4674-9268-0ff350d2aa0d
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column unit_price
 		dataType: double
@@ -113,7 +119,15 @@ table fct_orders
 		mode: import
 		source =
 				let
-				    Source = Parquet.Document(File.Contents(GoldDataFolder & "\fct_orders.parquet"))
+				    Source = Snowflake.Databases("obbwcpp-nt11983.snowflakecomputing.com", "COMPUTE_WH", [Role="ACCOUNTADMIN"]),
+				    Db = Source{[Name="SALES_MARKETING",Kind="Database"]}[Data],
+				    Schema = Db{[Name="MARTS",Kind="Schema"]}[Data],
+				    Tbl = Schema{[Name="FCT_ORDERS",Kind="Table"]}[Data],
+				    Lowercase = Table.TransformColumnNames(Tbl, Text.Lower)
 				in
-				    Source
+				    Lowercase
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
 
