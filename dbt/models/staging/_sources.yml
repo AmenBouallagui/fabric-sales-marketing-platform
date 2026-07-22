@@ -7,8 +7,6 @@ version: 2
 sources:
   - name: raw
     description: "Synthetic operational CRM and marketing extracts (CSV)."
-    meta:
-      external_location: "{% if target.type == 'duckdb' %}{{ env_var('SOURCE_DATA_DIR', 'data/source') }}/{name}.csv{% endif %}"
     tables:
       - name: customers
         description: "Customer master records from the synthetic CRM."
