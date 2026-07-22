@@ -1,0 +1,126 @@
+/// Dedicated, disconnected measure table. All report measures live here, grouped
+/// into display folders. The placeholder column is hidden.
+table _Measures
+	lineageTag: 35e95426-060e-4a25-8c29-4e506c4f3fc8
+
+	measure Revenue = SUM(fct_orders[total_amount])
+		formatString: \$#,0
+		displayFolder: Revenue and Margin
+		lineageTag: 0a7efd21-b406-4fed-be73-b81c233dc6b3
+
+	measure 'Net Revenue' = SUM(fct_orders[net_revenue])
+		formatString: \$#,0
+		displayFolder: Revenue and Margin
+		lineageTag: 4a94fa15-e00a-4470-9027-f569d888dadf
+
+	measure 'Gross Margin' = SUM(fct_orders[gross_margin])
+		formatString: \$#,0
+		displayFolder: Revenue and Margin
+		lineageTag: c66666ba-f977-41e5-a4c3-2814b3c441af
+
+	measure 'Gross Margin %' = DIVIDE([Gross Margin], [Net Revenue])
+		formatString: 0%;-0%;0%
+		displayFolder: Revenue and Margin
+		lineageTag: 7ce7c774-5ef6-46b1-942c-39f006252441
+
+	measure 'Estimated Cost' = SUM(fct_orders[estimated_cost])
+		formatString: \$#,0
+		displayFolder: Revenue and Margin
+		lineageTag: 03bafb3f-ad52-43ac-a2eb-f3aeb26e529d
+
+	measure Orders = DISTINCTCOUNT(fct_orders[order_id])
+		formatString: #,0
+		displayFolder: Revenue and Margin
+		lineageTag: bf517e02-11e3-4671-9fc4-84fa4e7f061e
+
+	measure 'Average Order Value' = DIVIDE([Revenue], [Orders])
+		formatString: \$#,0.00
+		displayFolder: Revenue and Margin
+		lineageTag: 37cb1d6c-3210-43af-9602-7c32b36b8ecd
+
+	measure Customers = DISTINCTCOUNT(dim_customer[customer_id])
+		formatString: #,0
+		displayFolder: Customer
+		lineageTag: 30a0c4d9-96dc-4616-a5ea-147f16f332d9
+
+	measure 'New Customers' = CALCULATE(DISTINCTCOUNT(dim_customer[customer_id]), TREATAS(VALUES(dim_date[calendar_date]), dim_customer[signup_date]))
+		formatString: #,0
+		displayFolder: Customer
+		lineageTag: dca87717-c173-44f0-bfe1-60837cc373b3
+
+	measure 'Ad Spend' = SUM(fct_ad_spend[spend_amount])
+		formatString: \$#,0
+		displayFolder: Marketing
+		lineageTag: df026347-f50a-48f0-abc6-d3b880d0c089
+
+	measure Impressions = SUM(fct_ad_spend[impressions])
+		formatString: #,0
+		displayFolder: Marketing
+		lineageTag: 9f24227f-5e4b-4751-8954-1cf44a8569a5
+
+	measure Clicks = SUM(fct_ad_spend[clicks])
+		formatString: #,0
+		displayFolder: Marketing
+		lineageTag: 7b0244d9-6acd-4a99-913e-e8391c6f5b02
+
+	measure Conversions = SUM(fct_ad_spend[conversions])
+		formatString: #,0
+		displayFolder: Marketing
+		lineageTag: 8720dd75-3f7f-4819-b93f-26c3dbda8c86
+
+	measure 'Click-Through Rate' = DIVIDE([Clicks], [Impressions])
+		formatString: 0.0%
+		displayFolder: Marketing
+		lineageTag: 0423cbf6-23ed-4a54-a798-9a542527400b
+
+	measure 'Conversion Rate' = DIVIDE([Conversions], [Clicks])
+		formatString: 0.0%
+		displayFolder: Marketing
+		lineageTag: 2f12bd17-23cb-45c4-9da3-73d71f9a1ccb
+
+	measure 'Cost Per Click' = DIVIDE([Ad Spend], [Clicks])
+		formatString: \$#,0.00
+		displayFolder: Marketing
+		lineageTag: 3e47eff0-b893-4869-be76-2bf52ab62a52
+
+	measure 'Cost Per Acquisition' = DIVIDE([Ad Spend], [Conversions])
+		formatString: \$#,0.00
+		displayFolder: Marketing
+		lineageTag: 2b806829-df0a-4ba4-8b0e-2353da850650
+
+	measure ROAS = DIVIDE([Revenue], [Ad Spend])
+		formatString: 0.00
+		displayFolder: Marketing
+		lineageTag: 656cbffd-5ab5-41f1-b466-88dc827d570c
+
+	measure 'Ticket Count' = DISTINCTCOUNT(fct_support_tickets[ticket_id])
+		formatString: #,0
+		displayFolder: Support
+		lineageTag: 06a1926a-7da5-42a0-b19f-3649f3bfc7a0
+
+	measure 'Avg First Response (min)' = AVERAGE(fct_support_tickets[first_response_minutes])
+		formatString: #,0.0
+		displayFolder: Support
+		lineageTag: f37bc6f1-ce23-42be-be19-4430b381f57f
+
+	measure 'Avg Resolution (min)' = AVERAGE(fct_support_tickets[resolution_minutes])
+		formatString: #,0.0
+		displayFolder: Support
+		lineageTag: 1646a914-8b31-4b99-8968-31b27ffdbcb0
+
+	measure 'Avg Satisfaction' = AVERAGE(fct_support_tickets[satisfaction_score])
+		formatString: 0.00
+		displayFolder: Support
+		lineageTag: 430830e1-9f85-45e2-b4c7-8759a5b44dbc
+
+	column Placeholder
+		dataType: string
+		isHidden
+		lineageTag: b3935579-3464-47c2-8b9a-1589bfb36622
+		summarizeBy: none
+		sourceColumn: [Placeholder]
+
+	partition _Measures = calculated
+		mode: import
+		source = ROW("Placeholder", BLANK())
+

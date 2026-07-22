@@ -1,0 +1,30 @@
+table dim_channel
+	lineageTag: eebb8560-622d-4d68-80c7-c1894fd10683
+
+	column channel_key
+		dataType: string
+		isHidden
+		lineageTag: 1afb77f1-1693-4656-8db3-2df0217766f5
+		summarizeBy: none
+		sourceColumn: channel_key
+
+	column channel
+		dataType: string
+		lineageTag: 5f059f8c-905e-4af0-a14d-43228bcd9207
+		summarizeBy: none
+		sourceColumn: channel
+
+	column channel_group
+		dataType: string
+		lineageTag: 87f010cd-cc32-43bd-94df-b977e2dcb2d6
+		summarizeBy: none
+		sourceColumn: channel_group
+
+	partition dim_channel = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(GoldDataFolder & "\dim_channel.parquet"))
+				in
+				    Source
+

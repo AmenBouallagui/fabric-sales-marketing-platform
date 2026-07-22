@@ -1,0 +1,119 @@
+table fct_orders
+	lineageTag: 996988e7-63e4-4b41-b42e-ee4b9891c3a0
+
+	column order_key
+		dataType: string
+		isHidden
+		lineageTag: 97367a7d-7ae5-4827-a291-1b2ab568e7db
+		summarizeBy: none
+		sourceColumn: order_key
+
+	column order_id
+		dataType: string
+		lineageTag: 31c61966-929b-409e-b7f4-4734ee79ed0a
+		summarizeBy: none
+		sourceColumn: order_id
+
+	column customer_key
+		dataType: string
+		isHidden
+		lineageTag: c106c73c-f412-48e7-be1c-3f24f6348134
+		summarizeBy: none
+		sourceColumn: customer_key
+
+	column product_key
+		dataType: string
+		isHidden
+		lineageTag: fd0cda18-5838-4e81-b612-3025c355bbd1
+		summarizeBy: none
+		sourceColumn: product_key
+
+	column campaign_key
+		dataType: string
+		isHidden
+		lineageTag: 08fa1a53-d632-4dd6-9fa6-ac58372f9b98
+		summarizeBy: none
+		sourceColumn: campaign_key
+
+	column order_date_key
+		dataType: int64
+		isHidden
+		lineageTag: 644197e1-885b-4e09-9dd0-3d020837b4d6
+		summarizeBy: none
+		sourceColumn: order_date_key
+
+	column quantity
+		dataType: int64
+		lineageTag: 0357413f-77e3-4674-9268-0ff350d2aa0d
+		summarizeBy: none
+		sourceColumn: quantity
+
+	column unit_price
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: d29f9af2-c2f4-4f87-9d09-178a88ff1487
+		summarizeBy: none
+		sourceColumn: unit_price
+
+	column discount_amount
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: 83fe7dad-bfb2-4827-af15-7c81e5d1af13
+		summarizeBy: none
+		sourceColumn: discount_amount
+
+	column tax_amount
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: ab863920-b09b-4ba4-b2d5-307400de74e0
+		summarizeBy: none
+		sourceColumn: tax_amount
+
+	column total_amount
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: 716f2dd7-c648-485e-ba6e-0e96622ac6a2
+		summarizeBy: none
+		sourceColumn: total_amount
+
+	column net_revenue
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: 9cbaf751-56ad-45cd-adf0-01f058ff30ff
+		summarizeBy: none
+		sourceColumn: net_revenue
+
+	column estimated_cost
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: ac245cbe-3262-415a-b7cb-c0f8c3e8a742
+		summarizeBy: none
+		sourceColumn: estimated_cost
+
+	column gross_margin
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: 70bea32f-24f9-414b-a177-6e5fce77141e
+		summarizeBy: none
+		sourceColumn: gross_margin
+
+	column payment_status
+		dataType: string
+		lineageTag: 9885466d-7151-40de-92b3-b716c7c2ce7d
+		summarizeBy: none
+		sourceColumn: payment_status
+
+	column refund_flag
+		dataType: boolean
+		lineageTag: 3743be82-0228-4290-bf7f-9db313ae9263
+		summarizeBy: none
+		sourceColumn: refund_flag
+
+	partition fct_orders = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(GoldDataFolder & "\fct_orders.parquet"))
+				in
+				    Source
+

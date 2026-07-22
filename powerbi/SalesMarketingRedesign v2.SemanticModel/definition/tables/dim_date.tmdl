@@ -1,0 +1,69 @@
+table dim_date
+	lineageTag: f4016e5a-6855-4a3e-a1c8-96fdf3ac4970
+
+	column date_key
+		dataType: int64
+		isHidden
+		lineageTag: 454f2cfe-7c15-47b3-8f0d-4e057dcad078
+		summarizeBy: none
+		sourceColumn: date_key
+
+	column calendar_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: c3541dd4-6a08-4ae5-918e-78b81986c707
+		summarizeBy: none
+		sourceColumn: calendar_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column calendar_year
+		dataType: int64
+		lineageTag: 6e0ab72d-dc01-4fae-94a3-94a1faaac302
+		summarizeBy: none
+		sourceColumn: calendar_year
+
+	column calendar_quarter
+		dataType: int64
+		lineageTag: 72a4816b-86aa-4e8b-b95b-01eeaaec4d2d
+		summarizeBy: none
+		sourceColumn: calendar_quarter
+
+	column calendar_month
+		dataType: int64
+		lineageTag: cac95c99-4bdb-46fb-b919-ccc34e7c5887
+		summarizeBy: none
+		sourceColumn: calendar_month
+
+	column month_name
+		dataType: string
+		lineageTag: 4fa4dac8-6732-4e9f-80ff-33d6d70d274c
+		summarizeBy: none
+		sourceColumn: month_name
+
+	column day_of_month
+		dataType: int64
+		lineageTag: 1423933e-f4fc-450f-9b65-e1c691607eec
+		summarizeBy: none
+		sourceColumn: day_of_month
+
+	column day_of_week
+		dataType: string
+		lineageTag: e6b2bd06-e3b3-4d60-ae27-0074cfddedd9
+		summarizeBy: none
+		sourceColumn: day_of_week
+
+	column is_weekend
+		dataType: boolean
+		lineageTag: beeac846-cbff-47a1-b03d-67ec9b41ecf8
+		summarizeBy: none
+		sourceColumn: is_weekend
+
+	partition dim_date = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(GoldDataFolder & "\dim_date.parquet"))
+				in
+				    Source
+

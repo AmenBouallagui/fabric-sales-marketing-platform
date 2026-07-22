@@ -1,0 +1,8 @@
+/// Absolute path to the folder of gold Parquet files produced by
+/// `python powerbi/export_gold.py` (default: <repo>/data/powerbi).
+/// Change this in Power BI Desktop via Transform data > Manage parameters to match your machine.
+expression GoldDataFolder = "C:\Users\AmenBouallagui\fabric-sales-marketing-platform\data\powerbi" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 9bf881cf-be00-4ac5-a7c9-84eba09c1e88
+
+	annotation PBI_ResultType = Text
+

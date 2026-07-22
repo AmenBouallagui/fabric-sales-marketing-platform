@@ -1,0 +1,66 @@
+table dim_campaign
+	lineageTag: 662c0976-67c6-4177-8571-e58fd29d381a
+
+	column campaign_key
+		dataType: string
+		isHidden
+		lineageTag: feb3127b-c1e2-4d59-a421-574ea3848b28
+		summarizeBy: none
+		sourceColumn: campaign_key
+
+	column campaign_id
+		dataType: string
+		lineageTag: 618db341-6418-42b8-9103-3a6a1bf02a87
+		summarizeBy: none
+		sourceColumn: campaign_id
+
+	column campaign_name
+		dataType: string
+		lineageTag: eedf3973-2266-43c0-85e2-481dbb8745d5
+		summarizeBy: none
+		sourceColumn: campaign_name
+
+	column channel
+		dataType: string
+		lineageTag: ff70ceb9-f48e-4686-a7e2-15cbffefef54
+		summarizeBy: none
+		sourceColumn: channel
+
+	column campaign_start_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: f828b4b2-9926-482c-a4a7-ecc7ea0f652c
+		summarizeBy: none
+		sourceColumn: campaign_start_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column campaign_end_date
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 3af65b3a-ba29-412f-9467-6f573947da7c
+		summarizeBy: none
+		sourceColumn: campaign_end_date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column target_segment
+		dataType: string
+		lineageTag: 4acab081-5a29-4ffb-95d7-fd8c9fc4f1b6
+		summarizeBy: none
+		sourceColumn: target_segment
+
+	column objective
+		dataType: string
+		lineageTag: 3bf356c2-9aaa-44d6-b27b-2f6f0e1b72d1
+		summarizeBy: none
+		sourceColumn: objective
+
+	partition dim_campaign = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(GoldDataFolder & "\dim_campaign.parquet"))
+				in
+				    Source
+

@@ -1,0 +1,112 @@
+{
+  "name": "PortfolioTheme",
+  "dataColors": [
+    "#0F766E",
+    "#2563EB",
+    "#F97360",
+    "#E2A93B",
+    "#7C5CC4",
+    "#2E7D9A",
+    "#48A999",
+    "#D75C6C"
+  ],
+  "foreground": "#17212B",
+  "foregroundNeutralSecondary": "#65727E",
+  "foregroundNeutralTertiary": "#C7D0D9",
+  "background": "#FFFFFF",
+  "backgroundLight": "#F4F7F9",
+  "backgroundNeutral": "#DCE3E8",
+  "tableAccent": "#0F766E",
+  "good": "#15936F",
+  "neutral": "#E2A93B",
+  "bad": "#D75C6C",
+  "maximum": "#2563EB",
+  "center": "#E2A93B",
+  "minimum": "#DCECF8",
+  "null": "#AAB4BE",
+  "textClasses": {
+    "callout": {
+      "fontSize": 25,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#17212B"
+    },
+    "title": {
+      "fontSize": 12,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#17212B"
+    },
+    "header": {
+      "fontSize": 11,
+      "fontFace": "Segoe UI Semibold",
+      "color": "#17212B"
+    },
+    "label": {
+      "fontSize": 10,
+      "fontFace": "Segoe UI",
+      "color": "#65727E"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [
+          {
+            "alignment": "left",
+            "fontFamily": "Segoe UI Semibold",
+            "fontSize": 12,
+            "fontColor": {
+              "solid": {
+                "color": "#17212B"
+              }
+            },
+            "background": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            }
+          }
+        ],
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#DCE3E8"
+              }
+            },
+            "radius": 6
+          }
+        ],
+        "visualHeader": [
+          {
+            "show": false
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F4F7F9"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+table fct_ad_spend
+	lineageTag: 6d1ba011-a9d3-47e8-adfa-291388771176
+
+	column ad_spend_key
+		dataType: string
+		isHidden
+		lineageTag: b5f3c2d9-930f-4fb7-90e6-633195436f7d
+		summarizeBy: none
+		sourceColumn: ad_spend_key
+
+	column spend_id
+		dataType: string
+		lineageTag: d10652c1-4298-4fc9-8d0d-0142fca96e87
+		summarizeBy: none
+		sourceColumn: spend_id
+
+	column campaign_key
+		dataType: string
+		isHidden
+		lineageTag: 64662626-ca05-4db1-89d8-de30291cb3ef
+		summarizeBy: none
+		sourceColumn: campaign_key
+
+	column channel_key
+		dataType: string
+		isHidden
+		lineageTag: e7f3bb16-d24f-4577-9c2d-678f984de298
+		summarizeBy: none
+		sourceColumn: channel_key
+
+	column spend_date_key
+		dataType: int64
+		isHidden
+		lineageTag: ce85502a-dce8-4ae6-a741-a779cc6047c2
+		summarizeBy: none
+		sourceColumn: spend_date_key
+
+	column impressions
+		dataType: int64
+		lineageTag: 871f7bbb-d291-4139-b47a-3e9b95bd9287
+		summarizeBy: none
+		sourceColumn: impressions
+
+	column clicks
+		dataType: int64
+		lineageTag: 07aafe56-aa10-4ee3-bd4b-eba52a53d205
+		summarizeBy: none
+		sourceColumn: clicks
+
+	column conversions
+		dataType: int64
+		lineageTag: 8a87b8e8-06fb-4605-999a-f8acaeb2a669
+		summarizeBy: none
+		sourceColumn: conversions
+
+	column spend_amount
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: faffbb20-1216-4d48-8f74-785e741a6bf9
+		summarizeBy: none
+		sourceColumn: spend_amount
+
+	partition fct_ad_spend = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(GoldDataFolder & "\fct_ad_spend.parquet"))
+				in
+				    Source
+

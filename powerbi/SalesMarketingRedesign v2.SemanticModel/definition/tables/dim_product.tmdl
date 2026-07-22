@@ -1,0 +1,80 @@
+table dim_product
+	lineageTag: 5db3b100-fe8b-4fc4-ae70-5c1998ee611c
+
+	column product_key
+		dataType: string
+		isHidden
+		lineageTag: 08d17682-cf4c-4393-9338-cb3251df6722
+		summarizeBy: none
+		sourceColumn: product_key
+
+	column product_id
+		dataType: string
+		lineageTag: ee05327b-471e-4034-900a-86ce38babecf
+		summarizeBy: none
+		sourceColumn: product_id
+
+	column product_name
+		dataType: string
+		lineageTag: 37cb6596-be31-423a-989e-8628df4f43f5
+		summarizeBy: none
+		sourceColumn: product_name
+
+	column category
+		dataType: string
+		lineageTag: 0c8e096a-513a-4c4f-a9ec-dec6bc842303
+		summarizeBy: none
+		sourceColumn: category
+
+	column plan_tier
+		dataType: string
+		lineageTag: 30fc59db-8d80-44cc-bb3c-01b467b3b138
+		summarizeBy: none
+		sourceColumn: plan_tier
+
+	column unit_price
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: d9fe3dcc-42c6-4fe2-8384-49399ae0caa0
+		summarizeBy: none
+		sourceColumn: unit_price
+
+	column unit_cost
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: 3f82f525-1722-47a6-af24-556ea1be5f0d
+		summarizeBy: none
+		sourceColumn: unit_cost
+
+	column is_subscription
+		dataType: boolean
+		lineageTag: 3fcca6b0-714b-4824-9ca5-0f370cf38aae
+		summarizeBy: none
+		sourceColumn: is_subscription
+
+	column valid_from
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 3662e1d0-a559-4f51-b209-18a4a7d036aa
+		summarizeBy: none
+		sourceColumn: valid_from
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column valid_to
+		dataType: dateTime
+		formatString: yyyy-mm-dd
+		lineageTag: 8ad8f3cd-0faa-4dc8-a890-d26dde8b4be9
+		summarizeBy: none
+		sourceColumn: valid_to
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition dim_product = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(GoldDataFolder & "\dim_product.parquet"))
+				in
+				    Source
+
