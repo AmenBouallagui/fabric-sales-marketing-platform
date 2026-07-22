@@ -1,66 +1,81 @@
 table dim_customer
+	lineageTag: f0ac9e80-7016-4763-8e93-693c491d7f8f
 
 	column customer_key
 		dataType: string
 		isHidden
+		lineageTag: c8db17f6-60a1-417a-a06e-e355928dc033
 		summarizeBy: none
 		sourceColumn: customer_key
 
 	column customer_id
 		dataType: string
+		lineageTag: e494c378-2c16-40c8-99ad-9d8771dbf99d
 		summarizeBy: none
 		sourceColumn: customer_id
 
 	column customer_name
 		dataType: string
+		lineageTag: 893b09fe-cb82-461c-a7ab-54ce3f54de72
 		summarizeBy: none
 		sourceColumn: customer_name
 
 	column email
 		dataType: string
+		lineageTag: bd8a8041-7642-4019-a107-8b04f6b82809
 		summarizeBy: none
 		sourceColumn: email
 
 	column country
 		dataType: string
+		lineageTag: b3cb3ace-06cd-4dd4-90a5-739eefbab168
 		summarizeBy: none
 		sourceColumn: country
 
 	column city
 		dataType: string
+		lineageTag: 8f07469a-0b03-4969-ae5d-94f0e887cad3
 		summarizeBy: none
 		sourceColumn: city
 
 	column customer_segment
 		dataType: string
+		lineageTag: cf76e3da-b793-4315-8976-d03fe1b7f768
 		summarizeBy: none
 		sourceColumn: customer_segment
 
 	column company_size
 		dataType: string
+		lineageTag: d808f4ac-cd36-4062-85af-8e1c973e35ff
 		summarizeBy: none
 		sourceColumn: company_size
 
 	column industry
 		dataType: string
+		lineageTag: 83bde547-918c-478c-baf2-30e2ac56608b
 		summarizeBy: none
 		sourceColumn: industry
 
 	column acquisition_channel
 		dataType: string
+		lineageTag: fcf92333-a0bd-4c8c-b96c-b2711fda36b6
 		summarizeBy: none
 		sourceColumn: acquisition_channel
 
 	column status
 		dataType: string
+		lineageTag: 2e21d889-8eb0-425b-a549-5ffdbfed0aef
 		summarizeBy: none
 		sourceColumn: status
 
 	column signup_date
 		dataType: dateTime
 		formatString: yyyy-mm-dd
+		lineageTag: a23a5bfb-d21d-41c6-9b10-6d9eab290f0e
 		summarizeBy: none
 		sourceColumn: signup_date
+
+		annotation UnderlyingDateTimeDataType = Date
 
 	partition dim_customer = m
 		mode: import
@@ -69,3 +84,4 @@ table dim_customer
 				    Source = Parquet.Document(File.Contents(GoldDataFolder & "\dim_customer.parquet"))
 				in
 				    Source
+

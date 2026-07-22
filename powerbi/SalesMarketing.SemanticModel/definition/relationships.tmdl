@@ -33,3 +33,4 @@ relationship 653598d7-1462-4836-a576-5126c3bf6bb5
 relationship f822062b-d243-41ee-92a6-a329586bd7aa
 	fromColumn: fct_support_tickets.created_date_key
 	toColumn: dim_date.date_key
+

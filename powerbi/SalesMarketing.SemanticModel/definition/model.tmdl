@@ -10,3 +10,16 @@ model Model
 annotation PBI_QueryOrder = ["GoldDataFolder","dim_customer","dim_product","dim_campaign","dim_channel","dim_date","fct_orders","fct_ad_spend","fct_support_tickets"]
 
 annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table dim_campaign
+ref table dim_channel
+ref table dim_customer
+ref table dim_date
+ref table dim_product
+ref table fct_ad_spend
+ref table fct_orders
+ref table fct_support_tickets
+ref table _Measures
+

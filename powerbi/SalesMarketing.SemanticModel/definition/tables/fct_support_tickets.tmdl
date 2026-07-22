@@ -1,61 +1,73 @@
 table fct_support_tickets
+	lineageTag: 6b3d5ecb-a07b-468e-9f19-1980c1fe6a84
 
 	column ticket_key
 		dataType: string
 		isHidden
+		lineageTag: b1a40b1a-0baa-477a-aa52-c8c7fb0c4197
 		summarizeBy: none
 		sourceColumn: ticket_key
 
 	column ticket_id
 		dataType: string
+		lineageTag: 8df7d5e3-e37a-4d0d-b554-bbf69e12e69b
 		summarizeBy: none
 		sourceColumn: ticket_id
 
 	column customer_key
 		dataType: string
 		isHidden
+		lineageTag: 6af002dd-8696-423c-a47c-8540e7e90b00
 		summarizeBy: none
 		sourceColumn: customer_key
 
 	column created_date_key
 		dataType: int64
 		isHidden
+		lineageTag: e1372e4c-0002-47d2-ad2a-eeeb6bceb0d7
 		summarizeBy: none
 		sourceColumn: created_date_key
 
 	column closed_date_key
 		dataType: int64
 		isHidden
+		lineageTag: 583ca6bb-e9c1-45dd-b097-25f6bdd58f26
 		summarizeBy: none
 		sourceColumn: closed_date_key
 
 	column priority
 		dataType: string
+		lineageTag: df2d5ee7-8e43-46bd-9b98-6eec325f85d5
 		summarizeBy: none
 		sourceColumn: priority
 
 	column category
 		dataType: string
+		lineageTag: fd2c2c79-fb87-42f4-ab66-f05e257322d3
 		summarizeBy: none
 		sourceColumn: category
 
 	column status
 		dataType: string
+		lineageTag: 6ed90420-6798-4bce-83ab-9450f3296734
 		summarizeBy: none
 		sourceColumn: status
 
 	column satisfaction_score
 		dataType: int64
+		lineageTag: 1c625452-5abf-4a82-bd24-727af4e2af62
 		summarizeBy: none
 		sourceColumn: satisfaction_score
 
 	column first_response_minutes
 		dataType: int64
+		lineageTag: a5c2024d-dfcc-4c7c-a0b6-3c204afc39f7
 		summarizeBy: none
 		sourceColumn: first_response_minutes
 
 	column resolution_minutes
 		dataType: int64
+		lineageTag: a5475d3b-d82d-414d-9e70-5dcc505f1755
 		summarizeBy: none
 		sourceColumn: resolution_minutes
 
@@ -66,3 +78,4 @@ table fct_support_tickets
 				    Source = Parquet.Document(File.Contents(GoldDataFolder & "\fct_support_tickets.parquet"))
 				in
 				    Source
+
