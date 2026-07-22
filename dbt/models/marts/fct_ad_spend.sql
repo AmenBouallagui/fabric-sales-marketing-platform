@@ -8,7 +8,7 @@ select
     a.spend_id,
     coalesce(cmp.campaign_key, '-1')                   as campaign_key,
     coalesce(ch.channel_key, '-1')                     as channel_key,
-    coalesce(cast(strftime(a.spend_date, '%Y%m%d') as integer), -1) as spend_date_key,
+    coalesce(cast({{ to_date_key('a.spend_date') }} as integer), -1) as spend_date_key,
     a.impressions,
     a.clicks,
     a.conversions,

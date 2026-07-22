@@ -16,7 +16,7 @@ select
     coalesce(c.customer_key, '-1')                     as customer_key,
     coalesce(p.product_key, '-1')                      as product_key,
     coalesce(cmp.campaign_key, '-1')                   as campaign_key,
-    coalesce(cast(strftime(o.order_date, '%Y%m%d') as integer), -1) as order_date_key,
+    coalesce(cast({{ to_date_key('o.order_date') }} as integer), -1) as order_date_key,
     o.quantity,
     o.unit_price,
     o.discount_amount,
