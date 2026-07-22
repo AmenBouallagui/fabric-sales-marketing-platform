@@ -1,0 +1,37 @@
+campaign_id,campaign_name,channel,campaign_start_date,campaign_end_date,target_segment,objective,updated_at
+CMP-0001,Email Awareness 2023 Q4,Email,2023-12-13,2024-02-15,Startup,Awareness,2024-02-15 00:00:00
+CMP-0002,Paid Social Awareness 2024 Q4,Paid Social,2024-12-13,2025-03-29,Mid-Market,Awareness,2025-03-29 00:00:00
+CMP-0003,Organic Lead Generation 2025 Q4,Organic,2025-11-04,2026-02-02,SMB,Lead Generation,2026-02-02 00:00:00
+CMP-0004,Paid Search Awareness 2025 Q2,Paid Search,2025-06-15,2025-07-20,SMB,Awareness,2025-07-20 00:00:00
+CMP-0005,Direct Expansion 2024 Q2,Direct,2024-06-15,2024-09-02,Startup,Expansion,2024-09-02 00:00:00
+CMP-0006,Paid Search Expansion 2025 Q4,Paid Search,2025-10-09,2026-01-25,Startup,Expansion,2026-01-25 00:00:00
+CMP-0007,Paid Social Awareness 2024 Q2,Paid Social,2024-04-08,2024-07-04,Startup,Awareness,2024-07-04 00:00:00
+CMP-0008,Partner Lead Generation 2024 Q2,Partner,2024-05-26,2024-07-08,Mid-Market,Lead Generation,2024-07-08 00:00:00
+CMP-0009,Paid Social Retention 2024 Q1,Paid Social,2024-03-16,2024-04-18,Enterprise,Retention,2024-04-18 00:00:00
+CMP-0010,Paid Social Retention 2025 Q4,Paid Social,2025-11-02,,Enterprise,Retention,2025-11-21 00:00:00
+CMP-0011,Referral Conversion 2025 Q2,Referral,2025-05-26,2025-08-02,Startup,Conversion,2025-08-02 00:00:00
+CMP-0012,Paid Social Expansion 2024 Q4,Paid Social,2024-12-22,2025-02-16,Startup,Expansion,2025-02-16 00:00:00
+CMP-0013,Paid Search Retention 2025 Q2,Paid Search,2025-04-18,,Enterprise,Retention,2025-04-25 00:00:00
+CMP-0014,Paid Social Retention 2024 Q2,Paid Social,2024-06-04,2024-07-06,Mid-Market,Retention,2024-07-06 00:00:00
+CMP-0015,Paid Search Conversion 2024 Q1,Paid Search,2024-01-10,2024-03-23,Enterprise,Conversion,2024-03-23 00:00:00
+CMP-0016,Partner Conversion 2025 Q3,Partner,2025-09-03,2025-12-27,Mid-Market,Conversion,2025-12-27 00:00:00
+CMP-0017,Email Lead Generation 2025 Q4,Email,2025-12-04,2026-02-22,SMB,Lead Generation,2026-02-22 00:00:00
+CMP-0018,Email Conversion 2023 Q4,Email,2023-12-14,2024-02-16,SMB,Conversion,2024-02-16 00:00:00
+CMP-0019,Paid Search Expansion 2023 Q4,Paid Search,2023-12-27,2024-04-19,Mid-Market,Expansion,2024-04-19 00:00:00
+CMP-0020,Email Lead Generation 2025 Q1,Email,2025-01-24,2025-04-24,Mid-Market,Lead Generation,2025-04-24 00:00:00
+CMP-0021,Email Awareness 2023 Q4,Email,2023-12-20,2024-03-21,SMB,Awareness,2024-03-21 00:00:00
+CMP-0022,Paid Search Conversion 2025 Q2,Paid Search,2025-05-29,2025-08-15,SMB,Conversion,2025-08-15 00:00:00
+CMP-0023,Partner Retention 2025 Q4,Partner,2025-11-19,2026-02-24,Enterprise,Retention,2026-02-24 00:00:00
+CMP-0024,Organic Expansion 2024 Q2,Organic,2024-06-21,2024-08-31,Enterprise,Expansion,2024-08-31 00:00:00
+CMP-0025,Referral Conversion 2024 Q3,Referral,2024-07-02,,Mid-Market,Conversion,2024-07-09 00:00:00
+CMP-0026,Paid Social Retention 2025 Q3,Paid Social,2025-09-17,2025-12-08,Mid-Market,Retention,2025-12-08 00:00:00
+CMP-0027,Paid Search Lead Generation 2024 Q3,Paid Search,2024-08-19,,Startup,Lead Generation,2024-08-19 00:00:00
+CMP-0028,Email Conversion 2024 Q2,Email,2024-05-21,,Startup,Conversion,2024-05-26 00:00:00
+CMP-0029,Referral Conversion 2024 Q1,Referral,2024-01-21,2024-03-11,SMB,Conversion,2024-03-11 00:00:00
+CMP-0030,Paid Social Lead Generation 2025 Q3,Paid Social,2025-08-29,,Enterprise,Lead Generation,2025-09-05 00:00:00
+CMP-0031,Paid Search Retention 2025 Q4,Paid Search,2025-11-04,2025-11-28,Enterprise,Retention,2025-11-28 00:00:00
+CMP-0032,Referral Expansion 2024 Q1,Referral,2024-01-16,,Mid-Market,Expansion,2024-01-18 00:00:00
+CMP-0033,Paid Search Lead Generation 2025 Q3,Paid Search,2025-08-01,2025-11-19,SMB,Lead Generation,2025-11-19 00:00:00
+CMP-0034,Paid Social Awareness 2024 Q1,Paid Social,2024-03-20,2024-06-13,SMB,Awareness,2024-06-13 00:00:00
+CMP-0035,Email Expansion 2024 Q1,Email,2024-03-03,,Enterprise,Expansion,2024-03-15 00:00:00
+CMP-0036,Paid Search Expansion 2024 Q3,Paid Search,2024-09-07,,Startup,Expansion,2024-09-18 00:00:00

@@ -25,6 +25,7 @@ secrets/
 data/
 outputs/
 *.csv
+!dbt/seeds/*.csv
 *.xlsx
 *.parquet
 

@@ -28,3 +28,11 @@ models:
     marts:
       +materialized: table
       +schema: marts
+
+# The six raw extracts, loaded as real warehouse tables via `dbt seed`. Needed
+# for cloud targets (Snowflake/BigQuery) since they can't read the local CSVs
+# the way dbt-duckdb's `external_location` sources do.
+seeds:
+  sales_marketing:
+    +schema: raw
+    +quote_columns: false

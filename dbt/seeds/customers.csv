@@ -1,0 +1,1001 @@
+customer_id,account_id,customer_name,email,country,city,signup_date,acquisition_channel,customer_segment,company_size,industry,status,updated_at
+CUST-000001,ACC-000001,"Rodriguez, Figueroa and Sanchez",contact1@rodriguezfigueroaa.example,United States,San Francisco,2025-10-03,Organic,Enterprise,1-10,Logistics,Active,2025-11-18 00:00:00
+CUST-000002,ACC-000002,Doyle Ltd,contact2@doyleltd.example,Spain,Seville,2024-02-15,Email,SMB,51-200,Financial Services,Churned,2024-03-27 00:00:00
+CUST-000003,ACC-000003,"Mcclain, Miller and Henderson",contact3@mcclainmillerandhe.example,Netherlands,Utrecht,2024-10-17,Paid Search,Startup,201-1000,Professional Services,Active,2024-10-23 00:00:00
+CUST-000004,ACC-000004,Davis and Sons,contact4@davisandsons.example,Germany,Cologne,2024-11-30,Email,SMB,51-200,Education,Active,2024-12-10 00:00:00
+CUST-000005,ACC-000005,"Guzman, Hoffman and Baldwin",contact5@guzmanhoffmanandba.example,Germany,Berlin,2025-08-06,Referral,Mid-Market,11-50,Professional Services,Active,2025-09-29 00:00:00
+CUST-000006,ACC-000006,"Gardner, Robinson and Lawrence",contact6@gardnerrobinsonand.example,Spain,Bilbao,2024-04-04,Email,Enterprise,51-200,Financial Services,Active,2024-05-25 00:00:00
+CUST-000007,ACC-000007,Blake and Sons,contact7@blakeandsons.example,United States,San Francisco,2024-11-13,Organic,Startup,51-200,Manufacturing,Active,2025-01-02 00:00:00
+CUST-000008,ACC-000008,"Henderson, Ramirez and Lewis",contact8@hendersonramirezan.example,Netherlands,Utrecht,2024-04-21,Partner,Startup,11-50,Professional Services,Active,2024-05-05 00:00:00
+CUST-000009,ACC-000009,Garcia-James,contact9@garcia-james.example,Canada,Calgary,2025-07-29,Email,SMB,201-1000,Retail,Active,2025-09-13 00:00:00
+CUST-000010,ACC-000010,Abbott-Munoz,contact10@abbott-munoz.example,United States,Seattle,2025-04-07,Paid Social,SMB,51-200,Logistics,Active,2025-04-12 00:00:00
+CUST-000011,ACC-000011,Blair PLC,contact11@blairplc.example,France,Lyon,2024-12-29,Direct,Mid-Market,201-1000,Education,Active,2025-01-11 00:00:00
+CUST-000012,ACC-000012,Dudley Group,contact12@dudleygroup.example,Australia,Perth,2024-10-14,Referral,Mid-Market,51-200,Retail,Active,2024-11-28 00:00:00
+CUST-000013,ACC-000013,Arnold Ltd,contact13@arnoldltd.example,Netherlands,Rotterdam,2024-04-21,Direct,Enterprise,1001-5000,Technology,Active,2024-06-16 00:00:00
+CUST-000014,ACC-000014,"Mcclure, Ward and Lee",contact14@mcclurewardandlee.example,Spain,Barcelona,2025-11-04,Direct,Enterprise,11-50,Financial Services,Active,2026-01-02 00:00:00
+CUST-000015,ACC-000015,Williams and Sons,contact15@williamsandsons.example,Netherlands,Utrecht,2025-04-18,Partner,Mid-Market,11-50,Manufacturing,Inactive,2025-07-16 00:00:00
+CUST-000016,ACC-000016,Galloway-Wyatt,contact16@galloway-wyatt.example,Spain,Bilbao,2024-08-21,Referral,SMB,51-200,Manufacturing,Active,2024-11-06 00:00:00
+CUST-000017,ACC-000017,James Group,contact17@jamesgroup.example,France,Lyon,2024-10-29,Email,Enterprise,51-200,Logistics,Active,2024-12-02 00:00:00
+CUST-000018,ACC-000018,"Flowers, Martin and Kelly",contact18@flowersmartinandke.example,Canada,Montreal,2025-06-14,Paid Search,Mid-Market,51-200,Media,Inactive,2025-08-24 00:00:00
+CUST-000019,ACC-000019,"Adams, Zuniga and Wong",contact19@adamszunigaandwong.example,Spain,Madrid,2025-06-10,Email,SMB,201-1000,Financial Services,Active,2025-06-18 00:00:00
+CUST-000020,ACC-000020,"Reid, Ferguson and Sanchez",contact20@reidfergusonandsan.example,Germany,Berlin,2024-12-03,Referral,Mid-Market,11-50,Education,Active,2025-02-19 00:00:00
+CUST-000021,ACC-000021,Gray-Mayo,contact21@gray-mayo.example,France,Paris,2024-08-09,Organic,Enterprise,1-10,Manufacturing,Active,2024-09-13 00:00:00
+CUST-000022,ACC-000022,"Watts, Robinson and Nguyen",contact22@wattsrobinsonandng.example,United Kingdom,London,2025-04-27,Partner,SMB,51-200,Financial Services,Active,2025-07-05 00:00:00
+CUST-000023,ACC-000023,Perez Inc,contact23@perezinc.example,Canada,Ottawa,2025-04-26,Paid Search,Mid-Market,201-1000,Professional Services,Inactive,2025-07-23 00:00:00
+CUST-000024,ACC-000024,Morales-Jones,contact24@morales-jones.example,Australia,Adelaide,2025-03-14,Organic,SMB,1001-5000,Education,Active,2025-05-16 00:00:00
+CUST-000025,ACC-000025,"Walter, Edwards and Rios",contact25@walteredwardsandri.example,Spain,Bilbao,2024-02-23,Organic,Startup,201-1000,Technology,Active,2024-05-16 00:00:00
+CUST-000026,ACC-000026,Wilkerson-Day,contact26@wilkerson-day.example,Netherlands,Amsterdam,2024-12-11,Organic,Enterprise,201-1000,Manufacturing,Active,2024-12-11 00:00:00
+CUST-000027,ACC-000027,Baker and Sons,contact27@bakerandsons.example,Germany,Berlin,2025-03-24,Paid Search,Startup,201-1000,Media,Active,2025-04-08 00:00:00
+CUST-000028,ACC-000028,"Hoffman, Baker and Richards",contact28@hoffmanbakerandric.example,Spain,Barcelona,2025-11-25,Paid Search,Startup,201-1000,Retail,Active,2026-01-20 00:00:00
+CUST-000029,ACC-000029,"Ross, Robinson and Bright",contact29@rossrobinsonandbri.example,France,Marseille,2025-01-19,Partner,SMB,11-50,Retail,Active,2025-03-09 00:00:00
+CUST-000030,ACC-000030,"Snyder, Campos and Callahan",contact30@snydercamposandcal.example,Germany,Munich,2024-09-07,Organic,SMB,201-1000,Financial Services,Active,2024-09-17 00:00:00
+CUST-000031,ACC-000031,Burton Ltd,contact31@burtonltd.example,Germany,Hamburg,2025-02-10,Paid Search,SMB,201-1000,Healthcare,Active,2025-04-16 00:00:00
+CUST-000032,ACC-000032,Carlson-Cruz,contact32@carlson-cruz.example,Canada,Toronto,2024-05-09,Paid Search,SMB,51-200,Telecommunications,Active,2024-05-14 00:00:00
+CUST-000033,ACC-000033,"Ferrell, Rice and Maddox",contact33@ferrellriceandmadd.example,United States,Chicago,2024-03-07,Organic,SMB,201-1000,Professional Services,Active,2024-06-05 00:00:00
+CUST-000034,ACC-000034,Frazier Inc,contact34@frazierinc.example,France,Lyon,2025-05-10,Paid Search,Enterprise,51-200,Financial Services,Active,2025-05-24 00:00:00
+CUST-000035,ACC-000035,"Dyer, Potter and Mack",contact35@dyerpotterandmack.example,Australia,Sydney,2025-12-21,Referral,Startup,51-200,Manufacturing,Active,2026-01-30 00:00:00
+CUST-000036,ACC-000036,Rodriguez-Graham,contact36@rodriguez-graham.example,United States,Chicago,2025-09-10,Referral,SMB,1-10,Financial Services,Active,2025-11-23 00:00:00
+CUST-000037,ACC-000037,Smith-Bowen,contact37@smith-bowen.example,Spain,Bilbao,2025-03-02,Paid Social,SMB,201-1000,Manufacturing,Active,2025-04-17 00:00:00
+CUST-000038,ACC-000038,"Baker, Mason and White",contact38@bakermasonandwhite.example,Spain,Madrid,2024-01-30,Email,Mid-Market,1001-5000,Financial Services,Active,2024-04-06 00:00:00
+CUST-000039,ACC-000039,Harrell LLC,contact39@harrellllc.example,United Kingdom,Birmingham,2025-12-23,Paid Search,Enterprise,11-50,Professional Services,Active,2026-02-25 00:00:00
+CUST-000040,ACC-000040,"Romero, Gonzalez and Brooks",contact40@romerogonzalezandb.example,Netherlands,The Hague,2024-11-24,Paid Social,SMB,51-200,Education,Active,2025-02-18 00:00:00
+CUST-000041,ACC-000041,Ryan PLC,contact41@ryanplc.example,Canada,Calgary,2024-07-30,Partner,SMB,1-10,Professional Services,Active,2024-09-10 00:00:00
+CUST-000042,ACC-000042,George Group,contact42@georgegroup.example,Spain,Bilbao,2025-10-14,Email,Mid-Market,1-10,Manufacturing,Active,2026-01-11 00:00:00
+CUST-000043,ACC-000043,Rodriguez LLC,contact43@rodriguezllc.example,Netherlands,Utrecht,2025-06-29,Partner,Mid-Market,5000+,Healthcare,Active,2025-08-15 00:00:00
+CUST-000044,ACC-000044,Allen-Allen,contact44@allen-allen.example,United Kingdom,Manchester,2025-07-01,Paid Social,Mid-Market,51-200,Healthcare,Active,2025-09-20 00:00:00
+CUST-000045,ACC-000045,"Arroyo, Miller and Tucker",contact45@arroyomillerandtuc.example,United States,Chicago,2024-07-22,Paid Social,SMB,51-200,Healthcare,Active,2024-09-26 00:00:00
+CUST-000046,ACC-000046,Spence PLC,contact46@spenceplc.example,Australia,Sydney,2025-12-26,Organic,Mid-Market,11-50,Manufacturing,Active,2026-01-07 00:00:00
+CUST-000047,ACC-000047,Anderson Group,contact47@andersongroup.example,Germany,Munich,2024-11-27,Organic,Startup,5000+,Manufacturing,Active,2025-01-24 00:00:00
+CUST-000048,ACC-000048,"Martin, Rose and Obrien",contact48@martinroseandobrie.example,Australia,Perth,2025-01-23,Direct,Enterprise,11-50,Professional Services,Active,2025-04-12 00:00:00
+CUST-000049,ACC-000049,Hickman Ltd,contact49@hickmanltd.example,Netherlands,Eindhoven,2025-07-02,Paid Search,Mid-Market,201-1000,Technology,Active,2025-07-13 00:00:00
+CUST-000050,ACC-000050,"Harris, Collins and Carney",contact50@harriscollinsandca.example,Spain,Madrid,2025-04-27,Partner,Mid-Market,51-200,Healthcare,Active,2025-07-12 00:00:00
+CUST-000051,ACC-000051,"Brooks, Lam and Hayes",contact51@brookslamandhayes.example,Spain,Valencia,2024-05-05,Partner,SMB,1-10,Logistics,Active,2024-05-14 00:00:00
+CUST-000052,ACC-000052,Walker LLC,contact52@walkerllc.example,Canada,Vancouver,2024-08-09,Email,SMB,201-1000,Telecommunications,Active,2024-10-27 00:00:00
+CUST-000053,ACC-000053,Chapman and Sons,contact53@chapmanandsons.example,United Kingdom,Birmingham,2024-09-21,Paid Social,SMB,1-10,Telecommunications,Active,2024-12-01 00:00:00
+CUST-000054,ACC-000054,"Robinson, Jones and Welch",contact54@robinsonjonesandwe.example,Germany,Cologne,2025-11-23,Organic,Startup,201-1000,Retail,Active,2025-12-06 00:00:00
+CUST-000055,ACC-000055,Jones Inc,contact55@jonesinc.example,Germany,Berlin,2025-06-06,Paid Social,Mid-Market,11-50,Financial Services,Active,2025-08-11 00:00:00
+CUST-000056,ACC-000056,Jones-Young,contact56@jones-young.example,United States,San Francisco,2024-09-24,Referral,SMB,201-1000,Financial Services,Active,2024-10-04 00:00:00
+CUST-000057,ACC-000057,"Washington, Ryan and Cummings",contact57@washingtonryanandc.example,France,Marseille,2025-06-21,Organic,Enterprise,201-1000,Financial Services,Inactive,2025-08-11 00:00:00
+CUST-000058,ACC-000058,"Johnston, Sanchez and Kennedy",contact58@johnstonsanchezand.example,Canada,Calgary,2025-06-23,Direct,Mid-Market,201-1000,Telecommunications,Active,2025-09-15 00:00:00
+CUST-000059,ACC-000059,Lee-Davis,contact59@lee-davis.example,Netherlands,Utrecht,2024-10-15,Email,Mid-Market,1-10,Logistics,Active,2024-11-02 00:00:00
+CUST-000060,ACC-000060,Gomez-Jenkins,contact60@gomez-jenkins.example,Netherlands,Rotterdam,2024-10-21,Organic,Enterprise,201-1000,Logistics,Inactive,2024-11-05 00:00:00
+CUST-000061,ACC-000061,"Brown, Valdez and Lucas",contact61@brownvaldezandluca.example,Australia,Perth,2025-10-15,Referral,SMB,5000+,Media,Churned,2025-11-22 00:00:00
+CUST-000062,ACC-000062,Powell LLC,contact62@powellllc.example,Netherlands,Eindhoven,2025-02-14,Organic,SMB,11-50,Retail,Active,2025-03-19 00:00:00
+CUST-000063,ACC-000063,Wright and Sons,contact63@wrightandsons.example,United Kingdom,London,2024-04-19,Partner,SMB,11-50,Manufacturing,Inactive,2024-04-23 00:00:00
+CUST-000064,ACC-000064,"West, Henderson and Ramirez",contact64@westhendersonandra.example,Australia,Perth,2025-06-10,Paid Search,SMB,1001-5000,Logistics,Inactive,2025-07-21 00:00:00
+CUST-000065,ACC-000065,Baxter Inc,contact65@baxterinc.example,Germany,Frankfurt,2025-03-06,Direct,SMB,11-50,Logistics,Active,2025-03-29 00:00:00
+CUST-000066,ACC-000066,Morton-Chase,contact66@morton-chase.example,United Kingdom,Manchester,2025-01-07,Partner,Mid-Market,201-1000,Education,Active,2025-01-18 00:00:00
+CUST-000067,ACC-000067,Williams PLC,contact67@williamsplc.example,Australia,Adelaide,2025-06-14,Partner,Enterprise,201-1000,Logistics,Active,2025-07-09 00:00:00
+CUST-000068,ACC-000068,Novak and Sons,contact68@novakandsons.example,United Kingdom,Bristol,2025-10-25,Organic,Enterprise,1-10,Retail,Active,2025-10-26 00:00:00
+CUST-000069,ACC-000069,Russell Group,contact69@russellgroup.example,United States,Austin,2024-08-29,Partner,SMB,201-1000,Manufacturing,Active,2024-11-20 00:00:00
+CUST-000070,ACC-000070,Hancock Inc,contact70@hancockinc.example,Germany,Berlin,2024-11-02,Paid Social,Startup,201-1000,Logistics,Active,2025-01-31 00:00:00
+CUST-000071,ACC-000071,Gray Group,contact71@graygroup.example,Spain,Seville,2024-05-18,Referral,Enterprise,51-200,Retail,Active,2024-06-20 00:00:00
+CUST-000072,ACC-000072,House-Glover,contact72@house-glover.example,Canada,Vancouver,2025-04-18,Paid Search,SMB,1001-5000,Media,Active,2025-07-06 00:00:00
+CUST-000073,ACC-000073,Henderson-Bernard,contact73@henderson-bernard.example,Germany,Frankfurt,2024-10-21,Paid Social,SMB,11-50,Manufacturing,Active,2024-12-01 00:00:00
+CUST-000074,ACC-000074,"Stanley, Tucker and Lee",contact74@stanleytuckerandle.example,Canada,Montreal,2024-09-07,Organic,SMB,51-200,Healthcare,Active,2024-11-29 00:00:00
+CUST-000075,ACC-000075,Novak PLC,contact75@novakplc.example,Netherlands,Utrecht,2025-05-24,Paid Social,SMB,1001-5000,Healthcare,Active,2025-06-08 00:00:00
+CUST-000076,ACC-000076,"Daniels, Adkins and Brown",contact76@danielsadkinsandbr.example,Germany,Berlin,2024-10-25,Organic,SMB,11-50,Professional Services,Active,2024-11-19 00:00:00
+CUST-000077,ACC-000077,"Woods, Calhoun and Schmidt",contact77@woodscalhounandsch.example,United Kingdom,Bristol,2024-12-05,Partner,SMB,1001-5000,Manufacturing,Active,2025-02-10 00:00:00
+CUST-000078,ACC-000078,Yu Inc,contact78@yuinc.example,Canada,Toronto,2024-11-17,Paid Social,SMB,1-10,Retail,Active,2024-12-07 00:00:00
+CUST-000079,ACC-000079,Jones Inc,contact79@jonesinc.example,France,Marseille,2024-07-07,Referral,Enterprise,51-200,Media,Churned,2024-09-19 00:00:00
+CUST-000080,ACC-000080,"Hensley, Powell and David",contact80@hensleypowellandda.example,Netherlands,The Hague,2024-04-01,Paid Search,Startup,1-10,Technology,Inactive,2024-05-09 00:00:00
+CUST-000081,ACC-000081,"Sanchez, Wheeler and Harvey",contact81@sanchezwheelerandh.example,Australia,Adelaide,2025-08-27,Referral,Enterprise,201-1000,Technology,Inactive,2025-10-02 00:00:00
+CUST-000082,ACC-000082,Sandoval-Cunningham,contact82@sandoval-cunningha.example,Germany,Cologne,2024-03-08,Referral,SMB,1001-5000,Telecommunications,Active,2024-04-18 00:00:00
+CUST-000083,ACC-000083,Donovan-Harris,contact83@donovan-harris.example,Canada,Ottawa,2024-08-25,Organic,Enterprise,1001-5000,Professional Services,Active,2024-11-05 00:00:00
+CUST-000084,ACC-000084,"Edwards, Baker and Anderson",contact84@edwardsbakerandand.example,Spain,Valencia,2025-05-02,Referral,Mid-Market,5000+,Education,Active,2025-05-02 00:00:00
+CUST-000085,ACC-000085,"Evans, Stewart and Walton",contact85@evansstewartandwal.example,Netherlands,Rotterdam,2024-04-05,Partner,Enterprise,201-1000,Technology,Active,2024-06-12 00:00:00
+CUST-000086,ACC-000086,Smith PLC,contact86@smithplc.example,Netherlands,The Hague,2025-04-24,Partner,Mid-Market,201-1000,Education,Inactive,2025-07-03 00:00:00
+CUST-000087,ACC-000087,"Ferrell, Jones and Lewis",contact87@ferrelljonesandlew.example,United States,San Francisco,2025-06-19,Organic,Mid-Market,51-200,Manufacturing,Active,2025-09-01 00:00:00
+CUST-000088,ACC-000088,Anderson-Bailey,contact88@anderson-bailey.example,United Kingdom,Edinburgh,2025-04-29,Organic,Enterprise,1001-5000,Education,Active,2025-07-28 00:00:00
+CUST-000089,ACC-000089,Suarez LLC,contact89@suarezllc.example,Spain,Seville,2024-08-10,Referral,Mid-Market,201-1000,Technology,Active,2024-10-20 00:00:00
+CUST-000090,ACC-000090,Moore-Bass,contact90@moore-bass.example,Spain,Madrid,2024-01-15,Paid Social,Mid-Market,1001-5000,Education,Active,2024-03-03 00:00:00
+CUST-000091,ACC-000091,"Turner, Riggs and Roman",contact91@turnerriggsandroma.example,Germany,Hamburg,2025-10-10,Partner,SMB,11-50,Education,Active,2025-11-21 00:00:00
+CUST-000092,ACC-000092,"Smith, Montoya and Evans",contact92@smithmontoyaandeva.example,Spain,Valencia,2024-08-26,Paid Social,Startup,51-200,Healthcare,Active,2024-09-30 00:00:00
+CUST-000093,ACC-000093,"Garcia, Humphrey and Baker",contact93@garciahumphreyandb.example,Spain,Bilbao,2025-08-11,Partner,SMB,201-1000,Technology,Inactive,2025-10-25 00:00:00
+CUST-000094,ACC-000094,Newton and Sons,contact94@newtonandsons.example,Germany,Munich,2024-05-24,Paid Search,Enterprise,11-50,Telecommunications,Active,2024-06-28 00:00:00
+CUST-000095,ACC-000095,Campbell-Clark,contact95@campbell-clark.example,Australia,Melbourne,2024-04-28,Paid Search,Mid-Market,11-50,Media,Active,2024-06-19 00:00:00
+CUST-000096,ACC-000096,Harris-Walters,contact96@harris-walters.example,United Kingdom,London,2025-07-22,Direct,Startup,5000+,Professional Services,Active,2025-07-30 00:00:00
+CUST-000097,ACC-000097,Wagner-King,contact97@wagner-king.example,Canada,Ottawa,2025-11-17,Partner,Enterprise,51-200,Media,Active,2025-12-15 00:00:00
+CUST-000098,ACC-000098,Davis Group,contact98@davisgroup.example,Netherlands,Eindhoven,2025-09-21,Partner,Mid-Market,11-50,Professional Services,Active,2025-10-15 00:00:00
+CUST-000099,ACC-000099,Williams-Cook,contact99@williams-cook.example,Netherlands,Amsterdam,2025-07-03,Direct,Startup,51-200,Financial Services,Active,2025-08-11 00:00:00
+CUST-000100,ACC-000100,Walsh LLC,contact100@walshllc.example,Canada,Montreal,2024-06-29,Organic,Startup,51-200,Manufacturing,Active,2024-08-13 00:00:00
+CUST-000101,ACC-000101,Figueroa PLC,contact101@figueroaplc.example,Spain,Valencia,2025-10-29,Paid Social,Mid-Market,201-1000,Logistics,Inactive,2026-01-02 00:00:00
+CUST-000102,ACC-000102,"Patterson, Smith and Jones",contact102@pattersonsmithandj.example,Canada,Montreal,2025-05-03,Paid Search,SMB,5000+,Healthcare,Active,2025-06-11 00:00:00
+CUST-000103,ACC-000103,"Mckee, Gardner and Davenport",contact103@mckeegardneranddav.example,Spain,Bilbao,2024-05-05,Organic,Mid-Market,5000+,Telecommunications,Active,2024-05-18 00:00:00
+CUST-000104,ACC-000104,"Tran, Jordan and Williams",contact104@tranjordanandwilli.example,United States,New York,2024-04-04,Paid Social,SMB,201-1000,Technology,Active,2024-05-23 00:00:00
+CUST-000105,ACC-000105,Nolan-Flynn,contact105@nolan-flynn.example,Spain,Barcelona,2025-09-28,Direct,Enterprise,201-1000,Retail,Active,2025-10-02 00:00:00
+CUST-000106,ACC-000106,Nolan and Sons,contact106@nolanandsons.example,Spain,Madrid,2024-07-20,Paid Search,Enterprise,51-200,Retail,Active,2024-10-05 00:00:00
+CUST-000107,ACC-000107,"Wright, Garcia and Deleon",contact107@wrightgarciaanddel.example,Spain,Barcelona,2025-07-13,Paid Search,SMB,1001-5000,Professional Services,Churned,2025-09-21 00:00:00
+CUST-000108,ACC-000108,Dickson-Brady,contact108@dickson-brady.example,Netherlands,The Hague,2024-04-11,Paid Social,Mid-Market,11-50,Financial Services,Active,2024-05-01 00:00:00
+CUST-000109,ACC-000109,Hancock and Sons,contact109@hancockandsons.example,Germany,Cologne,2024-07-24,Paid Search,SMB,11-50,Healthcare,Active,2024-08-16 00:00:00
+CUST-000110,ACC-000110,Johnson-Doyle,contact110@johnson-doyle.example,Netherlands,Amsterdam,2024-07-26,Paid Social,Mid-Market,5000+,Professional Services,Active,2024-07-28 00:00:00
+CUST-000111,ACC-000111,Patton-Jenkins,contact111@patton-jenkins.example,United Kingdom,Bristol,2024-07-24,Email,Startup,1001-5000,Healthcare,Active,2024-08-26 00:00:00
+CUST-000112,ACC-000112,"Shields, Cochran and Adams",contact112@shieldscochrananda.example,Spain,Barcelona,2025-05-08,Paid Social,SMB,51-200,Logistics,Active,2025-05-11 00:00:00
+CUST-000113,ACC-000113,"Rodriguez, Brennan and Garrison",contact113@rodriguezbrennanan.example,France,Paris,2025-10-30,Email,SMB,201-1000,Logistics,Active,2026-01-23 00:00:00
+CUST-000114,ACC-000114,Gonzalez Group,contact114@gonzalezgroup.example,Germany,Munich,2025-10-27,Partner,SMB,51-200,Retail,Active,2025-11-08 00:00:00
+CUST-000115,ACC-000115,Torres-Pope,contact115@torres-pope.example,France,Paris,2025-06-26,Email,Mid-Market,51-200,Education,Active,2025-08-25 00:00:00
+CUST-000116,ACC-000116,Walker Ltd,contact116@walkerltd.example,France,Marseille,2024-05-28,Email,SMB,51-200,Retail,Active,2024-07-18 00:00:00
+CUST-000117,ACC-000117,Ross LLC,contact117@rossllc.example,United States,San Francisco,2025-12-03,Paid Social,Mid-Market,11-50,Retail,Active,2025-12-24 00:00:00
+CUST-000118,ACC-000118,Rasmussen LLC,contact118@rasmussenllc.example,Canada,Montreal,2025-01-31,Paid Search,Startup,201-1000,Professional Services,Active,2025-04-14 00:00:00
+CUST-000119,ACC-000119,May-Ross,contact119@may-ross.example,Canada,Calgary,2025-02-03,Paid Social,SMB,51-200,Healthcare,Churned,2025-02-12 00:00:00
+CUST-000120,ACC-000120,"Rivera, Johnson and Wiley",contact120@riverajohnsonandwi.example,United States,Seattle,2025-05-27,Direct,Startup,51-200,Financial Services,Active,2025-08-15 00:00:00
+CUST-000121,ACC-000121,White-Estes,contact121@white-estes.example,Germany,Berlin,2025-07-16,Email,Startup,11-50,Healthcare,Active,2025-09-21 00:00:00
+CUST-000122,ACC-000122,Johnson-Carlson,contact122@johnson-carlson.example,Netherlands,Amsterdam,2025-11-27,Paid Social,Startup,5000+,Telecommunications,Active,2026-01-23 00:00:00
+CUST-000123,ACC-000123,Chandler-Edwards,contact123@chandler-edwards.example,Netherlands,Rotterdam,2025-03-01,Organic,Mid-Market,201-1000,Healthcare,Active,2025-05-20 00:00:00
+CUST-000124,ACC-000124,"Joyce, Wilson and Lam",contact124@joycewilsonandlam.example,Germany,Munich,2025-03-21,Partner,Startup,1001-5000,Retail,Active,2025-04-26 00:00:00
+CUST-000125,ACC-000125,Scott Ltd,contact125@scottltd.example,Spain,Bilbao,2025-06-28,Email,SMB,11-50,Professional Services,Active,2025-07-23 00:00:00
+CUST-000126,ACC-000126,Smith-Frost,contact126@smith-frost.example,France,Lille,2024-07-05,Email,Mid-Market,201-1000,Financial Services,Active,2024-07-19 00:00:00
+CUST-000127,ACC-000127,"Mcdaniel, Bentley and Mclaughlin",contact127@mcdanielbentleyand.example,United States,San Francisco,2024-08-12,Partner,SMB,1001-5000,Healthcare,Active,2024-11-04 00:00:00
+CUST-000128,ACC-000128,Diaz Inc,contact128@diazinc.example,Spain,Seville,2025-04-02,Email,Mid-Market,51-200,Financial Services,Active,2025-05-08 00:00:00
+CUST-000129,ACC-000129,"Mccall, Hanson and Alvarado",contact129@mccallhansonandalv.example,France,Marseille,2024-02-16,Email,Mid-Market,11-50,Telecommunications,Active,2024-05-01 00:00:00
+CUST-000130,ACC-000130,Cortez LLC,contact130@cortezllc.example,Netherlands,Eindhoven,2024-08-22,Paid Search,Mid-Market,11-50,Telecommunications,Active,2024-09-21 00:00:00
+CUST-000131,ACC-000131,"Parker, Ortiz and Powell",contact131@parkerortizandpowe.example,France,Marseille,2025-06-08,Paid Search,Enterprise,11-50,Media,Active,2025-09-02 00:00:00
+CUST-000132,ACC-000132,Spencer-Lee,contact132@spencer-lee.example,France,Toulouse,2025-12-14,Direct,SMB,51-200,Healthcare,Inactive,2026-03-03 00:00:00
+CUST-000133,ACC-000133,"Bentley, Byrd and Orr",contact133@bentleybyrdandorr.example,United States,Chicago,2025-01-14,Email,Startup,51-200,Professional Services,Active,2025-02-11 00:00:00
+CUST-000134,ACC-000134,"Carroll, Sullivan and Bass",contact134@carrollsullivanand.example,France,Toulouse,2024-10-19,Organic,SMB,11-50,Professional Services,Active,2024-12-02 00:00:00
+CUST-000135,ACC-000135,Mitchell-Jordan,contact135@mitchell-jordan.example,Spain,Seville,2024-11-17,Email,SMB,201-1000,Logistics,Churned,2025-01-28 00:00:00
+CUST-000136,ACC-000136,"Lawson, Morris and Ramos",contact136@lawsonmorrisandram.example,United Kingdom,London,2025-05-16,Paid Search,Mid-Market,1-10,Financial Services,Active,2025-06-05 00:00:00
+CUST-000137,ACC-000137,"Lewis, Kennedy and Santana",contact137@lewiskennedyandsan.example,France,Toulouse,2025-02-02,Partner,Mid-Market,51-200,Media,Active,2025-02-04 00:00:00
+CUST-000138,ACC-000138,"Jackson, Miller and Robertson",contact138@jacksonmillerandro.example,United States,Austin,2024-01-17,Paid Social,Mid-Market,201-1000,Financial Services,Inactive,2024-02-12 00:00:00
+CUST-000139,ACC-000139,"Harvey, Davis and Crane",contact139@harveydavisandcran.example,United Kingdom,Bristol,2025-01-29,Partner,SMB,11-50,Education,Active,2025-03-23 00:00:00
+CUST-000140,ACC-000140,Chambers and Sons,contact140@chambersandsons.example,Germany,Hamburg,2024-10-19,Organic,Mid-Market,11-50,Logistics,Active,2024-10-31 00:00:00
+CUST-000141,ACC-000141,Hernandez Inc,contact141@hernandezinc.example,Australia,Adelaide,2025-05-27,Paid Social,SMB,11-50,Technology,Active,2025-06-26 00:00:00
+CUST-000142,ACC-000142,Riggs PLC,contact142@riggsplc.example,Canada,Vancouver,2025-10-01,Paid Search,SMB,1-10,Financial Services,Active,2025-12-23 00:00:00
+CUST-000143,ACC-000143,Gibson Ltd,contact143@gibsonltd.example,United Kingdom,Edinburgh,2025-12-04,Partner,SMB,51-200,Logistics,Active,2025-12-10 00:00:00
+CUST-000144,ACC-000144,"Lee, Horton and Snyder",contact144@leehortonandsnyder.example,Germany,Cologne,2025-03-22,Paid Search,Startup,1-10,Technology,Active,2025-03-26 00:00:00
+CUST-000145,ACC-000145,Hernandez Ltd,contact145@hernandezltd.example,Australia,Melbourne,2024-09-22,Paid Search,Mid-Market,11-50,Professional Services,Active,2024-10-30 00:00:00
+CUST-000146,ACC-000146,Stafford Inc,contact146@staffordinc.example,Spain,Valencia,2024-11-20,Referral,Startup,5000+,Education,Active,2024-11-21 00:00:00
+CUST-000147,ACC-000147,Robinson-Brock,contact147@robinson-brock.example,United States,Seattle,2024-05-08,Paid Social,SMB,1001-5000,Retail,Active,2024-05-10 00:00:00
+CUST-000148,ACC-000148,"Holmes, Williams and Wright",contact148@holmeswilliamsandw.example,Canada,Calgary,2025-11-15,Organic,SMB,11-50,Logistics,Active,2025-12-01 00:00:00
+CUST-000149,ACC-000149,Bryant Group,contact149@bryantgroup.example,Spain,Seville,2025-09-11,Paid Social,SMB,51-200,Logistics,Inactive,2025-09-20 00:00:00
+CUST-000150,ACC-000150,"Schmidt, Hansen and Stewart",contact150@schmidthansenandst.example,United States,San Francisco,2025-09-16,Partner,SMB,51-200,Retail,Active,2025-11-28 00:00:00
+CUST-000151,ACC-000151,Salazar-Ball,contact151@salazar-ball.example,Spain,Barcelona,2024-08-27,Paid Social,Startup,1001-5000,Technology,Active,2024-09-07 00:00:00
+CUST-000152,ACC-000152,"Simmons, Meadows and Griffin",contact152@simmonsmeadowsandg.example,United Kingdom,Birmingham,2024-08-23,Paid Social,Mid-Market,1001-5000,Financial Services,Active,2024-10-09 00:00:00
+CUST-000153,ACC-000153,Manning Group,contact153@manninggroup.example,Australia,Brisbane,2025-09-18,Paid Social,SMB,11-50,Financial Services,Active,2025-11-21 00:00:00
+CUST-000154,ACC-000154,Green-Wright,contact154@green-wright.example,United Kingdom,Edinburgh,2025-02-02,Paid Social,SMB,11-50,Telecommunications,Active,2025-03-30 00:00:00
+CUST-000155,ACC-000155,"Ramirez, Strickland and Washington",contact155@ramirezstricklanda.example,Germany,Munich,2025-05-30,Paid Social,Mid-Market,51-200,Education,Inactive,2025-07-28 00:00:00
+CUST-000156,ACC-000156,Hill Inc,contact156@hillinc.example,Netherlands,Utrecht,2024-12-24,Paid Search,Startup,1001-5000,Professional Services,Active,2025-01-25 00:00:00
+CUST-000157,ACC-000157,"Mitchell, Nelson and Flores",contact157@mitchellnelsonandf.example,Canada,Toronto,2024-11-19,Paid Search,Mid-Market,1001-5000,Healthcare,Active,2025-02-07 00:00:00
+CUST-000158,ACC-000158,"Miller, Hernandez and Reyes",contact158@millerhernandezand.example,France,Lille,2025-04-07,Organic,SMB,11-50,Logistics,Active,2025-04-13 00:00:00
+CUST-000159,ACC-000159,Mccarthy Inc,contact159@mccarthyinc.example,France,Lyon,2025-08-17,Partner,Enterprise,201-1000,Media,Active,2025-08-26 00:00:00
+CUST-000160,ACC-000160,Russell-Daniels,contact160@russell-daniels.example,Spain,Barcelona,2024-09-01,Paid Search,Mid-Market,11-50,Media,Active,2024-11-17 00:00:00
+CUST-000161,ACC-000161,Brown-Wall,contact161@brown-wall.example,Australia,Brisbane,2025-08-14,Paid Social,SMB,201-1000,Manufacturing,Active,2025-08-20 00:00:00
+CUST-000162,ACC-000162,Stein-Silva,contact162@stein-silva.example,Netherlands,Utrecht,2024-06-27,Partner,Mid-Market,1001-5000,Professional Services,Active,2024-07-14 00:00:00
+CUST-000163,ACC-000163,"Smith, Gilmore and Johnston",contact163@smithgilmoreandjoh.example,Germany,Cologne,2024-10-21,Partner,Mid-Market,51-200,Education,Active,2024-11-05 00:00:00
+CUST-000164,ACC-000164,Smith-Bell,contact164@smith-bell.example,Germany,Hamburg,2025-10-29,Email,Mid-Market,1-10,Retail,Active,2025-11-01 00:00:00
+CUST-000165,ACC-000165,Castaneda-Ashley,contact165@castaneda-ashley.example,Germany,Hamburg,2025-11-28,Paid Social,SMB,201-1000,Education,Inactive,2025-12-08 00:00:00
+CUST-000166,ACC-000166,Medina-Navarro,contact166@medina-navarro.example,Spain,Madrid,2025-11-06,Organic,SMB,51-200,Retail,Active,2025-12-28 00:00:00
+CUST-000167,ACC-000167,"Hurst, Freeman and Nelson",contact167@hurstfreemanandnel.example,United Kingdom,London,2024-08-19,Paid Social,Startup,1001-5000,Telecommunications,Active,2024-10-18 00:00:00
+CUST-000168,ACC-000168,Johnson-Rogers,contact168@johnson-rogers.example,Canada,Vancouver,2025-09-08,Paid Search,Enterprise,51-200,Media,Active,2025-09-15 00:00:00
+CUST-000169,ACC-000169,"Yates, Ramsey and Pittman",contact169@yatesramseyandpitt.example,United Kingdom,Edinburgh,2025-11-15,Paid Social,SMB,1001-5000,Media,Active,2026-02-08 00:00:00
+CUST-000170,ACC-000170,Hooper PLC,contact170@hooperplc.example,United States,San Francisco,2025-12-16,Email,Mid-Market,11-50,Media,Inactive,2025-12-24 00:00:00
+CUST-000171,ACC-000171,Meadows PLC,contact171@meadowsplc.example,United States,Chicago,2024-01-16,Paid Social,SMB,11-50,Manufacturing,Active,2024-03-18 00:00:00
+CUST-000172,ACC-000172,"Alvarado, Miller and Patterson",contact172@alvaradomillerandp.example,United States,Chicago,2025-06-28,Email,Mid-Market,51-200,Telecommunications,Active,2025-09-08 00:00:00
+CUST-000173,ACC-000173,White-Green,contact173@white-green.example,Spain,Barcelona,2025-12-29,Paid Social,Mid-Market,1-10,Healthcare,Active,2026-02-14 00:00:00
+CUST-000174,ACC-000174,Lewis-Murphy,contact174@lewis-murphy.example,Netherlands,Amsterdam,2025-07-12,Paid Social,Mid-Market,51-200,Education,Active,2025-08-25 00:00:00
+CUST-000175,ACC-000175,Ramirez-Bean,contact175@ramirez-bean.example,Netherlands,Amsterdam,2024-06-19,Referral,SMB,201-1000,Technology,Active,2024-06-28 00:00:00
+CUST-000176,ACC-000176,King-Miller,contact176@king-miller.example,Germany,Munich,2025-07-11,Partner,SMB,11-50,Healthcare,Inactive,2025-08-01 00:00:00
+CUST-000177,ACC-000177,Curry Inc,contact177@curryinc.example,Netherlands,Rotterdam,2024-03-17,Paid Social,Mid-Market,11-50,Education,Active,2024-06-02 00:00:00
+CUST-000178,ACC-000178,Walker-Jones,contact178@walker-jones.example,Canada,Toronto,2024-12-17,Email,SMB,11-50,Manufacturing,Active,2025-01-17 00:00:00
+CUST-000179,ACC-000179,"Williams, Johnson and Wright",contact179@williamsjohnsonand.example,Australia,Melbourne,2025-04-02,Paid Social,SMB,1-10,Telecommunications,Inactive,2025-04-05 00:00:00
+CUST-000180,ACC-000180,Howell and Sons,contact180@howellandsons.example,France,Paris,2024-11-29,Paid Search,Mid-Market,1001-5000,Professional Services,Active,2025-02-03 00:00:00
+CUST-000181,ACC-000181,Wells Inc,contact181@wellsinc.example,Australia,Perth,2025-05-26,Referral,SMB,5000+,Manufacturing,Active,2025-07-27 00:00:00
+CUST-000182,ACC-000182,"Gould, Marshall and Scott",contact182@gouldmarshallandsc.example,Canada,Ottawa,2024-06-24,Paid Search,SMB,1-10,Manufacturing,Active,2024-06-30 00:00:00
+CUST-000183,ACC-000183,Jackson-Lawson,contact183@jackson-lawson.example,Germany,Frankfurt,2025-03-19,Organic,Enterprise,201-1000,Professional Services,Active,2025-03-23 00:00:00
+CUST-000184,ACC-000184,"Higgins, Strickland and Martin",contact184@higginsstricklanda.example,Netherlands,Utrecht,2025-04-16,Organic,SMB,201-1000,Media,Active,2025-04-26 00:00:00
+CUST-000185,ACC-000185,Rodriguez-Johnson,contact185@rodriguez-johnson.example,Germany,Hamburg,2025-04-08,Paid Search,Mid-Market,5000+,Healthcare,Active,2025-04-12 00:00:00
+CUST-000186,ACC-000186,Johnston-Odonnell,contact186@johnston-odonnell.example,Germany,Munich,2024-07-30,Paid Search,SMB,51-200,Education,Active,2024-09-24 00:00:00
+CUST-000187,ACC-000187,Sanders-Espinoza,contact187@sanders-espinoza.example,Canada,Toronto,2024-08-11,Paid Social,Mid-Market,51-200,Education,Active,2024-08-23 00:00:00
+CUST-000188,ACC-000188,Vargas Ltd,contact188@vargasltd.example,Germany,Hamburg,2024-07-07,Direct,SMB,51-200,Technology,Active,2024-08-31 00:00:00
+CUST-000189,ACC-000189,Garcia LLC,contact189@garciallc.example,Canada,Montreal,2024-12-03,Email,Mid-Market,1001-5000,Telecommunications,Active,2024-12-19 00:00:00
+CUST-000190,ACC-000190,"Burke, Martinez and Riggs",contact190@burkemartinezandri.example,United Kingdom,London,2025-03-04,Organic,SMB,201-1000,Education,Active,2025-05-31 00:00:00
+CUST-000191,ACC-000191,Reed Group,contact191@reedgroup.example,Netherlands,Utrecht,2024-09-22,Paid Search,Startup,51-200,Healthcare,Active,2024-11-27 00:00:00
+CUST-000192,ACC-000192,"Wood, Hunter and Peterson",contact192@woodhunterandpeter.example,Netherlands,Rotterdam,2024-10-26,Email,Mid-Market,11-50,Professional Services,Inactive,2024-11-29 00:00:00
+CUST-000193,ACC-000193,Short-Garcia,contact193@short-garcia.example,France,Paris,2024-07-28,Paid Search,Startup,201-1000,Professional Services,Active,2024-09-05 00:00:00
+CUST-000194,ACC-000194,Reid-Poole,contact194@reid-poole.example,United Kingdom,Bristol,2024-06-08,Email,Startup,1001-5000,Telecommunications,Active,2024-06-13 00:00:00
+CUST-000195,ACC-000195,"Hernandez, Thompson and Boyd",contact195@hernandezthompsona.example,Australia,Brisbane,2025-04-25,Referral,Startup,51-200,Technology,Active,2025-04-29 00:00:00
+CUST-000196,ACC-000196,"Nelson, Morton and Medina",contact196@nelsonmortonandmed.example,United States,Chicago,2025-08-19,Organic,Enterprise,201-1000,Manufacturing,Active,2025-10-06 00:00:00
+CUST-000197,ACC-000197,Marshall-Petersen,contact197@marshall-petersen.example,United Kingdom,Bristol,2024-07-31,Paid Social,SMB,51-200,Financial Services,Active,2024-08-02 00:00:00
+CUST-000198,ACC-000198,"Adams, Christian and Rivas",contact198@adamschristianandr.example,United States,San Francisco,2025-09-21,Paid Search,Enterprise,51-200,Education,Active,2025-11-18 00:00:00
+CUST-000199,ACC-000199,Ramirez Group,contact199@ramirezgroup.example,United Kingdom,Edinburgh,2025-02-21,Paid Search,Mid-Market,51-200,Education,Churned,2025-03-27 00:00:00
+CUST-000200,ACC-000200,Christensen PLC,contact200@christensenplc.example,Australia,Perth,2024-05-02,Organic,Startup,201-1000,Manufacturing,Active,2024-05-14 00:00:00
+CUST-000201,ACC-000201,"Barnett, Rogers and Snyder",contact201@barnettrogersandsn.example,United Kingdom,Edinburgh,2024-09-24,Partner,SMB,5000+,Telecommunications,Inactive,2024-11-11 00:00:00
+CUST-000202,ACC-000202,White-Lewis,contact202@white-lewis.example,Australia,Brisbane,2024-01-06,Paid Social,SMB,51-200,Education,Churned,2024-02-25 00:00:00
+CUST-000203,ACC-000203,Peterson-Beard,contact203@peterson-beard.example,Germany,Cologne,2024-01-29,Email,Mid-Market,51-200,Manufacturing,Active,2024-04-05 00:00:00
+CUST-000204,ACC-000204,"Beard, Peters and Black",contact204@beardpetersandblac.example,Netherlands,Eindhoven,2024-09-02,Email,SMB,51-200,Technology,Active,2024-09-19 00:00:00
+CUST-000205,ACC-000205,Miller Ltd,contact205@millerltd.example,Germany,Frankfurt,2024-11-28,Paid Search,SMB,11-50,Healthcare,Active,2025-01-16 00:00:00
+CUST-000206,ACC-000206,Freeman-Chang,contact206@freeman-chang.example,United Kingdom,Edinburgh,2025-08-05,Paid Search,Mid-Market,51-200,Logistics,Churned,2025-10-20 00:00:00
+CUST-000207,ACC-000207,"Alvarez, Joseph and West",contact207@alvarezjosephandwe.example,Spain,Valencia,2024-04-08,Paid Social,Startup,1-10,Manufacturing,Active,2024-05-02 00:00:00
+CUST-000208,ACC-000208,Davis and Sons,contact208@davisandsons.example,Australia,Perth,2025-09-05,Email,Mid-Market,51-200,Telecommunications,Active,2025-11-19 00:00:00
+CUST-000209,ACC-000209,Holt-Torres,contact209@holt-torres.example,United Kingdom,Manchester,2024-06-20,Organic,Enterprise,11-50,Education,Inactive,2024-08-24 00:00:00
+CUST-000210,ACC-000210,"Wood, Tran and Cooper",contact210@woodtranandcooper.example,Spain,Bilbao,2024-04-11,Referral,SMB,51-200,Education,Active,2024-05-20 00:00:00
+CUST-000211,ACC-000211,"Pierce, Bell and Chavez",contact211@piercebellandchave.example,United Kingdom,Bristol,2025-05-26,Partner,Startup,1001-5000,Manufacturing,Active,2025-08-14 00:00:00
+CUST-000212,ACC-000212,King-Martinez,contact212@king-martinez.example,Netherlands,Eindhoven,2025-07-20,Referral,Mid-Market,11-50,Education,Active,2025-10-15 00:00:00
+CUST-000213,ACC-000213,Stewart Ltd,contact213@stewartltd.example,Spain,Valencia,2025-03-18,Direct,Mid-Market,201-1000,Technology,Churned,2025-04-08 00:00:00
+CUST-000214,ACC-000214,"Tapia, Vaughn and Lee",contact214@tapiavaughnandlee.example,Germany,Cologne,2024-03-25,Referral,Enterprise,1001-5000,Technology,Inactive,2024-06-22 00:00:00
+CUST-000215,ACC-000215,"Washington, Hardy and Bray",contact215@washingtonhardyand.example,Netherlands,Amsterdam,2024-03-25,Partner,Startup,201-1000,Manufacturing,Active,2024-03-25 00:00:00
+CUST-000216,ACC-000216,"Carlson, Hooper and Wall",contact216@carlsonhooperandwa.example,United Kingdom,London,2024-10-12,Partner,Mid-Market,11-50,Education,Active,2024-10-23 00:00:00
+CUST-000217,ACC-000217,Perez-White,contact217@perez-white.example,United States,Seattle,2024-11-25,Referral,SMB,51-200,Education,Active,2024-11-28 00:00:00
+CUST-000218,ACC-000218,Erickson and Sons,contact218@ericksonandsons.example,United States,Chicago,2025-12-30,Partner,Startup,201-1000,Manufacturing,Active,2026-02-01 00:00:00
+CUST-000219,ACC-000219,Williams-Brown,contact219@williams-brown.example,Germany,Cologne,2024-07-28,Direct,Enterprise,51-200,Healthcare,Active,2024-10-21 00:00:00
+CUST-000220,ACC-000220,Terry-Martinez,contact220@terry-martinez.example,Australia,Brisbane,2024-05-20,Organic,SMB,11-50,Media,Active,2024-07-13 00:00:00
+CUST-000221,ACC-000221,Garcia-Smith,contact221@garcia-smith.example,Canada,Calgary,2025-11-22,Email,SMB,51-200,Professional Services,Active,2026-01-17 00:00:00
+CUST-000222,ACC-000222,Harrison-Alexander,contact222@harrison-alexander.example,Germany,Hamburg,2024-04-22,Organic,SMB,201-1000,Technology,Active,2024-04-29 00:00:00
+CUST-000223,ACC-000223,Sheppard LLC,contact223@sheppardllc.example,Netherlands,The Hague,2024-01-20,Partner,Mid-Market,11-50,Manufacturing,Active,2024-03-06 00:00:00
+CUST-000224,ACC-000224,Wilson-Jones,contact224@wilson-jones.example,Canada,Calgary,2024-11-05,Organic,Mid-Market,201-1000,Media,Active,2024-12-09 00:00:00
+CUST-000225,ACC-000225,Jones-Soto,contact225@jones-soto.example,Netherlands,Utrecht,2024-10-20,Partner,Enterprise,1-10,Media,Active,2024-12-02 00:00:00
+CUST-000226,ACC-000226,Hernandez PLC,contact226@hernandezplc.example,United Kingdom,Edinburgh,2025-03-28,Referral,SMB,51-200,Healthcare,Active,2025-04-20 00:00:00
+CUST-000227,ACC-000227,Miller-Wright,contact227@miller-wright.example,Spain,Madrid,2025-10-03,Direct,SMB,1001-5000,Telecommunications,Active,2025-10-21 00:00:00
+CUST-000228,ACC-000228,"Duran, Obrien and Gibbs",contact228@duranobrienandgibb.example,France,Lille,2025-11-12,Paid Social,Enterprise,11-50,Professional Services,Inactive,2026-02-06 00:00:00
+CUST-000229,ACC-000229,Rowe Group,contact229@rowegroup.example,France,Paris,2024-07-30,Referral,Mid-Market,201-1000,Manufacturing,Active,2024-09-18 00:00:00
+CUST-000230,ACC-000230,Kerr-Evans,contact230@kerr-evans.example,Canada,Vancouver,2025-12-17,Referral,Startup,51-200,Professional Services,Active,2026-01-23 00:00:00
+CUST-000231,ACC-000231,"Branch, Torres and Oliver",contact231@branchtorresandoli.example,Germany,Cologne,2025-04-07,Direct,Enterprise,51-200,Logistics,Inactive,2025-04-13 00:00:00
+CUST-000232,ACC-000232,"Choi, Garcia and Farmer",contact232@choigarciaandfarme.example,Spain,Seville,2024-02-20,Partner,Mid-Market,1001-5000,Healthcare,Active,2024-04-29 00:00:00
+CUST-000233,ACC-000233,"Clark, Guerrero and Moore",contact233@clarkguerreroandmo.example,United States,San Francisco,2025-11-17,Email,SMB,51-200,Financial Services,Active,2025-12-30 00:00:00
+CUST-000234,ACC-000234,Arnold and Sons,contact234@arnoldandsons.example,Spain,Seville,2024-04-10,Email,Mid-Market,11-50,Manufacturing,Active,2024-05-15 00:00:00
+CUST-000235,ACC-000235,Ortiz Ltd,contact235@ortizltd.example,Germany,Frankfurt,2025-03-06,Paid Search,Mid-Market,1001-5000,Technology,Inactive,2025-05-05 00:00:00
+CUST-000236,ACC-000236,"Harrison, Johnson and Roberts",contact236@harrisonjohnsonand.example,Netherlands,Rotterdam,2025-08-01,Direct,Mid-Market,201-1000,Logistics,Active,2025-08-12 00:00:00
+CUST-000237,ACC-000237,Warner-Gibson,contact237@warner-gibson.example,Netherlands,Amsterdam,2024-07-01,Paid Social,Mid-Market,201-1000,Telecommunications,Inactive,2024-08-18 00:00:00
+CUST-000238,ACC-000238,"Hall, Baker and Moody",contact238@hallbakerandmoody.example,Germany,Berlin,2024-07-16,Referral,SMB,1-10,Professional Services,Active,2024-10-02 00:00:00
+CUST-000239,ACC-000239,"Guerrero, Peck and Coleman",contact239@guerreropeckandcol.example,United Kingdom,Manchester,2024-12-14,Referral,SMB,11-50,Telecommunications,Active,2025-01-25 00:00:00
+CUST-000240,ACC-000240,"Walker, Hernandez and Baker",contact240@walkerhernandezand.example,Netherlands,Amsterdam,2025-10-08,Organic,SMB,201-1000,Technology,Active,2025-10-08 00:00:00
+CUST-000241,ACC-000241,Jones and Sons,contact241@jonesandsons.example,Canada,Montreal,2024-06-12,Paid Social,Enterprise,11-50,Professional Services,Active,2024-07-02 00:00:00
+CUST-000242,ACC-000242,Larson-Holloway,contact242@larson-holloway.example,France,Toulouse,2025-04-29,Paid Search,SMB,11-50,Manufacturing,Active,2025-05-04 00:00:00
+CUST-000243,ACC-000243,Gonzales-Harrison,contact243@gonzales-harrison.example,United States,San Francisco,2024-11-26,Partner,Enterprise,201-1000,Healthcare,Active,2025-01-10 00:00:00
+CUST-000244,ACC-000244,Lyons-Bender,contact244@lyons-bender.example,Netherlands,Utrecht,2024-03-22,Organic,SMB,51-200,Retail,Inactive,2024-04-24 00:00:00
+CUST-000245,ACC-000245,"Fernandez, Kim and George",contact245@fernandezkimandgeo.example,Netherlands,The Hague,2025-06-03,Paid Search,Mid-Market,1-10,Education,Active,2025-06-15 00:00:00
+CUST-000246,ACC-000246,Navarro-Munoz,contact246@navarro-munoz.example,United States,San Francisco,2025-08-31,Referral,SMB,1-10,Professional Services,Active,2025-11-01 00:00:00
+CUST-000247,ACC-000247,Davis Ltd,contact247@davisltd.example,Spain,Bilbao,2025-02-24,Paid Social,Mid-Market,51-200,Financial Services,Active,2025-03-12 00:00:00
+CUST-000248,ACC-000248,"Matthews, Smith and Hubbard",contact248@matthewssmithandhu.example,Germany,Hamburg,2024-05-08,Partner,Mid-Market,201-1000,Professional Services,Active,2024-06-08 00:00:00
+CUST-000249,ACC-000249,Johnston-Hines,contact249@johnston-hines.example,Spain,Barcelona,2024-04-23,Paid Social,SMB,1001-5000,Telecommunications,Active,2024-07-21 00:00:00
+CUST-000250,ACC-000250,Ruiz Ltd,contact250@ruizltd.example,United States,San Francisco,2024-11-05,Paid Social,Enterprise,11-50,Technology,Active,2024-11-11 00:00:00
+CUST-000251,ACC-000251,Moon-White,contact251@moon-white.example,Canada,Vancouver,2025-01-05,Paid Search,Mid-Market,11-50,Logistics,Active,2025-01-27 00:00:00
+CUST-000252,ACC-000252,"Graham, Olsen and Costa",contact252@grahamolsenandcost.example,Germany,Hamburg,2025-02-07,Organic,SMB,51-200,Professional Services,Active,2025-03-07 00:00:00
+CUST-000253,ACC-000253,Bailey-Cook,contact253@bailey-cook.example,Canada,Toronto,2024-06-27,Organic,SMB,51-200,Retail,Inactive,2024-08-12 00:00:00
+CUST-000254,ACC-000254,"Garcia, Martin and Jenkins",contact254@garciamartinandjen.example,United Kingdom,Bristol,2025-01-01,Referral,Enterprise,51-200,Media,Active,2025-01-23 00:00:00
+CUST-000255,ACC-000255,Roberts-Landry,contact255@roberts-landry.example,Netherlands,Eindhoven,2024-08-03,Organic,Startup,5000+,Professional Services,Active,2024-10-30 00:00:00
+CUST-000256,ACC-000256,"Johnson, Miller and King",contact256@johnsonmillerandki.example,Canada,Toronto,2025-05-16,Paid Social,SMB,201-1000,Media,Active,2025-05-16 00:00:00
+CUST-000257,ACC-000257,Cordova Group,contact257@cordovagroup.example,Netherlands,Rotterdam,2025-08-05,Paid Social,Startup,51-200,Technology,Active,2025-10-30 00:00:00
+CUST-000258,ACC-000258,"Bryan, Smith and Booth",contact258@bryansmithandbooth.example,United States,Seattle,2025-04-22,Paid Social,SMB,5000+,Technology,Churned,2025-06-09 00:00:00
+CUST-000259,ACC-000259,Gutierrez-Lopez,contact259@gutierrez-lopez.example,Canada,Montreal,2024-01-01,Direct,SMB,1-10,Professional Services,Inactive,2024-01-04 00:00:00
+CUST-000260,ACC-000260,Dean-Jimenez,contact260@dean-jimenez.example,France,Lille,2025-12-26,Paid Search,SMB,5000+,Retail,Inactive,2026-01-05 00:00:00
+CUST-000261,ACC-000261,Wolf-Harris,contact261@wolf-harris.example,Spain,Barcelona,2024-01-18,Direct,SMB,51-200,Healthcare,Active,2024-01-27 00:00:00
+CUST-000262,ACC-000262,"Anderson, Roberts and Gilmore",contact262@andersonrobertsand.example,Canada,Ottawa,2025-12-31,Paid Social,Startup,51-200,Manufacturing,Active,2026-01-26 00:00:00
+CUST-000263,ACC-000263,Martinez-Dudley,contact263@martinez-dudley.example,United Kingdom,Birmingham,2024-01-24,Paid Search,Enterprise,5000+,Media,Active,2024-02-23 00:00:00
+CUST-000264,ACC-000264,"Lloyd, Mckinney and Collins",contact264@lloydmckinneyandco.example,Australia,Adelaide,2025-01-12,Paid Social,Mid-Market,51-200,Financial Services,Active,2025-03-11 00:00:00
+CUST-000265,ACC-000265,Tran Inc,contact265@traninc.example,Australia,Melbourne,2024-03-18,Paid Search,Enterprise,51-200,Telecommunications,Active,2024-04-15 00:00:00
+CUST-000266,ACC-000266,Gay Inc,contact266@gayinc.example,France,Paris,2024-03-10,Referral,Startup,11-50,Manufacturing,Active,2024-05-14 00:00:00
+CUST-000267,ACC-000267,Valentine-Holland,contact267@valentine-holland.example,Germany,Berlin,2025-05-14,Organic,Mid-Market,201-1000,Financial Services,Churned,2025-06-09 00:00:00
+CUST-000268,ACC-000268,Jimenez Ltd,contact268@jimenezltd.example,United Kingdom,Manchester,2025-06-16,Paid Social,SMB,201-1000,Technology,Active,2025-07-09 00:00:00
+CUST-000269,ACC-000269,Hicks-Hill,contact269@hicks-hill.example,France,Lille,2024-03-27,Email,SMB,11-50,Logistics,Active,2024-04-21 00:00:00
+CUST-000270,ACC-000270,Baird-Sanchez,contact270@baird-sanchez.example,France,Paris,2025-12-14,Email,Startup,201-1000,Financial Services,Active,2026-01-12 00:00:00
+CUST-000271,ACC-000271,"Thomas, Lee and Greene",contact271@thomasleeandgreene.example,United Kingdom,Manchester,2024-08-22,Direct,Enterprise,201-1000,Manufacturing,Active,2024-11-06 00:00:00
+CUST-000272,ACC-000272,"Suarez, Shields and Hill",contact272@suarezshieldsandhi.example,United States,New York,2024-08-20,Direct,SMB,51-200,Professional Services,Active,2024-09-11 00:00:00
+CUST-000273,ACC-000273,Morgan-French,contact273@morgan-french.example,Canada,Ottawa,2024-08-05,Email,Startup,1-10,Education,Active,2024-08-29 00:00:00
+CUST-000274,ACC-000274,Hoover-Campbell,contact274@hoover-campbell.example,Australia,Perth,2024-12-03,Partner,Enterprise,51-200,Healthcare,Inactive,2025-02-28 00:00:00
+CUST-000275,ACC-000275,Monroe-Carpenter,contact275@monroe-carpenter.example,Germany,Frankfurt,2024-05-09,Referral,SMB,1-10,Financial Services,Active,2024-07-07 00:00:00
+CUST-000276,ACC-000276,"Burns, Hernandez and Ryan",contact276@burnshernandezandr.example,Germany,Frankfurt,2024-11-06,Organic,Mid-Market,1-10,Media,Active,2024-11-23 00:00:00
+CUST-000277,ACC-000277,Cook-Hines,contact277@cook-hines.example,Germany,Frankfurt,2024-06-02,Referral,SMB,51-200,Manufacturing,Active,2024-08-20 00:00:00
+CUST-000278,ACC-000278,Gibson-Morris,contact278@gibson-morris.example,Spain,Seville,2024-02-07,Paid Search,SMB,1-10,Technology,Active,2024-02-23 00:00:00
+CUST-000279,ACC-000279,Pollard and Sons,contact279@pollardandsons.example,United States,New York,2024-09-26,Referral,Mid-Market,11-50,Financial Services,Active,2024-10-10 00:00:00
+CUST-000280,ACC-000280,"Reyes, Chase and Jenkins",contact280@reyeschaseandjenki.example,United States,San Francisco,2025-05-06,Direct,Enterprise,201-1000,Education,Active,2025-06-15 00:00:00
+CUST-000281,ACC-000281,Garner-Thornton,contact281@garner-thornton.example,United Kingdom,Bristol,2025-07-11,Paid Search,Enterprise,51-200,Financial Services,Active,2025-09-11 00:00:00
+CUST-000282,ACC-000282,Hughes-Alvarado,contact282@hughes-alvarado.example,Germany,Frankfurt,2024-09-15,Partner,Enterprise,5000+,Retail,Active,2024-10-02 00:00:00
+CUST-000283,ACC-000283,"Pollard, Simpson and Johnson",contact283@pollardsimpsonandj.example,Netherlands,Rotterdam,2024-08-24,Direct,SMB,1001-5000,Financial Services,Active,2024-10-31 00:00:00
+CUST-000284,ACC-000284,"Sanford, Rivera and Garcia",contact284@sanfordriveraandga.example,Germany,Cologne,2025-07-29,Paid Social,Mid-Market,201-1000,Media,Active,2025-08-12 00:00:00
+CUST-000285,ACC-000285,Garcia-Lozano,contact285@garcia-lozano.example,Germany,Munich,2025-05-12,Organic,Mid-Market,5000+,Professional Services,Active,2025-07-22 00:00:00
+CUST-000286,ACC-000286,Bowen Group,contact286@bowengroup.example,Australia,Sydney,2025-08-31,Direct,SMB,1001-5000,Media,Active,2025-09-08 00:00:00
+CUST-000287,ACC-000287,"Booker, Jones and Harrington",contact287@bookerjonesandharr.example,Canada,Ottawa,2025-10-24,Direct,SMB,51-200,Technology,Active,2025-12-05 00:00:00
+CUST-000288,ACC-000288,Morgan-Schwartz,contact288@morgan-schwartz.example,France,Lyon,2025-08-23,Paid Search,SMB,201-1000,Retail,Active,2025-10-20 00:00:00
+CUST-000289,ACC-000289,"Miller, Murphy and Craig",contact289@millermurphyandcra.example,France,Paris,2025-11-15,Paid Social,Startup,11-50,Healthcare,Active,2025-12-09 00:00:00
+CUST-000290,ACC-000290,"James, Stewart and Higgins",contact290@jamesstewartandhig.example,Germany,Frankfurt,2024-10-31,Email,Mid-Market,201-1000,Professional Services,Active,2024-12-25 00:00:00
+CUST-000291,ACC-000291,Brennan-Johnson,contact291@brennan-johnson.example,Spain,Barcelona,2024-10-15,Paid Social,SMB,51-200,Logistics,Active,2024-12-16 00:00:00
+CUST-000292,ACC-000292,Young Ltd,contact292@youngltd.example,United Kingdom,Edinburgh,2024-08-23,Paid Social,Enterprise,1-10,Healthcare,Active,2024-10-21 00:00:00
+CUST-000293,ACC-000293,Bright-Francis,contact293@bright-francis.example,Australia,Brisbane,2024-06-20,Paid Search,SMB,11-50,Media,Active,2024-07-26 00:00:00
+CUST-000294,ACC-000294,Good-Hodges,contact294@good-hodges.example,United Kingdom,London,2025-07-01,Paid Search,Startup,5000+,Education,Active,2025-09-09 00:00:00
+CUST-000295,ACC-000295,"Brennan, Wallace and Benson",contact295@brennanwallaceandb.example,France,Lille,2025-06-06,Email,SMB,51-200,Logistics,Inactive,2025-08-11 00:00:00
+CUST-000296,ACC-000296,Williams Inc,contact296@williamsinc.example,France,Marseille,2025-08-08,Email,SMB,11-50,Technology,Active,2025-09-06 00:00:00
+CUST-000297,ACC-000297,Howard-Jordan,contact297@howard-jordan.example,Spain,Barcelona,2024-05-02,Email,SMB,11-50,Telecommunications,Active,2024-07-07 00:00:00
+CUST-000298,ACC-000298,Schmidt PLC,contact298@schmidtplc.example,Germany,Frankfurt,2024-12-25,Referral,Mid-Market,51-200,Manufacturing,Active,2025-03-18 00:00:00
+CUST-000299,ACC-000299,"Sparks, Jackson and Miller",contact299@sparksjacksonandmi.example,United Kingdom,Birmingham,2024-06-11,Organic,SMB,1001-5000,Healthcare,Active,2024-08-24 00:00:00
+CUST-000300,ACC-000300,Harvey-Allen,contact300@harvey-allen.example,United States,New York,2025-10-14,Paid Social,SMB,201-1000,Financial Services,Active,2025-12-19 00:00:00
+CUST-000301,ACC-000301,"Thomas, Murray and King",contact301@thomasmurrayandkin.example,United Kingdom,Bristol,2024-07-14,Paid Search,Startup,51-200,Telecommunications,Active,2024-09-21 00:00:00
+CUST-000302,ACC-000302,Estrada-Nolan,contact302@estrada-nolan.example,Spain,Valencia,2024-04-15,Paid Social,SMB,11-50,Logistics,Active,2024-06-27 00:00:00
+CUST-000303,ACC-000303,Santana-Byrd,contact303@santana-byrd.example,United States,Chicago,2025-02-20,Paid Social,Enterprise,1-10,Financial Services,Active,2025-03-18 00:00:00
+CUST-000304,ACC-000304,Jones LLC,contact304@jonesllc.example,Australia,Adelaide,2025-10-04,Paid Search,SMB,51-200,Manufacturing,Active,2025-12-08 00:00:00
+CUST-000305,ACC-000305,"Evans, Hayden and Vaughn",contact305@evanshaydenandvaug.example,France,Toulouse,2025-10-31,Paid Search,Enterprise,1001-5000,Media,Active,2025-11-18 00:00:00
+CUST-000306,ACC-000306,Bruce-Gonzalez,contact306@bruce-gonzalez.example,Canada,Calgary,2024-03-11,Paid Search,Mid-Market,201-1000,Education,Active,2024-04-12 00:00:00
+CUST-000307,ACC-000307,Castaneda-Rodriguez,contact307@castaneda-rodrigue.example,United Kingdom,Manchester,2024-08-26,Email,Mid-Market,51-200,Financial Services,Active,2024-11-19 00:00:00
+CUST-000308,ACC-000308,Armstrong-Andrews,contact308@armstrong-andrews.example,France,Lyon,2024-04-22,Email,SMB,201-1000,Retail,Active,2024-05-17 00:00:00
+CUST-000309,ACC-000309,"Phillips, Spence and Barrett",contact309@phillipsspenceandb.example,United Kingdom,Birmingham,2024-08-13,Direct,Mid-Market,51-200,Retail,Active,2024-10-28 00:00:00
+CUST-000310,ACC-000310,Smith-Grimes,contact310@smith-grimes.example,United States,San Francisco,2025-01-25,Referral,Enterprise,201-1000,Healthcare,Active,2025-03-04 00:00:00
+CUST-000311,ACC-000311,"Beltran, Lozano and Mcgee",contact311@beltranlozanoandmc.example,Netherlands,Utrecht,2024-07-24,Email,Enterprise,51-200,Telecommunications,Active,2024-08-12 00:00:00
+CUST-000312,ACC-000312,Parsons-Hall,contact312@parsons-hall.example,Netherlands,Rotterdam,2024-02-19,Paid Search,Startup,201-1000,Healthcare,Active,2024-02-27 00:00:00
+CUST-000313,ACC-000313,Robinson-Lee,contact313@robinson-lee.example,United States,Chicago,2025-01-07,Email,SMB,51-200,Media,Active,2025-02-25 00:00:00
+CUST-000314,ACC-000314,Byrd-Le,contact314@byrd-le.example,United Kingdom,Edinburgh,2024-02-08,Paid Search,Enterprise,5000+,Telecommunications,Active,2024-03-20 00:00:00
+CUST-000315,ACC-000315,"Becker, Taylor and Davis",contact315@beckertayloranddav.example,Canada,Ottawa,2024-06-14,Organic,Enterprise,51-200,Media,Active,2024-07-30 00:00:00
+CUST-000316,ACC-000316,"Lucas, Parker and Alexander",contact316@lucasparkerandalex.example,Netherlands,Rotterdam,2024-01-01,Organic,SMB,1-10,Media,Active,2024-01-04 00:00:00
+CUST-000317,ACC-000317,"Diaz, Anderson and Browning",contact317@diazandersonandbro.example,Netherlands,Eindhoven,2024-03-04,Organic,Mid-Market,11-50,Financial Services,Active,2024-03-28 00:00:00
+CUST-000318,ACC-000318,Burgess-Thompson,contact318@burgess-thompson.example,Netherlands,Utrecht,2024-11-14,Paid Social,SMB,51-200,Financial Services,Active,2024-11-14 00:00:00
+CUST-000319,ACC-000319,Buchanan LLC,contact319@buchananllc.example,Australia,Brisbane,2025-09-13,Email,Mid-Market,201-1000,Media,Active,2025-10-10 00:00:00
+CUST-000320,ACC-000320,"Shaw, Nelson and Martin",contact320@shawnelsonandmarti.example,Spain,Barcelona,2025-07-20,Partner,Startup,201-1000,Media,Active,2025-10-12 00:00:00
+CUST-000321,ACC-000321,Coffey-Phillips,contact321@coffey-phillips.example,United Kingdom,London,2024-03-13,Referral,Mid-Market,201-1000,Media,Inactive,2024-03-26 00:00:00
+CUST-000322,ACC-000322,Brock-Mcdonald,contact322@brock-mcdonald.example,United States,Austin,2024-01-26,Email,SMB,11-50,Manufacturing,Active,2024-03-28 00:00:00
+CUST-000323,ACC-000323,Taylor and Sons,contact323@taylorandsons.example,France,Marseille,2024-09-04,Organic,Enterprise,201-1000,Education,Active,2024-09-04 00:00:00
+CUST-000324,ACC-000324,"Ramsey, Whitney and Coffey",contact324@ramseywhitneyandco.example,Australia,Adelaide,2025-04-21,Paid Search,Startup,201-1000,Technology,Active,2025-06-11 00:00:00
+CUST-000325,ACC-000325,"Diaz, Gibbs and Smith",contact325@diazgibbsandsmith.example,Australia,Adelaide,2025-06-29,Referral,Startup,51-200,Healthcare,Active,2025-09-20 00:00:00
+CUST-000326,ACC-000326,"Martinez, Richardson and Curry",contact326@martinezrichardson.example,Canada,Toronto,2025-08-24,Email,SMB,51-200,Education,Active,2025-09-24 00:00:00
+CUST-000327,ACC-000327,Richards-Carson,contact327@richards-carson.example,Canada,Calgary,2024-09-07,Paid Social,Mid-Market,11-50,Financial Services,Active,2024-09-24 00:00:00
+CUST-000328,ACC-000328,Rodriguez-Hall,contact328@rodriguez-hall.example,United States,New York,2024-05-02,Paid Social,Mid-Market,51-200,Financial Services,Active,2024-06-22 00:00:00
+CUST-000329,ACC-000329,Harvey PLC,contact329@harveyplc.example,Canada,Calgary,2024-01-20,Direct,SMB,1001-5000,Technology,Inactive,2024-02-14 00:00:00
+CUST-000330,ACC-000330,Herman-Walker,contact330@herman-walker.example,France,Lyon,2024-04-17,Email,SMB,1001-5000,Healthcare,Active,2024-07-07 00:00:00
+CUST-000331,ACC-000331,Reid Group,contact331@reidgroup.example,France,Marseille,2024-02-17,Organic,Mid-Market,201-1000,Telecommunications,Active,2024-05-04 00:00:00
+CUST-000332,ACC-000332,"Turner, Ortiz and Taylor",contact332@turnerortizandtayl.example,United Kingdom,Bristol,2025-09-21,Email,Mid-Market,51-200,Professional Services,Churned,2025-11-19 00:00:00
+CUST-000333,ACC-000333,Torres Group,contact333@torresgroup.example,United Kingdom,Birmingham,2024-07-15,Organic,Mid-Market,201-1000,Telecommunications,Active,2024-09-11 00:00:00
+CUST-000334,ACC-000334,Davis PLC,contact334@davisplc.example,Spain,Bilbao,2025-08-24,Organic,SMB,201-1000,Healthcare,Active,2025-10-17 00:00:00
+CUST-000335,ACC-000335,Price LLC,contact335@pricellc.example,Germany,Hamburg,2025-02-08,Paid Social,SMB,51-200,Education,Active,2025-04-15 00:00:00
+CUST-000336,ACC-000336,"Avery, Horton and Fernandez",contact336@averyhortonandfern.example,Spain,Bilbao,2025-01-28,Organic,SMB,1001-5000,Logistics,Active,2025-03-10 00:00:00
+CUST-000337,ACC-000337,"Newton, Moore and Perry",contact337@newtonmooreandperr.example,Australia,Perth,2024-11-28,Email,SMB,1-10,Retail,Active,2025-02-24 00:00:00
+CUST-000338,ACC-000338,Bass PLC,contact338@bassplc.example,United Kingdom,Manchester,2025-08-21,Paid Search,Mid-Market,1-10,Professional Services,Active,2025-09-21 00:00:00
+CUST-000339,ACC-000339,Crosby-Ramirez,contact339@crosby-ramirez.example,Canada,Calgary,2024-02-01,Referral,Mid-Market,11-50,Professional Services,Active,2024-02-01 00:00:00
+CUST-000340,ACC-000340,"Wood, Ramos and Sampson",contact340@woodramosandsampso.example,Australia,Brisbane,2024-03-08,Paid Social,Enterprise,11-50,Logistics,Active,2024-05-10 00:00:00
+CUST-000341,ACC-000341,Garcia-Jennings,contact341@garcia-jennings.example,Netherlands,Utrecht,2024-11-05,Email,SMB,1001-5000,Telecommunications,Active,2025-01-04 00:00:00
+CUST-000342,ACC-000342,"Winters, Newman and Brown",contact342@wintersnewmanandbr.example,United Kingdom,London,2024-10-15,Email,Mid-Market,51-200,Professional Services,Active,2025-01-12 00:00:00
+CUST-000343,ACC-000343,Lopez-Martinez,contact343@lopez-martinez.example,France,Paris,2025-02-02,Email,Mid-Market,11-50,Education,Active,2025-03-09 00:00:00
+CUST-000344,ACC-000344,Davis-Lewis,contact344@davis-lewis.example,France,Marseille,2025-06-23,Email,Mid-Market,51-200,Logistics,Inactive,2025-07-31 00:00:00
+CUST-000345,ACC-000345,"Harper, Smith and Buchanan",contact345@harpersmithandbuch.example,Australia,Sydney,2025-03-05,Direct,Mid-Market,51-200,Professional Services,Active,2025-04-25 00:00:00
+CUST-000346,ACC-000346,Zhang PLC,contact346@zhangplc.example,United Kingdom,Edinburgh,2024-07-07,Organic,SMB,51-200,Retail,Active,2024-08-11 00:00:00
+CUST-000347,ACC-000347,Jones PLC,contact347@jonesplc.example,Australia,Adelaide,2024-08-27,Referral,Mid-Market,11-50,Professional Services,Active,2024-11-06 00:00:00
+CUST-000348,ACC-000348,Willis and Sons,contact348@willisandsons.example,Australia,Perth,2025-07-03,Referral,Enterprise,201-1000,Education,Active,2025-08-10 00:00:00
+CUST-000349,ACC-000349,Schroeder-Kramer,contact349@schroeder-kramer.example,Canada,Calgary,2024-05-27,Paid Social,SMB,11-50,Healthcare,Active,2024-08-06 00:00:00
+CUST-000350,ACC-000350,"Smith, Garrison and Thomas",contact350@smithgarrisonandth.example,Canada,Montreal,2025-01-03,Paid Social,Mid-Market,201-1000,Education,Active,2025-02-10 00:00:00
+CUST-000351,ACC-000351,Fernandez and Sons,contact351@fernandezandsons.example,France,Paris,2025-01-28,Organic,Mid-Market,11-50,Professional Services,Active,2025-02-17 00:00:00
+CUST-000352,ACC-000352,Guerrero Inc,contact352@guerreroinc.example,United States,Austin,2025-07-02,Paid Social,Mid-Market,201-1000,Telecommunications,Inactive,2025-09-30 00:00:00
+CUST-000353,ACC-000353,Smith and Sons,contact353@smithandsons.example,United Kingdom,Birmingham,2025-06-06,Paid Social,SMB,1001-5000,Education,Active,2025-07-23 00:00:00
+CUST-000354,ACC-000354,"Morris, Thompson and Williams",contact354@morristhompsonandw.example,Germany,Cologne,2024-12-05,Organic,Mid-Market,11-50,Financial Services,Active,2025-02-07 00:00:00
+CUST-000355,ACC-000355,"Fisher, Wilson and Brown",contact355@fisherwilsonandbro.example,Australia,Melbourne,2024-08-13,Email,SMB,1-10,Telecommunications,Active,2024-10-05 00:00:00
+CUST-000356,ACC-000356,Strickland-Palmer,contact356@strickland-palmer.example,Australia,Brisbane,2024-09-25,Paid Social,Startup,5000+,Education,Churned,2024-10-27 00:00:00
+CUST-000357,ACC-000357,Hayes and Sons,contact357@hayesandsons.example,Canada,Vancouver,2024-10-27,Partner,SMB,51-200,Healthcare,Active,2025-01-23 00:00:00
+CUST-000358,ACC-000358,"Williams, Logan and Camacho",contact358@williamsloganandca.example,Australia,Sydney,2024-06-09,Organic,Mid-Market,201-1000,Media,Active,2024-07-12 00:00:00
+CUST-000359,ACC-000359,"Turner, Schneider and Johnson",contact359@turnerschneiderand.example,United States,New York,2025-04-02,Referral,SMB,1-10,Retail,Active,2025-07-01 00:00:00
+CUST-000360,ACC-000360,Boone-Simmons,contact360@boone-simmons.example,Netherlands,Rotterdam,2024-06-01,Paid Search,Mid-Market,11-50,Retail,Active,2024-07-10 00:00:00
+CUST-000361,ACC-000361,Henry Group,contact361@henrygroup.example,Spain,Madrid,2025-04-19,Organic,Mid-Market,51-200,Logistics,Active,2025-04-21 00:00:00
+CUST-000362,ACC-000362,Lam LLC,contact362@lamllc.example,Australia,Sydney,2025-07-03,Paid Search,SMB,1001-5000,Logistics,Churned,2025-07-06 00:00:00
+CUST-000363,ACC-000363,"Hernandez, Martinez and Weber",contact363@hernandezmartineza.example,Canada,Vancouver,2025-12-04,Email,Mid-Market,11-50,Education,Churned,2026-03-02 00:00:00
+CUST-000364,ACC-000364,"Kelley, Nguyen and Vang",contact364@kelleynguyenandvan.example,Australia,Melbourne,2024-03-27,Paid Social,Enterprise,201-1000,Retail,Active,2024-05-14 00:00:00
+CUST-000365,ACC-000365,"Phillips, Wagner and Jordan",contact365@phillipswagnerandj.example,United States,Seattle,2025-07-09,Direct,Mid-Market,201-1000,Logistics,Active,2025-08-13 00:00:00
+CUST-000366,ACC-000366,"Wilson, Pena and Rich",contact366@wilsonpenaandrich.example,France,Paris,2024-03-03,Paid Social,Enterprise,11-50,Financial Services,Active,2024-05-15 00:00:00
+CUST-000367,ACC-000367,"Le, Lewis and Hayes",contact367@lelewisandhayes.example,Germany,Munich,2024-09-03,Email,Mid-Market,51-200,Media,Inactive,2024-10-29 00:00:00
+CUST-000368,ACC-000368,Gutierrez Group,contact368@gutierrezgroup.example,United Kingdom,Birmingham,2024-05-08,Paid Social,SMB,11-50,Education,Active,2024-07-07 00:00:00
+CUST-000369,ACC-000369,Perry-Davis,contact369@perry-davis.example,United States,San Francisco,2024-04-28,Email,Startup,51-200,Logistics,Active,2024-06-29 00:00:00
+CUST-000370,ACC-000370,Edwards-Scott,contact370@edwards-scott.example,Spain,Seville,2024-05-08,Organic,Enterprise,201-1000,Manufacturing,Active,2024-05-26 00:00:00
+CUST-000371,ACC-000371,Mcdaniel Group,contact371@mcdanielgroup.example,United Kingdom,Edinburgh,2024-02-02,Paid Social,SMB,51-200,Logistics,Active,2024-02-10 00:00:00
+CUST-000372,ACC-000372,Davis Inc,contact372@davisinc.example,Netherlands,Rotterdam,2025-08-24,Paid Social,Mid-Market,11-50,Technology,Active,2025-10-29 00:00:00
+CUST-000373,ACC-000373,Reynolds Ltd,contact373@reynoldsltd.example,Germany,Hamburg,2024-02-14,Paid Search,Enterprise,201-1000,Media,Churned,2024-02-15 00:00:00
+CUST-000374,ACC-000374,"Watson, Anderson and Brown",contact374@watsonandersonandb.example,United Kingdom,Birmingham,2024-10-18,Paid Search,Mid-Market,201-1000,Technology,Churned,2024-12-22 00:00:00
+CUST-000375,ACC-000375,"Hoffman, Santiago and Jenkins",contact375@hoffmansantiagoand.example,Australia,Adelaide,2025-05-26,Direct,Enterprise,51-200,Professional Services,Inactive,2025-06-06 00:00:00
+CUST-000376,ACC-000376,"Pugh, Henderson and Moon",contact376@pughhendersonandmo.example,United States,San Francisco,2025-12-24,Organic,Mid-Market,201-1000,Financial Services,Active,2026-01-16 00:00:00
+CUST-000377,ACC-000377,Schmitt PLC,contact377@schmittplc.example,Netherlands,The Hague,2025-09-16,Paid Search,Mid-Market,11-50,Telecommunications,Active,2025-11-19 00:00:00
+CUST-000378,ACC-000378,Bell-Lane,contact378@bell-lane.example,Netherlands,Eindhoven,2024-04-10,Direct,Mid-Market,201-1000,Media,Active,2024-06-05 00:00:00
+CUST-000379,ACC-000379,Moore Group,contact379@mooregroup.example,Germany,Hamburg,2025-12-23,Paid Search,SMB,51-200,Financial Services,Active,2026-03-04 00:00:00
+CUST-000380,ACC-000380,Boone LLC,contact380@boonellc.example,United Kingdom,Birmingham,2025-04-22,Organic,Enterprise,51-200,Logistics,Active,2025-06-16 00:00:00
+CUST-000381,ACC-000381,"Richardson, Farmer and Andrews",contact381@richardsonfarmeran.example,United States,San Francisco,2024-05-11,Referral,Enterprise,11-50,Healthcare,Active,2024-05-15 00:00:00
+CUST-000382,ACC-000382,Bruce-Villegas,contact382@bruce-villegas.example,Australia,Melbourne,2024-11-24,Partner,Enterprise,201-1000,Education,Active,2025-02-08 00:00:00
+CUST-000383,ACC-000383,"Austin, Day and Johnson",contact383@austindayandjohnso.example,Australia,Melbourne,2025-11-01,Referral,SMB,201-1000,Technology,Active,2025-11-20 00:00:00
+CUST-000384,ACC-000384,"Gallegos, Adams and White",contact384@gallegosadamsandwh.example,Canada,Ottawa,2024-10-14,Organic,Mid-Market,51-200,Financial Services,Active,2024-10-26 00:00:00
+CUST-000385,ACC-000385,"Farmer, Dorsey and Bell",contact385@farmerdorseyandbel.example,United States,Austin,2024-05-14,Direct,SMB,1001-5000,Healthcare,Active,2024-08-01 00:00:00
+CUST-000386,ACC-000386,Kane PLC,contact386@kaneplc.example,United States,Austin,2025-10-01,Paid Search,Mid-Market,1001-5000,Education,Active,2025-10-18 00:00:00
+CUST-000387,ACC-000387,"Morales, Thomas and Schultz",contact387@moralesthomasandsc.example,United States,Seattle,2025-11-27,Direct,Enterprise,11-50,Education,Active,2026-01-14 00:00:00
+CUST-000388,ACC-000388,Davis PLC,contact388@davisplc.example,Spain,Barcelona,2025-12-14,Partner,Startup,201-1000,Logistics,Active,2026-01-27 00:00:00
+CUST-000389,ACC-000389,Bennett Group,contact389@bennettgroup.example,Australia,Adelaide,2025-11-29,Direct,Enterprise,51-200,Financial Services,Active,2026-02-07 00:00:00
+CUST-000390,ACC-000390,Moore-Collins,contact390@moore-collins.example,Canada,Ottawa,2025-09-30,Paid Social,Enterprise,5000+,Media,Active,2025-10-04 00:00:00
+CUST-000391,ACC-000391,Frank-Bradley,contact391@frank-bradley.example,Netherlands,Rotterdam,2024-11-28,Paid Search,Enterprise,11-50,Technology,Active,2024-12-07 00:00:00
+CUST-000392,ACC-000392,Ware and Sons,contact392@wareandsons.example,Canada,Montreal,2024-05-20,Email,Startup,51-200,Healthcare,Active,2024-06-26 00:00:00
+CUST-000393,ACC-000393,Webster Inc,contact393@websterinc.example,United Kingdom,Edinburgh,2025-03-27,Organic,SMB,51-200,Financial Services,Active,2025-05-09 00:00:00
+CUST-000394,ACC-000394,"Miller, Ramos and Coleman",contact394@millerramosandcole.example,France,Toulouse,2024-06-10,Organic,SMB,11-50,Financial Services,Active,2024-08-20 00:00:00
+CUST-000395,ACC-000395,"Ramos, Nelson and Fischer",contact395@ramosnelsonandfisc.example,Netherlands,Rotterdam,2024-12-11,Direct,Startup,201-1000,Education,Active,2025-02-04 00:00:00
+CUST-000396,ACC-000396,Reed Inc,contact396@reedinc.example,Spain,Valencia,2025-04-24,Email,Enterprise,51-200,Telecommunications,Active,2025-05-07 00:00:00
+CUST-000397,ACC-000397,Gregory-Watkins,contact397@gregory-watkins.example,United States,Chicago,2025-11-22,Paid Social,Startup,11-50,Professional Services,Active,2026-02-19 00:00:00
+CUST-000398,ACC-000398,"Estrada, Williams and Foster",contact398@estradawilliamsand.example,Canada,Calgary,2024-07-30,Organic,Mid-Market,51-200,Logistics,Active,2024-09-09 00:00:00
+CUST-000399,ACC-000399,"Brown, Harris and Dougherty",contact399@brownharrisanddoug.example,United Kingdom,London,2024-07-03,Paid Search,SMB,1001-5000,Education,Active,2024-09-28 00:00:00
+CUST-000400,ACC-000400,Duran LLC,contact400@duranllc.example,United Kingdom,Manchester,2025-06-21,Paid Search,Mid-Market,1001-5000,Technology,Active,2025-09-19 00:00:00
+CUST-000401,ACC-000401,Wilson-Jimenez,contact401@wilson-jimenez.example,Australia,Adelaide,2024-01-05,Paid Search,Mid-Market,51-200,Retail,Active,2024-01-09 00:00:00
+CUST-000402,ACC-000402,Thompson-James,contact402@thompson-james.example,Spain,Barcelona,2025-02-18,Partner,Startup,51-200,Logistics,Active,2025-04-05 00:00:00
+CUST-000403,ACC-000403,"Hall, Hansen and Barnett",contact403@hallhansenandbarne.example,United Kingdom,Manchester,2025-06-29,Referral,Enterprise,11-50,Technology,Active,2025-08-06 00:00:00
+CUST-000404,ACC-000404,Jones-Hensley,contact404@jones-hensley.example,Australia,Melbourne,2025-02-06,Organic,Startup,1001-5000,Technology,Active,2025-03-23 00:00:00
+CUST-000405,ACC-000405,Graham Group,contact405@grahamgroup.example,Germany,Berlin,2024-10-07,Paid Social,Mid-Market,201-1000,Logistics,Active,2024-11-04 00:00:00
+CUST-000406,ACC-000406,Atkins PLC,contact406@atkinsplc.example,France,Paris,2025-08-28,Email,SMB,201-1000,Technology,Active,2025-10-17 00:00:00
+CUST-000407,ACC-000407,Berry-Mckinney,contact407@berry-mckinney.example,Germany,Munich,2024-09-28,Partner,Startup,1001-5000,Telecommunications,Active,2024-11-11 00:00:00
+CUST-000408,ACC-000408,Roberts-Sullivan,contact408@roberts-sullivan.example,Canada,Ottawa,2025-06-03,Partner,Enterprise,11-50,Media,Active,2025-06-19 00:00:00
+CUST-000409,ACC-000409,Jackson-Meza,contact409@jackson-meza.example,Australia,Sydney,2024-12-05,Email,Startup,201-1000,Professional Services,Active,2024-12-31 00:00:00
+CUST-000410,ACC-000410,Collier-Gillespie,contact410@collier-gillespie.example,United States,Austin,2024-01-20,Partner,SMB,11-50,Education,Inactive,2024-02-02 00:00:00
+CUST-000411,ACC-000411,Kim Inc,contact411@kiminc.example,Canada,Toronto,2025-01-22,Organic,SMB,11-50,Technology,Active,2025-04-08 00:00:00
+CUST-000412,ACC-000412,Graham Group,contact412@grahamgroup.example,Canada,Montreal,2024-02-06,Organic,Enterprise,51-200,Manufacturing,Active,2024-04-07 00:00:00
+CUST-000413,ACC-000413,"Miller, Harrell and Reese",contact413@millerharrellandre.example,United Kingdom,Manchester,2025-11-11,Partner,SMB,51-200,Logistics,Inactive,2025-12-16 00:00:00
+CUST-000414,ACC-000414,Cook and Sons,contact414@cookandsons.example,Canada,Calgary,2025-03-15,Organic,SMB,5000+,Telecommunications,Active,2025-04-20 00:00:00
+CUST-000415,ACC-000415,Dixon Inc,contact415@dixoninc.example,United States,Seattle,2024-09-28,Organic,Mid-Market,51-200,Manufacturing,Active,2024-10-05 00:00:00
+CUST-000416,ACC-000416,"Hicks, Bullock and Bailey",contact416@hicksbullockandbai.example,Netherlands,Eindhoven,2024-12-21,Paid Social,Enterprise,1001-5000,Logistics,Active,2025-01-16 00:00:00
+CUST-000417,ACC-000417,"Mullen, Brewer and Hernandez",contact417@mullenbrewerandher.example,Australia,Perth,2025-03-28,Organic,Mid-Market,201-1000,Media,Active,2025-06-20 00:00:00
+CUST-000418,ACC-000418,Thomas and Sons,contact418@thomasandsons.example,United States,Seattle,2024-07-09,Email,SMB,201-1000,Technology,Active,2024-07-11 00:00:00
+CUST-000419,ACC-000419,Morrison Ltd,contact419@morrisonltd.example,United Kingdom,Edinburgh,2024-07-29,Email,Enterprise,5000+,Professional Services,Active,2024-08-11 00:00:00
+CUST-000420,ACC-000420,Thompson Ltd,contact420@thompsonltd.example,France,Marseille,2024-11-02,Organic,SMB,51-200,Professional Services,Inactive,2025-01-17 00:00:00
+CUST-000421,ACC-000421,Marshall-Elliott,contact421@marshall-elliott.example,Australia,Adelaide,2024-07-08,Paid Social,Startup,51-200,Education,Active,2024-08-24 00:00:00
+CUST-000422,ACC-000422,"Cole, Glass and Cunningham",contact422@coleglassandcunnin.example,Netherlands,The Hague,2025-07-08,Partner,Enterprise,11-50,Media,Active,2025-07-10 00:00:00
+CUST-000423,ACC-000423,"Downs, Morris and Maddox",contact423@downsmorrisandmadd.example,Spain,Valencia,2024-03-16,Paid Social,Enterprise,11-50,Logistics,Active,2024-04-29 00:00:00
+CUST-000424,ACC-000424,Hernandez-Jones,contact424@hernandez-jones.example,France,Toulouse,2025-08-27,Direct,SMB,1001-5000,Education,Active,2025-11-03 00:00:00
+CUST-000425,ACC-000425,Welch-Hogan,contact425@welch-hogan.example,Germany,Munich,2024-09-11,Paid Social,Enterprise,51-200,Retail,Active,2024-10-12 00:00:00
+CUST-000426,ACC-000426,"Brown, Romero and Collins",contact426@brownromeroandcoll.example,Canada,Ottawa,2025-02-14,Email,SMB,51-200,Telecommunications,Active,2025-03-20 00:00:00
+CUST-000427,ACC-000427,Johnson-Wood,contact427@johnson-wood.example,Spain,Seville,2024-04-25,Organic,SMB,11-50,Telecommunications,Active,2024-06-21 00:00:00
+CUST-000428,ACC-000428,Jones-Lin,contact428@jones-lin.example,Spain,Bilbao,2024-10-08,Partner,SMB,51-200,Professional Services,Active,2024-12-01 00:00:00
+CUST-000429,ACC-000429,Gilbert PLC,contact429@gilbertplc.example,United States,Austin,2025-07-05,Paid Search,Mid-Market,201-1000,Professional Services,Active,2025-09-25 00:00:00
+CUST-000430,ACC-000430,Ford-Spencer,contact430@ford-spencer.example,Netherlands,Eindhoven,2024-07-16,Partner,SMB,51-200,Financial Services,Active,2024-08-07 00:00:00
+CUST-000431,ACC-000431,"Huang, Cole and Pacheco",contact431@huangcoleandpachec.example,United States,Seattle,2024-04-06,Organic,SMB,201-1000,Manufacturing,Active,2024-05-01 00:00:00
+CUST-000432,ACC-000432,"Lopez, Jacobs and Mason",contact432@lopezjacobsandmaso.example,Netherlands,Amsterdam,2025-01-16,Email,Mid-Market,201-1000,Financial Services,Active,2025-01-30 00:00:00
+CUST-000433,ACC-000433,Hayes LLC,contact433@hayesllc.example,Spain,Madrid,2024-04-28,Organic,SMB,1001-5000,Education,Active,2024-06-27 00:00:00
+CUST-000434,ACC-000434,"Miller, Lucas and Williams",contact434@millerlucasandwill.example,Canada,Montreal,2024-08-18,Paid Search,Startup,11-50,Logistics,Active,2024-10-05 00:00:00
+CUST-000435,ACC-000435,"Kim, Gonzales and Mills",contact435@kimgonzalesandmill.example,Germany,Munich,2024-11-25,Organic,SMB,201-1000,Healthcare,Active,2024-12-26 00:00:00
+CUST-000436,ACC-000436,Cox LLC,contact436@coxllc.example,United States,New York,2025-02-16,Paid Social,Mid-Market,11-50,Telecommunications,Active,2025-04-20 00:00:00
+CUST-000437,ACC-000437,Ortiz-Morgan,contact437@ortiz-morgan.example,France,Marseille,2025-04-12,Paid Social,Mid-Market,51-200,Financial Services,Active,2025-05-16 00:00:00
+CUST-000438,ACC-000438,"Williams, Mccoy and Cook",contact438@williamsmccoyandco.example,Australia,Perth,2025-05-09,Email,Enterprise,201-1000,Technology,Active,2025-05-26 00:00:00
+CUST-000439,ACC-000439,Davis-Gregory,contact439@davis-gregory.example,United States,Austin,2025-09-09,Organic,Mid-Market,201-1000,Telecommunications,Active,2025-10-28 00:00:00
+CUST-000440,ACC-000440,King-York,contact440@king-york.example,Germany,Cologne,2024-02-18,Paid Search,Enterprise,11-50,Financial Services,Active,2024-03-28 00:00:00
+CUST-000441,ACC-000441,"Marks, Cook and Aguilar",contact441@markscookandaguila.example,Australia,Perth,2024-09-21,Paid Search,Startup,1001-5000,Media,Active,2024-10-27 00:00:00
+CUST-000442,ACC-000442,Rangel LLC,contact442@rangelllc.example,United Kingdom,Birmingham,2024-01-01,Paid Search,Mid-Market,1-10,Media,Active,2024-02-10 00:00:00
+CUST-000443,ACC-000443,"Hale, Myers and Larson",contact443@halemyersandlarson.example,Canada,Ottawa,2024-01-07,Paid Search,SMB,201-1000,Retail,Active,2024-03-30 00:00:00
+CUST-000444,ACC-000444,Collins Group,contact444@collinsgroup.example,Germany,Hamburg,2024-06-04,Email,Enterprise,5000+,Technology,Active,2024-06-23 00:00:00
+CUST-000445,ACC-000445,"Conner, Li and Santiago",contact445@connerliandsantiag.example,France,Paris,2025-03-13,Paid Search,Mid-Market,51-200,Retail,Active,2025-04-07 00:00:00
+CUST-000446,ACC-000446,"Osborn, Gaines and Davis",contact446@osborngainesanddav.example,Netherlands,Amsterdam,2025-10-15,Partner,Mid-Market,1001-5000,Technology,Inactive,2025-12-05 00:00:00
+CUST-000447,ACC-000447,"Henderson, Cox and Cox",contact447@hendersoncoxandcox.example,United Kingdom,Edinburgh,2025-07-19,Paid Social,Mid-Market,201-1000,Professional Services,Active,2025-07-23 00:00:00
+CUST-000448,ACC-000448,Bean LLC,contact448@beanllc.example,Australia,Adelaide,2025-04-17,Paid Search,SMB,1001-5000,Logistics,Inactive,2025-04-30 00:00:00
+CUST-000449,ACC-000449,Lee-Cooke,contact449@lee-cooke.example,France,Toulouse,2025-07-22,Partner,Startup,201-1000,Telecommunications,Active,2025-09-11 00:00:00
+CUST-000450,ACC-000450,Jones Inc,contact450@jonesinc.example,United Kingdom,London,2024-05-05,Paid Social,Startup,201-1000,Logistics,Inactive,2024-06-20 00:00:00
+CUST-000451,ACC-000451,"Wise, Conley and Stephenson",contact451@wiseconleyandsteph.example,Australia,Melbourne,2025-09-05,Organic,Enterprise,11-50,Media,Inactive,2025-11-03 00:00:00
+CUST-000452,ACC-000452,Stanley PLC,contact452@stanleyplc.example,Australia,Sydney,2025-10-12,Direct,SMB,201-1000,Logistics,Active,2025-10-22 00:00:00
+CUST-000453,ACC-000453,Harper and Sons,contact453@harperandsons.example,Germany,Berlin,2024-03-10,Direct,Enterprise,11-50,Media,Active,2024-05-26 00:00:00
+CUST-000454,ACC-000454,White Ltd,contact454@whiteltd.example,United States,Austin,2024-12-09,Referral,Startup,5000+,Professional Services,Churned,2025-01-22 00:00:00
+CUST-000455,ACC-000455,"Lamb, Martin and Kim",contact455@lambmartinandkim.example,France,Marseille,2025-08-29,Paid Search,SMB,11-50,Telecommunications,Inactive,2025-09-12 00:00:00
+CUST-000456,ACC-000456,Diaz-Ball,contact456@diaz-ball.example,France,Paris,2024-12-14,Email,Mid-Market,11-50,Retail,Churned,2025-01-11 00:00:00
+CUST-000457,ACC-000457,Bishop-Goodwin,contact457@bishop-goodwin.example,Canada,Ottawa,2025-09-06,Direct,Enterprise,1001-5000,Manufacturing,Active,2025-09-26 00:00:00
+CUST-000458,ACC-000458,Young-Allen,contact458@young-allen.example,Netherlands,Utrecht,2025-11-14,Direct,Enterprise,11-50,Telecommunications,Active,2025-12-25 00:00:00
+CUST-000459,ACC-000459,Mckee-Lee,contact459@mckee-lee.example,Spain,Barcelona,2024-12-12,Paid Search,Mid-Market,51-200,Retail,Active,2025-01-23 00:00:00
+CUST-000460,ACC-000460,"Valentine, Joyce and Murray",contact460@valentinejoyceandm.example,United States,Seattle,2024-02-13,Organic,Startup,201-1000,Healthcare,Active,2024-03-23 00:00:00
+CUST-000461,ACC-000461,Strickland-Shaw,contact461@strickland-shaw.example,Netherlands,Eindhoven,2024-09-05,Paid Social,SMB,11-50,Financial Services,Active,2024-10-16 00:00:00
+CUST-000462,ACC-000462,Burch-Montoya,contact462@burch-montoya.example,Canada,Vancouver,2024-06-06,Paid Search,Startup,11-50,Healthcare,Active,2024-08-27 00:00:00
+CUST-000463,ACC-000463,"Taylor, Wright and Davidson",contact463@taylorwrightanddav.example,Netherlands,Amsterdam,2024-12-12,Email,Enterprise,51-200,Education,Active,2025-03-09 00:00:00
+CUST-000464,ACC-000464,Spencer-Garcia,contact464@spencer-garcia.example,Germany,Berlin,2025-03-04,Paid Social,SMB,11-50,Logistics,Active,2025-04-17 00:00:00
+CUST-000465,ACC-000465,"Rosales, Mitchell and Hines",contact465@rosalesmitchelland.example,United States,San Francisco,2024-12-05,Paid Social,Mid-Market,11-50,Financial Services,Active,2025-03-02 00:00:00
+CUST-000466,ACC-000466,Cole-Palmer,contact466@cole-palmer.example,Australia,Sydney,2024-05-22,Paid Search,SMB,1-10,Professional Services,Active,2024-08-04 00:00:00
+CUST-000467,ACC-000467,Davis-Lozano,contact467@davis-lozano.example,Canada,Calgary,2024-08-08,Organic,Mid-Market,51-200,Media,Active,2024-10-21 00:00:00
+CUST-000468,ACC-000468,Wilkerson-Arias,contact468@wilkerson-arias.example,France,Lyon,2025-05-11,Paid Search,Mid-Market,51-200,Logistics,Active,2025-05-31 00:00:00
+CUST-000469,ACC-000469,Brown-Shaw,contact469@brown-shaw.example,Canada,Calgary,2024-01-20,Organic,SMB,1-10,Media,Active,2024-02-28 00:00:00
+CUST-000470,ACC-000470,Hughes Inc,contact470@hughesinc.example,Australia,Sydney,2024-06-05,Paid Search,Mid-Market,201-1000,Financial Services,Active,2024-07-07 00:00:00
+CUST-000471,ACC-000471,Walker-Flores,contact471@walker-flores.example,Netherlands,The Hague,2025-10-14,Direct,Mid-Market,201-1000,Manufacturing,Active,2025-10-22 00:00:00
+CUST-000472,ACC-000472,Combs Ltd,contact472@combsltd.example,Spain,Seville,2024-03-13,Paid Search,SMB,1-10,Telecommunications,Churned,2024-03-19 00:00:00
+CUST-000473,ACC-000473,Moody-Taylor,contact473@moody-taylor.example,Germany,Hamburg,2024-10-30,Organic,Enterprise,51-200,Telecommunications,Active,2024-12-25 00:00:00
+CUST-000474,ACC-000474,Lowery-Kennedy,contact474@lowery-kennedy.example,Germany,Munich,2024-05-31,Paid Search,Startup,1001-5000,Professional Services,Active,2024-07-08 00:00:00
+CUST-000475,ACC-000475,Blake Group,contact475@blakegroup.example,Netherlands,The Hague,2024-03-17,Paid Search,SMB,201-1000,Telecommunications,Active,2024-05-31 00:00:00
+CUST-000476,ACC-000476,Gilbert-Bullock,contact476@gilbert-bullock.example,Spain,Barcelona,2024-11-05,Paid Social,SMB,51-200,Professional Services,Active,2025-01-04 00:00:00
+CUST-000477,ACC-000477,Scott and Sons,contact477@scottandsons.example,Spain,Valencia,2025-01-16,Paid Search,SMB,51-200,Technology,Active,2025-01-23 00:00:00
+CUST-000478,ACC-000478,"Bentley, Lynch and Henderson",contact478@bentleylynchandhen.example,United States,Austin,2024-05-08,Paid Search,SMB,11-50,Telecommunications,Inactive,2024-07-23 00:00:00
+CUST-000479,ACC-000479,Young-Martinez,contact479@young-martinez.example,Netherlands,Rotterdam,2024-02-26,Organic,SMB,1001-5000,Financial Services,Active,2024-04-11 00:00:00
+CUST-000480,ACC-000480,Barnes PLC,contact480@barnesplc.example,United States,Seattle,2024-04-08,Email,Startup,1001-5000,Retail,Active,2024-05-29 00:00:00
+CUST-000481,ACC-000481,Brown-Copeland,contact481@brown-copeland.example,United Kingdom,London,2025-04-21,Paid Search,SMB,1001-5000,Healthcare,Active,2025-07-17 00:00:00
+CUST-000482,ACC-000482,Carlson-Smith,contact482@carlson-smith.example,Spain,Madrid,2025-09-20,Organic,Mid-Market,11-50,Media,Active,2025-11-17 00:00:00
+CUST-000483,ACC-000483,"Andrews, Higgins and Carter",contact483@andrewshigginsandc.example,United Kingdom,Manchester,2024-05-11,Email,Enterprise,51-200,Technology,Active,2024-05-13 00:00:00
+CUST-000484,ACC-000484,Mendez and Sons,contact484@mendezandsons.example,Spain,Madrid,2024-08-22,Paid Social,SMB,11-50,Professional Services,Active,2024-09-07 00:00:00
+CUST-000485,ACC-000485,"Butler, Beck and Miller",contact485@butlerbeckandmille.example,Germany,Hamburg,2024-09-08,Paid Social,Enterprise,51-200,Logistics,Active,2024-10-16 00:00:00
+CUST-000486,ACC-000486,Jones-Fox,contact486@jones-fox.example,Canada,Ottawa,2024-09-20,Paid Search,Mid-Market,51-200,Media,Inactive,2024-09-23 00:00:00
+CUST-000487,ACC-000487,"Hartman, Romero and Smith",contact487@hartmanromeroandsm.example,United Kingdom,London,2024-06-27,Paid Social,Enterprise,201-1000,Retail,Active,2024-07-12 00:00:00
+CUST-000488,ACC-000488,Williams-Hughes,contact488@williams-hughes.example,France,Paris,2024-02-10,Organic,SMB,11-50,Logistics,Active,2024-04-22 00:00:00
+CUST-000489,ACC-000489,King-Smith,contact489@king-smith.example,Spain,Madrid,2025-01-18,Direct,Enterprise,1001-5000,Retail,Churned,2025-01-30 00:00:00
+CUST-000490,ACC-000490,Cooper Ltd,contact490@cooperltd.example,France,Marseille,2024-09-18,Direct,SMB,11-50,Professional Services,Active,2024-10-03 00:00:00
+CUST-000491,ACC-000491,"Fuller, Ingram and Moss",contact491@fulleringramandmos.example,Australia,Melbourne,2024-09-07,Direct,SMB,1-10,Education,Active,2024-10-22 00:00:00
+CUST-000492,ACC-000492,Anderson-Bell,contact492@anderson-bell.example,Spain,Valencia,2024-07-12,Organic,SMB,1001-5000,Technology,Active,2024-07-20 00:00:00
+CUST-000493,ACC-000493,Li-Thompson,contact493@li-thompson.example,Spain,Madrid,2025-11-10,Paid Search,Mid-Market,201-1000,Technology,Active,2025-12-03 00:00:00
+CUST-000494,ACC-000494,"Marshall, Dominguez and Welch",contact494@marshalldomingueza.example,France,Lyon,2025-03-22,Paid Social,SMB,51-200,Financial Services,Active,2025-06-15 00:00:00
+CUST-000495,ACC-000495,Brown Group,contact495@browngroup.example,United Kingdom,Birmingham,2024-11-02,Paid Social,SMB,201-1000,Telecommunications,Active,2024-12-29 00:00:00
+CUST-000496,ACC-000496,Carter Inc,contact496@carterinc.example,Germany,Hamburg,2024-05-30,Paid Search,Mid-Market,11-50,Telecommunications,Active,2024-08-25 00:00:00
+CUST-000497,ACC-000497,Blackwell LLC,contact497@blackwellllc.example,United States,Seattle,2025-08-08,Paid Search,SMB,11-50,Manufacturing,Active,2025-09-09 00:00:00
+CUST-000498,ACC-000498,Robertson-Hays,contact498@robertson-hays.example,United Kingdom,Bristol,2025-10-11,Organic,Mid-Market,51-200,Telecommunications,Active,2025-12-06 00:00:00
+CUST-000499,ACC-000499,"Kennedy, Johnson and Lucas",contact499@kennedyjohnsonandl.example,Australia,Brisbane,2024-01-24,Paid Social,Startup,51-200,Technology,Active,2024-02-14 00:00:00
+CUST-000500,ACC-000500,Kelly-Norman,contact500@kelly-norman.example,Germany,Cologne,2025-11-10,Paid Search,Enterprise,201-1000,Telecommunications,Active,2025-12-14 00:00:00
+CUST-000501,ACC-000501,"Rivera, Martinez and Richardson",contact501@riveramartinezandr.example,United States,Seattle,2025-05-26,Referral,SMB,11-50,Healthcare,Active,2025-06-10 00:00:00
+CUST-000502,ACC-000502,Paul-Kline,contact502@paul-kline.example,Netherlands,Rotterdam,2024-03-13,Paid Social,SMB,201-1000,Technology,Active,2024-05-27 00:00:00
+CUST-000503,ACC-000503,Morgan-Lopez,contact503@morgan-lopez.example,Australia,Melbourne,2025-07-04,Partner,Mid-Market,201-1000,Media,Inactive,2025-07-20 00:00:00
+CUST-000504,ACC-000504,"Jimenez, Glass and Stone",contact504@jimenezglassandsto.example,Spain,Barcelona,2024-03-19,Paid Social,SMB,11-50,Retail,Active,2024-04-06 00:00:00
+CUST-000505,ACC-000505,Acosta Inc,contact505@acostainc.example,United Kingdom,Birmingham,2024-02-07,Organic,Enterprise,1-10,Healthcare,Active,2024-03-20 00:00:00
+CUST-000506,ACC-000506,Morrison-Short,contact506@morrison-short.example,Germany,Munich,2024-03-25,Paid Search,SMB,51-200,Media,Inactive,2024-05-03 00:00:00
+CUST-000507,ACC-000507,"Carter, Garcia and Murphy",contact507@cartergarciaandmur.example,France,Lille,2024-12-02,Organic,SMB,201-1000,Retail,Active,2024-12-30 00:00:00
+CUST-000508,ACC-000508,Parker-Morrison,contact508@parker-morrison.example,Canada,Montreal,2025-03-28,Paid Search,Enterprise,201-1000,Media,Active,2025-04-29 00:00:00
+CUST-000509,ACC-000509,Jackson-Wallace,contact509@jackson-wallace.example,United Kingdom,Edinburgh,2024-10-24,Paid Search,Enterprise,201-1000,Financial Services,Active,2024-11-19 00:00:00
+CUST-000510,ACC-000510,Williams-Berg,contact510@williams-berg.example,Canada,Calgary,2024-03-30,Email,SMB,51-200,Technology,Active,2024-06-21 00:00:00
+CUST-000511,ACC-000511,Mendez-Graham,contact511@mendez-graham.example,Australia,Melbourne,2024-05-25,Paid Social,Mid-Market,11-50,Retail,Active,2024-07-16 00:00:00
+CUST-000512,ACC-000512,"Whitney, Gould and Jones",contact512@whitneygouldandjon.example,Netherlands,Rotterdam,2025-09-15,Paid Search,Startup,51-200,Professional Services,Active,2025-12-07 00:00:00
+CUST-000513,ACC-000513,"Sullivan, Palmer and Brady",contact513@sullivanpalmerandb.example,Spain,Seville,2025-12-04,Direct,SMB,11-50,Healthcare,Active,2026-03-03 00:00:00
+CUST-000514,ACC-000514,Cisneros and Sons,contact514@cisnerosandsons.example,Spain,Barcelona,2025-07-05,Paid Search,SMB,201-1000,Financial Services,Active,2025-09-02 00:00:00
+CUST-000515,ACC-000515,"Gregory, Kim and Martinez",contact515@gregorykimandmarti.example,Australia,Melbourne,2024-03-16,Email,Mid-Market,11-50,Media,Active,2024-05-30 00:00:00
+CUST-000516,ACC-000516,Osborne LLC,contact516@osbornellc.example,United States,San Francisco,2025-08-22,Email,SMB,51-200,Manufacturing,Active,2025-09-01 00:00:00
+CUST-000517,ACC-000517,Reyes-Bradley,contact517@reyes-bradley.example,Australia,Brisbane,2025-05-20,Paid Social,Startup,51-200,Manufacturing,Active,2025-08-14 00:00:00
+CUST-000518,ACC-000518,"Hernandez, Cole and Watson",contact518@hernandezcoleandwa.example,United States,New York,2025-01-19,Organic,Enterprise,51-200,Healthcare,Active,2025-03-03 00:00:00
+CUST-000519,ACC-000519,Hines-Berry,contact519@hines-berry.example,Germany,Hamburg,2024-04-14,Paid Search,Mid-Market,201-1000,Technology,Active,2024-06-17 00:00:00
+CUST-000520,ACC-000520,"Richardson, Edwards and Ramirez",contact520@richardsonedwardsa.example,France,Marseille,2025-12-29,Referral,Mid-Market,51-200,Technology,Active,2026-01-20 00:00:00
+CUST-000521,ACC-000521,Johnson and Sons,contact521@johnsonandsons.example,United Kingdom,Edinburgh,2024-11-19,Paid Social,Mid-Market,1001-5000,Professional Services,Active,2024-11-27 00:00:00
+CUST-000522,ACC-000522,Holmes-Mcintyre,contact522@holmes-mcintyre.example,Canada,Calgary,2024-02-02,Paid Search,SMB,1001-5000,Technology,Active,2024-04-22 00:00:00
+CUST-000523,ACC-000523,Green LLC,contact523@greenllc.example,Canada,Toronto,2024-06-02,Paid Social,Mid-Market,1001-5000,Healthcare,Active,2024-07-12 00:00:00
+CUST-000524,ACC-000524,"Griffin, Davies and Mitchell",contact524@griffindaviesandmi.example,Spain,Madrid,2024-10-20,Partner,SMB,201-1000,Telecommunications,Active,2024-11-01 00:00:00
+CUST-000525,ACC-000525,Gonzalez-Taylor,contact525@gonzalez-taylor.example,United Kingdom,Bristol,2024-02-15,Referral,Mid-Market,201-1000,Retail,Active,2024-04-14 00:00:00
+CUST-000526,ACC-000526,Hayes Ltd,contact526@hayesltd.example,United Kingdom,London,2024-08-24,Direct,Enterprise,201-1000,Media,Active,2024-08-28 00:00:00
+CUST-000527,ACC-000527,Osborn-Cochran,contact527@osborn-cochran.example,Australia,Melbourne,2024-12-08,Email,Mid-Market,51-200,Retail,Active,2025-01-17 00:00:00
+CUST-000528,ACC-000528,Contreras-Mckinney,contact528@contreras-mckinney.example,Canada,Toronto,2025-11-24,Email,SMB,51-200,Telecommunications,Active,2026-01-27 00:00:00
+CUST-000529,ACC-000529,"Daniels, Vance and York",contact529@danielsvanceandyor.example,Australia,Sydney,2024-03-04,Organic,SMB,201-1000,Logistics,Active,2024-05-08 00:00:00
+CUST-000530,ACC-000530,"Mckinney, Graves and Thompson",contact530@mckinneygravesandt.example,Australia,Adelaide,2025-02-25,Partner,Mid-Market,1-10,Manufacturing,Active,2025-04-07 00:00:00
+CUST-000531,ACC-000531,Hicks-Martinez,contact531@hicks-martinez.example,France,Paris,2025-10-31,Organic,SMB,1-10,Professional Services,Active,2025-12-03 00:00:00
+CUST-000532,ACC-000532,Conner and Sons,contact532@connerandsons.example,Canada,Toronto,2025-08-12,Paid Social,Enterprise,1001-5000,Manufacturing,Active,2025-10-27 00:00:00
+CUST-000533,ACC-000533,Johnson-Spencer,contact533@johnson-spencer.example,Canada,Ottawa,2025-11-07,Email,Mid-Market,1-10,Telecommunications,Active,2025-11-23 00:00:00
+CUST-000534,ACC-000534,Mcdonald-Bird,contact534@mcdonald-bird.example,United Kingdom,London,2024-05-04,Email,Mid-Market,51-200,Retail,Active,2024-05-10 00:00:00
+CUST-000535,ACC-000535,Salazar Inc,contact535@salazarinc.example,France,Lille,2025-08-08,Paid Search,Startup,201-1000,Logistics,Active,2025-08-22 00:00:00
+CUST-000536,ACC-000536,Parker Ltd,contact536@parkerltd.example,Canada,Toronto,2025-12-16,Organic,SMB,11-50,Professional Services,Active,2026-02-26 00:00:00
+CUST-000537,ACC-000537,"Mendoza, Jenkins and Ortiz",contact537@mendozajenkinsando.example,Germany,Berlin,2024-08-26,Paid Social,SMB,1001-5000,Professional Services,Inactive,2024-10-07 00:00:00
+CUST-000538,ACC-000538,"Jones, Compton and Day",contact538@jonescomptonandday.example,United States,New York,2024-12-30,Partner,Enterprise,11-50,Retail,Active,2025-01-02 00:00:00
+CUST-000539,ACC-000539,Owens-Holmes,contact539@owens-holmes.example,France,Toulouse,2025-01-23,Paid Social,Mid-Market,1001-5000,Logistics,Active,2025-02-07 00:00:00
+CUST-000540,ACC-000540,Humphrey PLC,contact540@humphreyplc.example,United States,Chicago,2024-12-26,Partner,SMB,201-1000,Media,Active,2024-12-28 00:00:00
+CUST-000541,ACC-000541,"Matthews, Saunders and Anderson",contact541@matthewssaundersan.example,Netherlands,Utrecht,2024-07-30,Organic,Mid-Market,11-50,Logistics,Active,2024-10-12 00:00:00
+CUST-000542,ACC-000542,"Bartlett, Brown and Martinez",contact542@bartlettbrownandma.example,United States,Austin,2025-12-10,Referral,Startup,11-50,Logistics,Active,2026-01-20 00:00:00
+CUST-000543,ACC-000543,Torres and Sons,contact543@torresandsons.example,Canada,Toronto,2025-11-30,Paid Search,SMB,51-200,Financial Services,Active,2025-12-06 00:00:00
+CUST-000544,ACC-000544,Donovan-Perez,contact544@donovan-perez.example,Canada,Montreal,2024-10-05,Direct,Mid-Market,51-200,Logistics,Inactive,2024-10-25 00:00:00
+CUST-000545,ACC-000545,"Jacobson, Singleton and King",contact545@jacobsonsingletona.example,Spain,Barcelona,2025-08-11,Organic,SMB,11-50,Logistics,Churned,2025-10-06 00:00:00
+CUST-000546,ACC-000546,"Huber, Hill and Weber",contact546@huberhillandweber.example,United States,Seattle,2024-10-17,Paid Social,Startup,5000+,Healthcare,Active,2024-12-10 00:00:00
+CUST-000547,ACC-000547,"Ferguson, Shaw and Jackson",contact547@fergusonshawandjac.example,Germany,Frankfurt,2025-08-04,Paid Social,Mid-Market,11-50,Telecommunications,Active,2025-10-17 00:00:00
+CUST-000548,ACC-000548,"Moore, Hopkins and Le",contact548@moorehopkinsandle.example,France,Lille,2025-03-03,Paid Social,SMB,1001-5000,Education,Active,2025-03-05 00:00:00
+CUST-000549,ACC-000549,"Morgan, Bradshaw and Williams",contact549@morganbradshawandw.example,France,Marseille,2024-12-09,Paid Social,Startup,11-50,Retail,Active,2024-12-15 00:00:00
+CUST-000550,ACC-000550,Miller Ltd,contact550@millerltd.example,Netherlands,Amsterdam,2024-04-03,Referral,Mid-Market,5000+,Healthcare,Active,2024-04-06 00:00:00
+CUST-000551,ACC-000551,"Baker, Clark and Armstrong",contact551@bakerclarkandarmst.example,Spain,Barcelona,2025-04-23,Direct,Startup,11-50,Retail,Churned,2025-05-28 00:00:00
+CUST-000552,ACC-000552,"Fowler, Jimenez and Burton",contact552@fowlerjimenezandbu.example,Germany,Cologne,2024-08-22,Email,Enterprise,51-200,Technology,Active,2024-10-27 00:00:00
+CUST-000553,ACC-000553,May-Turner,contact553@may-turner.example,Spain,Valencia,2024-06-07,Email,SMB,201-1000,Professional Services,Active,2024-08-06 00:00:00
+CUST-000554,ACC-000554,Ballard Ltd,contact554@ballardltd.example,United Kingdom,Bristol,2024-05-21,Organic,SMB,11-50,Media,Active,2024-06-09 00:00:00
+CUST-000555,ACC-000555,Evans-Jones,contact555@evans-jones.example,Australia,Brisbane,2025-12-18,Partner,SMB,1001-5000,Professional Services,Active,2026-02-15 00:00:00
+CUST-000556,ACC-000556,Moore Group,contact556@mooregroup.example,France,Paris,2024-03-16,Partner,SMB,11-50,Education,Active,2024-05-14 00:00:00
+CUST-000557,ACC-000557,Marshall-Peterson,contact557@marshall-peterson.example,Netherlands,The Hague,2025-08-06,Paid Social,SMB,201-1000,Retail,Churned,2025-08-23 00:00:00
+CUST-000558,ACC-000558,Edwards Ltd,contact558@edwardsltd.example,Australia,Perth,2025-09-25,Direct,Enterprise,201-1000,Media,Active,2025-12-02 00:00:00
+CUST-000559,ACC-000559,Gross-Valencia,contact559@gross-valencia.example,Spain,Bilbao,2024-01-23,Organic,Mid-Market,201-1000,Logistics,Active,2024-03-01 00:00:00
+CUST-000560,ACC-000560,Anderson-Wood,contact560@anderson-wood.example,Spain,Bilbao,2025-03-06,Partner,Mid-Market,1-10,Technology,Active,2025-03-11 00:00:00
+CUST-000561,ACC-000561,"Rodriguez, Allen and Martinez",contact561@rodriguezallenandm.example,France,Lyon,2025-02-26,Direct,SMB,11-50,Retail,Inactive,2025-04-02 00:00:00
+CUST-000562,ACC-000562,Wright-Davis,contact562@wright-davis.example,United States,Austin,2024-09-19,Referral,Mid-Market,11-50,Telecommunications,Active,2024-11-28 00:00:00
+CUST-000563,ACC-000563,Dougherty-Lin,contact563@dougherty-lin.example,Germany,Munich,2025-05-02,Paid Search,Mid-Market,51-200,Logistics,Active,2025-07-04 00:00:00
+CUST-000564,ACC-000564,Wright-Grimes,contact564@wright-grimes.example,Canada,Ottawa,2024-10-25,Email,Startup,11-50,Telecommunications,Active,2024-11-18 00:00:00
+CUST-000565,ACC-000565,Li PLC,contact565@liplc.example,Australia,Brisbane,2024-11-17,Paid Search,Mid-Market,5000+,Financial Services,Active,2025-01-24 00:00:00
+CUST-000566,ACC-000566,"Edwards, Hines and Jimenez",contact566@edwardshinesandjim.example,Canada,Montreal,2024-11-11,Referral,Mid-Market,51-200,Manufacturing,Inactive,2024-12-16 00:00:00
+CUST-000567,ACC-000567,"Owens, Koch and Jimenez",contact567@owenskochandjimene.example,Canada,Ottawa,2025-08-08,Paid Social,Mid-Market,201-1000,Financial Services,Active,2025-09-18 00:00:00
+CUST-000568,ACC-000568,Landry PLC,contact568@landryplc.example,Canada,Calgary,2025-04-07,Email,Mid-Market,51-200,Logistics,Churned,2025-04-14 00:00:00
+CUST-000569,ACC-000569,Levy-Lewis,contact569@levy-lewis.example,Netherlands,The Hague,2024-10-04,Partner,SMB,11-50,Education,Active,2025-01-02 00:00:00
+CUST-000570,ACC-000570,Williams-Campbell,contact570@williams-campbell.example,France,Lille,2025-11-08,Paid Search,Mid-Market,51-200,Healthcare,Active,2026-01-23 00:00:00
+CUST-000571,ACC-000571,"Khan, Pena and Ruiz",contact571@khanpenaandruiz.example,Australia,Sydney,2025-08-09,Organic,Enterprise,51-200,Technology,Active,2025-08-26 00:00:00
+CUST-000572,ACC-000572,"Smith, Rodriguez and Anderson",contact572@smithrodriguezanda.example,Germany,Munich,2025-11-12,Email,Startup,51-200,Media,Active,2026-01-02 00:00:00
+CUST-000573,ACC-000573,Luna-Gallagher,contact573@luna-gallagher.example,United Kingdom,Bristol,2025-06-17,Organic,SMB,51-200,Logistics,Active,2025-08-27 00:00:00
+CUST-000574,ACC-000574,Williams-Williams,contact574@williams-williams.example,United States,San Francisco,2024-10-13,Paid Search,SMB,51-200,Logistics,Active,2024-11-27 00:00:00
+CUST-000575,ACC-000575,"Lee, Tran and Jones",contact575@leetranandjones.example,United States,New York,2025-07-19,Paid Search,Startup,5000+,Telecommunications,Active,2025-08-07 00:00:00
+CUST-000576,ACC-000576,"Cole, Pierce and Bryan",contact576@colepierceandbryan.example,United Kingdom,Manchester,2024-08-28,Organic,Startup,11-50,Logistics,Active,2024-11-24 00:00:00
+CUST-000577,ACC-000577,"Becker, Wilson and Hester",contact577@beckerwilsonandhes.example,Australia,Brisbane,2024-07-17,Email,Mid-Market,51-200,Media,Churned,2024-08-10 00:00:00
+CUST-000578,ACC-000578,Brooks-Hatfield,contact578@brooks-hatfield.example,France,Toulouse,2024-11-25,Email,SMB,11-50,Logistics,Active,2024-12-25 00:00:00
+CUST-000579,ACC-000579,"Mcmillan, Fischer and Gonzalez",contact579@mcmillanfischerand.example,Australia,Sydney,2025-12-09,Paid Search,SMB,51-200,Telecommunications,Active,2026-01-11 00:00:00
+CUST-000580,ACC-000580,"Morales, Williams and Williams",contact580@moraleswilliamsand.example,United States,Chicago,2025-02-19,Organic,Mid-Market,201-1000,Manufacturing,Active,2025-05-11 00:00:00
+CUST-000581,ACC-000581,"Cook, Wells and Bryant",contact581@cookwellsandbryant.example,United States,Austin,2024-10-07,Paid Social,Mid-Market,11-50,Media,Active,2024-11-21 00:00:00
+CUST-000582,ACC-000582,"Barry, Taylor and Velazquez",contact582@barrytaylorandvela.example,Spain,Barcelona,2024-12-03,Paid Social,Enterprise,201-1000,Logistics,Active,2025-02-06 00:00:00
+CUST-000583,ACC-000583,Martin-Ewing,contact583@martin-ewing.example,United States,Seattle,2024-07-31,Referral,SMB,51-200,Financial Services,Active,2024-10-21 00:00:00
+CUST-000584,ACC-000584,"Kirby, Wheeler and Romero",contact584@kirbywheelerandrom.example,United States,Seattle,2025-04-26,Paid Social,SMB,1-10,Professional Services,Active,2025-07-19 00:00:00
+CUST-000585,ACC-000585,"Patel, Erickson and Evans",contact585@patelericksonandev.example,Germany,Frankfurt,2024-09-13,Email,SMB,5000+,Retail,Active,2024-11-29 00:00:00
+CUST-000586,ACC-000586,Richardson Ltd,contact586@richardsonltd.example,Australia,Melbourne,2025-02-09,Direct,Mid-Market,51-200,Financial Services,Active,2025-05-02 00:00:00
+CUST-000587,ACC-000587,Whitney PLC,contact587@whitneyplc.example,Netherlands,The Hague,2024-09-27,Organic,Mid-Market,1001-5000,Financial Services,Active,2024-12-22 00:00:00
+CUST-000588,ACC-000588,Robles-Swanson,contact588@robles-swanson.example,United States,New York,2024-08-22,Email,Mid-Market,51-200,Financial Services,Active,2024-11-20 00:00:00
+CUST-000589,ACC-000589,"Soto, Carlson and Baker",contact589@sotocarlsonandbake.example,Spain,Bilbao,2025-12-10,Paid Search,SMB,5000+,Logistics,Active,2026-02-06 00:00:00
+CUST-000590,ACC-000590,"Patton, Parsons and Lane",contact590@pattonparsonsandla.example,Spain,Madrid,2024-09-09,Paid Search,Startup,51-200,Media,Active,2024-09-20 00:00:00
+CUST-000591,ACC-000591,"Williams, Castillo and Warren",contact591@williamscastilloan.example,Spain,Seville,2024-02-21,Paid Search,Startup,51-200,Financial Services,Active,2024-03-02 00:00:00
+CUST-000592,ACC-000592,"Harvey, Randall and Hernandez",contact592@harveyrandallandhe.example,Australia,Melbourne,2024-10-03,Referral,Startup,201-1000,Professional Services,Active,2024-12-14 00:00:00
+CUST-000593,ACC-000593,"Allen, Armstrong and Graves",contact593@allenarmstrongandg.example,Canada,Vancouver,2025-01-23,Partner,SMB,51-200,Professional Services,Active,2025-02-20 00:00:00
+CUST-000594,ACC-000594,Smith LLC,contact594@smithllc.example,Australia,Sydney,2024-03-10,Paid Search,Startup,51-200,Education,Active,2024-05-22 00:00:00
+CUST-000595,ACC-000595,Hernandez-Vaughn,contact595@hernandez-vaughn.example,United Kingdom,Bristol,2024-08-11,Paid Social,Mid-Market,5000+,Professional Services,Inactive,2024-11-04 00:00:00
+CUST-000596,ACC-000596,Shaw-Carr,contact596@shaw-carr.example,Spain,Madrid,2024-05-01,Paid Social,Enterprise,201-1000,Telecommunications,Active,2024-06-28 00:00:00
+CUST-000597,ACC-000597,Salas-Fitzgerald,contact597@salas-fitzgerald.example,France,Toulouse,2024-12-31,Email,Enterprise,201-1000,Education,Active,2025-03-10 00:00:00
+CUST-000598,ACC-000598,Thornton PLC,contact598@thorntonplc.example,Spain,Seville,2025-06-12,Email,Mid-Market,201-1000,Professional Services,Active,2025-07-07 00:00:00
+CUST-000599,ACC-000599,Hoffman Ltd,contact599@hoffmanltd.example,Netherlands,The Hague,2025-12-08,Email,Mid-Market,1001-5000,Education,Active,2026-01-16 00:00:00
+CUST-000600,ACC-000600,Fox-Edwards,contact600@fox-edwards.example,Netherlands,Eindhoven,2024-10-11,Partner,Enterprise,1001-5000,Retail,Active,2025-01-06 00:00:00
+CUST-000601,ACC-000601,Stevens PLC,contact601@stevensplc.example,France,Lyon,2025-09-23,Paid Social,Startup,201-1000,Logistics,Active,2025-12-06 00:00:00
+CUST-000602,ACC-000602,Payne-Lowe,contact602@payne-lowe.example,Spain,Seville,2024-06-05,Email,Mid-Market,51-200,Manufacturing,Active,2024-06-23 00:00:00
+CUST-000603,ACC-000603,"Becker, Lara and Baker",contact603@beckerlaraandbaker.example,Netherlands,The Hague,2025-07-24,Email,Startup,1-10,Media,Active,2025-10-17 00:00:00
+CUST-000604,ACC-000604,Lee-Wright,contact604@lee-wright.example,Canada,Vancouver,2025-02-15,Paid Social,SMB,201-1000,Professional Services,Inactive,2025-04-01 00:00:00
+CUST-000605,ACC-000605,"Evans, David and Hendrix",contact605@evansdavidandhendr.example,Spain,Madrid,2025-07-08,Partner,SMB,1001-5000,Professional Services,Active,2025-09-22 00:00:00
+CUST-000606,ACC-000606,Bush-Vaughn,contact606@bush-vaughn.example,France,Lille,2025-07-06,Paid Search,SMB,51-200,Media,Active,2025-08-22 00:00:00
+CUST-000607,ACC-000607,Stewart-Bailey,contact607@stewart-bailey.example,United Kingdom,London,2025-01-24,Referral,Mid-Market,11-50,Media,Active,2025-03-19 00:00:00
+CUST-000608,ACC-000608,"Hill, Martinez and Rhodes",contact608@hillmartinezandrho.example,France,Marseille,2024-07-07,Referral,SMB,51-200,Education,Churned,2024-07-21 00:00:00
+CUST-000609,ACC-000609,Huang-Foster,contact609@huang-foster.example,Australia,Melbourne,2025-01-19,Partner,Mid-Market,51-200,Professional Services,Active,2025-02-18 00:00:00
+CUST-000610,ACC-000610,Blevins-Ballard,contact610@blevins-ballard.example,Spain,Madrid,2025-08-27,Organic,Startup,1001-5000,Education,Active,2025-10-31 00:00:00
+CUST-000611,ACC-000611,Williams-Moses,contact611@williams-moses.example,Spain,Seville,2025-12-10,Paid Social,Mid-Market,11-50,Retail,Active,2026-02-24 00:00:00
+CUST-000612,ACC-000612,Reed Group,contact612@reedgroup.example,Germany,Berlin,2025-11-09,Partner,Mid-Market,201-1000,Media,Active,2025-11-17 00:00:00
+CUST-000613,ACC-000613,"Scott, Mendoza and Harris",contact613@scottmendozaandhar.example,Spain,Seville,2024-05-12,Referral,SMB,201-1000,Logistics,Active,2024-05-18 00:00:00
+CUST-000614,ACC-000614,"Nelson, Hoffman and Nelson",contact614@nelsonhoffmanandne.example,Germany,Frankfurt,2025-03-12,Organic,SMB,5000+,Media,Active,2025-05-14 00:00:00
+CUST-000615,ACC-000615,Gilbert PLC,contact615@gilbertplc.example,Netherlands,Amsterdam,2024-03-17,Referral,Mid-Market,11-50,Media,Active,2024-04-26 00:00:00
+CUST-000616,ACC-000616,Sanchez Ltd,contact616@sanchezltd.example,Netherlands,Amsterdam,2025-05-04,Paid Social,SMB,5000+,Logistics,Inactive,2025-07-20 00:00:00
+CUST-000617,ACC-000617,"Perez, Hall and Garcia",contact617@perezhallandgarcia.example,Canada,Calgary,2025-12-26,Email,Enterprise,201-1000,Retail,Active,2026-01-01 00:00:00
+CUST-000618,ACC-000618,Love-Garcia,contact618@love-garcia.example,United Kingdom,Birmingham,2024-02-08,Partner,SMB,201-1000,Technology,Active,2024-03-10 00:00:00
+CUST-000619,ACC-000619,Smith PLC,contact619@smithplc.example,United States,New York,2025-04-24,Paid Social,Mid-Market,1-10,Retail,Active,2025-04-27 00:00:00
+CUST-000620,ACC-000620,Russell Group,contact620@russellgroup.example,Canada,Ottawa,2025-11-22,Organic,Mid-Market,51-200,Media,Active,2026-01-25 00:00:00
+CUST-000621,ACC-000621,Santos-Avila,contact621@santos-avila.example,Germany,Munich,2025-09-11,Direct,Enterprise,201-1000,Logistics,Active,2025-11-28 00:00:00
+CUST-000622,ACC-000622,Morris-Brewer,contact622@morris-brewer.example,Germany,Berlin,2024-10-13,Referral,Mid-Market,51-200,Education,Active,2024-10-27 00:00:00
+CUST-000623,ACC-000623,Pearson and Sons,contact623@pearsonandsons.example,Canada,Ottawa,2024-03-16,Partner,Mid-Market,51-200,Media,Active,2024-04-14 00:00:00
+CUST-000624,ACC-000624,"Rodgers, Jefferson and Johnson",contact624@rodgersjeffersonan.example,Germany,Berlin,2025-11-06,Organic,Mid-Market,201-1000,Technology,Active,2026-01-21 00:00:00
+CUST-000625,ACC-000625,Butler and Sons,contact625@butlerandsons.example,France,Marseille,2025-11-04,Direct,Mid-Market,201-1000,Professional Services,Active,2025-11-07 00:00:00
+CUST-000626,ACC-000626,Osborn Group,contact626@osborngroup.example,Canada,Ottawa,2025-02-27,Paid Search,Mid-Market,1-10,Professional Services,Active,2025-05-24 00:00:00
+CUST-000627,ACC-000627,Lopez-Curry,contact627@lopez-curry.example,United Kingdom,Birmingham,2025-12-16,Organic,SMB,51-200,Education,Active,2026-03-06 00:00:00
+CUST-000628,ACC-000628,Mcdowell-Smith,contact628@mcdowell-smith.example,United Kingdom,Birmingham,2024-01-04,Organic,Enterprise,11-50,Media,Active,2024-01-17 00:00:00
+CUST-000629,ACC-000629,"Morrison, Hebert and Rogers",contact629@morrisonhebertandr.example,France,Lyon,2025-03-26,Referral,SMB,1001-5000,Manufacturing,Active,2025-04-07 00:00:00
+CUST-000630,ACC-000630,Hays-Daniels,contact630@hays-daniels.example,United Kingdom,London,2024-01-29,Partner,Startup,5000+,Education,Active,2024-03-31 00:00:00
+CUST-000631,ACC-000631,Small-Anderson,contact631@small-anderson.example,Netherlands,Utrecht,2025-11-14,Referral,Mid-Market,51-200,Professional Services,Active,2025-11-14 00:00:00
+CUST-000632,ACC-000632,"Mcdonald, Lee and Rodriguez",contact632@mcdonaldleeandrodr.example,United Kingdom,Edinburgh,2025-05-12,Email,Startup,11-50,Media,Active,2025-06-27 00:00:00
+CUST-000633,ACC-000633,Simon Ltd,contact633@simonltd.example,Germany,Berlin,2025-10-29,Organic,Enterprise,11-50,Healthcare,Churned,2025-11-03 00:00:00
+CUST-000634,ACC-000634,Higgins-Smith,contact634@higgins-smith.example,Germany,Cologne,2025-02-15,Organic,Enterprise,51-200,Retail,Inactive,2025-04-04 00:00:00
+CUST-000635,ACC-000635,Gibbs-Bradley,contact635@gibbs-bradley.example,Canada,Montreal,2024-03-01,Organic,SMB,1001-5000,Manufacturing,Active,2024-04-01 00:00:00
+CUST-000636,ACC-000636,Thompson Ltd,contact636@thompsonltd.example,Netherlands,Utrecht,2024-01-20,Paid Search,SMB,51-200,Healthcare,Active,2024-03-24 00:00:00
+CUST-000637,ACC-000637,Wilcox-Robertson,contact637@wilcox-robertson.example,Canada,Toronto,2024-09-02,Organic,SMB,1-10,Retail,Active,2024-11-21 00:00:00
+CUST-000638,ACC-000638,Morales Inc,contact638@moralesinc.example,United Kingdom,Bristol,2025-06-27,Partner,Enterprise,1-10,Retail,Active,2025-08-10 00:00:00
+CUST-000639,ACC-000639,Holden Group,contact639@holdengroup.example,Spain,Madrid,2024-04-20,Referral,SMB,11-50,Retail,Active,2024-06-17 00:00:00
+CUST-000640,ACC-000640,Boyle-Smith,contact640@boyle-smith.example,Australia,Melbourne,2025-09-14,Referral,Mid-Market,1001-5000,Manufacturing,Active,2025-11-07 00:00:00
+CUST-000641,ACC-000641,Young-Molina,contact641@young-molina.example,Netherlands,Eindhoven,2024-06-24,Organic,Mid-Market,201-1000,Education,Inactive,2024-09-21 00:00:00
+CUST-000642,ACC-000642,Turner-Sharp,contact642@turner-sharp.example,Australia,Sydney,2024-12-28,Organic,Enterprise,201-1000,Professional Services,Active,2025-01-18 00:00:00
+CUST-000643,ACC-000643,Green LLC,contact643@greenllc.example,Spain,Valencia,2024-05-28,Paid Search,Startup,51-200,Retail,Active,2024-06-18 00:00:00
+CUST-000644,ACC-000644,"Young, Contreras and Marshall",contact644@youngcontrerasandm.example,Germany,Hamburg,2024-12-06,Organic,Enterprise,5000+,Logistics,Active,2025-01-09 00:00:00
+CUST-000645,ACC-000645,Sullivan PLC,contact645@sullivanplc.example,Spain,Madrid,2024-11-26,Organic,SMB,51-200,Manufacturing,Active,2025-02-01 00:00:00
+CUST-000646,ACC-000646,"Carrillo, Vaughn and Fowler",contact646@carrillovaughnandf.example,United Kingdom,Manchester,2024-01-05,Paid Social,SMB,1001-5000,Media,Inactive,2024-03-23 00:00:00
+CUST-000647,ACC-000647,Richardson-Walker,contact647@richardson-walker.example,Germany,Munich,2025-02-19,Paid Search,SMB,1001-5000,Financial Services,Active,2025-03-16 00:00:00
+CUST-000648,ACC-000648,Mendoza Group,contact648@mendozagroup.example,France,Toulouse,2025-07-29,Email,SMB,51-200,Financial Services,Churned,2025-08-08 00:00:00
+CUST-000649,ACC-000649,"Zhang, Brooks and Miles",contact649@zhangbrooksandmile.example,Australia,Adelaide,2025-11-15,Organic,SMB,1001-5000,Manufacturing,Active,2026-01-09 00:00:00
+CUST-000650,ACC-000650,Todd-Pham,contact650@todd-pham.example,Spain,Bilbao,2024-08-29,Organic,Mid-Market,11-50,Retail,Active,2024-10-22 00:00:00
+CUST-000651,ACC-000651,Gill Ltd,contact651@gillltd.example,Germany,Berlin,2025-10-05,Paid Social,Enterprise,201-1000,Manufacturing,Active,2025-11-08 00:00:00
+CUST-000652,ACC-000652,"Marks, Miller and Griffin",contact652@marksmillerandgrif.example,Netherlands,Amsterdam,2025-10-04,Organic,SMB,1-10,Financial Services,Active,2025-10-20 00:00:00
+CUST-000653,ACC-000653,"Cox, Stark and Rodriguez",contact653@coxstarkandrodrigu.example,Canada,Toronto,2025-12-23,Organic,Mid-Market,51-200,Manufacturing,Active,2026-03-10 00:00:00
+CUST-000654,ACC-000654,"Leach, Harris and Herrera",contact654@leachharrisandherr.example,Spain,Valencia,2024-09-29,Organic,Enterprise,11-50,Professional Services,Active,2024-12-15 00:00:00
+CUST-000655,ACC-000655,Murphy PLC,contact655@murphyplc.example,France,Paris,2025-09-14,Email,Mid-Market,1-10,Media,Active,2025-11-21 00:00:00
+CUST-000656,ACC-000656,Wilson-Harris,contact656@wilson-harris.example,France,Lyon,2025-02-17,Paid Search,Mid-Market,1-10,Healthcare,Active,2025-04-10 00:00:00
+CUST-000657,ACC-000657,"Burns, Nolan and Griffin",contact657@burnsnolanandgriff.example,Spain,Bilbao,2024-02-12,Partner,Enterprise,51-200,Retail,Active,2024-03-06 00:00:00
+CUST-000658,ACC-000658,Chavez PLC,contact658@chavezplc.example,Netherlands,The Hague,2024-07-16,Paid Search,Enterprise,201-1000,Education,Active,2024-08-21 00:00:00
+CUST-000659,ACC-000659,Bryant-Brown,contact659@bryant-brown.example,United States,San Francisco,2025-05-06,Organic,Startup,51-200,Education,Active,2025-05-12 00:00:00
+CUST-000660,ACC-000660,Chambers-Parker,contact660@chambers-parker.example,United Kingdom,Manchester,2024-04-27,Paid Social,Mid-Market,51-200,Media,Active,2024-05-19 00:00:00
+CUST-000661,ACC-000661,Foster Inc,contact661@fosterinc.example,Canada,Calgary,2024-11-13,Organic,Startup,5000+,Retail,Active,2024-12-23 00:00:00
+CUST-000662,ACC-000662,"Robinson, Jones and Henderson",contact662@robinsonjonesandhe.example,Netherlands,Eindhoven,2025-07-20,Paid Social,Startup,5000+,Professional Services,Active,2025-08-28 00:00:00
+CUST-000663,ACC-000663,"Brown, Mcknight and Michael",contact663@brownmcknightandmi.example,United States,New York,2024-04-19,Partner,Enterprise,11-50,Logistics,Active,2024-04-26 00:00:00
+CUST-000664,ACC-000664,Andersen Group,contact664@andersengroup.example,Canada,Montreal,2024-12-29,Organic,SMB,51-200,Healthcare,Active,2025-03-26 00:00:00
+CUST-000665,ACC-000665,Mitchell and Sons,contact665@mitchellandsons.example,France,Marseille,2024-06-06,Email,SMB,201-1000,Logistics,Inactive,2024-06-30 00:00:00
+CUST-000666,ACC-000666,Cannon Ltd,contact666@cannonltd.example,Netherlands,Rotterdam,2025-01-27,Paid Social,SMB,201-1000,Retail,Active,2025-03-14 00:00:00
+CUST-000667,ACC-000667,"Stuart, Brooks and Vance",contact667@stuartbrooksandvan.example,France,Toulouse,2024-06-24,Paid Search,Enterprise,51-200,Retail,Inactive,2024-08-05 00:00:00
+CUST-000668,ACC-000668,Kane-Knox,contact668@kane-knox.example,Spain,Seville,2025-12-06,Organic,Mid-Market,201-1000,Professional Services,Active,2026-01-17 00:00:00
+CUST-000669,ACC-000669,Miller-Brandt,contact669@miller-brandt.example,Australia,Brisbane,2024-02-26,Organic,Enterprise,11-50,Professional Services,Active,2024-05-12 00:00:00
+CUST-000670,ACC-000670,"Anderson, Dalton and Wilson",contact670@andersondaltonandw.example,Canada,Calgary,2025-12-05,Organic,SMB,51-200,Education,Active,2026-02-10 00:00:00
+CUST-000671,ACC-000671,"Long, Anderson and Irwin",contact671@longandersonandirw.example,Australia,Perth,2025-08-01,Direct,Startup,201-1000,Healthcare,Active,2025-10-18 00:00:00
+CUST-000672,ACC-000672,Avila LLC,contact672@avilallc.example,France,Marseille,2025-09-17,Referral,SMB,201-1000,Technology,Active,2025-10-21 00:00:00
+CUST-000673,ACC-000673,Nunez-Stephens,contact673@nunez-stephens.example,Netherlands,Rotterdam,2025-09-14,Direct,SMB,1001-5000,Telecommunications,Active,2025-10-08 00:00:00
+CUST-000674,ACC-000674,"Gray, Hall and Murray",contact674@grayhallandmurray.example,United States,Chicago,2024-05-17,Paid Social,Startup,1-10,Logistics,Active,2024-06-24 00:00:00
+CUST-000675,ACC-000675,Hill Ltd,contact675@hillltd.example,France,Toulouse,2025-11-11,Referral,SMB,11-50,Logistics,Active,2026-01-01 00:00:00
+CUST-000676,ACC-000676,Johnson Ltd,contact676@johnsonltd.example,Netherlands,The Hague,2025-03-10,Email,Enterprise,1-10,Education,Active,2025-04-09 00:00:00
+CUST-000677,ACC-000677,Mendez-Mayer,contact677@mendez-mayer.example,France,Paris,2025-12-04,Email,Startup,11-50,Logistics,Active,2026-01-14 00:00:00
+CUST-000678,ACC-000678,Allen Inc,contact678@alleninc.example,United States,Seattle,2025-10-03,Direct,Mid-Market,1-10,Manufacturing,Active,2025-10-16 00:00:00
+CUST-000679,ACC-000679,Wheeler Group,contact679@wheelergroup.example,France,Lille,2025-02-27,Email,Enterprise,51-200,Technology,Active,2025-04-21 00:00:00
+CUST-000680,ACC-000680,"Powers, Brennan and Sanchez",contact680@powersbrennanandsa.example,Australia,Brisbane,2024-09-30,Partner,SMB,51-200,Financial Services,Churned,2024-12-03 00:00:00
+CUST-000681,ACC-000681,Morales and Sons,contact681@moralesandsons.example,Netherlands,The Hague,2024-03-26,Referral,Startup,201-1000,Healthcare,Active,2024-05-12 00:00:00
+CUST-000682,ACC-000682,"Robinson, Shields and Brown",contact682@robinsonshieldsand.example,Canada,Toronto,2024-03-14,Paid Search,Mid-Market,51-200,Retail,Churned,2024-06-01 00:00:00
+CUST-000683,ACC-000683,"Holder, Young and Hendricks",contact683@holderyoungandhend.example,Australia,Sydney,2024-10-11,Email,SMB,1-10,Telecommunications,Active,2025-01-09 00:00:00
+CUST-000684,ACC-000684,"Flores, Harper and Chambers",contact684@floresharperandcha.example,Australia,Perth,2025-08-15,Organic,Enterprise,201-1000,Retail,Active,2025-11-05 00:00:00
+CUST-000685,ACC-000685,Young-Walter,contact685@young-walter.example,Canada,Vancouver,2025-01-04,Partner,Enterprise,1-10,Professional Services,Active,2025-01-12 00:00:00
+CUST-000686,ACC-000686,"Boyd, Gutierrez and Hill",contact686@boydgutierrezandhi.example,Spain,Valencia,2024-12-18,Partner,Enterprise,1001-5000,Healthcare,Active,2025-03-08 00:00:00
+CUST-000687,ACC-000687,"Fry, Hobbs and Buck",contact687@fryhobbsandbuck.example,Germany,Hamburg,2024-06-27,Paid Search,SMB,1-10,Professional Services,Active,2024-07-27 00:00:00
+CUST-000688,ACC-000688,"Shelton, Peters and Williams",contact688@sheltonpetersandwi.example,France,Marseille,2025-02-16,Paid Search,Startup,51-200,Education,Active,2025-03-29 00:00:00
+CUST-000689,ACC-000689,David-Powers,contact689@david-powers.example,Germany,Cologne,2025-04-11,Paid Search,Enterprise,1001-5000,Financial Services,Active,2025-05-18 00:00:00
+CUST-000690,ACC-000690,"Flores, Butler and Hernandez",contact690@floresbutlerandher.example,Spain,Madrid,2025-12-18,Organic,Mid-Market,201-1000,Manufacturing,Inactive,2026-01-12 00:00:00
+CUST-000691,ACC-000691,White-Medina,contact691@white-medina.example,Australia,Perth,2025-06-17,Paid Search,Mid-Market,201-1000,Financial Services,Active,2025-09-04 00:00:00
+CUST-000692,ACC-000692,Atkinson LLC,contact692@atkinsonllc.example,Spain,Bilbao,2025-03-19,Referral,Enterprise,201-1000,Logistics,Active,2025-05-16 00:00:00
+CUST-000693,ACC-000693,"Thomas, Ford and Brown",contact693@thomasfordandbrown.example,Australia,Perth,2025-10-27,Email,SMB,11-50,Media,Active,2026-01-22 00:00:00
+CUST-000694,ACC-000694,Faulkner-Grant,contact694@faulkner-grant.example,Australia,Melbourne,2024-11-06,Partner,SMB,201-1000,Telecommunications,Active,2025-01-31 00:00:00
+CUST-000695,ACC-000695,Price LLC,contact695@pricellc.example,United States,New York,2025-11-14,Paid Social,SMB,1001-5000,Logistics,Active,2025-12-22 00:00:00
+CUST-000696,ACC-000696,Rivera Inc,contact696@riverainc.example,United Kingdom,Bristol,2024-09-27,Organic,Mid-Market,5000+,Healthcare,Active,2024-12-02 00:00:00
+CUST-000697,ACC-000697,Boone-Davis,contact697@boone-davis.example,Netherlands,Utrecht,2024-04-03,Paid Search,SMB,51-200,Media,Active,2024-05-18 00:00:00
+CUST-000698,ACC-000698,"Calderon, Williams and Bennett",contact698@calderonwilliamsan.example,France,Paris,2024-11-01,Partner,Enterprise,51-200,Financial Services,Active,2024-12-16 00:00:00
+CUST-000699,ACC-000699,"Morrison, Russo and Lopez",contact699@morrisonrussoandlo.example,United States,Austin,2024-04-04,Paid Search,Enterprise,201-1000,Telecommunications,Active,2024-06-10 00:00:00
+CUST-000700,ACC-000700,"Ramsey, Hansen and Mendoza",contact700@ramseyhansenandmen.example,United States,San Francisco,2024-03-27,Paid Search,Startup,201-1000,Media,Active,2024-05-28 00:00:00
+CUST-000701,ACC-000701,Turner-Stout,contact701@turner-stout.example,France,Lyon,2025-10-06,Paid Social,SMB,11-50,Professional Services,Active,2025-12-27 00:00:00
+CUST-000702,ACC-000702,Giles Ltd,contact702@gilesltd.example,France,Paris,2025-08-03,Partner,Startup,11-50,Telecommunications,Inactive,2025-10-12 00:00:00
+CUST-000703,ACC-000703,Burgess Group,contact703@burgessgroup.example,Canada,Calgary,2024-06-10,Paid Search,Startup,11-50,Logistics,Inactive,2024-08-05 00:00:00
+CUST-000704,ACC-000704,Dominguez Ltd,contact704@dominguezltd.example,Canada,Toronto,2025-09-04,Email,SMB,51-200,Logistics,Active,2025-11-26 00:00:00
+CUST-000705,ACC-000705,Sanders and Sons,contact705@sandersandsons.example,Canada,Ottawa,2024-02-20,Referral,Startup,11-50,Financial Services,Active,2024-02-29 00:00:00
+CUST-000706,ACC-000706,"Morris, Campbell and Owens",contact706@morriscampbellando.example,France,Lille,2024-07-26,Referral,Mid-Market,1-10,Technology,Active,2024-10-03 00:00:00
+CUST-000707,ACC-000707,"Howard, Green and Hunt",contact707@howardgreenandhunt.example,United States,San Francisco,2025-05-31,Paid Search,Enterprise,1-10,Telecommunications,Active,2025-07-05 00:00:00
+CUST-000708,ACC-000708,Owens-Lang,contact708@owens-lang.example,France,Lille,2024-08-10,Paid Search,Enterprise,5000+,Healthcare,Active,2024-09-18 00:00:00
+CUST-000709,ACC-000709,"Harrison, Franco and Rocha",contact709@harrisonfrancoandr.example,Germany,Munich,2025-06-17,Organic,Enterprise,1-10,Manufacturing,Active,2025-08-27 00:00:00
+CUST-000710,ACC-000710,Edwards-Williams,contact710@edwards-williams.example,Germany,Munich,2025-10-01,Paid Social,Enterprise,1-10,Technology,Active,2025-10-25 00:00:00
+CUST-000711,ACC-000711,Figueroa Inc,contact711@figueroainc.example,Netherlands,Rotterdam,2024-02-18,Email,Mid-Market,51-200,Professional Services,Churned,2024-05-08 00:00:00
+CUST-000712,ACC-000712,Tran-Silva,contact712@tran-silva.example,France,Marseille,2024-01-18,Paid Social,SMB,11-50,Logistics,Active,2024-03-03 00:00:00
+CUST-000713,ACC-000713,"Butler, Hernandez and Rivera",contact713@butlerhernandezand.example,Netherlands,The Hague,2025-11-18,Organic,SMB,5000+,Logistics,Inactive,2025-12-19 00:00:00
+CUST-000714,ACC-000714,Hudson-Sanchez,contact714@hudson-sanchez.example,Spain,Seville,2025-01-15,Paid Search,SMB,1001-5000,Education,Active,2025-02-13 00:00:00
+CUST-000715,ACC-000715,"Pena, Cohen and Scott",contact715@penacohenandscott.example,Australia,Perth,2025-01-05,Email,Enterprise,51-200,Professional Services,Inactive,2025-02-12 00:00:00
+CUST-000716,ACC-000716,Levy-May,contact716@levy-may.example,Spain,Bilbao,2024-12-04,Paid Search,SMB,51-200,Education,Active,2025-02-27 00:00:00
+CUST-000717,ACC-000717,Murray-Oconnor,contact717@murray-oconnor.example,France,Toulouse,2024-11-12,Email,Mid-Market,51-200,Manufacturing,Active,2024-11-21 00:00:00
+CUST-000718,ACC-000718,Jackson-Cortez,contact718@jackson-cortez.example,Germany,Munich,2025-05-19,Paid Search,Enterprise,1-10,Education,Inactive,2025-07-04 00:00:00
+CUST-000719,ACC-000719,White-Preston,contact719@white-preston.example,Canada,Montreal,2025-02-27,Direct,Mid-Market,51-200,Telecommunications,Inactive,2025-05-13 00:00:00
+CUST-000720,ACC-000720,"Bernard, Warren and Combs",contact720@bernardwarrenandco.example,France,Marseille,2024-04-29,Email,Mid-Market,11-50,Healthcare,Active,2024-06-10 00:00:00
+CUST-000721,ACC-000721,Landry Ltd,contact721@landryltd.example,Canada,Toronto,2025-04-03,Paid Search,Mid-Market,11-50,Manufacturing,Active,2025-05-24 00:00:00
+CUST-000722,ACC-000722,Duran Group,contact722@durangroup.example,Australia,Perth,2025-05-03,Paid Search,SMB,201-1000,Professional Services,Active,2025-06-03 00:00:00
+CUST-000723,ACC-000723,Kirby and Sons,contact723@kirbyandsons.example,Spain,Seville,2024-03-24,Paid Social,SMB,1-10,Education,Active,2024-04-05 00:00:00
+CUST-000724,ACC-000724,Mann Inc,contact724@manninc.example,United States,Chicago,2024-10-02,Paid Search,SMB,11-50,Technology,Active,2024-11-29 00:00:00
+CUST-000725,ACC-000725,Wagner LLC,contact725@wagnerllc.example,Spain,Valencia,2025-07-31,Paid Social,Enterprise,51-200,Healthcare,Inactive,2025-10-22 00:00:00
+CUST-000726,ACC-000726,Williamson Ltd,contact726@williamsonltd.example,United States,Chicago,2025-03-28,Partner,SMB,51-200,Professional Services,Active,2025-05-14 00:00:00
+CUST-000727,ACC-000727,"Durham, Hopkins and Smith",contact727@durhamhopkinsandsm.example,Netherlands,The Hague,2024-04-09,Email,SMB,11-50,Professional Services,Active,2024-05-18 00:00:00
+CUST-000728,ACC-000728,"Arnold, Smith and Moreno",contact728@arnoldsmithandmore.example,United States,Seattle,2024-01-30,Paid Search,Mid-Market,1-10,Media,Active,2024-02-10 00:00:00
+CUST-000729,ACC-000729,Nichols-Mitchell,contact729@nichols-mitchell.example,Germany,Hamburg,2025-02-28,Email,SMB,11-50,Telecommunications,Active,2025-05-24 00:00:00
+CUST-000730,ACC-000730,"Li, Craig and Drake",contact730@licraiganddrake.example,Netherlands,Amsterdam,2024-12-03,Paid Social,SMB,11-50,Professional Services,Active,2025-02-20 00:00:00
+CUST-000731,ACC-000731,Rodriguez Inc,contact731@rodriguezinc.example,Netherlands,Eindhoven,2025-12-03,Direct,Mid-Market,1001-5000,Education,Active,2026-02-23 00:00:00
+CUST-000732,ACC-000732,"Hernandez, Lee and Fox",contact732@hernandezleeandfox.example,Germany,Cologne,2025-01-16,Paid Search,Enterprise,1001-5000,Retail,Active,2025-02-17 00:00:00
+CUST-000733,ACC-000733,Adams-Sanders,contact733@adams-sanders.example,Australia,Perth,2025-11-11,Referral,SMB,51-200,Retail,Active,2026-01-06 00:00:00
+CUST-000734,ACC-000734,Chung-Stevens,contact734@chung-stevens.example,Spain,Bilbao,2024-06-05,Referral,Enterprise,51-200,Logistics,Inactive,2024-07-14 00:00:00
+CUST-000735,ACC-000735,Branch and Sons,contact735@branchandsons.example,Canada,Ottawa,2024-11-23,Paid Search,Enterprise,201-1000,Manufacturing,Active,2024-12-14 00:00:00
+CUST-000736,ACC-000736,Sutton-Abbott,contact736@sutton-abbott.example,Netherlands,Eindhoven,2024-04-12,Paid Search,Enterprise,201-1000,Media,Inactive,2024-04-30 00:00:00
+CUST-000737,ACC-000737,"Frey, Santos and Johnson",contact737@freysantosandjohns.example,Netherlands,Utrecht,2025-02-23,Organic,Startup,11-50,Financial Services,Active,2025-03-29 00:00:00
+CUST-000738,ACC-000738,Gray-Tran,contact738@gray-tran.example,United Kingdom,London,2024-05-17,Partner,Mid-Market,11-50,Financial Services,Active,2024-07-06 00:00:00
+CUST-000739,ACC-000739,Walsh Ltd,contact739@walshltd.example,Netherlands,Amsterdam,2024-12-25,Organic,Mid-Market,51-200,Healthcare,Active,2025-01-05 00:00:00
+CUST-000740,ACC-000740,Miller Group,contact740@millergroup.example,Australia,Melbourne,2024-09-08,Email,Mid-Market,201-1000,Financial Services,Active,2024-11-10 00:00:00
+CUST-000741,ACC-000741,"Mueller, Knight and Hodge",contact741@muellerknightandho.example,Spain,Valencia,2024-05-15,Referral,Startup,11-50,Professional Services,Active,2024-06-25 00:00:00
+CUST-000742,ACC-000742,Jacobson Inc,contact742@jacobsoninc.example,Spain,Seville,2024-03-11,Partner,SMB,51-200,Professional Services,Active,2024-05-30 00:00:00
+CUST-000743,ACC-000743,Lewis Ltd,contact743@lewisltd.example,Netherlands,Utrecht,2025-01-09,Organic,Startup,51-200,Education,Active,2025-02-03 00:00:00
+CUST-000744,ACC-000744,"Alvarez, Williams and Jones",contact744@alvarezwilliamsand.example,United Kingdom,London,2025-11-23,Organic,Mid-Market,11-50,Healthcare,Active,2025-11-27 00:00:00
+CUST-000745,ACC-000745,Lam-Elliott,contact745@lam-elliott.example,Spain,Barcelona,2024-05-25,Referral,Enterprise,51-200,Education,Active,2024-06-22 00:00:00
+CUST-000746,ACC-000746,White LLC,contact746@whitellc.example,United Kingdom,Edinburgh,2024-10-23,Paid Social,SMB,201-1000,Financial Services,Active,2025-01-19 00:00:00
+CUST-000747,ACC-000747,Ali PLC,contact747@aliplc.example,France,Lille,2024-06-13,Partner,Mid-Market,51-200,Manufacturing,Active,2024-07-12 00:00:00
+CUST-000748,ACC-000748,Goodwin Ltd,contact748@goodwinltd.example,United Kingdom,Manchester,2025-08-14,Paid Search,SMB,11-50,Financial Services,Active,2025-10-17 00:00:00
+CUST-000749,ACC-000749,Hickman-Evans,contact749@hickman-evans.example,United Kingdom,Edinburgh,2024-10-30,Paid Search,Startup,11-50,Technology,Active,2025-01-14 00:00:00
+CUST-000750,ACC-000750,"Allen, Davenport and Price",contact750@allendavenportandp.example,Canada,Calgary,2025-12-13,Partner,Mid-Market,1001-5000,Financial Services,Active,2026-01-07 00:00:00
+CUST-000751,ACC-000751,"Rivera, Campos and Taylor",contact751@riveracamposandtay.example,Australia,Adelaide,2024-06-28,Paid Social,Startup,51-200,Financial Services,Active,2024-08-25 00:00:00
+CUST-000752,ACC-000752,"Ramsey, Mason and Mccann",contact752@ramseymasonandmcca.example,Canada,Ottawa,2024-02-29,Paid Search,SMB,1-10,Manufacturing,Active,2024-03-18 00:00:00
+CUST-000753,ACC-000753,Davis and Sons,contact753@davisandsons.example,United States,Chicago,2025-03-01,Paid Search,Mid-Market,11-50,Education,Active,2025-04-02 00:00:00
+CUST-000754,ACC-000754,Peterson PLC,contact754@petersonplc.example,Australia,Melbourne,2025-04-21,Organic,SMB,1001-5000,Professional Services,Active,2025-05-17 00:00:00
+CUST-000755,ACC-000755,"Sanders, Ayala and Johnson",contact755@sandersayalaandjoh.example,France,Toulouse,2025-12-25,Partner,Enterprise,201-1000,Manufacturing,Churned,2026-02-24 00:00:00
+CUST-000756,ACC-000756,Bowers-Hayes,contact756@bowers-hayes.example,Germany,Munich,2025-09-29,Paid Search,SMB,1001-5000,Financial Services,Active,2025-12-17 00:00:00
+CUST-000757,ACC-000757,Kelly Group,contact757@kellygroup.example,Netherlands,Rotterdam,2025-10-08,Paid Search,Enterprise,201-1000,Technology,Inactive,2025-10-30 00:00:00
+CUST-000758,ACC-000758,Lopez-Willis,contact758@lopez-willis.example,Germany,Frankfurt,2025-04-08,Organic,Mid-Market,51-200,Media,Active,2025-05-04 00:00:00
+CUST-000759,ACC-000759,Miller-Montgomery,contact759@miller-montgomery.example,Canada,Montreal,2024-09-20,Direct,SMB,51-200,Telecommunications,Active,2024-12-03 00:00:00
+CUST-000760,ACC-000760,Marquez Inc,contact760@marquezinc.example,Netherlands,Utrecht,2024-11-09,Paid Social,Enterprise,11-50,Healthcare,Active,2024-12-21 00:00:00
+CUST-000761,ACC-000761,Moore-Dawson,contact761@moore-dawson.example,Canada,Vancouver,2024-04-07,Direct,Enterprise,201-1000,Healthcare,Active,2024-05-23 00:00:00
+CUST-000762,ACC-000762,"Moore, Price and Ward",contact762@moorepriceandward.example,France,Marseille,2024-11-11,Partner,SMB,201-1000,Retail,Churned,2025-01-14 00:00:00
+CUST-000763,ACC-000763,Smith LLC,contact763@smithllc.example,Australia,Sydney,2024-09-23,Paid Social,Enterprise,11-50,Healthcare,Active,2024-10-05 00:00:00
+CUST-000764,ACC-000764,Ward-Nelson,contact764@ward-nelson.example,Australia,Perth,2024-01-27,Partner,Mid-Market,1001-5000,Healthcare,Active,2024-04-15 00:00:00
+CUST-000765,ACC-000765,Miller Group,contact765@millergroup.example,United Kingdom,Birmingham,2024-05-29,Email,Mid-Market,51-200,Manufacturing,Active,2024-07-01 00:00:00
+CUST-000766,ACC-000766,Hawkins-Hunt,contact766@hawkins-hunt.example,Spain,Bilbao,2025-01-25,Organic,Mid-Market,1-10,Media,Active,2025-03-25 00:00:00
+CUST-000767,ACC-000767,Johnson LLC,contact767@johnsonllc.example,France,Marseille,2024-09-26,Organic,Mid-Market,51-200,Media,Active,2024-11-04 00:00:00
+CUST-000768,ACC-000768,"Davis, George and Nguyen",contact768@davisgeorgeandnguy.example,Germany,Hamburg,2025-12-27,Partner,SMB,1001-5000,Telecommunications,Active,2026-03-05 00:00:00
+CUST-000769,ACC-000769,Smith-Gutierrez,contact769@smith-gutierrez.example,Canada,Toronto,2024-12-15,Referral,Startup,1001-5000,Retail,Active,2025-02-08 00:00:00
+CUST-000770,ACC-000770,Hardy PLC,contact770@hardyplc.example,Germany,Berlin,2025-12-01,Referral,Enterprise,51-200,Manufacturing,Inactive,2025-12-16 00:00:00
+CUST-000771,ACC-000771,Armstrong and Sons,contact771@armstrongandsons.example,Netherlands,Rotterdam,2025-04-27,Direct,Startup,5000+,Retail,Active,2025-05-14 00:00:00
+CUST-000772,ACC-000772,"James, Taylor and Turner",contact772@jamestaylorandturn.example,Australia,Melbourne,2024-01-30,Organic,SMB,1001-5000,Technology,Active,2024-04-18 00:00:00
+CUST-000773,ACC-000773,Thomas-Jackson,contact773@thomas-jackson.example,United States,Austin,2024-05-28,Partner,SMB,1001-5000,Retail,Active,2024-07-14 00:00:00
+CUST-000774,ACC-000774,Fisher-Washington,contact774@fisher-washington.example,Netherlands,Rotterdam,2025-05-30,Partner,SMB,1001-5000,Healthcare,Active,2025-06-24 00:00:00
+CUST-000775,ACC-000775,Ward and Sons,contact775@wardandsons.example,Spain,Seville,2025-02-02,Paid Social,SMB,51-200,Manufacturing,Inactive,2025-02-15 00:00:00
+CUST-000776,ACC-000776,"Weber, Wheeler and Gonzalez",contact776@weberwheelerandgon.example,Australia,Sydney,2024-08-08,Paid Search,SMB,201-1000,Financial Services,Active,2024-08-19 00:00:00
+CUST-000777,ACC-000777,Taylor Inc,contact777@taylorinc.example,Germany,Munich,2025-01-16,Organic,SMB,201-1000,Media,Active,2025-04-09 00:00:00
+CUST-000778,ACC-000778,Cook-Oliver,contact778@cook-oliver.example,United States,New York,2025-10-22,Partner,SMB,201-1000,Logistics,Active,2026-01-18 00:00:00
+CUST-000779,ACC-000779,Alexander-Jordan,contact779@alexander-jordan.example,United Kingdom,Manchester,2024-10-11,Paid Social,Mid-Market,11-50,Telecommunications,Inactive,2024-11-15 00:00:00
+CUST-000780,ACC-000780,"Mccann, Taylor and Flores",contact780@mccanntaylorandflo.example,Spain,Seville,2024-02-02,Referral,Enterprise,201-1000,Technology,Active,2024-02-20 00:00:00
+CUST-000781,ACC-000781,"Harris, Edwards and Oconnell",contact781@harrisedwardsandoc.example,Australia,Sydney,2024-08-15,Paid Search,SMB,5000+,Financial Services,Active,2024-09-22 00:00:00
+CUST-000782,ACC-000782,Carter-Neal,contact782@carter-neal.example,Netherlands,Rotterdam,2025-11-15,Paid Social,Enterprise,51-200,Telecommunications,Active,2025-11-27 00:00:00
+CUST-000783,ACC-000783,Faulkner-Casey,contact783@faulkner-casey.example,United States,New York,2025-07-10,Email,Mid-Market,5000+,Logistics,Active,2025-08-29 00:00:00
+CUST-000784,ACC-000784,Bennett-Velasquez,contact784@bennett-velasquez.example,United States,San Francisco,2025-09-04,Paid Search,Enterprise,51-200,Education,Active,2025-10-30 00:00:00
+CUST-000785,ACC-000785,Diaz-Frederick,contact785@diaz-frederick.example,Germany,Frankfurt,2025-10-28,Partner,Mid-Market,11-50,Retail,Active,2026-01-25 00:00:00
+CUST-000786,ACC-000786,Vargas PLC,contact786@vargasplc.example,France,Lyon,2024-03-26,Paid Search,SMB,11-50,Education,Active,2024-04-24 00:00:00
+CUST-000787,ACC-000787,Maldonado PLC,contact787@maldonadoplc.example,United States,New York,2024-07-25,Partner,SMB,1001-5000,Education,Inactive,2024-08-12 00:00:00
+CUST-000788,ACC-000788,Benton Group,contact788@bentongroup.example,Netherlands,Amsterdam,2024-02-13,Paid Social,Mid-Market,201-1000,Logistics,Active,2024-02-25 00:00:00
+CUST-000789,ACC-000789,"Clark, Salinas and Guerra",contact789@clarksalinasandgue.example,France,Marseille,2024-01-04,Direct,Enterprise,51-200,Education,Active,2024-02-07 00:00:00
+CUST-000790,ACC-000790,Fuentes Group,contact790@fuentesgroup.example,United States,Chicago,2025-09-02,Email,Mid-Market,201-1000,Technology,Active,2025-10-26 00:00:00
+CUST-000791,ACC-000791,"Porter, Schultz and Allen",contact791@porterschultzandal.example,United States,Seattle,2025-11-15,Paid Search,Mid-Market,51-200,Professional Services,Churned,2025-11-21 00:00:00
+CUST-000792,ACC-000792,"Moore, Henderson and Bennett",contact792@moorehendersonandb.example,Germany,Cologne,2024-04-23,Paid Search,SMB,51-200,Media,Active,2024-07-01 00:00:00
+CUST-000793,ACC-000793,Ewing-Mendoza,contact793@ewing-mendoza.example,Netherlands,Rotterdam,2025-06-11,Paid Search,SMB,1001-5000,Healthcare,Active,2025-07-22 00:00:00
+CUST-000794,ACC-000794,Ferguson-Mclean,contact794@ferguson-mclean.example,Spain,Barcelona,2025-01-26,Email,SMB,201-1000,Financial Services,Active,2025-04-08 00:00:00
+CUST-000795,ACC-000795,"Barnes, Johnson and Schmitt",contact795@barnesjohnsonandsc.example,Germany,Hamburg,2024-02-20,Partner,SMB,201-1000,Financial Services,Active,2024-04-02 00:00:00
+CUST-000796,ACC-000796,"Woodard, Herrera and Little",contact796@woodardherreraandl.example,United Kingdom,Manchester,2025-10-31,Organic,Startup,201-1000,Logistics,Active,2025-11-14 00:00:00
+CUST-000797,ACC-000797,Rodriguez and Sons,contact797@rodriguezandsons.example,Australia,Adelaide,2025-09-28,Organic,SMB,5000+,Manufacturing,Active,2025-09-29 00:00:00
+CUST-000798,ACC-000798,"Ortega, Jackson and Salazar",contact798@ortegajacksonandsa.example,Germany,Berlin,2025-02-18,Email,SMB,11-50,Education,Active,2025-04-09 00:00:00
+CUST-000799,ACC-000799,"Terrell, Byrd and Ross",contact799@terrellbyrdandross.example,United Kingdom,Birmingham,2025-06-01,Organic,Mid-Market,11-50,Telecommunications,Active,2025-07-20 00:00:00
+CUST-000800,ACC-000800,Sheppard-Jordan,contact800@sheppard-jordan.example,Germany,Hamburg,2024-10-17,Email,Enterprise,1-10,Technology,Active,2024-12-30 00:00:00
+CUST-000801,ACC-000801,Garcia and Sons,contact801@garciaandsons.example,United States,New York,2025-08-02,Organic,Startup,201-1000,Healthcare,Inactive,2025-10-20 00:00:00
+CUST-000802,ACC-000802,"Burgess, Grant and Watts",contact802@burgessgrantandwat.example,United Kingdom,Birmingham,2024-11-21,Referral,Mid-Market,201-1000,Logistics,Active,2024-12-05 00:00:00
+CUST-000803,ACC-000803,Griffin Group,contact803@griffingroup.example,France,Marseille,2025-12-24,Direct,Mid-Market,201-1000,Education,Active,2026-01-21 00:00:00
+CUST-000804,ACC-000804,Barton-Chapman,contact804@barton-chapman.example,Australia,Melbourne,2024-02-16,Paid Social,Startup,51-200,Technology,Active,2024-03-05 00:00:00
+CUST-000805,ACC-000805,"Hernandez, Cuevas and Webb",contact805@hernandezcuevasand.example,Netherlands,Amsterdam,2024-05-05,Paid Search,SMB,1-10,Media,Active,2024-05-14 00:00:00
+CUST-000806,ACC-000806,Perry-Nixon,contact806@perry-nixon.example,Spain,Madrid,2025-12-09,Paid Search,Enterprise,201-1000,Financial Services,Active,2025-12-09 00:00:00
+CUST-000807,ACC-000807,Guerra Ltd,contact807@guerraltd.example,France,Paris,2024-07-30,Email,Enterprise,5000+,Media,Active,2024-08-06 00:00:00
+CUST-000808,ACC-000808,Bailey LLC,contact808@baileyllc.example,United States,Seattle,2024-08-15,Paid Social,Enterprise,51-200,Media,Active,2024-10-01 00:00:00
+CUST-000809,ACC-000809,Mueller-Boyd,contact809@mueller-boyd.example,Germany,Berlin,2025-08-01,Direct,SMB,11-50,Logistics,Active,2025-08-14 00:00:00
+CUST-000810,ACC-000810,Alvarez-Kim,contact810@alvarez-kim.example,Australia,Adelaide,2024-05-18,Email,Enterprise,51-200,Manufacturing,Inactive,2024-06-04 00:00:00
+CUST-000811,ACC-000811,"Chavez, Jones and Williams",contact811@chavezjonesandwill.example,United States,Austin,2025-01-10,Organic,Startup,51-200,Healthcare,Churned,2025-01-20 00:00:00
+CUST-000812,ACC-000812,"Wilson, Sweeney and Wong",contact812@wilsonsweeneyandwo.example,Australia,Perth,2024-07-28,Referral,Startup,11-50,Logistics,Active,2024-10-01 00:00:00
+CUST-000813,ACC-000813,"Marsh, Spears and Yang",contact813@marshspearsandyang.example,Netherlands,Eindhoven,2024-05-24,Paid Social,SMB,51-200,Education,Active,2024-07-20 00:00:00
+CUST-000814,ACC-000814,"Thompson, Moore and Castro",contact814@thompsonmooreandca.example,United Kingdom,Birmingham,2025-12-05,Partner,SMB,201-1000,Professional Services,Active,2026-03-02 00:00:00
+CUST-000815,ACC-000815,Hall-Sullivan,contact815@hall-sullivan.example,Spain,Bilbao,2024-05-26,Paid Search,Mid-Market,51-200,Financial Services,Active,2024-06-05 00:00:00
+CUST-000816,ACC-000816,Lopez Ltd,contact816@lopezltd.example,Spain,Madrid,2024-03-09,Email,Enterprise,51-200,Professional Services,Active,2024-03-27 00:00:00
+CUST-000817,ACC-000817,Foster-Mclaughlin,contact817@foster-mclaughlin.example,United States,Austin,2025-05-07,Direct,SMB,1-10,Education,Active,2025-06-17 00:00:00
+CUST-000818,ACC-000818,Cole Group,contact818@colegroup.example,United States,Austin,2025-09-25,Referral,Enterprise,1001-5000,Healthcare,Active,2025-11-23 00:00:00
+CUST-000819,ACC-000819,Smith-Lewis,contact819@smith-lewis.example,Netherlands,Amsterdam,2024-04-03,Partner,Enterprise,51-200,Media,Active,2024-04-14 00:00:00
+CUST-000820,ACC-000820,Goodwin-Stokes,contact820@goodwin-stokes.example,Australia,Melbourne,2025-06-01,Organic,Mid-Market,51-200,Financial Services,Inactive,2025-06-20 00:00:00
+CUST-000821,ACC-000821,Ray PLC,contact821@rayplc.example,United States,Austin,2025-01-30,Partner,Enterprise,1-10,Media,Active,2025-03-09 00:00:00
+CUST-000822,ACC-000822,Diaz and Sons,contact822@diazandsons.example,Netherlands,Eindhoven,2025-08-29,Email,Mid-Market,201-1000,Telecommunications,Active,2025-08-30 00:00:00
+CUST-000823,ACC-000823,Wilson-Lambert,contact823@wilson-lambert.example,Canada,Vancouver,2024-04-02,Email,SMB,1001-5000,Education,Active,2024-05-07 00:00:00
+CUST-000824,ACC-000824,Rose-Fowler,contact824@rose-fowler.example,Netherlands,The Hague,2025-12-14,Paid Search,SMB,1-10,Financial Services,Active,2026-02-21 00:00:00
+CUST-000825,ACC-000825,"Price, Long and Wilson",contact825@pricelongandwilson.example,France,Toulouse,2025-03-28,Paid Social,SMB,11-50,Education,Active,2025-05-14 00:00:00
+CUST-000826,ACC-000826,Bruce-Williamson,contact826@bruce-williamson.example,United States,San Francisco,2025-09-07,Email,SMB,11-50,Education,Churned,2025-10-16 00:00:00
+CUST-000827,ACC-000827,"Mccarthy, Evans and Mendez",contact827@mccarthyevansandme.example,Netherlands,Amsterdam,2024-09-21,Paid Search,Mid-Market,201-1000,Education,Active,2024-11-04 00:00:00
+CUST-000828,ACC-000828,Powers LLC,contact828@powersllc.example,Australia,Adelaide,2025-11-20,Referral,SMB,5000+,Healthcare,Active,2026-02-14 00:00:00
+CUST-000829,ACC-000829,Allen Inc,contact829@alleninc.example,Spain,Seville,2025-04-02,Partner,SMB,51-200,Professional Services,Active,2025-05-19 00:00:00
+CUST-000830,ACC-000830,Brooks and Sons,contact830@brooksandsons.example,United States,San Francisco,2024-04-02,Direct,Mid-Market,51-200,Healthcare,Active,2024-05-20 00:00:00
+CUST-000831,ACC-000831,"Price, Carlson and Andrews",contact831@pricecarlsonandand.example,Canada,Vancouver,2025-11-05,Paid Search,Startup,201-1000,Education,Active,2026-01-28 00:00:00
+CUST-000832,ACC-000832,Lopez-Reid,contact832@lopez-reid.example,Canada,Ottawa,2025-08-04,Direct,Mid-Market,201-1000,Education,Active,2025-08-18 00:00:00
+CUST-000833,ACC-000833,"Ellison, Arias and Thompson",contact833@ellisonariasandtho.example,Germany,Hamburg,2024-08-07,Paid Search,Enterprise,11-50,Professional Services,Active,2024-08-15 00:00:00
+CUST-000834,ACC-000834,Burns and Sons,contact834@burnsandsons.example,Canada,Toronto,2025-02-02,Organic,Mid-Market,11-50,Media,Active,2025-03-14 00:00:00
+CUST-000835,ACC-000835,Edwards Group,contact835@edwardsgroup.example,Spain,Valencia,2024-10-10,Partner,Mid-Market,51-200,Logistics,Active,2024-11-07 00:00:00
+CUST-000836,ACC-000836,"Brown, Howard and Smith",contact836@brownhowardandsmit.example,Spain,Madrid,2025-02-01,Paid Search,Mid-Market,201-1000,Media,Active,2025-02-19 00:00:00
+CUST-000837,ACC-000837,Lee Group,contact837@leegroup.example,Spain,Bilbao,2025-12-06,Paid Search,SMB,201-1000,Media,Inactive,2025-12-16 00:00:00
+CUST-000838,ACC-000838,"Wagner, Simpson and Cohen",contact838@wagnersimpsonandco.example,Canada,Vancouver,2025-10-19,Paid Search,Startup,201-1000,Logistics,Active,2026-01-06 00:00:00
+CUST-000839,ACC-000839,Mckinney-Wallace,contact839@mckinney-wallace.example,United States,Austin,2024-06-06,Organic,Mid-Market,1001-5000,Healthcare,Active,2024-07-31 00:00:00
+CUST-000840,ACC-000840,Miller Inc,contact840@millerinc.example,Australia,Brisbane,2025-12-11,Partner,SMB,11-50,Healthcare,Active,2026-02-11 00:00:00
+CUST-000841,ACC-000841,Carter LLC,contact841@carterllc.example,United Kingdom,Birmingham,2024-11-16,Paid Search,Mid-Market,51-200,Education,Active,2024-11-26 00:00:00
+CUST-000842,ACC-000842,Medina and Sons,contact842@medinaandsons.example,Netherlands,Amsterdam,2025-05-30,Paid Search,SMB,1-10,Manufacturing,Active,2025-06-30 00:00:00
+CUST-000843,ACC-000843,Cunningham-Barton,contact843@cunningham-barton.example,Australia,Adelaide,2025-07-12,Email,Enterprise,1001-5000,Media,Active,2025-09-06 00:00:00
+CUST-000844,ACC-000844,Dunn-Wilson,contact844@dunn-wilson.example,United States,San Francisco,2024-12-19,Paid Social,Enterprise,201-1000,Technology,Active,2025-02-05 00:00:00
+CUST-000845,ACC-000845,Adams PLC,contact845@adamsplc.example,United States,Chicago,2024-11-29,Referral,SMB,51-200,Financial Services,Active,2025-01-31 00:00:00
+CUST-000846,ACC-000846,Weaver-Sherman,contact846@weaver-sherman.example,United States,Chicago,2024-11-29,Direct,SMB,1-10,Media,Active,2025-01-28 00:00:00
+CUST-000847,ACC-000847,"Alexander, Robinson and Coleman",contact847@alexanderrobinsona.example,Canada,Montreal,2025-09-22,Referral,SMB,201-1000,Logistics,Inactive,2025-10-29 00:00:00
+CUST-000848,ACC-000848,"Greer, Potter and Evans",contact848@greerpotterandevan.example,United States,Seattle,2024-10-09,Partner,SMB,201-1000,Retail,Active,2024-12-19 00:00:00
+CUST-000849,ACC-000849,Cole LLC,contact849@colellc.example,Spain,Valencia,2024-07-23,Organic,SMB,201-1000,Retail,Active,2024-08-15 00:00:00
+CUST-000850,ACC-000850,Gonzales Inc,contact850@gonzalesinc.example,France,Paris,2024-09-21,Partner,Mid-Market,11-50,Education,Active,2024-09-28 00:00:00
+CUST-000851,ACC-000851,Clark Ltd,contact851@clarkltd.example,Australia,Sydney,2024-05-22,Paid Search,Enterprise,1001-5000,Manufacturing,Active,2024-08-13 00:00:00
+CUST-000852,ACC-000852,"Norris, Callahan and Bishop",contact852@norriscallahanandb.example,Spain,Barcelona,2024-10-13,Paid Search,Enterprise,201-1000,Financial Services,Active,2024-10-15 00:00:00
+CUST-000853,ACC-000853,Martin-Taylor,contact853@martin-taylor.example,Australia,Brisbane,2024-03-24,Email,Enterprise,201-1000,Education,Active,2024-04-18 00:00:00
+CUST-000854,ACC-000854,Li Inc,contact854@liinc.example,Canada,Toronto,2024-03-06,Paid Search,Mid-Market,201-1000,Logistics,Active,2024-03-16 00:00:00
+CUST-000855,ACC-000855,"Bell, Campbell and Ryan",contact855@bellcampbellandrya.example,United Kingdom,London,2025-06-13,Partner,SMB,1001-5000,Media,Active,2025-07-04 00:00:00
+CUST-000856,ACC-000856,Werner-Carter,contact856@werner-carter.example,Spain,Bilbao,2024-02-26,Email,Mid-Market,5000+,Logistics,Active,2024-04-01 00:00:00
+CUST-000857,ACC-000857,"Adams, Hodge and Duke",contact857@adamshodgeandduke.example,Canada,Vancouver,2025-02-19,Direct,SMB,201-1000,Professional Services,Active,2025-03-02 00:00:00
+CUST-000858,ACC-000858,"Ochoa, Taylor and Brady",contact858@ochoataylorandbrad.example,United States,Seattle,2025-07-24,Paid Social,SMB,51-200,Logistics,Active,2025-09-04 00:00:00
+CUST-000859,ACC-000859,Sellers-Riddle,contact859@sellers-riddle.example,Netherlands,Utrecht,2025-06-13,Organic,SMB,51-200,Healthcare,Churned,2025-09-05 00:00:00
+CUST-000860,ACC-000860,"Martinez, Cline and Wright",contact860@martinezclineandwr.example,Spain,Seville,2024-11-22,Referral,SMB,1001-5000,Technology,Active,2024-12-04 00:00:00
+CUST-000861,ACC-000861,"Morris, Wright and Bridges",contact861@morriswrightandbri.example,Australia,Perth,2024-05-21,Paid Social,Mid-Market,201-1000,Financial Services,Active,2024-08-13 00:00:00
+CUST-000862,ACC-000862,Burns-Ray,contact862@burns-ray.example,Australia,Melbourne,2025-11-11,Email,Mid-Market,1-10,Telecommunications,Active,2025-12-18 00:00:00
+CUST-000863,ACC-000863,Burton-Brooks,contact863@burton-brooks.example,United States,San Francisco,2025-09-02,Email,SMB,11-50,Professional Services,Active,2025-10-25 00:00:00
+CUST-000864,ACC-000864,Schultz Inc,contact864@schultzinc.example,Spain,Barcelona,2025-03-23,Direct,SMB,1001-5000,Healthcare,Inactive,2025-05-02 00:00:00
+CUST-000865,ACC-000865,Robertson-Ramirez,contact865@robertson-ramirez.example,Spain,Bilbao,2024-03-04,Referral,Mid-Market,1001-5000,Logistics,Active,2024-04-01 00:00:00
+CUST-000866,ACC-000866,Gibson-Freeman,contact866@gibson-freeman.example,Netherlands,Utrecht,2024-01-26,Paid Search,Mid-Market,5000+,Retail,Active,2024-02-04 00:00:00
+CUST-000867,ACC-000867,"Smith, Schroeder and Oconnor",contact867@smithschroederando.example,Spain,Madrid,2024-08-18,Organic,SMB,51-200,Education,Active,2024-10-10 00:00:00
+CUST-000868,ACC-000868,"Stanton, Reid and Terry",contact868@stantonreidandterr.example,Spain,Seville,2024-04-25,Email,SMB,1001-5000,Healthcare,Active,2024-07-17 00:00:00
+CUST-000869,ACC-000869,Flynn Group,contact869@flynngroup.example,Germany,Berlin,2025-09-20,Paid Search,Enterprise,1001-5000,Technology,Active,2025-11-06 00:00:00
+CUST-000870,ACC-000870,Donaldson and Sons,contact870@donaldsonandsons.example,United States,Chicago,2024-05-30,Organic,Mid-Market,51-200,Healthcare,Active,2024-07-23 00:00:00
+CUST-000871,ACC-000871,Adams-Clayton,contact871@adams-clayton.example,Germany,Berlin,2024-07-25,Paid Social,Startup,11-50,Healthcare,Active,2024-09-21 00:00:00
+CUST-000872,ACC-000872,Kelley-Anderson,contact872@kelley-anderson.example,Canada,Vancouver,2025-12-14,Paid Search,Enterprise,5000+,Education,Active,2026-01-18 00:00:00
+CUST-000873,ACC-000873,Kramer-Shannon,contact873@kramer-shannon.example,United States,Chicago,2025-08-21,Organic,SMB,1-10,Technology,Active,2025-08-31 00:00:00
+CUST-000874,ACC-000874,Williams Ltd,contact874@williamsltd.example,United States,San Francisco,2024-06-08,Paid Search,Enterprise,201-1000,Healthcare,Active,2024-07-24 00:00:00
+CUST-000875,ACC-000875,Smith-Noble,contact875@smith-noble.example,Netherlands,Utrecht,2024-10-07,Email,SMB,201-1000,Education,Active,2024-12-25 00:00:00
+CUST-000876,ACC-000876,Alexander Inc,contact876@alexanderinc.example,France,Paris,2025-01-12,Paid Search,Mid-Market,201-1000,Retail,Active,2025-02-09 00:00:00
+CUST-000877,ACC-000877,Harris-Barker,contact877@harris-barker.example,France,Lyon,2025-04-30,Referral,Enterprise,11-50,Professional Services,Inactive,2025-07-18 00:00:00
+CUST-000878,ACC-000878,Khan LLC,contact878@khanllc.example,Netherlands,The Hague,2025-11-15,Paid Search,Startup,201-1000,Professional Services,Active,2026-01-31 00:00:00
+CUST-000879,ACC-000879,Baxter LLC,contact879@baxterllc.example,France,Toulouse,2025-09-28,Partner,Mid-Market,11-50,Telecommunications,Active,2025-10-20 00:00:00
+CUST-000880,ACC-000880,Pena LLC,contact880@penallc.example,Netherlands,Amsterdam,2025-12-15,Paid Search,Startup,1001-5000,Logistics,Active,2026-02-05 00:00:00
+CUST-000881,ACC-000881,Watson Ltd,contact881@watsonltd.example,United States,Austin,2024-01-30,Organic,Mid-Market,11-50,Healthcare,Active,2024-04-07 00:00:00
+CUST-000882,ACC-000882,Williams Ltd,contact882@williamsltd.example,Spain,Barcelona,2024-06-21,Paid Social,Startup,201-1000,Professional Services,Active,2024-08-05 00:00:00
+CUST-000883,ACC-000883,Barber-Fischer,contact883@barber-fischer.example,Germany,Berlin,2025-02-15,Paid Social,Startup,1001-5000,Professional Services,Active,2025-04-19 00:00:00
+CUST-000884,ACC-000884,Rios-Padilla,contact884@rios-padilla.example,Canada,Ottawa,2024-02-05,Organic,SMB,11-50,Education,Active,2024-04-27 00:00:00
+CUST-000885,ACC-000885,Lewis Inc,contact885@lewisinc.example,Spain,Seville,2024-09-16,Partner,Mid-Market,11-50,Media,Active,2024-11-12 00:00:00
+CUST-000886,ACC-000886,Wheeler PLC,contact886@wheelerplc.example,Netherlands,Amsterdam,2024-04-22,Partner,SMB,201-1000,Financial Services,Active,2024-07-07 00:00:00
+CUST-000887,ACC-000887,"Wallace, Smith and Cooper",contact887@wallacesmithandcoo.example,United States,Chicago,2025-11-12,Paid Social,SMB,1-10,Retail,Churned,2026-01-23 00:00:00
+CUST-000888,ACC-000888,Mcneil Group,contact888@mcneilgroup.example,Canada,Montreal,2024-02-16,Paid Search,Startup,11-50,Logistics,Active,2024-04-29 00:00:00
+CUST-000889,ACC-000889,"Anderson, Jones and Reyes",contact889@andersonjonesandre.example,United States,New York,2024-04-18,Referral,Mid-Market,51-200,Logistics,Active,2024-07-04 00:00:00
+CUST-000890,ACC-000890,"Shaffer, Garcia and Richardson",contact890@shaffergarciaandri.example,United Kingdom,Birmingham,2024-05-22,Email,Mid-Market,5000+,Technology,Active,2024-06-11 00:00:00
+CUST-000891,ACC-000891,Taylor-Ayala,contact891@taylor-ayala.example,United States,New York,2024-04-18,Paid Social,Enterprise,201-1000,Manufacturing,Active,2024-04-19 00:00:00
+CUST-000892,ACC-000892,May Ltd,contact892@mayltd.example,Netherlands,Rotterdam,2025-02-19,Referral,SMB,51-200,Healthcare,Active,2025-03-04 00:00:00
+CUST-000893,ACC-000893,Jones PLC,contact893@jonesplc.example,France,Lille,2024-09-23,Organic,Startup,5000+,Financial Services,Active,2024-10-15 00:00:00
+CUST-000894,ACC-000894,Bishop and Sons,contact894@bishopandsons.example,Australia,Perth,2025-10-29,Email,Enterprise,51-200,Technology,Active,2025-12-30 00:00:00
+CUST-000895,ACC-000895,Bell-Lewis,contact895@bell-lewis.example,Netherlands,Amsterdam,2024-07-09,Paid Social,SMB,51-200,Education,Active,2024-08-24 00:00:00
+CUST-000896,ACC-000896,"Hernandez, Jenkins and Parks",contact896@hernandezjenkinsan.example,France,Lille,2025-01-27,Organic,Startup,51-200,Professional Services,Churned,2025-03-10 00:00:00
+CUST-000897,ACC-000897,Miller Inc,contact897@millerinc.example,France,Marseille,2025-04-27,Paid Search,Enterprise,51-200,Education,Active,2025-04-27 00:00:00
+CUST-000898,ACC-000898,Goodwin PLC,contact898@goodwinplc.example,United States,San Francisco,2025-04-02,Referral,Enterprise,51-200,Retail,Active,2025-06-03 00:00:00
+CUST-000899,ACC-000899,"Cruz, Richmond and Edwards",contact899@cruzrichmondandedw.example,United States,Chicago,2025-08-05,Paid Search,SMB,201-1000,Media,Active,2025-09-07 00:00:00
+CUST-000900,ACC-000900,Wright Ltd,contact900@wrightltd.example,France,Lyon,2024-05-27,Referral,SMB,1-10,Professional Services,Active,2024-08-04 00:00:00
+CUST-000901,ACC-000901,Wright PLC,contact901@wrightplc.example,United States,Seattle,2025-01-05,Referral,Enterprise,201-1000,Telecommunications,Active,2025-01-15 00:00:00
+CUST-000902,ACC-000902,"Griffith, Mitchell and Pugh",contact902@griffithmitchellan.example,United States,Seattle,2025-08-08,Referral,SMB,11-50,Retail,Active,2025-09-03 00:00:00
+CUST-000903,ACC-000903,Abbott Ltd,contact903@abbottltd.example,Canada,Calgary,2025-09-22,Paid Search,SMB,51-200,Healthcare,Active,2025-09-26 00:00:00
+CUST-000904,ACC-000904,Harris-Lawson,contact904@harris-lawson.example,Australia,Melbourne,2025-03-27,Paid Social,Startup,11-50,Manufacturing,Inactive,2025-04-21 00:00:00
+CUST-000905,ACC-000905,Adkins LLC,contact905@adkinsllc.example,Germany,Munich,2025-04-21,Organic,Startup,201-1000,Education,Active,2025-07-14 00:00:00
+CUST-000906,ACC-000906,"Brown, Hurst and Blevins",contact906@brownhurstandblevi.example,Netherlands,Rotterdam,2025-09-23,Email,SMB,201-1000,Manufacturing,Active,2025-11-06 00:00:00
+CUST-000907,ACC-000907,Cruz-Allen,contact907@cruz-allen.example,Germany,Munich,2025-04-01,Partner,SMB,51-200,Logistics,Active,2025-05-10 00:00:00
+CUST-000908,ACC-000908,"Wheeler, Rice and Levine",contact908@wheelerriceandlevi.example,Canada,Toronto,2025-11-24,Paid Social,Mid-Market,11-50,Technology,Active,2025-12-18 00:00:00
+CUST-000909,ACC-000909,Peck-Anderson,contact909@peck-anderson.example,United Kingdom,London,2024-04-03,Partner,SMB,11-50,Education,Active,2024-04-27 00:00:00
+CUST-000910,ACC-000910,"Fisher, Payne and Thompson",contact910@fisherpayneandthom.example,United States,San Francisco,2024-09-11,Paid Search,Enterprise,1001-5000,Manufacturing,Inactive,2024-11-10 00:00:00
+CUST-000911,ACC-000911,Best-Townsend,contact911@best-townsend.example,Spain,Madrid,2024-03-23,Paid Social,SMB,11-50,Healthcare,Active,2024-06-20 00:00:00
+CUST-000912,ACC-000912,Matthews Inc,contact912@matthewsinc.example,Canada,Ottawa,2024-03-07,Paid Search,Enterprise,201-1000,Professional Services,Churned,2024-05-13 00:00:00
+CUST-000913,ACC-000913,Lewis-Livingston,contact913@lewis-livingston.example,Germany,Berlin,2024-12-10,Referral,SMB,51-200,Logistics,Active,2025-02-15 00:00:00
+CUST-000914,ACC-000914,Hunter-Fuller,contact914@hunter-fuller.example,Australia,Perth,2024-06-14,Paid Search,Enterprise,11-50,Education,Active,2024-07-26 00:00:00
+CUST-000915,ACC-000915,"Wang, Henderson and Morales",contact915@wanghendersonandmo.example,France,Lyon,2024-10-24,Paid Social,Mid-Market,201-1000,Technology,Active,2024-11-01 00:00:00
+CUST-000916,ACC-000916,"Herrera, Jensen and Ramirez",contact916@herrerajensenandra.example,Germany,Hamburg,2024-11-16,Referral,Mid-Market,51-200,Technology,Active,2025-01-20 00:00:00
+CUST-000917,ACC-000917,Miller-Mccall,contact917@miller-mccall.example,France,Lyon,2025-03-29,Organic,SMB,1-10,Manufacturing,Active,2025-06-10 00:00:00
+CUST-000918,ACC-000918,Herrera Group,contact918@herreragroup.example,Spain,Valencia,2025-11-22,Paid Search,SMB,5000+,Professional Services,Active,2026-01-07 00:00:00
+CUST-000919,ACC-000919,"Walters, Davenport and Becker",contact919@waltersdavenportan.example,United Kingdom,Birmingham,2025-09-12,Paid Search,Enterprise,11-50,Retail,Active,2025-09-20 00:00:00
+CUST-000920,ACC-000920,Collins Group,contact920@collinsgroup.example,Netherlands,Utrecht,2024-10-03,Organic,SMB,51-200,Retail,Inactive,2024-12-06 00:00:00
+CUST-000921,ACC-000921,"Ashley, Allen and Sanchez",contact921@ashleyallenandsanc.example,Spain,Barcelona,2024-08-26,Paid Social,Startup,51-200,Logistics,Active,2024-11-17 00:00:00
+CUST-000922,ACC-000922,Wilson-Salazar,contact922@wilson-salazar.example,France,Marseille,2025-07-17,Paid Search,Mid-Market,51-200,Technology,Active,2025-08-06 00:00:00
+CUST-000923,ACC-000923,Parker Ltd,contact923@parkerltd.example,Germany,Cologne,2024-03-31,Email,SMB,1001-5000,Technology,Active,2024-04-14 00:00:00
+CUST-000924,ACC-000924,"Yang, Wilson and Zimmerman",contact924@yangwilsonandzimme.example,Canada,Montreal,2025-01-30,Paid Social,Mid-Market,1-10,Financial Services,Active,2025-04-07 00:00:00
+CUST-000925,ACC-000925,"Smith, Crawford and Reed",contact925@smithcrawfordandre.example,Canada,Vancouver,2024-11-05,Email,Enterprise,5000+,Telecommunications,Inactive,2024-12-05 00:00:00
+CUST-000926,ACC-000926,"Logan, Le and Jackson",contact926@loganleandjackson.example,Australia,Sydney,2024-05-13,Paid Social,SMB,201-1000,Manufacturing,Active,2024-07-17 00:00:00
+CUST-000927,ACC-000927,Brady LLC,contact927@bradyllc.example,France,Lyon,2025-03-26,Paid Search,Enterprise,5000+,Financial Services,Active,2025-05-28 00:00:00
+CUST-000928,ACC-000928,"Tanner, Wise and Johnson",contact928@tannerwiseandjohns.example,United Kingdom,London,2024-08-22,Paid Search,Startup,1001-5000,Retail,Active,2024-09-15 00:00:00
+CUST-000929,ACC-000929,Nelson-Brown,contact929@nelson-brown.example,Germany,Berlin,2024-05-15,Paid Social,Startup,5000+,Telecommunications,Active,2024-05-18 00:00:00
+CUST-000930,ACC-000930,"Proctor, Burton and Crawford",contact930@proctorburtonandcr.example,France,Lille,2025-04-22,Paid Search,SMB,201-1000,Professional Services,Active,2025-06-11 00:00:00
+CUST-000931,ACC-000931,"Ward, Porter and Bradley",contact931@wardporterandbradl.example,France,Paris,2024-05-07,Paid Social,SMB,51-200,Healthcare,Active,2024-06-13 00:00:00
+CUST-000932,ACC-000932,Moore-Ayala,contact932@moore-ayala.example,Netherlands,Utrecht,2025-05-06,Partner,SMB,51-200,Healthcare,Active,2025-07-22 00:00:00
+CUST-000933,ACC-000933,"Craig, Wilson and Yang",contact933@craigwilsonandyang.example,United Kingdom,Edinburgh,2024-04-28,Partner,Startup,201-1000,Technology,Active,2024-05-30 00:00:00
+CUST-000934,ACC-000934,Williams Inc,contact934@williamsinc.example,Netherlands,The Hague,2024-11-13,Paid Social,Mid-Market,51-200,Media,Active,2024-12-05 00:00:00
+CUST-000935,ACC-000935,Williams LLC,contact935@williamsllc.example,Germany,Berlin,2025-08-13,Email,Enterprise,201-1000,Financial Services,Active,2025-10-30 00:00:00
+CUST-000936,ACC-000936,Mora-White,contact936@mora-white.example,Australia,Sydney,2024-06-16,Email,SMB,1-10,Healthcare,Inactive,2024-08-21 00:00:00
+CUST-000937,ACC-000937,Tran Ltd,contact937@tranltd.example,Canada,Vancouver,2025-07-15,Partner,Mid-Market,1001-5000,Retail,Active,2025-09-09 00:00:00
+CUST-000938,ACC-000938,"Rios, Walker and Wright",contact938@rioswalkerandwrigh.example,Canada,Montreal,2025-06-11,Paid Social,Mid-Market,11-50,Professional Services,Active,2025-09-05 00:00:00
+CUST-000939,ACC-000939,"Flores, Mckenzie and Duncan",contact939@floresmckenzieandd.example,Germany,Cologne,2025-10-21,Paid Social,Enterprise,5000+,Professional Services,Active,2025-12-31 00:00:00
+CUST-000940,ACC-000940,Shaw Inc,contact940@shawinc.example,France,Lyon,2024-05-03,Paid Social,SMB,11-50,Media,Active,2024-07-20 00:00:00
+CUST-000941,ACC-000941,Walker PLC,contact941@walkerplc.example,Netherlands,Amsterdam,2025-06-06,Paid Search,Mid-Market,11-50,Healthcare,Churned,2025-08-17 00:00:00
+CUST-000942,ACC-000942,Finley Inc,contact942@finleyinc.example,Germany,Munich,2025-11-15,Paid Social,Mid-Market,1001-5000,Retail,Active,2025-12-21 00:00:00
+CUST-000943,ACC-000943,Cline-Ayala,contact943@cline-ayala.example,Australia,Adelaide,2025-07-11,Partner,Enterprise,1001-5000,Retail,Active,2025-07-16 00:00:00
+CUST-000944,ACC-000944,Murphy-Tran,contact944@murphy-tran.example,Germany,Berlin,2024-05-17,Partner,Mid-Market,201-1000,Technology,Active,2024-07-11 00:00:00
+CUST-000945,ACC-000945,Wood LLC,contact945@woodllc.example,Canada,Vancouver,2025-08-23,Paid Search,Startup,5000+,Media,Active,2025-10-31 00:00:00
+CUST-000946,ACC-000946,"Mueller, Stevenson and Sanchez",contact946@muellerstevensonan.example,United States,New York,2024-03-19,Organic,Mid-Market,11-50,Education,Active,2024-06-17 00:00:00
+CUST-000947,ACC-000947,Vargas-Snyder,contact947@vargas-snyder.example,Australia,Sydney,2025-03-06,Organic,SMB,1001-5000,Manufacturing,Active,2025-05-07 00:00:00
+CUST-000948,ACC-000948,Oconnor PLC,contact948@oconnorplc.example,Canada,Ottawa,2024-12-29,Organic,SMB,51-200,Telecommunications,Active,2025-02-18 00:00:00
+CUST-000949,ACC-000949,Hernandez Group,contact949@hernandezgroup.example,Australia,Sydney,2025-01-23,Email,Mid-Market,51-200,Financial Services,Active,2025-03-16 00:00:00
+CUST-000950,ACC-000950,Hall LLC,contact950@hallllc.example,United Kingdom,Manchester,2025-01-14,Paid Search,SMB,51-200,Telecommunications,Active,2025-01-24 00:00:00
+CUST-000951,ACC-000951,"Franco, Wiley and Tapia",contact951@francowileyandtapi.example,United States,San Francisco,2024-01-24,Partner,SMB,1-10,Professional Services,Active,2024-01-24 00:00:00
+CUST-000952,ACC-000952,Blake Group,contact952@blakegroup.example,United Kingdom,Bristol,2025-01-06,Direct,SMB,201-1000,Healthcare,Active,2025-01-10 00:00:00
+CUST-000953,ACC-000953,"Acosta, Garcia and Moreno",contact953@acostagarciaandmor.example,France,Paris,2025-11-15,Email,Enterprise,201-1000,Professional Services,Active,2026-02-05 00:00:00
+CUST-000954,ACC-000954,Barnes Inc,contact954@barnesinc.example,Germany,Hamburg,2024-11-15,Email,Enterprise,11-50,Media,Active,2025-01-25 00:00:00
+CUST-000955,ACC-000955,Dawson Inc,contact955@dawsoninc.example,Spain,Bilbao,2024-07-21,Organic,Startup,5000+,Retail,Active,2024-08-13 00:00:00
+CUST-000956,ACC-000956,Morse PLC,contact956@morseplc.example,France,Marseille,2025-12-28,Paid Social,SMB,51-200,Retail,Active,2026-02-04 00:00:00
+CUST-000957,ACC-000957,Haynes-Watson,contact957@haynes-watson.example,Germany,Hamburg,2024-03-13,Paid Search,Startup,11-50,Logistics,Active,2024-04-26 00:00:00
+CUST-000958,ACC-000958,"Miller, Davis and Anderson",contact958@millerdavisandande.example,Netherlands,Utrecht,2024-12-21,Email,Startup,201-1000,Financial Services,Active,2025-01-12 00:00:00
+CUST-000959,ACC-000959,Jones-Bradley,contact959@jones-bradley.example,Australia,Perth,2025-01-09,Paid Search,Enterprise,11-50,Technology,Active,2025-02-16 00:00:00
+CUST-000960,ACC-000960,Bates-Anderson,contact960@bates-anderson.example,Germany,Berlin,2024-12-15,Partner,SMB,1-10,Professional Services,Active,2025-01-15 00:00:00
+CUST-000961,ACC-000961,Green-Edwards,contact961@green-edwards.example,Canada,Ottawa,2025-11-04,Organic,Mid-Market,201-1000,Telecommunications,Inactive,2026-01-06 00:00:00
+CUST-000962,ACC-000962,Haynes-Moss,contact962@haynes-moss.example,Germany,Cologne,2024-11-04,Organic,SMB,11-50,Education,Active,2025-01-11 00:00:00
+CUST-000963,ACC-000963,Chavez-Hall,contact963@chavez-hall.example,Spain,Madrid,2025-12-12,Paid Social,Enterprise,11-50,Financial Services,Active,2025-12-20 00:00:00
+CUST-000964,ACC-000964,Taylor PLC,contact964@taylorplc.example,Canada,Ottawa,2024-02-18,Direct,Mid-Market,201-1000,Education,Active,2024-03-31 00:00:00
+CUST-000965,ACC-000965,Moore and Sons,contact965@mooreandsons.example,Australia,Adelaide,2025-06-20,Paid Search,SMB,1-10,Healthcare,Active,2025-09-18 00:00:00
+CUST-000966,ACC-000966,Owens-Russell,contact966@owens-russell.example,France,Toulouse,2025-03-09,Paid Search,SMB,1001-5000,Logistics,Active,2025-05-27 00:00:00
+CUST-000967,ACC-000967,"Howard, Townsend and Hayes",contact967@howardtownsendandh.example,France,Lyon,2024-06-24,Paid Search,SMB,1001-5000,Professional Services,Active,2024-09-04 00:00:00
+CUST-000968,ACC-000968,Baker-Wilson,contact968@baker-wilson.example,United Kingdom,Birmingham,2024-06-15,Email,Mid-Market,11-50,Retail,Active,2024-08-20 00:00:00
+CUST-000969,ACC-000969,Aguirre LLC,contact969@aguirrellc.example,Australia,Adelaide,2025-06-10,Direct,Mid-Market,51-200,Professional Services,Active,2025-06-10 00:00:00
+CUST-000970,ACC-000970,"Terry, Williams and Huff",contact970@terrywilliamsandhu.example,United States,New York,2025-04-11,Paid Social,Startup,1-10,Professional Services,Active,2025-07-08 00:00:00
+CUST-000971,ACC-000971,Hernandez-Dawson,contact971@hernandez-dawson.example,United Kingdom,Edinburgh,2025-03-22,Partner,Mid-Market,201-1000,Professional Services,Active,2025-05-27 00:00:00
+CUST-000972,ACC-000972,Foster-Williams,contact972@foster-williams.example,Germany,Cologne,2024-02-07,Paid Social,Mid-Market,1-10,Retail,Inactive,2024-04-27 00:00:00
+CUST-000973,ACC-000973,Green-Ewing,contact973@green-ewing.example,Germany,Frankfurt,2025-03-13,Email,SMB,5000+,Education,Active,2025-06-03 00:00:00
+CUST-000974,ACC-000974,Crane Group,contact974@cranegroup.example,Germany,Munich,2025-12-18,Paid Search,Mid-Market,11-50,Technology,Active,2026-01-10 00:00:00
+CUST-000975,ACC-000975,"Adkins, Wright and Murray",contact975@adkinswrightandmur.example,Canada,Montreal,2024-01-13,Organic,SMB,201-1000,Manufacturing,Active,2024-01-14 00:00:00
+CUST-000976,ACC-000976,Martinez Inc,contact976@martinezinc.example,Canada,Toronto,2024-12-08,Email,Mid-Market,11-50,Retail,Active,2025-02-05 00:00:00
+CUST-000977,ACC-000977,Anderson Group,contact977@andersongroup.example,United States,San Francisco,2024-12-27,Organic,SMB,11-50,Education,Active,2025-02-06 00:00:00
+CUST-000978,ACC-000978,Parks-Pace,contact978@parks-pace.example,France,Lyon,2025-10-17,Paid Social,Startup,51-200,Telecommunications,Active,2025-10-18 00:00:00
+CUST-000979,ACC-000979,Aguilar LLC,contact979@aguilarllc.example,United Kingdom,London,2024-07-25,Partner,Startup,201-1000,Telecommunications,Active,2024-08-18 00:00:00
+CUST-000980,ACC-000980,Johnson Inc,contact980@johnsoninc.example,France,Toulouse,2024-12-13,Direct,SMB,5000+,Manufacturing,Inactive,2025-03-13 00:00:00
+CUST-000981,ACC-000981,Orr Group,contact981@orrgroup.example,France,Toulouse,2025-06-08,Organic,Mid-Market,1-10,Professional Services,Active,2025-07-11 00:00:00
+CUST-000982,ACC-000982,Davis LLC,contact982@davisllc.example,Netherlands,Eindhoven,2024-02-14,Email,SMB,1-10,Financial Services,Active,2024-03-08 00:00:00
+CUST-000983,ACC-000983,Williams Group,contact983@williamsgroup.example,France,Paris,2025-08-08,Referral,SMB,51-200,Manufacturing,Active,2025-10-06 00:00:00
+CUST-000984,ACC-000984,Jackson PLC,contact984@jacksonplc.example,Netherlands,Eindhoven,2025-08-24,Paid Social,SMB,51-200,Professional Services,Active,2025-10-23 00:00:00
+CUST-000985,ACC-000985,Underwood-Foster,contact985@underwood-foster.example,France,Toulouse,2025-06-10,Partner,SMB,1001-5000,Professional Services,Active,2025-07-10 00:00:00
+CUST-000986,ACC-000986,Reyes Group,contact986@reyesgroup.example,Netherlands,Eindhoven,2025-04-18,Paid Social,SMB,1001-5000,Telecommunications,Active,2025-07-04 00:00:00
+CUST-000987,ACC-000987,Gomez and Sons,contact987@gomezandsons.example,France,Lille,2025-06-30,Referral,SMB,1001-5000,Manufacturing,Active,2025-08-21 00:00:00
+CUST-000988,ACC-000988,Ramirez-Stephenson,contact988@ramirez-stephenson.example,United Kingdom,Manchester,2025-07-25,Paid Search,SMB,11-50,Telecommunications,Active,2025-08-08 00:00:00
+CUST-000989,ACC-000989,Mendez PLC,contact989@mendezplc.example,Canada,Vancouver,2025-10-22,Paid Social,Mid-Market,51-200,Telecommunications,Active,2025-11-20 00:00:00
+CUST-000990,ACC-000990,Holland Group,contact990@hollandgroup.example,Spain,Bilbao,2024-11-08,Organic,SMB,201-1000,Education,Active,2025-01-24 00:00:00
+CUST-000991,ACC-000991,Andrade-Mendoza,contact991@andrade-mendoza.example,United Kingdom,Birmingham,2024-11-29,Organic,SMB,51-200,Technology,Inactive,2024-12-07 00:00:00
+CUST-000992,ACC-000992,Ramirez and Sons,contact992@ramirezandsons.example,France,Marseille,2025-04-11,Partner,Enterprise,201-1000,Retail,Active,2025-04-12 00:00:00
+CUST-000993,ACC-000993,Gonzalez-Wilkerson,contact993@gonzalez-wilkerson.example,Canada,Vancouver,2024-05-21,Direct,SMB,11-50,Media,Active,2024-07-19 00:00:00
+CUST-000994,ACC-000994,"Wright, Mcknight and Stephens",contact994@wrightmcknightands.example,Germany,Frankfurt,2025-09-17,Paid Search,SMB,51-200,Education,Inactive,2025-10-27 00:00:00
+CUST-000995,ACC-000995,Mayo Ltd,contact995@mayoltd.example,France,Toulouse,2025-07-17,Paid Social,Enterprise,1001-5000,Telecommunications,Inactive,2025-08-09 00:00:00
+CUST-000996,ACC-000996,Castillo-Harrington,contact996@castillo-harringto.example,Netherlands,Amsterdam,2025-04-06,Paid Social,SMB,11-50,Logistics,Active,2025-05-18 00:00:00
+CUST-000997,ACC-000997,Durham-Shaw,contact997@durham-shaw.example,France,Marseille,2024-08-08,Organic,SMB,5000+,Technology,Active,2024-08-24 00:00:00
+CUST-000998,ACC-000998,Nelson-Johnson,contact998@nelson-johnson.example,United Kingdom,Edinburgh,2024-09-11,Organic,SMB,51-200,Logistics,Active,2024-10-15 00:00:00
+CUST-000999,ACC-000999,"Robinson, Huang and Osborne",contact999@robinsonhuangandos.example,Australia,Melbourne,2024-11-13,Partner,Mid-Market,1-10,Retail,Active,2024-12-04 00:00:00
+CUST-001000,ACC-001000,Stokes Group,contact1000@stokesgroup.example,France,Lyon,2025-04-29,Referral,SMB,11-50,Logistics,Active,2025-06-21 00:00:00
