@@ -1,17 +1,17 @@
 # Power BI
 
 This folder contains the Power BI layer as **code**: a Power BI Project (`.pbip`)
-whose semantic model is defined in TMDL over the dbt **gold** star schema. It reads
-the gold tables as Parquet files (exported from DuckDB) — no database driver needed.
-Report visuals are assembled in Power BI Desktop following the build guide.
+whose semantic model is defined in TMDL over the dbt **gold** star schema. It
+connects live to Snowflake via Power BI's native connector — no ODBC driver, no
+file export. All 6 report pages are fully built.
 
 ## Power BI Project (BI as code)
 
 - [`SalesMarketing.pbip`](SalesMarketing.pbip) — open this in Power BI Desktop.
-- [`SalesMarketing.SemanticModel/`](SalesMarketing.SemanticModel/) — TMDL definition: 8 tables, relationships, and ~22 DAX measures over the gold model, reading the gold Parquet exports via the `GoldDataFolder` parameter (no database driver needed).
-- [`SalesMarketing.Report/`](SalesMarketing.Report/) — report shell (PBIR format) with a starter page; add the remaining pages in Desktop.
-- [`export_gold.py`](export_gold.py) — exports the gold marts to `data/powerbi/*.parquet` for Power BI to read.
-- [`report_build_guide.md`](report_build_guide.md) — prerequisites, export step, open/refresh steps, and the per-page visual plan.
+- [`SalesMarketing.SemanticModel/`](SalesMarketing.SemanticModel/) — TMDL definition: 8 tables, relationships, and ~22 DAX measures over the gold model, reading live from Snowflake's `SALES_MARKETING.MARTS` schema.
+- [`SalesMarketing.Report/`](SalesMarketing.Report/) — fully built report (PBIR format): Executive Overview, Revenue & Margin, Marketing Performance, Customer & Segment Analysis, Product Performance, and Support Quality.
+- [`export_gold.py`](export_gold.py) — legacy: exports the gold marts to `data/powerbi/*.parquet`, from when the model read local files instead of Snowflake. Kept for reference; not used by the current model.
+- [`report_build_guide.md`](report_build_guide.md) — prerequisites, Snowflake connection details, and the built page/visual reference.
 
 ## Design Files
 
@@ -20,14 +20,12 @@ Report visuals are assembled in Power BI Desktop following the build guide.
 
 These build the Power BI layer over the Gold star schema from the [dbt project](../dbt/), described in [docs/medallion_design.md](../docs/medallion_design.md).
 
-## Planned Report Pages
+## Report Pages
 
-- Executive revenue overview.
-- Campaign performance.
-- Customer and segment analysis.
-- Product performance.
-- Support quality.
-- Data quality summary.
+All 6 pages are built — see [report_build_guide.md](report_build_guide.md) for the
+full per-page visual and measure breakdown: Executive Overview, Revenue & Margin,
+Marketing Performance, Customer & Segment Analysis, Product Performance, and
+Support Quality.
 
 ## Future Operations / Data Health Dashboard
 
