@@ -1,14 +1,11 @@
 # Medallion Design (Bronze → Silver → Gold)
 
-This document is the single design reference for the medallion architecture. The
-same Bronze → Silver → Gold logic is implemented three ways in this repo:
+This document is the single design reference for the medallion architecture. 
+The same Bronze → Silver → Gold logic is implemented two ways in this repo:
 
-- **dbt + DuckDB** — runnable warehouse project in [`dbt/`](../dbt/) (staging → intermediate → marts).
+- **dbt + DuckDB or Snowflake** — runnable warehouse project in [`dbt/`](../dbt/) (staging → intermediate → marts), portable across both targets.
 - **Local pandas pipeline** — [`local_pipeline/run_local_medallion.py`](../local_pipeline/run_local_medallion.py).
-- **Fabric PySpark source** — [`fabric_notebooks/`](../fabric_notebooks/) (for a future Microsoft Fabric Lakehouse).
 
-The Fabric Lakehouse / Delta deployment itself is a planned step; the dbt and
-pandas implementations run today.
 
 ## Source Entities
 
@@ -34,12 +31,6 @@ Added metadata columns: `ingestion_run_id`, `source_file_name`, `source_file_pat
 `source_system`, `entity_name`, `load_date`, `ingested_at`, `source_updated_at`
 (parsed from `updated_at`), and `row_hash` (hash across source columns for
 duplicate detection).
-
-In Fabric, source files land in Lakehouse Files using a partitioned convention:
-`Files/source/{source_system}/{entity}/load_date=YYYY-MM-DD/file.csv`. Bronze
-validation focuses on capture and traceability (required IDs present and non-null,
-parseable `source_updated_at`, non-zero row counts, duplicate-ID reporting) rather
-than business cleansing.
 
 ## Silver — Cleaned, Typed, Deduplicated, Validated
 
@@ -79,7 +70,7 @@ Gold turns valid Silver records into a Power BI-ready star schema.
 **Derived order measures:** `net_revenue = total_amount - tax_amount`;
 `estimated_cost = quantity * product unit_cost`; `gross_margin = net_revenue - estimated_cost`.
 
-**Surrogate keys:** deterministic keys (hash-based in pandas/Fabric;
+**Surrogate keys:** deterministic keys (hash-based in pandas;
 `dbt_utils.generate_surrogate_key` in dbt) so reruns produce stable joins. Source
 business IDs are kept as alternate keys.
 

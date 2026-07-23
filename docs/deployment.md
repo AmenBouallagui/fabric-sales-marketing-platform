@@ -2,40 +2,30 @@
 
 ## Overview
 
-This project is intended to be portable between local development and a Microsoft Fabric workspace. The repository should contain code, documentation, and lightweight configuration patterns, while environment-specific settings remain outside source control.
+This project runs in two environments: locally (DuckDB, zero credentials) and in the cloud (dbt Cloud + Snowflake, Power BI Desktop connected live). The repository contains code, documentation, and configuration patterns; environment-specific secrets stay outside source control.
 
 ## Local Development
 
-Local work will focus on:
+- Generate synthetic source data.
+- Run the dbt project against the DuckDB target, or the pandas medallion pipeline.
+- Execute tests (`dbt build`, `pytest`).
+- Generated files stay out of Git (ignored under `data/`).
 
-- Generating synthetic source data.
-- Running transformation logic in notebooks or scripts.
-- Executing tests.
-- Reviewing documentation and SQL assets.
+## Cloud Deployment (dbt Cloud + Snowflake)
 
-Generated files should stay out of Git unless explicitly approved for a small sample dataset.
-
-## Fabric Workspace Setup
-
-Planned Fabric setup steps:
-
-1. Create or select a Fabric workspace.
-2. Create a Lakehouse for the project.
-3. Create logical folders for Bronze, Silver, and Gold data.
-4. Upload or ingest synthetic source data into Bronze.
-5. Import notebooks and SQL scripts.
-6. Configure pipelines for repeatable orchestration.
-7. Build or connect a Power BI semantic model to Gold tables.
+1. Create a Snowflake account/database and a dbt Cloud project connected to it.
+2. Add a Snowflake target/environment in dbt Cloud (see `dbt/profiles.yml` for the local equivalent).
+3. Run `dbt seed` then `dbt build` in dbt Cloud against the Snowflake target.
+4. Open `powerbi/SalesMarketing.pbip` in Power BI Desktop and refresh — it connects live to the `SALES_MARKETING.MARTS` schema via Power BI's native Snowflake connector.
 
 ## Configuration
 
-Do not commit secrets, connection strings, tokens, or tenant-specific identifiers. Use Fabric workspace settings, environment variables, or secure deployment parameters where needed.
+Do not commit secrets, connection strings, tokens, or account identifiers. Snowflake credentials live in dbt Cloud's environment settings and Power BI Desktop's cached connection, not in source control.
 
 ## Release Readiness Checklist
 
 - Documentation is up to date.
 - Data generator can recreate test inputs.
-- Transformations are repeatable.
-- Data quality checks pass.
+- `dbt build` passes on both DuckDB and Snowflake targets.
 - Power BI screenshots reflect current metrics.
 - No secrets or generated large data files are committed.

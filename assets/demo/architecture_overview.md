@@ -1,10 +1,10 @@
 # Demo Architecture Overview
 
-This diagram separates what runs locally today from the planned Microsoft Fabric, Power BI, and AI/Data Agent implementation path.
+This diagram shows the local pandas prototype alongside the dbt warehouse path (DuckDB or Snowflake) that feeds the live-connected Power BI report.
 
 ```mermaid
 flowchart LR
-    subgraph LocalToday["Runs Locally Today"]
+    subgraph LocalToday["Local Prototype"]
         Sources["Synthetic CSV sources<br/>customers, products, campaigns,<br/>orders, ad spend, support tickets"]
         Generator["Local data generation<br/>Python + Faker"]
         Bronze["Local Bronze parquet outputs<br/>source records + ingestion metadata"]
@@ -13,18 +13,15 @@ flowchart LR
         Observability["Local observability outputs<br/>run logs, quality results,<br/>row count reconciliation"]
     end
 
-    subgraph PlannedFabric["Planned Microsoft Fabric Implementation"]
-        Lakehouse["Microsoft Fabric Lakehouse<br/>Files + Delta tables"]
-        FabricBronze["Planned Bronze Delta tables"]
-        FabricSilver["Planned Silver Delta tables"]
-        FabricGold["Planned Gold tables or Warehouse objects"]
-        FabricObs["Planned observability tables"]
+    subgraph DbtWarehouse["dbt Warehouse<br/>DuckDB or Snowflake"]
+        Staging["Staging views"]
+        Intermediate["Intermediate views"]
+        Marts["Marts tables"]
     end
 
-    subgraph PlannedConsumption["Planned Consumption"]
-        SemanticModel["Planned Power BI semantic model"]
-        Reports["Planned Power BI report pages"]
-        Agent["Planned AI/Data Agent extension"]
+    subgraph Consumption["Power BI"]
+        SemanticModel["Semantic model (TMDL)"]
+        Reports["6 report pages<br/>live-connected to Snowflake"]
     end
 
     Sources --> Generator
@@ -35,18 +32,12 @@ flowchart LR
     Silver --> Observability
     Gold --> Observability
 
-    Sources -.planned upload.-> Lakehouse
-    Lakehouse --> FabricBronze
-    FabricBronze --> FabricSilver
-    FabricSilver --> FabricGold
-    FabricBronze --> FabricObs
-    FabricSilver --> FabricObs
-    FabricGold --> FabricObs
+    Sources --> Staging
+    Staging --> Intermediate
+    Intermediate --> Marts
 
-    FabricGold --> SemanticModel
-    FabricObs --> SemanticModel
+    Marts --> SemanticModel
     SemanticModel --> Reports
-    SemanticModel --> Agent
 ```
 
-The local prototype is executable today. Microsoft Fabric execution, Power BI report creation, and the AI/Data Agent extension are planned unless a later implementation note documents otherwise.
+The local prototype and the dbt warehouse (both targets) are executable today; the Power BI report is built and connected live.

@@ -2,11 +2,11 @@
 
 ## Purpose
 
-This folder is reserved for future portfolio demo screenshots and presentation assets. It documents what should be captured once the local prototype, Microsoft Fabric implementation, or Power BI report views are ready to show visually.
+This folder is reserved for future portfolio demo screenshots and presentation assets. It documents what should be captured once the local prototype or Power BI report views are ready to show visually.
 
 ## Current Demo Assets
 
-- [Architecture overview](architecture_overview.md): Mermaid diagram showing what runs locally today and what is planned for Fabric, Power BI, and AI/Data Agent work.
+- [Architecture overview](architecture_overview.md): Mermaid diagram showing the local prototype and dbt warehouse (DuckDB/Snowflake) feeding the live-connected Power BI report.
 - [Gold model](gold_model.md): Mermaid diagram showing Gold dimensions, facts, and reporting relationships.
 
 ## Planned Screenshots
@@ -16,19 +16,15 @@ This folder is reserved for future portfolio demo screenshots and presentation a
 - Local medallion pipeline command output.
 - Local output folder structure for `data/source/`, `data/bronze/`, `data/silver/`, `data/gold/`, and `data/observability/`.
 - Pytest or CI success output.
-- Future Fabric workspace and Lakehouse item overview.
-- Future Bronze, Silver, and Gold table previews.
-- Future SQL endpoint validation results.
-- Future Power BI semantic model relationships.
-- Future Power BI report pages.
+- Power BI semantic model relationships.
+- Power BI report pages.
 
 ## Current Status
 
-No screenshots, images, Power BI files, or generated data assets are included yet. Demo assets should be added only when they represent real local output or explicitly documented future Fabric and Power BI work.
+No screenshots, images, or generated data assets are included yet. Demo assets should be added once they represent real local output or the live Power BI report.
 
 ## Guidelines
 
 - Do not include secrets, tenant IDs, workspace IDs, connection strings, or credentials.
 - Do not commit generated data extracts.
 - Use screenshots only for portfolio-safe synthetic data.
-- Label future Fabric or Power BI screenshots with the date and implementation status.

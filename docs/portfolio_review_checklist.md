@@ -45,14 +45,10 @@ Generated data is written under ignored `data/` folders and is not committed.
 
 ### Power BI & BI
 - Semantic model as code (PBIP / TMDL): 8 tables, relationships, ~22 DAX measures
+- Connects live to Snowflake via Power BI's native connector — no file export, no driver
 - Business metrics definitions: revenue, gross margin, marketing ROI, customer, support
-- Report design across 5 domains (Executive, Revenue, Marketing, Customer, Support)
+- 6 report pages built: Executive Overview, Revenue & Margin, Marketing Performance, Customer & Segment Analysis, Product Performance, Support Quality
 - Star schema optimized for Power BI: correct relationship cardinality, hidden FK columns, display folders
-
-### Microsoft Fabric
-- Medallion architecture mapped to Fabric (OneLake, Lakehouse, Delta tables, notebooks, SQL endpoint)
-- PySpark notebook source for all three layers — ready to import into Fabric
-- Practical setup guides covering workspace creation through SQL endpoint validation
 
 ### Engineering Practices
 - GitHub Actions CI validates the full local pipeline on every push
@@ -62,14 +58,11 @@ Generated data is written under ignored `data/` folders and is not committed.
 
 ## What Is Not Implemented Yet
 
-- Microsoft Fabric workspace (guides and notebook source are ready; not yet executed)
-- Power BI report visuals (semantic model defined; pages to be built in Desktop)
-- Data Factory pipeline orchestration
+- Data Factory-style pipeline orchestration for the cloud path
+- An operations/data-health Power BI page (needs observability data wired in as extra tables)
 
 ---
 
 ## Reviewer Notes
 
-The local prototype is fully executable and CI-validated. Fabric and Power BI execution are the planned next phases, clearly separated from what works today.
-
-For professional context — real-world experience with Power BI, Fabric, and data migration — see [docs/real_world_context.md](real_world_context.md).
+The local prototype, the dbt warehouse (both targets), and the Power BI report are all fully executable and demonstrated end-to-end.

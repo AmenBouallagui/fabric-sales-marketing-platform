@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This folder contains the deterministic synthetic source data generator for the AI-Ready Sales & Marketing Data Platform. The generated files simulate operational source extracts that can be landed into a Microsoft Fabric Bronze layer.
+This folder contains the deterministic synthetic source data generator for the AI-Ready Sales & Marketing Data Platform. The generated files simulate operational source extracts for the Bronze layer of the medallion pipeline.
 
 The data is fully synthetic and designed for portfolio demonstration, local development, and repeatable ingestion testing.
 
@@ -48,8 +48,8 @@ python data_generation/generate_source_data.py --output-dir data/source --seed 4
 - `--start-date`: inclusive data start date. Defaults to `2024-01-01`.
 - `--end-date`: inclusive data end date. Defaults to `2025-12-31`.
 
-## Fabric Usage Notes
+## Usage Notes
 
-The files are shaped as source-system extracts for Bronze ingestion. They include stable IDs, related business entities, event dates, and `updated_at` timestamps to support future incremental loading patterns in Microsoft Fabric.
+The files are shaped as source-system extracts for warehouse ingestion (dbt seeds, or DuckDB's `external_location`). They include stable IDs, related business entities, event dates, and `updated_at` timestamps to support incremental loading patterns.
 
 The generator intentionally includes realistic imperfect patterns such as refunded orders, failed payments, inactive customers, open support tickets, ended campaigns, and ongoing campaigns.

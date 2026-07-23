@@ -1,6 +1,6 @@
 # Architecture Diagram
 
-This Mermaid diagram summarizes what runs locally today and how the same medallion pattern is planned to move into Microsoft Fabric, Power BI, and a future AI/Data Agent extension.
+This Mermaid diagram summarizes the two working implementations of the medallion pattern in this repo — a local pandas prototype and a dbt warehouse that runs on DuckDB or Snowflake — both feeding a Power BI report connected live to Snowflake.
 
 ```mermaid
 flowchart LR
@@ -17,19 +17,15 @@ flowchart LR
         Obs["Observability Outputs<br/>run log, quality results,<br/>row count reconciliation"]
     end
 
-    subgraph FutureFabric["Future Microsoft Fabric Implementation"]
-        OneLake["OneLake / Lakehouse Files"]
-        FabricBronze["Bronze Delta Tables"]
-        FabricSilver["Silver Delta Tables"]
-        FabricGold["Gold Delta Tables or Warehouse"]
-        Pipelines["Data Factory Pipelines"]
-        FabricObs["Observability Tables"]
+    subgraph Warehouse["dbt Warehouse<br/>DuckDB (local) or Snowflake (dbt Cloud)"]
+        Staging["Staging Views"]
+        Intermediate["Intermediate Views<br/>Silver logic"]
+        Marts["Marts Tables<br/>Gold star schema"]
     end
 
-    subgraph Reporting["Future Reporting And AI"]
-        Semantic["Power BI Semantic Model"]
-        Reports["Power BI Reports<br/>business + data health pages"]
-        Agent["Future AI/Data Agent<br/>grounded on curated Gold data<br/>and observability metadata"]
+    subgraph Reporting["Power BI"]
+        Semantic["Semantic Model (TMDL)<br/>8 tables, ~22 DAX measures"]
+        Reports["6 Report Pages<br/>live-connected to Snowflake"]
     end
 
     Generator --> CSV
@@ -39,20 +35,56 @@ flowchart LR
     Silver --> Gold
     LocalPipeline --> Obs
 
-    CSV -.planned upload.-> OneLake
-    OneLake --> FabricBronze
-    FabricBronze --> FabricSilver
-    FabricSilver --> FabricGold
-    Pipelines --> FabricBronze
-    Pipelines --> FabricSilver
-    Pipelines --> FabricGold
-    Pipelines --> FabricObs
-    FabricBronze --> FabricObs
-    FabricSilver --> FabricObs
-    FabricGold --> FabricObs
+    CSV --> Staging
+    Staging --> Intermediate
+    Intermediate --> Marts
 
-    FabricGold --> Semantic
-    FabricObs --> Semantic
+    Marts --> Semantic
     Semantic --> Reports
-    Semantic --> Agent
-```
+
+    
+---
+
+## `assets/demo/architecture_overview.md` — replace entirely
+
+```markdown
+# Demo Architecture Overview
+
+This diagram shows the local pandas prototype alongside the dbt warehouse path (DuckDB or Snowflake) that feeds the live-connected Power BI report.
+
+```mermaid
+flowchart LR
+    subgraph LocalToday["Local Prototype"]
+        Sources["Synthetic CSV sources<br/>customers, products, campaigns,<br/>orders, ad spend, support tickets"]
+        Generator["Local data generation<br/>Python + Faker"]
+        Bronze["Local Bronze parquet outputs<br/>source records + ingestion metadata"]
+        Silver["Local Silver parquet outputs<br/>standardized, typed, deduplicated,<br/>validated current records"]
+        Gold["Local Gold parquet outputs<br/>dimensions, facts, KPI-ready fields"]
+        Observability["Local observability outputs<br/>run logs, quality results,<br/>row count reconciliation"]
+    end
+
+    subgraph DbtWarehouse["dbt Warehouse<br/>DuckDB or Snowflake"]
+        Staging["Staging views"]
+        Intermediate["Intermediate views"]
+        Marts["Marts tables"]
+    end
+
+    subgraph Consumption["Power BI"]
+        SemanticModel["Semantic model (TMDL)"]
+        Reports["6 report pages<br/>live-connected to Snowflake"]
+    end
+
+    Sources --> Generator
+    Generator --> Bronze
+    Bronze --> Silver
+    Silver --> Gold
+    Bronze --> Observability
+    Silver --> Observability
+    Gold --> Observability
+
+    Sources --> Staging
+    Staging --> Intermediate
+    Intermediate --> Marts
+
+    Marts --> SemanticModel
+    SemanticModel --> Reports

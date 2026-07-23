@@ -2,7 +2,7 @@
 
 This folder contains a local Python prototype for the AI-Ready Sales & Marketing Data Platform medallion flow.
 
-The prototype runs locally with pandas. It is not a Microsoft Fabric implementation. Its purpose is to validate the planned Bronze, Silver, Gold, and observability logic before building Fabric notebooks, Lakehouse tables, and orchestration.
+The prototype runs locally with pandas. Its purpose is to validate the Bronze, Silver, Gold, and observability logic independently of the dbt implementation.
 
 ## Inputs
 

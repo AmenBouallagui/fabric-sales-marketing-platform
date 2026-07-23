@@ -1,9 +1,9 @@
 # dbt Warehouse (DuckDB)
 
 A dbt project that transforms the synthetic sales & marketing extracts into a
-tested, documented star schema. It is the warehouse-native counterpart to the
-Microsoft Fabric medallion design in this repo: the same Bronze → Silver → Gold
-logic, expressed in dbt with sources, staging, intermediate, and marts layers.
+tested, documented star schema. It expresses the same Bronze → Silver → Gold
+logic as the repo's local pandas prototype, with sources, staging, intermediate,
+and marts layers.
 
 DuckDB is used as the warehouse so the whole project runs locally and in CI with
 **no cloud account or credentials**. The modeling patterns (sources, layered
@@ -59,6 +59,5 @@ singular net-revenue test). The DuckDB file and `target/` artifacts are gitignor
 - `data_generation/` produces the source CSVs this project reads.
 - `local_pipeline/run_local_medallion.py` is the pandas reference implementation
   of the same Bronze/Silver/Gold logic.
-- `fabric_notebooks/` holds the PySpark equivalent for a Microsoft Fabric Lakehouse.
 - The `sales_marketing_powerbi` exposure documents the planned Power BI semantic
   model that consumes these gold tables.

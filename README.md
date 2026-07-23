@@ -1,6 +1,6 @@
 # Sales & Marketing Analytics Platform
 
-An end-to-end analytics engineering portfolio project: synthetic sales and marketing data modeled through a Bronze → Silver → Gold medallion pipeline, a tested dbt + DuckDB warehouse, and a Power BI semantic model authored as code. Everything core runs locally with no cloud account.
+An end-to-end analytics engineering portfolio project: synthetic sales and marketing data modeled through a Bronze → Silver → Gold medallion pipeline, a tested dbt warehouse that runs on either DuckDB (local, zero credentials) or Snowflake (via dbt Cloud), and a Power BI semantic model authored as code — connected live to Snowflake, all 6 report pages built.
 
 Built by **Amen Bouallagui** — BI Developer and Analytics Engineer with 2 years of hands-on experience in Microsoft Fabric, Power BI, and data migration on real client projects.
 
@@ -44,11 +44,6 @@ python -m pytest
 - Star schema optimized for Power BI consumption
 - Business metric definitions for revenue, margin, marketing, customer, and support KPIs
 
-### Microsoft Fabric
-- Medallion architecture mapped to Fabric Lakehouse (OneLake, Delta tables, notebooks)
-- PySpark notebook source for Bronze, Silver, and Gold layers — ready to import into Fabric
-- Setup guides for workspace, Lakehouse, source upload, notebook configuration, SQL endpoint validation
-
 ### Engineering Practices
 - GitHub Actions CI: generates data, runs local pipeline, runs `dbt build` with all tests, validates `.gitignore` hygiene
 - Deterministic synthetic data generator with relational integrity validation
@@ -72,15 +67,12 @@ See [docs/architecture.md](docs/architecture.md) and [docs/medallion_design.md](
 
 ## Current Status
 
-**Runs in CI today:**
+**Runs today:**
 - Synthetic data generation (6 CSV sources: customers, products, campaigns, orders, ad spend, support tickets)
 - Local medallion pipeline (Bronze / Silver / Gold + observability parquet outputs)
-- dbt warehouse: 21 models, ~38 tests, all passing
+- dbt warehouse: 21 models, ~38 tests — runs on DuckDB (CI, zero credentials) or Snowflake (via dbt Cloud)
 - Pytest suite
-
-**Defined, not yet executed in Fabric / Power BI Desktop:**
-- Power BI report visuals — semantic model and ~22 DAX measures are defined as code; pages are designed and ready to build
-- Microsoft Fabric workspace — setup guides and PySpark notebook source are ready; execution pending
+- Power BI report: 6 pages built, semantic model connected live to Snowflake
 
 ---
 
@@ -91,8 +83,6 @@ See [docs/architecture.md](docs/architecture.md) and [docs/medallion_design.md](
 | [`dbt/`](dbt/) | dbt + DuckDB warehouse — staging, intermediate, marts, tests, CI |
 | [`data_generation/`](data_generation/) | Deterministic synthetic source data generator |
 | [`local_pipeline/`](local_pipeline/) | Executable pandas medallion prototype with observability |
-| [`fabric_notebooks/`](fabric_notebooks/) | PySpark source for Fabric Bronze, Silver, and Gold notebooks |
-| [`fabric_implementation/`](fabric_implementation/) | Fabric workspace and Lakehouse setup guides |
 | [`powerbi/`](powerbi/) | Semantic model as code (PBIP / TMDL), DAX measures, design notes |
 | [`docs/`](docs/) | Architecture, medallion design, data quality, business metrics, roadmap |
 | [`sql/`](sql/) | Validation, observability, and business metric queries |
