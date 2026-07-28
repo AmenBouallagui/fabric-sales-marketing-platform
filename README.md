@@ -8,6 +8,14 @@ Built by **Amen Bouallagui** — BI Developer and Analytics Engineer with 2 year
 
 ---
 
+## Power BI Report
+
+<video src="powerbi/report_screenshots/executive_overview.mp4" controls width="800"></video>
+
+Executive Overview page, connected live to Snowflake via Power BI's native connector — 6 pages total covering revenue, margin, marketing, customer segments, product performance, and support quality. See [powerbi/report_build_guide.md](powerbi/report_build_guide.md) for the full page-by-page breakdown.
+
+---
+
 ## Quick Start
 
 ```bash
