@@ -4,7 +4,7 @@
   "position": {
     "x": 196,
     "y": 494,
-    "z": 16000,
+    "z": 11000,
     "height": 214,
     "width": 526,
     "tabOrder": 3000
@@ -80,6 +80,25 @@
                   "Value": "false"
                 }
               }
+            },
+            "labelColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "gridlineTransparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "59D"
+                }
+              }
             }
           }
         }
@@ -93,6 +112,18 @@
                   "Value": "false"
                 }
               }
+            },
+            "labelColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -104,8 +135,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#0F766E'"
+                    "ThemeDataColor": {
+                      "ColorId": 4,
+                      "Percent": 0
                     }
                   }
                 }
@@ -129,14 +161,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Orders by product'"
+                  "Value": "'Orders by Product'"
                 }
               }
             },
             "alignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'left'"
+                  "Value": "'center'"
                 }
               }
             },
@@ -144,8 +176,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#17212B'"
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
                     }
                   }
                 }
@@ -192,7 +225,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "100D"
                 }
               }
             }
@@ -214,7 +247,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#DCE3E8'"
+                      "Value": "'#526679'"
                     }
                   }
                 }

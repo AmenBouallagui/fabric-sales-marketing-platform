@@ -22,6 +22,30 @@
           }
         }
       }
+    ],
+    "background": [
+      {
+        "properties": {
+          "transparency": {
+            "expr": {
+              "Literal": {
+                "Value": "0D"
+              }
+            }
+          },
+          "color": {
+            "solid": {
+              "color": {
+                "expr": {
+                  "Literal": {
+                    "Value": "'#17212B'"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     ]
   }
 }

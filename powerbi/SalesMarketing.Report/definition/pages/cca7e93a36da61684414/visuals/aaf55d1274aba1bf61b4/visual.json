@@ -4,17 +4,47 @@
   "position": {
     "x": 738,
     "y": 494,
-    "z": 17000,
+    "z": 12000,
     "height": 214,
     "width": 530,
     "tabOrder": 4000
   },
   "visual": {
-    "visualType": "lineClusteredColumnComboChart",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Category": {
+        "Values": {
           "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_product"
+                    }
+                  },
+                  "Property": "category"
+                }
+              },
+              "queryRef": "dim_product.category",
+              "nativeQueryRef": "category",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_product"
+                    }
+                  },
+                  "Property": "product_name"
+                }
+              },
+              "queryRef": "dim_product.product_name",
+              "nativeQueryRef": "product_name",
+              "active": false
+            },
             {
               "field": {
                 "Column": {
@@ -28,12 +58,8 @@
               },
               "queryRef": "dim_product.plan_tier",
               "nativeQueryRef": "plan_tier",
-              "active": true
-            }
-          ]
-        },
-        "Tooltips": {
-          "projections": [
+              "active": false
+            },
             {
               "field": {
                 "Measure": {
@@ -46,7 +72,8 @@
                 }
               },
               "queryRef": "_Measures.Revenue",
-              "nativeQueryRef": "Revenue"
+              "nativeQueryRef": "Revenue",
+              "active": false
             },
             {
               "field": {
@@ -60,12 +87,9 @@
                 }
               },
               "queryRef": "_Measures.Orders",
-              "nativeQueryRef": "Orders"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
+              "nativeQueryRef": "Orders",
+              "active": false
+            },
             {
               "field": {
                 "Measure": {
@@ -78,12 +102,9 @@
                 }
               },
               "queryRef": "_Measures.Gross Margin",
-              "nativeQueryRef": "Gross Margin"
-            }
-          ]
-        },
-        "Y2": {
-          "projections": [
+              "nativeQueryRef": "Gross Margin",
+              "active": false
+            },
             {
               "field": {
                 "Measure": {
@@ -96,7 +117,8 @@
                 }
               },
               "queryRef": "_Measures.Gross Margin %",
-              "nativeQueryRef": "Gross Margin %"
+              "nativeQueryRef": "Gross Margin %",
+              "active": false
             }
           ]
         }
@@ -111,7 +133,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Gross Margin"
+                "Property": "Revenue"
               }
             },
             "direction": "Descending"
@@ -121,92 +143,108 @@
       }
     },
     "objects": {
-      "valueAxis": [
+      "grid": [
         {
           "properties": {
-            "showAxisTitle": {
+            "gridVertical": {
               "expr": {
                 "Literal": {
                   "Value": "false"
                 }
               }
             },
-            "logAxisScale": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "invertAxis": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "roundRange": {
+            "gridHorizontal": {
               "expr": {
                 "Literal": {
                   "Value": "true"
                 }
               }
-            }
-          }
-        }
-      ],
-      "categoryAxis": [
-        {
-          "properties": {
-            "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "dataPoint": [
-        {
-          "properties": {
-            "borderShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+            },
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#526679'"
+                    }
+                  }
                 }
               }
             },
-            "fill": {
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontColor": {
               "solid": {
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#0F766E'"
+                      "Value": "'#C8D5DE'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#17212B'"
                     }
                   }
                 }
               }
             }
           }
-        },
+        }
+      ],
+      "values": [
         {
           "properties": {
-            "fill": {
+            "fontColorPrimary": {
               "solid": {
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#2563EB'"
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#17212B'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1E2B37'"
                     }
                   }
                 }
               }
             }
-          },
-          "selector": {
-            "metadata": "_Measures.Gross Margin %"
           }
         }
       ]
@@ -225,14 +263,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Margin by plan tier'"
+                  "Value": "'Product profitability detail'"
                 }
               }
             },
             "alignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'left'"
+                  "Value": "'center'"
                 }
               }
             },
@@ -240,8 +278,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#17212B'"
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
                     }
                   }
                 }
@@ -288,7 +327,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "100D"
                 }
               }
             }
@@ -310,7 +349,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#DCE3E8'"
+                      "Value": "'#526679'"
                     }
                   }
                 }

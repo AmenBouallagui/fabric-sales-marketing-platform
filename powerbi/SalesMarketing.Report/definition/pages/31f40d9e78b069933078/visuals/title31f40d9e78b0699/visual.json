@@ -4,8 +4,8 @@
   "position": {
     "x": 0,
     "y": 0,
-    "z": 1000,
-    "height": 68,
+    "z": 0,
+    "height": 64,
     "width": 1280,
     "tabOrder": 0
   },
@@ -23,11 +23,12 @@
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "21pt",
+                      "fontSize": "18pt",
                       "color": "#ffffff"
                     }
                   }
-                ]
+                ],
+                "horizontalTextAlignment": "center"
               },
               {
                 "textRuns": [
@@ -35,11 +36,12 @@
                     "value": "Understand growth, segment value, and geographic concentration",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "9pt",
+                      "fontSize": "8pt",
                       "color": "#c8d5de"
                     }
                   }
-                ]
+                ],
+                "horizontalTextAlignment": "center"
               }
             ]
           }
@@ -84,14 +86,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "radius": {
-              "expr": {
-                "Literal": {
-                  "Value": "2D"
+                  "Value": "false"
                 }
               }
             }

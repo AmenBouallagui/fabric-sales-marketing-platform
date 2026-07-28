@@ -4,17 +4,32 @@
   "position": {
     "x": 738,
     "y": 494,
-    "z": 17000,
+    "z": 11000,
     "height": 214,
     "width": 530,
-    "tabOrder": 4000
+    "tabOrder": 3000
   },
   "visual": {
-    "visualType": "clusteredBarChart",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Category": {
+        "Values": {
           "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dim_customer"
+                    }
+                  },
+                  "Property": "customer_segment"
+                }
+              },
+              "queryRef": "dim_customer.customer_segment",
+              "nativeQueryRef": "customer_segment",
+              "active": true
+            },
             {
               "field": {
                 "Column": {
@@ -28,12 +43,8 @@
               },
               "queryRef": "dim_customer.country",
               "nativeQueryRef": "country",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
+              "active": false
+            },
             {
               "field": {
                 "Measure": {
@@ -46,7 +57,53 @@
                 }
               },
               "queryRef": "_Measures.Customers",
-              "nativeQueryRef": "Customers"
+              "nativeQueryRef": "Customers",
+              "active": false
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Revenue"
+                }
+              },
+              "queryRef": "_Measures.Revenue",
+              "nativeQueryRef": "Revenue",
+              "active": false
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Average Order Value"
+                }
+              },
+              "queryRef": "_Measures.Average Order Value",
+              "nativeQueryRef": "Average Order Value",
+              "active": false
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Ticket Count"
+                }
+              },
+              "queryRef": "_Measures.Ticket Count",
+              "nativeQueryRef": "Ticket Count",
+              "active": false
             }
           ]
         }
@@ -61,7 +118,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Customers"
+                "Property": "Revenue"
               }
             },
             "direction": "Descending"
@@ -71,41 +128,103 @@
       }
     },
     "objects": {
-      "valueAxis": [
+      "grid": [
         {
           "properties": {
-            "showAxisTitle": {
+            "gridVertical": {
               "expr": {
                 "Literal": {
                   "Value": "false"
                 }
               }
-            }
-          }
-        }
-      ],
-      "categoryAxis": [
-        {
-          "properties": {
-            "showAxisTitle": {
+            },
+            "gridHorizontal": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
-            }
-          }
-        }
-      ],
-      "dataPoint": [
-        {
-          "properties": {
-            "fill": {
+            },
+            "outlineColor": {
               "solid": {
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#2563EB'"
+                      "Value": "'#526679'"
+                    }
+                  }
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#C8D5DE'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#17212B'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#17212B'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1E2B37'"
                     }
                   }
                 }
@@ -129,14 +248,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Customer footprint by country'"
+                  "Value": "'Customer segment detail'"
                 }
               }
             },
             "alignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'left'"
+                  "Value": "'center'"
                 }
               }
             },
@@ -144,8 +263,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#17212B'"
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
                     }
                   }
                 }
@@ -192,7 +312,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "100D"
                 }
               }
             }
@@ -214,7 +334,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#DCE3E8'"
+                      "Value": "'#526679'"
                     }
                   }
                 }
@@ -249,7 +369,21 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "4a18b9a37362c612bdcb",
+        "name": "90ab7571ea666d0a5ab0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_customer"
+              }
+            },
+            "Property": "customer_segment"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f1114cd66b240b7d7607",
         "field": {
           "Column": {
             "Expression": {
@@ -260,65 +394,63 @@
             "Property": "country"
           }
         },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "d",
-              "Entity": "dim_customer",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Not": {
-                  "Expression": {
-                    "In": {
-                      "Expressions": [
-                        {
-                          "Column": {
-                            "Expression": {
-                              "SourceRef": {
-                                "Source": "d"
-                              }
-                            },
-                            "Property": "country"
-                          }
-                        }
-                      ],
-                      "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'Unknown'"
-                            }
-                          }
-                        ]
-                      ]
-                    }
-                  }
-                }
+        "type": "Categorical"
+      },
+      {
+        "name": "23eaffcb340214b48de8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
               }
-            }
-          ]
+            },
+            "Property": "Customers"
+          }
         },
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
+        "type": "Advanced"
+      },
+      {
+        "name": "f5863bc5b97a26407d45",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
               }
-            }
-          ]
-        }
+            },
+            "Property": "Revenue"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c389779316dde880408b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Average Order Value"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "40a6bf7c55904814601c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Ticket Count"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

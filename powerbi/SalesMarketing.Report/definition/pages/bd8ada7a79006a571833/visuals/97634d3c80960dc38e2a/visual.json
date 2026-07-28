@@ -21,6 +21,13 @@
                   "Value": "'tabRoundTopCorners'"
                 }
               }
+            },
+            "tabRoundCornerTop": {
+              "expr": {
+                "Literal": {
+                  "Value": "12L"
+                }
+              }
             }
           }
         }

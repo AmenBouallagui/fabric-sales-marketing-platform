@@ -4,17 +4,47 @@
   "position": {
     "x": 738,
     "y": 494,
-    "z": 17000,
+    "z": 12000,
     "height": 214,
     "width": 530,
     "tabOrder": 4000
   },
   "visual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Category": {
+        "Values": {
           "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fct_support_tickets"
+                    }
+                  },
+                  "Property": "priority"
+                }
+              },
+              "queryRef": "fct_support_tickets.priority",
+              "nativeQueryRef": "priority",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "fct_support_tickets"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "queryRef": "fct_support_tickets.status",
+              "nativeQueryRef": "status",
+              "active": false
+            },
             {
               "field": {
                 "Column": {
@@ -28,12 +58,38 @@
               },
               "queryRef": "fct_support_tickets.category",
               "nativeQueryRef": "category",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
+              "active": false
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Ticket Count"
+                }
+              },
+              "queryRef": "_Measures.Ticket Count",
+              "nativeQueryRef": "Ticket Count",
+              "active": false
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg First Response (min)"
+                }
+              },
+              "queryRef": "_Measures.Avg First Response (min)",
+              "nativeQueryRef": "Avg First Response (min)",
+              "active": false
+            },
             {
               "field": {
                 "Measure": {
@@ -46,7 +102,23 @@
                 }
               },
               "queryRef": "_Measures.Avg Resolution (min)",
-              "nativeQueryRef": "Avg Resolution (min)"
+              "nativeQueryRef": "Avg Resolution (min)",
+              "active": false
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Satisfaction"
+                }
+              },
+              "queryRef": "_Measures.Avg Satisfaction",
+              "nativeQueryRef": "Avg Satisfaction",
+              "active": false
             }
           ]
         }
@@ -61,7 +133,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Avg Resolution (min)"
+                "Property": "Ticket Count"
               }
             },
             "direction": "Descending"
@@ -71,41 +143,103 @@
       }
     },
     "objects": {
-      "valueAxis": [
+      "grid": [
         {
           "properties": {
-            "showAxisTitle": {
+            "gridVertical": {
               "expr": {
                 "Literal": {
                   "Value": "false"
                 }
               }
-            }
-          }
-        }
-      ],
-      "categoryAxis": [
-        {
-          "properties": {
-            "showAxisTitle": {
+            },
+            "gridHorizontal": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
-            }
-          }
-        }
-      ],
-      "dataPoint": [
-        {
-          "properties": {
-            "fill": {
+            },
+            "outlineColor": {
               "solid": {
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#F97360'"
+                      "Value": "'#526679'"
+                    }
+                  }
+                }
+              }
+            },
+            "textSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#C8D5DE'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#17212B'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "fontColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColorPrimary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#17212B'"
+                    }
+                  }
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#1E2B37'"
                     }
                   }
                 }
@@ -129,14 +263,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Resolution time by category'"
+                  "Value": "'Support risk detail'"
                 }
               }
             },
             "alignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'left'"
+                  "Value": "'center'"
                 }
               }
             },
@@ -144,8 +278,9 @@
               "solid": {
                 "color": {
                   "expr": {
-                    "Literal": {
-                      "Value": "'#17212B'"
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
                     }
                   }
                 }
@@ -161,7 +296,28 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "14D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "italic": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "underline": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -192,7 +348,7 @@
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "100D"
                 }
               }
             }
@@ -214,7 +370,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#DCE3E8'"
+                      "Value": "'#526679'"
                     }
                   }
                 }
@@ -231,6 +387,19 @@
         }
       ],
       "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
         {
           "properties": {
             "show": {

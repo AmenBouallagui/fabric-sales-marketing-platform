@@ -1,10 +1,10 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "titlef1263f77f4dbe6d",
   "position": {
     "x": 0,
     "y": 0,
-    "z": 1000,
+    "z": 0,
     "height": 64,
     "width": 1280,
     "tabOrder": 0
@@ -23,12 +23,12 @@
                     "textStyle": {
                       "fontWeight": "bold",
                       "fontFamily": "Segoe UI Semibold",
-                      "fontSize": "21pt",
-                      "color": "#FFFFFF"
+                      "fontSize": "18pt",
+                      "color": "#ffffff"
                     }
                   }
                 ],
-                "horizontalTextAlignment": "left"
+                "horizontalTextAlignment": "center"
               },
               {
                 "textRuns": [
@@ -36,12 +36,12 @@
                     "value": "Track revenue quality, margin contribution, and order economics",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
-                      "fontSize": "9pt",
-                      "color": "#C8D5DE"
+                      "fontSize": "8pt",
+                      "color": "#c8d5de"
                     }
                   }
                 ],
-                "horizontalTextAlignment": "left"
+                "horizontalTextAlignment": "center"
               }
             ]
           }
