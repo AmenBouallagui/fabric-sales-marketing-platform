@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "806e6c3f82ce010bfefc",
   "position": {
     "x": 196,
@@ -7,7 +7,7 @@
     "z": 3000,
     "height": 104,
     "width": 256,
-    "tabOrder": 2000
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -272,23 +272,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "e1e8eb6509c0e3a3caec",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Customers"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

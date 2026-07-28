@@ -1,5 +1,6 @@
 table dim_date
 	lineageTag: f4016e5a-6855-4a3e-a1c8-96fdf3ac4970
+	dataCategory: Time
 
 	column date_key
 		dataType: double
@@ -12,6 +13,7 @@ table dim_date
 
 	column calendar_date
 		dataType: dateTime
+		isKey
 		formatString: yyyy-mm-dd
 		lineageTag: c3541dd4-6a08-4ae5-918e-78b81986c707
 		summarizeBy: none
@@ -21,13 +23,12 @@ table dim_date
 
 	column calendar_year
 		dataType: double
+		formatString: 0
 		lineageTag: 6e0ab72d-dc01-4fae-94a3-94a1faaac302
 		summarizeBy: sum
 		sourceColumn: calendar_year
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column calendar_quarter
 		dataType: double
@@ -41,13 +42,12 @@ table dim_date
 
 	column calendar_month
 		dataType: double
+		formatString: 0
 		lineageTag: cac95c99-4bdb-46fb-b919-ccc34e7c5887
 		summarizeBy: sum
 		sourceColumn: calendar_month
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column month_name
 		dataType: string
@@ -85,9 +85,10 @@ table dim_date
 				    Db = Source{[Name="SALES_MARKETING",Kind="Database"]}[Data],
 				    Schema = Db{[Name="MARTS",Kind="Schema"]}[Data],
 				    Tbl = Schema{[Name="DIM_DATE",Kind="Table"]}[Data],
-				    Lowercase = Table.TransformColumnNames(Tbl, Text.Lower)
+				    Lowercase = Table.TransformColumnNames(Tbl, Text.Lower),
+				    #"Filtered Rows" = Table.SelectRows(Lowercase, each ([calendar_date] <> null))
 				in
-				    Lowercase
+				    #"Filtered Rows"
 
 	annotation PBI_NavigationStepName = Navigation
 

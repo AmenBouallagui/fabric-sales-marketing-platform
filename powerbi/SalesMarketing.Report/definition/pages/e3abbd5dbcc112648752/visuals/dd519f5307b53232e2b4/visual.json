@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "d17bd2fa560cfb15a8dc",
   "position": {
     "x": 196,
@@ -7,7 +7,7 @@
     "z": 16000,
     "height": 214,
     "width": 526,
-    "tabOrder": 21
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -245,37 +245,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c8f76300138e94fde460",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dim_campaign"
-              }
-            },
-            "Property": "campaign_name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "9721ebaa25d443692103",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "ROAS"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

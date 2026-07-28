@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "c0ddb16d66a7d8ac29ea",
   "position": {
     "x": 196,
@@ -7,7 +7,7 @@
     "z": 3000,
     "height": 104,
     "width": 256,
-    "tabOrder": 2000
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -272,23 +272,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "5e50075b0384ffd30475",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Ad Spend"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
