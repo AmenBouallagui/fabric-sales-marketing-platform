@@ -1,0 +1,15 @@
+run_id,pipeline_name,layer_name,status,start_time,end_time,duration_seconds,rows_read,rows_written,error_message,triggered_by,created_at
+local-75340984-c022-521c-8ad1-a01feaadf672,local_medallion_prototype,local,succeeded,2026-07-21 14:17:41+00:00,2026-07-21 14:17:42+00:00,1,13416,41064,,local_cli,2026-07-21 14:17:42+00:00
+local-78f97399-aba7-564e-a327-2f925947cc93,local_medallion_prototype,local,succeeded,2026-07-22 14:17:39+00:00,2026-07-22 14:17:42+00:00,3,13416,41064,,local_cli,2026-07-22 14:17:42+00:00
+local-cbfe7383-57d3-5c34-852a-58fd13f2d759,local_medallion_prototype,local,succeeded,2026-07-23 14:17:40+00:00,2026-07-23 14:17:42+00:00,2,13416,41064,,local_cli,2026-07-23 14:17:42+00:00
+local-4f1ee866-8b54-535c-8e54-1fd9ad897c30,local_medallion_prototype,local,succeeded,2026-07-24 14:17:40+00:00,2026-07-24 14:17:42+00:00,2,13416,41064,,local_cli,2026-07-24 14:17:42+00:00
+local-7bc4dbeb-acf6-5e2a-9494-7c2482834415,local_medallion_prototype,local,succeeded,2026-07-25 14:17:40+00:00,2026-07-25 14:17:42+00:00,2,13416,41064,,local_cli,2026-07-25 14:17:42+00:00
+local-186ef5c0-8842-5d15-967a-ebe262ae9d58,local_medallion_prototype,local,succeeded,2026-07-26 14:17:41+00:00,2026-07-26 14:17:42+00:00,1,13416,41064,,local_cli,2026-07-26 14:17:42+00:00
+local-4baf1391-88eb-5436-87fb-053bf01b34e1,local_medallion_prototype,local,succeeded,2026-07-27 14:17:39+00:00,2026-07-27 14:17:42+00:00,3,13416,41064,,local_cli,2026-07-27 14:17:42+00:00
+local-6924352b-66e5-554b-841d-cd4de75038e1,local_medallion_prototype,local,failed,2026-07-28 14:17:41+00:00,2026-07-28 14:17:42+00:00,1,13416,41064,Critical check failed: required_key_not_null on customers,local_cli,2026-07-28 14:17:42+00:00
+local-33e0e9d1-c3a4-59a5-b086-0b3b967e38ba,local_medallion_prototype,local,succeeded,2026-07-29 14:17:40+00:00,2026-07-29 14:17:42+00:00,2,13416,41064,,local_cli,2026-07-29 14:17:42+00:00
+local-bf914f70-e30f-54ef-9cff-b9d7168b3a14,local_medallion_prototype,local,succeeded,2026-07-30 14:17:39+00:00,2026-07-30 14:17:42+00:00,3,13416,41064,,local_cli,2026-07-30 14:17:42+00:00
+local-51caea17-be1e-5c1d-b668-b0c9ce504547,local_medallion_prototype,local,succeeded,2026-07-31 14:17:39+00:00,2026-07-31 14:17:42+00:00,3,13416,41064,,local_cli,2026-07-31 14:17:42+00:00
+local-abf000a5-73a7-5e72-8202-69d2970870eb,local_medallion_prototype,local,succeeded,2026-08-01 14:17:39+00:00,2026-08-01 14:17:42+00:00,3,13416,41064,,local_cli,2026-08-01 14:17:42+00:00
+local-3025b486-170a-5870-8777-ea251364db5a,local_medallion_prototype,local,succeeded,2026-08-02 14:17:39+00:00,2026-08-02 14:17:42+00:00,3,13416,41064,,local_cli,2026-08-02 14:17:42+00:00
+local-19a62400-3b61-4963-85c9-360231d0387e,local_medallion_prototype,local,succeeded,2026-08-03 14:17:40+00:00,2026-08-03 14:17:42+00:00,2,13416,41064,,local_cli,2026-08-03 14:17:42+00:00

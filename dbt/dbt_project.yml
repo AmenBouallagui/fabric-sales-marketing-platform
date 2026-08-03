@@ -36,3 +36,5 @@ seeds:
   sales_marketing:
     +schema: raw
     +quote_columns: false
+    observability:
+      +schema: observability
