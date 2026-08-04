@@ -1,0 +1,102 @@
+table data_quality_results
+	lineageTag: 9b4a080a-03dd-42b9-b6d2-429bfe1f4623
+
+	column check_id
+		dataType: string
+		isHidden
+		lineageTag: a6f112d9-74f6-46ab-934f-303422663d4f
+		summarizeBy: none
+		sourceColumn: check_id
+
+	column run_id
+		dataType: string
+		lineageTag: b2a6403e-e0eb-4b83-b7d6-2b3f5640ec02
+		summarizeBy: none
+		sourceColumn: run_id
+
+	column layer_name
+		dataType: string
+		lineageTag: 14afbbfd-7cf5-4e5e-b913-eb25993edab8
+		summarizeBy: none
+		sourceColumn: layer_name
+
+	column table_name
+		dataType: string
+		lineageTag: ff66f97b-694f-46e3-bc2d-2ba75882b435
+		summarizeBy: none
+		sourceColumn: table_name
+
+	column check_name
+		dataType: string
+		lineageTag: 2bae7659-16b5-40b0-b210-9820ffabffe3
+		summarizeBy: none
+		sourceColumn: check_name
+
+	column check_category
+		dataType: string
+		lineageTag: dc78a59d-bb2c-4b6e-9b11-4e45666ad338
+		summarizeBy: none
+		sourceColumn: check_category
+
+	column severity
+		dataType: string
+		lineageTag: b24ac7d7-4914-4371-9dfe-2344332deff4
+		summarizeBy: none
+		sourceColumn: severity
+
+	column status
+		dataType: string
+		lineageTag: e13f9ec3-dd90-4345-8aa8-f46c8c3a679c
+		summarizeBy: none
+		sourceColumn: status
+
+	column expected_value
+		dataType: string
+		lineageTag: b4f300ac-9ce9-41fd-98ba-b53e4147e09c
+		summarizeBy: none
+		sourceColumn: expected_value
+
+	column actual_value
+		dataType: string
+		lineageTag: c44bf554-4a0f-4c9c-be6e-f76b307565d3
+		summarizeBy: none
+		sourceColumn: actual_value
+
+	column failed_row_count
+		dataType: int64
+		lineageTag: a4bc699b-fcfd-4c9b-919c-36c09768c80c
+		summarizeBy: sum
+		sourceColumn: failed_row_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column dq_issue_reason
+		dataType: string
+		lineageTag: 7815c103-d60f-4c51-aa7a-703fbf9684d7
+		summarizeBy: none
+		sourceColumn: dq_issue_reason
+
+	column checked_at
+		dataType: dateTime
+		lineageTag: 68252bea-48e0-40ec-8d72-aab359391895
+		formatString: General Date
+		summarizeBy: none
+		sourceColumn: checked_at
+
+		annotation UnderlyingDateTimeDataType = DateTime
+
+	partition data_quality_results = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("obbwcpp-nt11983.snowflakecomputing.com", "COMPUTE_WH", [Role="ACCOUNTADMIN"]),
+				    Db = Source{[Name="SALES_MARKETING",Kind="Database"]}[Data],
+				    Schema = Db{[Name="OBSERVABILITY",Kind="Schema"]}[Data],
+				    Tbl = Schema{[Name="DATA_QUALITY_RESULTS",Kind="Table"]}[Data],
+				    Lowercase = Table.TransformColumnNames(Tbl, Text.Lower)
+				in
+				    Lowercase
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table

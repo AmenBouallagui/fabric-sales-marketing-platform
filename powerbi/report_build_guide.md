@@ -2,8 +2,8 @@
 
 This repo ships the Power BI **semantic model as code** (PBIP / TMDL) in
 [`SalesMarketing.SemanticModel/`](SalesMarketing.SemanticModel/). The model defines
-the tables, relationships, and ~22 DAX measures over the dbt **gold** star schema,
-and the report (`SalesMarketing.Report/`) ships fully built — 6 pages, all visuals,
+the tables, relationships, and ~28 DAX measures over the dbt **gold** star schema,
+and the report (`SalesMarketing.Report/`) ships fully built — 7 pages, all visuals,
 no assembly required.
 
 The semantic model connects **live to Snowflake** via Power BI's native connector,
@@ -26,7 +26,7 @@ export is needed — Power BI's Snowflake connector is built in.
 1. Open `powerbi/SalesMarketing.pbip` in Power BI Desktop.
 2. **Refresh**. You'll be prompted for your Snowflake server (`<account>.snowflakecomputing.com`)
    and warehouse the first time; after that, credentials are cached per machine.
-3. All 8 tables load directly from `SALES_MARKETING.MARTS`.
+3. All 11 tables load directly from `SALES_MARKETING.MARTS`.
 
 The model arrives with relationships and measures already defined (display folders:
 Revenue and Margin, Customer, Marketing, Support). Technical keys are hidden, and

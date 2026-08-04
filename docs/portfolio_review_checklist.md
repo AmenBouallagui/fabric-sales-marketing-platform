@@ -44,10 +44,10 @@ Generated data is written under ignored `data/` folders and is not committed.
 - Deterministic synthetic data generation with relational integrity validation
 
 ### Power BI & BI
-- Semantic model as code (PBIP / TMDL): 8 tables, relationships, ~22 DAX measures
+- Semantic model as code (PBIP / TMDL): 11 tables, relationships, ~28 DAX measures
 - Connects live to Snowflake via Power BI's native connector — no file export, no driver
 - Business metrics definitions: revenue, gross margin, marketing ROI, customer, support
-- 6 report pages built: Executive Overview, Revenue & Margin, Marketing Performance, Customer & Segment Analysis, Product Performance, Support Quality
+- 7 report pages built: Executive Overview, Revenue & Margin, Marketing Performance, Customer & Segment Analysis, Product Performance, Support Quality, Operations & Data Health
 - Star schema optimized for Power BI: correct relationship cardinality, hidden FK columns, display folders
 
 ### Engineering Practices

@@ -50,7 +50,7 @@ Pipeline run logs, data quality results, dataset freshness, and row count reconc
 
 ### Consumption
 
-Power BI semantic model (PBIP / TMDL, defined as code), connected live to Snowflake — 6 report pages built.
+Power BI semantic model (PBIP / TMDL, defined as code), connected live to Snowflake — 7 report pages built.
 
 ## Current Limitations
 

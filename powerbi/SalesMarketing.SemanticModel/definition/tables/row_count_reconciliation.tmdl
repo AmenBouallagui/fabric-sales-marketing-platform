@@ -1,0 +1,94 @@
+table row_count_reconciliation
+	lineageTag: e1f27a04-737b-44ac-a41b-0c4a4bffb8f1
+
+	column reconciliation_id
+		dataType: string
+		isHidden
+		lineageTag: 0d60e53e-538b-47f7-94be-74158840adc0
+		summarizeBy: none
+		sourceColumn: reconciliation_id
+
+	column run_id
+		dataType: string
+		lineageTag: f3440b36-066c-4c41-ae2a-81f3db4bb39c
+		summarizeBy: none
+		sourceColumn: run_id
+
+	column source_layer
+		dataType: string
+		lineageTag: a2a6ca23-703e-47f5-b7fd-4e00ebeb566c
+		summarizeBy: none
+		sourceColumn: source_layer
+
+	column target_layer
+		dataType: string
+		lineageTag: b07cb800-23b3-4231-bac9-1194cff9b88a
+		summarizeBy: none
+		sourceColumn: target_layer
+
+	column source_table
+		dataType: string
+		lineageTag: bb27e5a3-e52a-4319-9343-f3eef88769c5
+		summarizeBy: none
+		sourceColumn: source_table
+
+	column target_table
+		dataType: string
+		lineageTag: 27da1075-2210-491f-b4da-61270c44523e
+		summarizeBy: none
+		sourceColumn: target_table
+
+	column source_row_count
+		dataType: int64
+		lineageTag: a281edc5-1008-4bc8-94f5-d49dd2cdf6fb
+		summarizeBy: sum
+		sourceColumn: source_row_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column target_row_count
+		dataType: int64
+		lineageTag: 40d81ef2-7d28-45ef-81da-eb0175c74e2e
+		summarizeBy: sum
+		sourceColumn: target_row_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column row_count_difference
+		dataType: int64
+		lineageTag: 3220cc98-a667-473d-9b7f-38a56fcb243b
+		summarizeBy: sum
+		sourceColumn: row_count_difference
+
+		annotation SummarizationSetBy = Automatic
+
+	column reconciliation_status
+		dataType: string
+		lineageTag: be670cf5-9e45-49ef-9559-18680d112211
+		summarizeBy: none
+		sourceColumn: reconciliation_status
+
+	column checked_at
+		dataType: dateTime
+		lineageTag: f7aaf3d4-a7b1-4278-862f-67154ac4d3d7
+		formatString: General Date
+		summarizeBy: none
+		sourceColumn: checked_at
+
+		annotation UnderlyingDateTimeDataType = DateTime
+
+	partition row_count_reconciliation = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("obbwcpp-nt11983.snowflakecomputing.com", "COMPUTE_WH", [Role="ACCOUNTADMIN"]),
+				    Db = Source{[Name="SALES_MARKETING",Kind="Database"]}[Data],
+				    Schema = Db{[Name="OBSERVABILITY",Kind="Schema"]}[Data],
+				    Tbl = Schema{[Name="ROW_COUNT_RECONCILIATION",Kind="Table"]}[Data],
+				    Lowercase = Table.TransformColumnNames(Tbl, Text.Lower)
+				in
+				    Lowercase
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table

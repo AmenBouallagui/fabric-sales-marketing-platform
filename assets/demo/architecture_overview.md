@@ -21,7 +21,7 @@ flowchart LR
 
     subgraph Consumption["Power BI"]
         SemanticModel["Semantic model (TMDL)"]
-        Reports["6 report pages<br/>live-connected to Snowflake"]
+        Reports["7 report pages<br/>live-connected to Snowflake"]
     end
 
     Sources --> Generator

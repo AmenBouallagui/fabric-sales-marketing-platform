@@ -113,6 +113,36 @@ table _Measures
 		displayFolder: Support
 		lineageTag: 430830e1-9f85-45e2-b4c7-8759a5b44dbc
 
+	measure 'Pipeline Success Rate' = DIVIDE(CALCULATE(COUNTROWS(pipeline_run_log), pipeline_run_log[status] = "succeeded"), COUNTROWS(pipeline_run_log))
+		formatString: 0%;-0%;0%
+		displayFolder: Operations
+		lineageTag: a1b2c3d4-1111-4a11-8b11-111111111111
+
+	measure 'Failed Checks' = CALCULATE(COUNTROWS(data_quality_results), data_quality_results[status] = "failed")
+		formatString: #,0
+		displayFolder: Operations
+		lineageTag: a1b2c3d4-2222-4a22-8b22-222222222222
+
+	measure 'Failed Critical Checks' = CALCULATE(COUNTROWS(data_quality_results), data_quality_results[status] = "failed", data_quality_results[severity] = "critical")
+		formatString: #,0
+		displayFolder: Operations
+		lineageTag: a1b2c3d4-3333-4a33-8b33-333333333333
+
+	measure 'Warning Checks' = CALCULATE(COUNTROWS(data_quality_results), data_quality_results[status] = "failed", data_quality_results[severity] = "warning")
+		formatString: #,0
+		displayFolder: Operations
+		lineageTag: a1b2c3d4-4444-4a44-8b44-444444444444
+
+	measure 'Reconciliation Mismatches' = CALCULATE(COUNTROWS(row_count_reconciliation), row_count_reconciliation[reconciliation_status] = "mismatch")
+		formatString: #,0
+		displayFolder: Operations
+		lineageTag: a1b2c3d4-5555-4a55-8b55-555555555555
+
+	measure 'Pipeline Runs' = COUNTROWS(pipeline_run_log)
+		formatString: #,0
+		displayFolder: Operations
+		lineageTag: a1b2c3d4-6666-4a66-8b66-666666666666
+
 	column Placeholder
 		dataType: string
 		isHidden

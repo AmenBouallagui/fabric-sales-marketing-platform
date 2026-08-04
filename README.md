@@ -1,6 +1,6 @@
 # Sales & Marketing Analytics Platform
 
-An end-to-end analytics engineering portfolio project: synthetic sales and marketing data modeled through a Bronze → Silver → Gold medallion pipeline, a tested dbt warehouse that runs on either DuckDB (local, zero credentials) or Snowflake (via dbt Cloud), and a Power BI semantic model authored as code — connected live to Snowflake, all 6 report pages built.
+An end-to-end analytics engineering portfolio project: synthetic sales and marketing data modeled through a Bronze → Silver → Gold medallion pipeline, a tested dbt warehouse that runs on either DuckDB (local, zero credentials) or Snowflake (via dbt Cloud), and a Power BI semantic model authored as code — connected live to Snowflake, all 7 report pages built.
 
 Built by **Amen Bouallagui** — BI Developer and Analytics Engineer with 2 years of hands-on experience in Microsoft Fabric, Power BI, and data migration on real client projects.
 
@@ -12,7 +12,7 @@ Built by **Amen Bouallagui** — BI Developer and Analytics Engineer with 2 year
 
 <video src="powerbi/report_screenshots/executive_overview.mp4" controls width="800"></video>
 
-Executive Overview page, connected live to Snowflake via Power BI's native connector — 6 pages total covering revenue, margin, marketing, customer segments, product performance, and support quality. See [powerbi/report_build_guide.md](powerbi/report_build_guide.md) for the full page-by-page breakdown.
+Executive Overview page, connected live to Snowflake via Power BI's native connector — 7 pages total covering revenue, margin, marketing, customer segments, product performance, support quality, and operations/data health. See [powerbi/report_build_guide.md](powerbi/report_build_guide.md) for the full page-by-page breakdown.
 
 ---
 
@@ -48,7 +48,7 @@ python -m pytest
 - Observability: pipeline run log, data quality results, row count reconciliation
 
 ### Power BI & BI Architecture
-- Semantic model authored as code (PBIP / TMDL): 8 tables, relationships, ~22 DAX measures
+- Semantic model authored as code (PBIP / TMDL): 11 tables, relationships, ~28 DAX measures
 - Star schema optimized for Power BI consumption
 - Business metric definitions for revenue, margin, marketing, customer, and support KPIs
 
@@ -80,7 +80,7 @@ See [docs/architecture.md](docs/architecture.md) and [docs/medallion_design.md](
 - Local medallion pipeline (Bronze / Silver / Gold + observability parquet outputs)
 - dbt warehouse: 21 models, ~38 tests — runs on DuckDB (CI, zero credentials) or Snowflake (via dbt Cloud)
 - Pytest suite
-- Power BI report: 6 pages built, semantic model connected live to Snowflake
+- Power BI report: 7 pages built, semantic model connected live to Snowflake
 
 ---
 

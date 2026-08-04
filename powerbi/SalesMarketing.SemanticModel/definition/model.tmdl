@@ -7,7 +7,7 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["GoldDataFolder","dim_customer","dim_product","dim_campaign","dim_channel","dim_date","fct_orders","fct_ad_spend","fct_support_tickets"]
+annotation PBI_QueryOrder = ["GoldDataFolder","dim_customer","dim_product","dim_campaign","dim_channel","dim_date","fct_orders","fct_ad_spend","fct_support_tickets","pipeline_run_log","data_quality_results","row_count_reconciliation"]
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
@@ -21,5 +21,8 @@ ref table dim_product
 ref table fct_ad_spend
 ref table fct_orders
 ref table fct_support_tickets
+ref table pipeline_run_log
+ref table data_quality_results
+ref table row_count_reconciliation
 ref table _Measures
 

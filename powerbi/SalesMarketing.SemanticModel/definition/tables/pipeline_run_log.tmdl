@@ -1,0 +1,105 @@
+table pipeline_run_log
+	lineageTag: 7ed67b4c-9faa-4c36-a345-b607cb372ed0
+
+	column run_id
+		dataType: string
+		lineageTag: db68be63-206a-4e33-917f-ab65d766c0d9
+		summarizeBy: none
+		sourceColumn: run_id
+
+	column pipeline_name
+		dataType: string
+		lineageTag: 37887bc4-de30-4a63-83b9-9c72272ecb8f
+		summarizeBy: none
+		sourceColumn: pipeline_name
+
+	column layer_name
+		dataType: string
+		lineageTag: 2f78d07f-f2df-4072-ad75-4d46da1a773f
+		summarizeBy: none
+		sourceColumn: layer_name
+
+	column status
+		dataType: string
+		lineageTag: 1de11c34-2dd2-45dc-8412-2c5ab2190a62
+		summarizeBy: none
+		sourceColumn: status
+
+	column start_time
+		dataType: dateTime
+		lineageTag: 82db42d7-cf86-474d-8c54-c1620663e205
+		formatString: General Date
+		summarizeBy: none
+		sourceColumn: start_time
+
+		annotation UnderlyingDateTimeDataType = DateTime
+
+	column end_time
+		dataType: dateTime
+		lineageTag: bb843df5-4151-4c71-9f61-77bcad6614dd
+		formatString: General Date
+		summarizeBy: none
+		sourceColumn: end_time
+
+		annotation UnderlyingDateTimeDataType = DateTime
+
+	column duration_seconds
+		dataType: int64
+		lineageTag: 6dc4fbfd-e0ef-46fd-9002-a7d616cd2e3a
+		summarizeBy: sum
+		sourceColumn: duration_seconds
+
+		annotation SummarizationSetBy = Automatic
+
+	column rows_read
+		dataType: int64
+		lineageTag: a4b81709-3dd9-41c8-8cf0-366906c1479e
+		summarizeBy: sum
+		sourceColumn: rows_read
+
+		annotation SummarizationSetBy = Automatic
+
+	column rows_written
+		dataType: int64
+		lineageTag: 41fe8565-d456-42f4-8750-c3a3eeef5556
+		summarizeBy: sum
+		sourceColumn: rows_written
+
+		annotation SummarizationSetBy = Automatic
+
+	column error_message
+		dataType: string
+		lineageTag: 103f90fe-006c-4c1a-9aea-ee051130a521
+		summarizeBy: none
+		sourceColumn: error_message
+
+	column triggered_by
+		dataType: string
+		lineageTag: 4a4f7b51-b512-47fa-9f56-efe774691f5b
+		summarizeBy: none
+		sourceColumn: triggered_by
+
+	column created_at
+		dataType: dateTime
+		lineageTag: 75924b03-b450-42b3-8351-1c4fa132e380
+		formatString: General Date
+		summarizeBy: none
+		sourceColumn: created_at
+
+		annotation UnderlyingDateTimeDataType = DateTime
+
+	partition pipeline_run_log = m
+		mode: import
+		source =
+				let
+				    Source = Snowflake.Databases("obbwcpp-nt11983.snowflakecomputing.com", "COMPUTE_WH", [Role="ACCOUNTADMIN"]),
+				    Db = Source{[Name="SALES_MARKETING",Kind="Database"]}[Data],
+				    Schema = Db{[Name="OBSERVABILITY",Kind="Schema"]}[Data],
+				    Tbl = Schema{[Name="PIPELINE_RUN_LOG",Kind="Table"]}[Data],
+				    Lowercase = Table.TransformColumnNames(Tbl, Text.Lower)
+				in
+				    Lowercase
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table

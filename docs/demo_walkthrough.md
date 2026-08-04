@@ -59,7 +59,7 @@ See `assets/demo/gold_model.md` for a visual summary.
 
 ## Power BI
 
-The report is fully built and connects live to Snowflake via Power BI's native connector — no file export, no ODBC driver. 6 pages: Executive Overview, Revenue & Margin, Marketing Performance, Customer & Segment Analysis, Product Performance, Support Quality.
+The report is fully built and connects live to Snowflake via Power BI's native connector — no file export, no ODBC driver. 7 pages: Executive Overview, Revenue & Margin, Marketing Performance, Customer & Segment Analysis, Product Performance, Support Quality, Operations & Data Health.
 
 ## Reviewer Takeaway
 
