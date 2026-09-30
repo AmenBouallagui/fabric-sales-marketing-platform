@@ -1,11 +1,11 @@
 version: 2
 
-# These six CSV extracts are produced by data_generation/generate_source_data.py.
-# dbt-duckdb reads them directly via external_location, so no manual load step is
-# needed. Path is relative to the directory dbt is invoked from (repo root); override
-# with SOURCE_DATA_DIR if you run dbt from elsewhere.
+# These six tables are loaded from the committed fixtures in dbt/seeds/.
+# Run dbt seed before dbt build: sources do not depend on seed nodes in the DAG.
+# The pandas pipeline separately consumes generated CSVs under data/source/.
 sources:
   - name: raw
+    schema: raw
     description: "Synthetic operational CRM and marketing extracts (CSV)."
     tables:
       - name: customers

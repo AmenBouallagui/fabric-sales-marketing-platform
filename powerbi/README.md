@@ -2,13 +2,13 @@
 
 This folder contains the Power BI layer as **code**: a Power BI Project (`.pbip`)
 whose semantic model is defined in TMDL over the dbt **gold** star schema. It
-connects live to Snowflake via Power BI's native connector — no ODBC driver, no
+imports data from Snowflake via Power BI's native connector — no ODBC driver, no
 file export. All 7 report pages are fully built.
 
 ## Power BI Project (BI as code)
 
 - [`SalesMarketing.pbip`](SalesMarketing.pbip) — open this in Power BI Desktop.
-- [`SalesMarketing.SemanticModel/`](SalesMarketing.SemanticModel/) — TMDL definition: 11 tables, relationships, and ~28 DAX measures over the gold model, reading live from Snowflake's `SALES_MARKETING.MARTS` schema.
+- [`SalesMarketing.SemanticModel/`](SalesMarketing.SemanticModel/) — TMDL definition: 11 data tables plus a measure table, relationships, and 28 DAX measures over the gold model, importing from Snowflake's `SALES_MARKETING.MARTS` schema.
 - [`SalesMarketing.Report/`](SalesMarketing.Report/) — fully built report (PBIR format): Executive Overview, Revenue & Margin, Marketing Performance, Customer & Segment Analysis, Product Performance, Support Quality, and Operations & Data Health.
 - [`export_gold.py`](export_gold.py) — legacy: exports the gold marts to `data/powerbi/*.parquet`, from when the model read local files instead of Snowflake. Kept for reference; not used by the current model.
 - [`report_build_guide.md`](report_build_guide.md) — prerequisites, Snowflake connection details, and the built page/visual reference.

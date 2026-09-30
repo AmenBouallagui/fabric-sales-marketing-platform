@@ -17,7 +17,7 @@ The project follows a medallion architecture:
 - Silver standardizes, type-casts, deduplicates, and validates records.
 - Gold creates business-ready dimensions, facts, and KPI-ready fields.
 - Observability captures run logs, quality checks, and row count reconciliation.
-- Power BI connects live to the Gold layer.
+- Power BI imports the Snowflake Gold tables through its native connector.
 
 See `assets/architecture_diagram.md` for the full architecture.
 
@@ -38,7 +38,12 @@ The pipeline writes ignored local outputs under `data/source/`, `data/bronze/`, 
 
 The same medallion logic also runs as a dbt project against DuckDB (local, zero credentials) or Snowflake (via dbt Cloud):
 
-- `dbt build --project-dir dbt` — 21 models, ~38 tests
+- Set `DBT_PROFILES_DIR=dbt` (PowerShell: `$env:DBT_PROFILES_DIR = 'dbt'`).
+- `dbt deps --project-dir dbt`
+- `dbt seed --project-dir dbt` — load committed fixtures before source tests run.
+- `dbt build --project-dir dbt` — 21 models, 38 data tests
+
+The pandas inputs are generated CSVs; dbt reads the separate committed seed fixtures.
 
 ## Gold Model
 
@@ -59,8 +64,8 @@ See `assets/demo/gold_model.md` for a visual summary.
 
 ## Power BI
 
-The report is fully built and connects live to Snowflake via Power BI's native connector — no file export, no ODBC driver. 7 pages: Executive Overview, Revenue & Margin, Marketing Performance, Customer & Segment Analysis, Product Performance, Support Quality, Operations & Data Health.
+The report is fully built and imports data from Snowflake via Power BI's native connector — no file export, no ODBC driver. 7 pages: Executive Overview, Revenue & Margin, Marketing Performance, Customer & Segment Analysis, Product Performance, Support Quality, Operations & Data Health.
 
 ## Reviewer Takeaway
 
-This project demonstrates the full analytics delivery path: business problem framing, source data generation, medallion processing, dimensional modeling, data quality, observability, CI, and a live-connected BI layer — running on two interchangeable warehouse targets (DuckDB and Snowflake) from the same dbt codebase.
+This project demonstrates the full analytics delivery path: business problem framing, source data generation, medallion processing, dimensional modeling, data quality, observability, CI, and a Power BI layer using Snowflake Import mode. DuckDB provides the credential-free local warehouse; Snowflake requires its own configured environment and validation.
