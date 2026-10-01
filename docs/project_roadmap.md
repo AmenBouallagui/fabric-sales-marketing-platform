@@ -10,8 +10,8 @@ A portfolio analytics platform showing end-to-end data engineering and BI skills
 - Local medallion prototype in Python (Bronze / Silver / Gold + observability outputs)
 - dbt warehouse: 21 models, ~38 tests, all passing — runs on DuckDB (CI) or Snowflake (dbt Cloud)
 - Staging → intermediate → marts layering with surrogate keys and unknown members
-- Power BI semantic model as code (PBIP / TMDL): 11 tables, ~28 DAX measures, relationships
-- Power BI report: 7 pages built, connected live to Snowflake
+- Power BI semantic model as code (PBIP / TMDL): 11 data tables plus a measure table, 28 DAX measures, relationships
+- Power BI report: 7 pages built, connected to Snowflake in Import mode
 - GitHub Actions CI (data generation → local pipeline → dbt build + tests → pytest)
 - Medallion design, data quality and observability design, business metrics definitions
 

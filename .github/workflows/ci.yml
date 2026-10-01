@@ -1,5 +1,8 @@
 name: CI
 
+permissions:
+  contents: read
+
 on:
   pull_request:
   push:
@@ -46,6 +49,8 @@ jobs:
           DBT_PROFILES_DIR: dbt
         run: |
           dbt deps --project-dir dbt
+          # Sources reference seeded tables, so load them before source tests run.
+          dbt seed --project-dir dbt
           dbt build --project-dir dbt
 
       - name: Verify generated data and dbt artifacts are not tracked
@@ -56,3 +61,15 @@ jobs:
 
       - name: Run tests
         run: python -m pytest
+
+      - name: Upload dbt diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dbt-diagnostics
+          path: |
+            dbt/logs/dbt.log
+            dbt/target/run_results.json
+            dbt/target/manifest.json
+          if-no-files-found: ignore
+          retention-days: 7

@@ -2,12 +2,12 @@
 
 This repo ships the Power BI **semantic model as code** (PBIP / TMDL) in
 [`SalesMarketing.SemanticModel/`](SalesMarketing.SemanticModel/). The model defines
-the tables, relationships, and ~28 DAX measures over the dbt **gold** star schema,
+the tables, relationships, and 28 DAX measures over the dbt **gold** star schema,
 and the report (`SalesMarketing.Report/`) ships fully built — 7 pages, all visuals,
 no assembly required.
 
-The semantic model connects **live to Snowflake** via Power BI's native connector,
-reading the gold marts produced by the [dbt project](../dbt/) (see its README for
+The semantic model uses **Import mode** through Power BI's native Snowflake connector,
+loading the gold marts produced by the [dbt project](../dbt/) (see its README for
 the DuckDB-local vs. Snowflake-via-dbt-Cloud dual setup). No ODBC driver or file
 export is needed — Power BI's Snowflake connector is built in.
 
@@ -23,10 +23,15 @@ export is needed — Power BI's Snowflake connector is built in.
 
 ## Open and refresh
 
-1. Open `powerbi/SalesMarketing.pbip` in Power BI Desktop.
-2. **Refresh**. You'll be prompted for your Snowflake server (`<account>.snowflakecomputing.com`)
-   and warehouse the first time; after that, credentials are cached per machine.
-3. All 11 tables load directly from `SALES_MARKETING.MARTS`.
+1. Update the TMDL connection settings for your Snowflake account, warehouse,
+   database, and authorized reporting role before opening the project. The
+   committed model currently contains the original demo connection settings.
+2. Open `powerbi/SalesMarketing.pbip` in Power BI Desktop, then **Refresh**
+   and authenticate with your own Snowflake credentials.
+3. Refresh imports eight business tables from `SALES_MARKETING.MARTS` and three
+   demonstration telemetry tables from `SALES_MARKETING.OBSERVABILITY`. The
+   disconnected measure table is defined locally in TMDL. Data changes in
+   Snowflake appear after a refresh, not through live queries.
 
 The model arrives with relationships and measures already defined (display folders:
 Revenue and Margin, Customer, Marketing, Support). Technical keys are hidden, and
@@ -42,11 +47,12 @@ Revenue and Margin, Customer, Marketing, Support). Technical keys are hidden, an
 | Customer & Segment Analysis | New customers trend, revenue by segment, customers by country donut | Customers, New Customers, Revenue, Average Order Value |
 | Product Performance | Orders by product, revenue mix donut, margin by plan tier combo | Revenue, Gross Margin, Gross Margin %, Orders |
 | Support Quality | Satisfaction trend, first response by priority, ticket status donut | Ticket Count, Avg First Response, Avg Resolution, Avg Satisfaction |
+| Operations & Data Health | Run status, failed checks, row-count reconciliation | Pipeline Success Rate, Failed Checks, Reconciliation Mismatches |
 
 Each page has a horizontal filter bar (month, plus two page-relevant dimensions) and
-a dark sidebar with global navigation. No "Operations / Data Health" page is built —
-the model loads the gold star only; that page would need `dbt test` results or
-pipeline observability output wired in as extra tables.
+a dark sidebar with global navigation. Operations & Data Health uses the
+committed observability seeds. These are demonstration records, not current CI
+results or a live feed from the pandas pipeline.
 
 ## Capture screenshots
 
@@ -58,7 +64,8 @@ Recruiters look for these first.
 
 If you don't have Snowflake credentials, you can still verify the underlying data
 modeling — the [dbt project](../dbt/) runs entirely locally via DuckDB with zero
-cloud credentials (`dbt build --project-dir dbt`), producing the same gold star
+cloud credentials (run `dbt deps`, `dbt seed`, then `dbt build` with
+`--project-dir dbt` and `DBT_PROFILES_DIR=dbt`), producing the same gold star
 schema this report reads from. The semantic model (TMDL) and report layout (PBIR)
 are also fully readable as plain text/JSON in source control without opening
 Desktop at all.

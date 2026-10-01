@@ -1,8 +1,8 @@
 # Sales & Marketing Analytics Platform
 
-An end-to-end analytics engineering portfolio project: synthetic sales and marketing data modeled through a Bronze → Silver → Gold medallion pipeline, a tested dbt warehouse that runs on either DuckDB (local, zero credentials) or Snowflake (via dbt Cloud), and a Power BI semantic model authored as code — connected live to Snowflake, all 7 report pages built.
+An end-to-end analytics engineering portfolio project: synthetic sales and marketing data modeled through a Bronze → Silver → Gold medallion pipeline, a tested dbt warehouse that runs on either DuckDB (local, zero credentials) or Snowflake (via dbt Cloud), and a Power BI semantic model authored as code — using the native Snowflake connector in Import mode, all 7 report pages built.
 
-Built by **Amen Bouallagui** — BI Developer and Analytics Engineer with 2 years of hands-on experience in Microsoft Fabric, Power BI, and data migration on real client projects.
+Built by **Amen Bouallagui** — BI Developer and Analytics Engineer with 2 years of part-time experience in Microsoft Fabric, Power BI, and data migration on real client projects.
 
 > See [docs/real_world_context.md](docs/real_world_context.md) for the professional background this portfolio extends.
 
@@ -12,31 +12,39 @@ Built by **Amen Bouallagui** — BI Developer and Analytics Engineer with 2 year
 
 <video src="powerbi/report_screenshots/executive_overview.mp4" controls width="800"></video>
 
-Executive Overview page, connected live to Snowflake via Power BI's native connector — 7 pages total covering revenue, margin, marketing, customer segments, product performance, support quality, and operations/data health. See [powerbi/report_build_guide.md](powerbi/report_build_guide.md) for the full page-by-page breakdown.
+Executive Overview page, using Power BI's native Snowflake connector in Import mode — 7 pages total covering revenue, margin, marketing, customer segments, product performance, support quality, and operations/data health. See [powerbi/report_build_guide.md](powerbi/report_build_guide.md) for the full page-by-page breakdown.
 
 ---
 
 ## Quick Start
 
 ```bash
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 python data_generation/generate_source_data.py
-
-# PowerShell
-$env:DBT_PROFILES_DIR = 'dbt'
-dbt deps  --project-dir dbt
-dbt build --project-dir dbt          # 21 models, ~38 tests — DuckDB, no cloud needed
-
 python local_pipeline/run_local_medallion.py
+
+# Bash / zsh
+export DBT_PROFILES_DIR=dbt
+# PowerShell alternative: $env:DBT_PROFILES_DIR = 'dbt'
+dbt deps  --project-dir dbt
+dbt seed --project-dir dbt          # load committed synthetic fixtures first
+dbt build --project-dir dbt         # 21 models and 38 data tests
+
 python -m pytest
 ```
+
+The pandas pipeline consumes the generated files in `data/source/`. The dbt
+warehouse consumes the committed fixtures in `dbt/seeds/`, loaded into `raw`
+and `observability` by `dbt seed`. These are separate synthetic datasets;
+generating new CSVs does not update the dbt fixtures. See [dbt/README.md](dbt/README.md)
+for the source-loading sequence.
 
 ---
 
 ## What This Demonstrates
 
 ### Analytics Engineering
-- dbt warehouse on DuckDB: sources → staging → intermediate → marts, all tested in CI
+- dbt warehouse on DuckDB: sources → staging → intermediate → marts, with a CI workflow for model and data-test validation
 - Dimensional modeling: surrogate keys, conformed dimensions with unknown members, date dimension, 3 fact tables
 - dbt tests: uniqueness, not-null, referential integrity, accepted values, and a singular business logic test
 
@@ -48,26 +56,27 @@ python -m pytest
 - Observability: pipeline run log, data quality results, row count reconciliation
 
 ### Power BI & BI Architecture
-- Semantic model authored as code (PBIP / TMDL): 11 tables, relationships, ~28 DAX measures
+- Semantic model authored as code (PBIP / TMDL): 11 data tables plus a measure table, relationships, and 28 DAX measures
 - Star schema optimized for Power BI consumption
 - Business metric definitions for revenue, margin, marketing, customer, and support KPIs
 
 ### Engineering Practices
-- GitHub Actions CI: generates data, runs local pipeline, runs `dbt build` with all tests, validates `.gitignore` hygiene
+- GitHub Actions CI: generates data, runs local pipeline, loads dbt seeds before `dbt build` and its data tests, validates `.gitignore` hygiene
 - Deterministic synthetic data generator with relational integrity validation
-- No credentials, no client data — all data is synthetic and seeded
+- No credentials or client data committed — all input data is synthetic
 
 ---
 
 ## Architecture
 
 ```
-Source CSVs → Bronze (raw + metadata) → Silver (clean + validated) → Gold (star schema) → Power BI
+Generated CSVs → pandas Bronze → Silver → Gold parquet outputs
+Committed CSV fixtures → dbt seed → staging → intermediate → marts → Power BI (Snowflake Import)
 ```
 
-The same medallion logic is implemented twice:
-- **dbt + DuckDB** — runs in CI on every push, no cloud account required
-- **Python / pandas** — local prototype with parquet outputs and observability tables
+The layered analytics design is demonstrated in two implementations with separate inputs:
+- **dbt + DuckDB** — committed seed fixtures → staging → intermediate → marts; validated by CI without a cloud account
+- **Python / pandas** — generated CSVs → Bronze/Silver/Gold parquet outputs and observability tables
 
 See [docs/architecture.md](docs/architecture.md) and [docs/medallion_design.md](docs/medallion_design.md).
 
@@ -78,9 +87,9 @@ See [docs/architecture.md](docs/architecture.md) and [docs/medallion_design.md](
 **Runs today:**
 - Synthetic data generation (6 CSV sources: customers, products, campaigns, orders, ad spend, support tickets)
 - Local medallion pipeline (Bronze / Silver / Gold + observability parquet outputs)
-- dbt warehouse: 21 models, ~38 tests — runs on DuckDB (CI, zero credentials) or Snowflake (via dbt Cloud)
+- dbt warehouse: 21 models, 38 data tests — runs on DuckDB (CI, zero credentials) or Snowflake (via dbt Cloud)
 - Pytest suite
-- Power BI report: 7 pages built, semantic model connected live to Snowflake
+- Power BI report: 7 pages built, semantic model using the native Snowflake connector in Import mode
 
 ---
 

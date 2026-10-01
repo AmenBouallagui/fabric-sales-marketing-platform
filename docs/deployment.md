@@ -2,12 +2,13 @@
 
 ## Overview
 
-This project runs in two environments: locally (DuckDB, zero credentials) and in the cloud (dbt Cloud + Snowflake, Power BI Desktop connected live). The repository contains code, documentation, and configuration patterns; environment-specific secrets stay outside source control.
+This project runs in two environments: locally (DuckDB, zero credentials) and in the cloud (dbt Cloud + Snowflake, Power BI Desktop using the native Snowflake connector in Import mode). The repository contains code, documentation, and configuration patterns; environment-specific secrets stay outside source control.
 
 ## Local Development
 
-- Generate synthetic source data.
-- Run the dbt project against the DuckDB target, or the pandas medallion pipeline.
+- For pandas: generate synthetic CSVs, then run the local medallion pipeline.
+- For dbt: run `dbt deps`, `dbt seed`, then `dbt build` against the DuckDB target.
+- dbt uses committed seed fixtures; pandas uses generated CSVs. Their inputs are separate.
 - Execute tests (`dbt build`, `pytest`).
 - Generated files stay out of Git (ignored under `data/`).
 
@@ -16,7 +17,7 @@ This project runs in two environments: locally (DuckDB, zero credentials) and in
 1. Create a Snowflake account/database and a dbt Cloud project connected to it.
 2. Add a Snowflake target/environment in dbt Cloud (see `dbt/profiles.yml` for the local equivalent).
 3. Run `dbt seed` then `dbt build` in dbt Cloud against the Snowflake target.
-4. Open `powerbi/SalesMarketing.pbip` in Power BI Desktop and refresh — it connects live to the `SALES_MARKETING.MARTS` schema via Power BI's native Snowflake connector.
+4. Open `powerbi/SalesMarketing.pbip` in Power BI Desktop and refresh — it imports data from the `SALES_MARKETING.MARTS` schema via Power BI's native Snowflake connector.
 
 ## Configuration
 

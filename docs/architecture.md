@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is an analytics engineering portfolio project. It turns synthetic customers, products, campaigns, orders, ad spend, and support tickets into governed analytics outputs, implemented two ways: a local pandas prototype and a dbt warehouse (DuckDB locally, Snowflake via dbt Cloud), both feeding a Power BI semantic model connected live to Snowflake.
+This is an analytics engineering portfolio project. It turns synthetic customers, products, campaigns, orders, ad spend, and support tickets into governed analytics outputs, implemented two ways: a local pandas prototype and a dbt warehouse (DuckDB locally, Snowflake via dbt Cloud), with the Snowflake warehouse feeding a Power BI semantic model in Import mode.
 
 ## Architecture Diagram
 
@@ -20,11 +20,11 @@ See the Mermaid architecture diagram in [architecture_diagram.md](../assets/arch
 
 ## dbt Warehouse Flow
 
-1. Source extracts are seeded (`dbt seed`) or read directly (DuckDB `external_location`).
+1. Committed CSV fixtures are loaded into raw tables with `dbt seed` before `dbt build`.
 2. Staging models type-cast and normalize.
 3. Intermediate models dedupe to latest record per business key and flag data quality.
 4. Marts build conformed dimensions and fact tables with derived measures.
-5. Power BI consumes Gold via a semantic model (PBIP / TMDL, defined as code), connected live to Snowflake.
+5. Power BI consumes Gold via a semantic model (PBIP / TMDL, defined as code), connected to Snowflake in Import mode.
 
 ## Layer Responsibilities
 
@@ -50,9 +50,12 @@ Pipeline run logs, data quality results, dataset freshness, and row count reconc
 
 ### Consumption
 
-Power BI semantic model (PBIP / TMDL, defined as code), connected live to Snowflake — 7 report pages built.
+Power BI semantic model (PBIP / TMDL, defined as code), connected to Snowflake in Import mode — 7 report pages built.
 
 ## Current Limitations
 
 - Local outputs are generated under ignored `data/` folders and are not committed.
 - The dbt project's cloud target (Snowflake) requires credentials; the DuckDB target runs with none.
+- The pandas pipeline consumes generated CSVs; dbt consumes committed fixtures. These are separate datasets.
+- Power BI reads the Snowflake warehouse; local parquet outputs are not its current data source.
+- Power BI operations tables use seeded demonstration telemetry.
