@@ -236,6 +236,8 @@ def validation_issues(entity: str, frame: pd.DataFrame) -> pd.Series:
         add_issue(frame["campaign_start_date"].isna(), "missing campaign_start_date")
         add_issue(~frame["channel"].isin(VALID_CHANNELS), "invalid campaign channel")
     elif entity == "orders":
+        add_issue(frame["order_date"].isna(), "missing order_date")
+        add_issue(frame["quantity"].isna() | (frame["quantity"] <= 0), "invalid quantity")
         add_issue(frame["customer_id"].isna(), "missing customer_id")
         add_issue(frame["product_id"].isna(), "missing product_id")
         add_issue(frame["payment_status"].isna(), "missing payment_status")
@@ -244,6 +246,7 @@ def validation_issues(entity: str, frame: pd.DataFrame) -> pd.Series:
         for column in ["unit_price", "discount_amount", "tax_amount"]:
             add_issue(frame[column].isna() | (frame[column] < 0), f"invalid {column}")
     elif entity == "ad_spend":
+        add_issue(frame["spend_date"].isna(), "missing spend_date")
         add_issue(frame["campaign_id"].isna(), "missing campaign_id")
         for column in ["spend_amount", "impressions", "clicks", "conversions"]:
             add_issue(frame[column].isna() | (frame[column] < 0), f"invalid {column}")
@@ -321,25 +324,25 @@ def build_gold(silver: dict[str, pd.DataFrame], processed_at: pd.Timestamp) -> d
     tickets = current_valid(silver, "support_tickets")
 
     dim_customer = customers[["customer_id", "customer_name", "email", "country", "city", "customer_segment", "company_size", "industry", "acquisition_channel", "status", "signup_date"]].copy()
-    dim_customer["customer_key"] = dim_customer["customer_id"].map(stable_hash)
+    dim_customer["customer_key"] = dim_customer["customer_id"].map(stable_hash).astype("Int64")
     dim_customer["gold_processed_at"] = processed_at
 
     dim_product = products[["product_id", "product_name", "category", "plan_tier", "unit_price", "unit_cost", "is_subscription", "valid_from", "valid_to"]].copy()
-    dim_product["product_key"] = dim_product["product_id"].map(stable_hash)
+    dim_product["product_key"] = dim_product["product_id"].map(stable_hash).astype("Int64")
     dim_product["gold_processed_at"] = processed_at
 
     dim_campaign = campaigns[["campaign_id", "campaign_name", "channel", "campaign_start_date", "campaign_end_date", "target_segment", "objective"]].copy()
-    dim_campaign["campaign_key"] = dim_campaign["campaign_id"].map(stable_hash)
+    dim_campaign["campaign_key"] = dim_campaign["campaign_id"].map(stable_hash).astype("Int64")
     dim_campaign["gold_processed_at"] = processed_at
 
     segments = sorted(set(customers["customer_segment"].dropna()))
     dim_customer_segment = pd.DataFrame({"customer_segment": segments})
-    dim_customer_segment["customer_segment_key"] = dim_customer_segment["customer_segment"].map(stable_hash)
+    dim_customer_segment["customer_segment_key"] = dim_customer_segment["customer_segment"].map(stable_hash).astype("Int64")
     dim_customer_segment["gold_processed_at"] = processed_at
 
     channels = sorted(set(pd.concat([customers["acquisition_channel"], campaigns["channel"], ad_spend["channel"]]).dropna()))
     dim_channel = pd.DataFrame({"channel": channels})
-    dim_channel["channel_key"] = dim_channel["channel"].map(stable_hash)
+    dim_channel["channel_key"] = dim_channel["channel"].map(stable_hash).astype("Int64")
     dim_channel["channel_group"] = dim_channel["channel"]
     dim_channel["gold_processed_at"] = processed_at
 
@@ -384,6 +387,21 @@ def build_gold(silver: dict[str, pd.DataFrame], processed_at: pd.Timestamp) -> d
     fact_support_tickets["closed_date_key"] = date_key(fact_support_tickets["closed_at"])
     fact_support_tickets["gold_processed_at"] = processed_at
     fact_support_tickets = fact_support_tickets[["ticket_key", "ticket_id", "customer_key", "created_date_key", "closed_date_key", "priority", "category", "status", "satisfaction_score", "first_response_minutes", "resolution_minutes", "gold_processed_at"]]
+
+    # Match dbt's unknown-member semantics; never invent a cost for unknown products.
+    def unknown_member(frame, key, labels):
+        row = {column: pd.NA for column in frame.columns}
+        row.update(labels)
+        row[key] = -1
+        row["gold_processed_at"] = processed_at
+        return pd.concat([frame, pd.DataFrame([row])], ignore_index=True)
+
+    dim_customer = unknown_member(dim_customer, "customer_key", {"customer_id": "UNKNOWN", "customer_name": "Unknown", "customer_segment": "Unknown"})
+    dim_product = unknown_member(dim_product, "product_key", {"product_id": "UNKNOWN", "product_name": "Unknown"})
+    dim_campaign = unknown_member(dim_campaign, "campaign_key", {"campaign_id": "UNKNOWN", "campaign_name": "Unknown", "channel": "Unknown"})
+    dim_channel = unknown_member(dim_channel, "channel_key", {"channel": "Unknown", "channel_group": "Unknown"})
+    dim_customer_segment = unknown_member(dim_customer_segment, "customer_segment_key", {"customer_segment": "Unknown"})
+    dim_date = unknown_member(dim_date, "date_key", {})
 
     return {
         "dim_customer": dim_customer[["customer_key", "customer_id", "customer_name", "email", "country", "city", "customer_segment", "company_size", "industry", "acquisition_channel", "status", "signup_date", "gold_processed_at"]],

@@ -46,7 +46,7 @@ Business-ready dimensions, facts, KPI-ready fields, and Power BI-friendly struct
 
 ### Observability
 
-Pipeline run logs, data quality results, dataset freshness, and row count reconciliation.
+Pipeline run logs, data quality results, and row count reconciliation. Freshness and persistent history remain planned.
 
 ### Consumption
 

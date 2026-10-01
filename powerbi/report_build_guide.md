@@ -23,9 +23,7 @@ export is needed — Power BI's Snowflake connector is built in.
 
 ## Open and refresh
 
-1. Update the TMDL connection settings for your Snowflake account, warehouse,
-   database, and authorized reporting role before opening the project. The
-   committed model currently contains the original demo connection settings.
+1. Open the project and configure Transform data → Manage parameters: `SnowflakeServer`, `SnowflakeWarehouse`, `SnowflakeDatabase`, `SnowflakeRole`, `SnowflakeMartsSchema`, and `SnowflakeObservabilitySchema`. The server is a placeholder; the role defaults to `ANALYTICS_READER`. Your Snowflake administrator must provide a reporting role with warehouse usage, database/schema usage, and SELECT on the imported tables. No credentials are committed.
 2. Open `powerbi/SalesMarketing.pbip` in Power BI Desktop, then **Refresh**
    and authenticate with your own Snowflake credentials.
 3. Refresh imports eight business tables from `SALES_MARKETING.MARTS` and three
@@ -53,6 +51,10 @@ Each page has a horizontal filter bar (month, plus two page-relevant dimensions)
 a dark sidebar with global navigation. Operations & Data Health uses the
 committed observability seeds. These are demonstration records, not current CI
 results or a live feed from the pandas pipeline.
+
+## Demo screenshot
+
+The README screenshot is a frame from the committed recording, with the Startup segment selected. It predates the KPI corrections; current values require a new Desktop refresh. Only Executive Overview is shown in that recording.
 
 ## Capture screenshots
 

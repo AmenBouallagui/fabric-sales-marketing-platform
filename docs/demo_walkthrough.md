@@ -41,7 +41,7 @@ The same medallion logic also runs as a dbt project against DuckDB (local, zero 
 - Set `DBT_PROFILES_DIR=dbt` (PowerShell: `$env:DBT_PROFILES_DIR = 'dbt'`).
 - `dbt deps --project-dir dbt`
 - `dbt seed --project-dir dbt` — load committed fixtures before source tests run.
-- `dbt build --project-dir dbt` — 21 models, 38 data tests
+- `dbt build --project-dir dbt` — 21 models, 39 data tests
 
 The pandas inputs are generated CSVs; dbt reads the separate committed seed fixtures.
 

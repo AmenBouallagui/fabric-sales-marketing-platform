@@ -1,51 +1,26 @@
-# Business Metrics
+# Business metrics
 
-## Purpose
+These definitions apply to the committed Power BI model and [SQL validation queries](../sql/business_metric_queries.sql). Fact tables retain all valid orders for audit; sales KPIs count only **Paid orders with refund_flag = false**. This is a demonstration convention, not an accounting ledger or partial-refund model.
 
-This document defines KPI definitions for the future Power BI semantic model. Measures should be implemented from Gold tables so calculations remain consistent across reports.
+| Measure | Definition and filter |
+| --- | --- |
+| Revenue | Sum of total_amount for eligible orders; includes tax |
+| Net Revenue | Sum of total_amount minus tax for eligible orders |
+| Estimated Cost | Quantity × product unit_cost for eligible orders; blank if any eligible order lacks cost |
+| Gross Margin | Net Revenue minus Estimated Cost; blank if cost is incomplete |
+| Gross Margin % | Gross Margin / Net Revenue |
+| Orders | Distinct eligible order_id |
+| Average Order Value | Revenue / Orders |
+| Customers | Registered dim_customer members, excluding UNKNOWN; not a count of buyers |
+| New Customers | Registered customers whose signup_date is in the selected calendar period; excludes UNKNOWN |
+| Ad Spend / Impressions / Clicks / Conversions | Sum of corresponding fct_ad_spend columns |
+| Click-Through Rate | Clicks / Impressions |
+| Conversion Rate | Conversions / Clicks |
+| Cost Per Click / Acquisition | Ad Spend / Clicks or Conversions |
+| ROAS | Eligible order revenue for known campaigns / spend for those campaigns; selected channel filters campaigns by their configured channel |
+| Ticket Count | Distinct ticket_id, all statuses |
+| Avg First Response / Resolution / Satisfaction | Average of the respective support fact column; null values excluded |
 
-## Revenue And Customer Metrics
+Ratios return blank for zero denominators. Campaign attribution uses the campaign_id carried by the source order; it is not multi-touch attribution. Channel-filtered ROAS uses dim_campaign.channel for both numerator and denominator, rather than inferring revenue from spend rows. Paid sales without a known campaign remain in Revenue but are excluded from ROAS.
 
-- Revenue (`[Revenue]`): sum of `fact_orders.total_amount`.
-- Net Revenue (`[Net Revenue]`): sum of `fact_orders.net_revenue`, calculated as order total less tax.
-- Gross Margin (`[Gross Margin]`): sum of `fact_orders.gross_margin`, calculated as net revenue less estimated product cost.
-- Gross Margin % (`[Gross Margin %]`): gross margin divided by net revenue.
-- Average Order Value (`[Average Order Value]`): revenue divided by order count.
-- Orders (`[Orders]`): distinct count of `fact_orders.order_id`.
-- Customers (`[Customers]`): distinct count of `dim_customer.customer_id`.
-- New Customers (`[New Customers]`): count of customers by `dim_customer.signup_date` within the selected date period.
-
-## Marketing Metrics
-
-- Ad Spend (`[Ad Spend]`): sum of `fact_ad_spend.spend_amount`.
-- Impressions (`[Impressions]`): sum of `fact_ad_spend.impressions`.
-- Clicks (`[Clicks]`): sum of `fact_ad_spend.clicks`.
-- Conversions (`[Conversions]`): sum of `fact_ad_spend.conversions`.
-- Conversion Rate (`[Conversion Rate]`): conversions divided by clicks.
-- Cost Per Click (`[Cost Per Click]`): ad spend divided by clicks.
-- Cost Per Acquisition (`[Cost Per Acquisition]`): ad spend divided by conversions.
-- ROAS (`[ROAS]`): revenue attributed to campaigns divided by ad spend.
-
-## Support Metrics
-
-- Ticket Count (`[Ticket Count]`): distinct count of `fact_support_tickets.ticket_id`.
-- Average First Response Minutes (`[Average First Response Minutes]`): average of `fact_support_tickets.first_response_minutes`.
-- Average Resolution Time (`[Average Resolution Time]`): average of `fact_support_tickets.resolution_minutes`.
-- Customer Satisfaction Score (`[Customer Satisfaction Score]`): average of `fact_support_tickets.satisfaction_score`.
-
-## Divide-By-Zero Handling
-
-Ratio measures should use safe division logic so blank or zero denominators return blank instead of errors.
-
-## Metric Governance
-
-Each metric should document:
-
-- Metric owner
-- Business definition
-- Grain
-- Source table
-- Calculation logic
-- Filters
-- Exclusions
-- Validation query
+Operations measures count seeded demonstration runs/checks and reconciliation statuses. They do not describe current CI health. The [build guide](../powerbi/report_build_guide.md) lists the report pages; [quality documentation](data_quality_observability.md) distinguishes implemented monitoring from planned controls.

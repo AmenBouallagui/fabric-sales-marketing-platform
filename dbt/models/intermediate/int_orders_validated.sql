@@ -5,7 +5,8 @@ with deduplicated as (
             *,
             row_number() over (
                 partition by order_id
-                order by source_updated_at desc nulls last
+                order by source_updated_at desc nulls last,
+                         {{ dbt_utils.generate_surrogate_key(['order_id', 'customer_id', 'product_id', 'campaign_id', 'order_date', 'quantity', 'unit_price', 'discount_amount', 'tax_amount', 'total_amount', 'payment_status', 'refund_flag', 'source_updated_at']) }} desc
             ) as _rn
         from {{ ref('stg_orders') }}
     )
@@ -17,6 +18,8 @@ flagged as (
         * exclude (_rn),
         case
             when order_id is null then 'missing order_id'
+            when order_date is null then 'missing order_date'
+            when quantity is null or quantity <= 0 then 'invalid quantity'
             when customer_id is null then 'missing customer_id'
             when product_id is null then 'missing product_id'
             when payment_status is null then 'missing payment_status'

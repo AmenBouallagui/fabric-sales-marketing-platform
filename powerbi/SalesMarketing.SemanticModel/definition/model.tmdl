@@ -7,7 +7,7 @@ model Model
 		legacyRedirects
 		returnErrorValuesAsNull
 
-annotation PBI_QueryOrder = ["GoldDataFolder","dim_customer","dim_product","dim_campaign","dim_channel","dim_date","fct_orders","fct_ad_spend","fct_support_tickets","pipeline_run_log","data_quality_results","row_count_reconciliation"]
+annotation PBI_QueryOrder = ["SnowflakeServer","SnowflakeWarehouse","SnowflakeDatabase","SnowflakeRole","SnowflakeMartsSchema","SnowflakeObservabilitySchema","dim_customer","dim_product","dim_campaign","dim_channel","dim_date","fct_orders","fct_ad_spend","fct_support_tickets","pipeline_run_log","data_quality_results","row_count_reconciliation"]
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
