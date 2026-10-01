@@ -1,6 +1,9 @@
-pandas>=2.0
-numpy>=1.24
-faker>=24.0
-pyarrow>=15.0
-pytest>=8.0
-dbt-duckdb>=1.9,<2.0
+# Verified on Python 3.12 locally and in CI. Upgrade as a tested set.
+pandas==3.0.6
+numpy==2.5.3
+faker==40.40.0
+pyarrow==25.0.1
+pytest==9.1.1
+dbt-core==1.12.5
+dbt-duckdb==1.11.0
+duckdb==1.5.6

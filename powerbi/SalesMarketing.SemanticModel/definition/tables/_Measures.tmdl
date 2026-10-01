@@ -3,17 +3,17 @@
 table _Measures
 	lineageTag: 35e95426-060e-4a25-8c29-4e506c4f3fc8
 
-	measure Revenue = SUM(fct_orders[total_amount])
+	measure Revenue = CALCULATE(SUM(fct_orders[total_amount]), KEEPFILTERS(fct_orders[payment_status] = "Paid"), KEEPFILTERS(fct_orders[refund_flag] = FALSE()))
 		formatString: \$#,0
 		displayFolder: Revenue and Margin
 		lineageTag: 0a7efd21-b406-4fed-be73-b81c233dc6b3
 
-	measure 'Net Revenue' = SUM(fct_orders[net_revenue])
+	measure 'Net Revenue' = CALCULATE(SUM(fct_orders[net_revenue]), KEEPFILTERS(fct_orders[payment_status] = "Paid"), KEEPFILTERS(fct_orders[refund_flag] = FALSE()))
 		formatString: \$#,0
 		displayFolder: Revenue and Margin
 		lineageTag: 4a94fa15-e00a-4470-9027-f569d888dadf
 
-	measure 'Gross Margin' = SUM(fct_orders[gross_margin])
+	measure 'Gross Margin' = IF(ISBLANK([Estimated Cost]), BLANK(), [Net Revenue] - [Estimated Cost])
 		formatString: \$#,0
 		displayFolder: Revenue and Margin
 		lineageTag: c66666ba-f977-41e5-a4c3-2814b3c441af
@@ -23,12 +23,14 @@ table _Measures
 		displayFolder: Revenue and Margin
 		lineageTag: 7ce7c774-5ef6-46b1-942c-39f006252441
 
-	measure 'Estimated Cost' = SUM(fct_orders[estimated_cost])
+	measure 'Estimated Cost' =
+			VAR MissingCost = CALCULATE(COUNTROWS(FILTER(fct_orders, ISBLANK(fct_orders[estimated_cost]))), KEEPFILTERS(fct_orders[payment_status] = "Paid"), KEEPFILTERS(fct_orders[refund_flag] = FALSE()))
+			RETURN IF(MissingCost > 0, BLANK(), CALCULATE(SUM(fct_orders[estimated_cost]), KEEPFILTERS(fct_orders[payment_status] = "Paid"), KEEPFILTERS(fct_orders[refund_flag] = FALSE())))
 		formatString: \$#,0
 		displayFolder: Revenue and Margin
 		lineageTag: 03bafb3f-ad52-43ac-a2eb-f3aeb26e529d
 
-	measure Orders = DISTINCTCOUNT(fct_orders[order_id])
+	measure Orders = CALCULATE(DISTINCTCOUNT(fct_orders[order_id]), KEEPFILTERS(fct_orders[payment_status] = "Paid"), KEEPFILTERS(fct_orders[refund_flag] = FALSE()))
 		formatString: #,0
 		displayFolder: Revenue and Margin
 		lineageTag: bf517e02-11e3-4671-9fc4-84fa4e7f061e
@@ -38,12 +40,12 @@ table _Measures
 		displayFolder: Revenue and Margin
 		lineageTag: 37cb1d6c-3210-43af-9602-7c32b36b8ecd
 
-	measure Customers = DISTINCTCOUNT(dim_customer[customer_id])
+	measure Customers = CALCULATE(DISTINCTCOUNT(dim_customer[customer_id]), KEEPFILTERS(dim_customer[customer_id] <> "UNKNOWN"))
 		formatString: #,0
 		displayFolder: Customer
 		lineageTag: 30a0c4d9-96dc-4616-a5ea-147f16f332d9
 
-	measure 'New Customers' = CALCULATE(DISTINCTCOUNT(dim_customer[customer_id]), TREATAS(VALUES(dim_date[calendar_date]), dim_customer[signup_date]))
+	measure 'New Customers' = CALCULATE([Customers], TREATAS(VALUES(dim_date[calendar_date]), dim_customer[signup_date]))
 		formatString: #,0
 		displayFolder: Customer
 		lineageTag: dca87717-c173-44f0-bfe1-60837cc373b3
@@ -88,7 +90,11 @@ table _Measures
 		displayFolder: Marketing
 		lineageTag: 2b806829-df0a-4ba4-8b0e-2353da850650
 
-	measure ROAS = DIVIDE([Revenue], [Ad Spend])
+	measure ROAS =
+			VAR Campaigns = CALCULATETABLE(VALUES(dim_campaign[campaign_key]), KEEPFILTERS(dim_campaign[campaign_id] <> "UNKNOWN"), KEEPFILTERS(TREATAS(VALUES(dim_channel[channel]), dim_campaign[channel])))
+			VAR AttributedRevenue = CALCULATE([Revenue], KEEPFILTERS(TREATAS(Campaigns, fct_orders[campaign_key])))
+			VAR CampaignSpend = CALCULATE([Ad Spend], REMOVEFILTERS(dim_channel), KEEPFILTERS(TREATAS(Campaigns, fct_ad_spend[campaign_key])))
+			RETURN DIVIDE(AttributedRevenue, CampaignSpend)
 		formatString: 0.00
 		displayFolder: Marketing
 		lineageTag: 656cbffd-5ab5-41f1-b466-88dc827d570c

@@ -26,7 +26,7 @@ unknown_member as (
         'Unknown'   as category,
         'Unknown'   as plan_tier,
         cast(0 as double)  as unit_price,
-        cast(0 as double)  as unit_cost,
+        cast(null as double) as unit_cost,
         false       as is_subscription,
         null        as valid_from,
         null        as valid_to

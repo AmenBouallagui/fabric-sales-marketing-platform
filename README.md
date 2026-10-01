@@ -10,13 +10,19 @@ Built by **Amen Bouallagui** — BI Developer and Analytics Engineer with 2 year
 
 ## Power BI Report
 
-<video src="powerbi/report_screenshots/executive_overview.mp4" controls width="800"></video>
+![Executive Overview — historical demo screenshot](powerbi/report_screenshots/executive_overview.webp)
+
+[Watch the Executive Overview demo recording](powerbi/report_screenshots/executive_overview.mp4)
+
+The screenshot (Startup segment selected) and recording predate the KPI corrections. Current measure definitions are in [business metrics](docs/business_metrics.md); refresh the project to see those changes.
 
 Executive Overview page, using Power BI's native Snowflake connector in Import mode — 7 pages total covering revenue, margin, marketing, customer segments, product performance, support quality, and operations/data health. See [powerbi/report_build_guide.md](powerbi/report_build_guide.md) for the full page-by-page breakdown.
 
 ---
 
 ## Quick Start
+
+Use Python 3.12. Dependencies are pinned to the versions verified by CI.
 
 ```bash
 python -m pip install -r requirements.txt
@@ -28,7 +34,7 @@ export DBT_PROFILES_DIR=dbt
 # PowerShell alternative: $env:DBT_PROFILES_DIR = 'dbt'
 dbt deps  --project-dir dbt
 dbt seed --project-dir dbt          # load committed synthetic fixtures first
-dbt build --project-dir dbt         # 21 models and 38 data tests
+dbt build --project-dir dbt         # 21 models and 39 data tests
 
 python -m pytest
 ```
@@ -87,7 +93,7 @@ See [docs/architecture.md](docs/architecture.md) and [docs/medallion_design.md](
 **Runs today:**
 - Synthetic data generation (6 CSV sources: customers, products, campaigns, orders, ad spend, support tickets)
 - Local medallion pipeline (Bronze / Silver / Gold + observability parquet outputs)
-- dbt warehouse: 21 models, 38 data tests — runs on DuckDB (CI, zero credentials) or Snowflake (via dbt Cloud)
+- dbt warehouse: 21 models, 39 data tests — runs on DuckDB (CI, zero credentials) or Snowflake (via dbt Cloud)
 - Pytest suite
 - Power BI report: 7 pages built, semantic model using the native Snowflake connector in Import mode
 
@@ -126,9 +132,9 @@ Six source entities covering the full sales and marketing lifecycle:
 
 - [Medallion design (Bronze → Silver → Gold)](docs/medallion_design.md)
 - [Data quality and observability](docs/data_quality_observability.md)
-- [Business metrics (~22 KPI definitions)](docs/business_metrics.md)
+- [Business metrics (KPI definitions)](docs/business_metrics.md)
 - [Power BI semantic model notes](powerbi/semantic_model_notes.md)
-- [Power BI report design](powerbi/report_design.md)
+- [Power BI report build guide](powerbi/report_build_guide.md)
 - [Project roadmap](docs/project_roadmap.md)
 - [Portfolio review checklist](docs/portfolio_review_checklist.md)
 - [Real-world professional context](docs/real_world_context.md)

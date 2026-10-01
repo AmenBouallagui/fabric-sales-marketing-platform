@@ -1,90 +1,24 @@
-# Architecture Diagram
+# Architecture diagram
 
-This Mermaid diagram summarizes the two working implementations of the medallion pattern in this repo — a local pandas prototype and a dbt warehouse that runs on DuckDB or Snowflake — both feeding a Power BI report connected live to Snowflake.
-
-```mermaid
-flowchart LR
-    subgraph Sources["Synthetic Source Extracts"]
-        CSV["Source CSVs<br/>customers, products, campaigns,<br/>orders, ad spend, support tickets"]
-    end
-
-    subgraph Local["Local Executable Prototype"]
-        Generator["Synthetic Data Generator"]
-        LocalPipeline["Local Medallion Pipeline<br/>pandas + parquet"]
-        Bronze["Bronze Outputs<br/>raw records + ingestion metadata"]
-        Silver["Silver Outputs<br/>cleaned, typed, deduplicated records"]
-        Gold["Gold Outputs<br/>dimensions, facts, KPIs"]
-        Obs["Observability Outputs<br/>run log, quality results,<br/>row count reconciliation"]
-    end
-
-    subgraph Warehouse["dbt Warehouse<br/>DuckDB (local) or Snowflake (dbt Cloud)"]
-        Staging["Staging Views"]
-        Intermediate["Intermediate Views<br/>Silver logic"]
-        Marts["Marts Tables<br/>Gold star schema"]
-    end
-
-    subgraph Reporting["Power BI"]
-        Semantic["Semantic Model (TMDL)<br/>11 tables, ~28 DAX measures"]
-        Reports["6 Report Pages<br/>live-connected to Snowflake"]
-    end
-
-    Generator --> CSV
-    CSV --> LocalPipeline
-    LocalPipeline --> Bronze
-    Bronze --> Silver
-    Silver --> Gold
-    LocalPipeline --> Obs
-
-    CSV --> Staging
-    Staging --> Intermediate
-    Intermediate --> Marts
-
-    Marts --> Semantic
-    Semantic --> Reports
-
-    
----
-
-## `assets/demo/architecture_overview.md` — replace entirely
-
-```markdown
-# Demo Architecture Overview
-
-This diagram shows the local pandas prototype alongside the dbt warehouse path (DuckDB or Snowflake) that feeds the live-connected Power BI report.
+Two independently runnable implementations use separate synthetic inputs. Only the Snowflake deployment feeds the Power BI report.
 
 ```mermaid
 flowchart LR
-    subgraph LocalToday["Local Prototype"]
-        Sources["Synthetic CSV sources<br/>customers, products, campaigns,<br/>orders, ad spend, support tickets"]
-        Generator["Local data generation<br/>Python + Faker"]
-        Bronze["Local Bronze parquet outputs<br/>source records + ingestion metadata"]
-        Silver["Local Silver parquet outputs<br/>standardized, typed, deduplicated,<br/>validated current records"]
-        Gold["Local Gold parquet outputs<br/>dimensions, facts, KPI-ready fields"]
-        Observability["Local observability outputs<br/>run logs, quality results,<br/>row count reconciliation"]
-    end
+    A[Generated CSVs] --> B[pandas Bronze]
+    B --> C[pandas Silver]
+    C --> D[Gold parquet]
+    C --> E[Local run telemetry]
+    D --> E
+    F[Committed CSV fixtures] --> G[dbt seed: raw]
+    G --> H[staging]
+    H --> I[intermediate: validation]
+    I --> J[marts: star schema]
+    J --> K[DuckDB: local and CI]
+    J --> L[Snowflake: configured cloud deployment]
+    M[Committed telemetry fixtures] --> N[dbt seed: observability]
+    N --> L
+    L --> O[Power BI Import: 11 data tables + measure table]
+    O --> P[7 report pages]
+```
 
-    subgraph DbtWarehouse["dbt Warehouse<br/>DuckDB or Snowflake"]
-        Staging["Staging views"]
-        Intermediate["Intermediate views"]
-        Marts["Marts tables"]
-    end
-
-    subgraph Consumption["Power BI"]
-        SemanticModel["Semantic model (TMDL)"]
-        Reports["7 report pages<br/>live-connected to Snowflake"]
-    end
-
-    Sources --> Generator
-    Generator --> Bronze
-    Bronze --> Silver
-    Silver --> Gold
-    Bronze --> Observability
-    Silver --> Observability
-    Gold --> Observability
-
-    Sources --> Staging
-    Staging --> Intermediate
-    Intermediate --> Marts
-
-    Marts --> SemanticModel
-    SemanticModel --> Reports
+Generated parquet and local run telemetry do not automatically update Snowflake or the report. Report operations data is seeded demonstration telemetry. See [architecture and limitations](../docs/architecture.md).

@@ -1,21 +1,20 @@
-# Project Roadmap
+# Project roadmap
 
-## Project Vision
+## Implemented
 
-A portfolio analytics platform showing end-to-end data engineering and BI skills: medallion architecture, dbt modeling, dimensional design, and Power BI semantic modeling. Built on a foundation of real professional experience (see [real_world_context.md](real_world_context.md)).
+- Synthetic source generator and pandas Bronze/Silver/Gold pipeline.
+- dbt warehouse with a credential-free DuckDB target and CI validation.
+- Star schema, unknown members, source quality flags, and business-rule tests.
+- One Power BI project with seven pages, Snowflake Import partitions, and parameterized connection settings.
+- Local quality/reconciliation outputs and separate seeded report operations data.
 
-## Completed
+## Next engineering milestones
 
-- Synthetic data generator (6 sources, deterministic, relational integrity validated)
-- Local medallion prototype in Python (Bronze / Silver / Gold + observability outputs)
-- dbt warehouse: 21 models, ~38 tests, all passing — runs on DuckDB (CI) or Snowflake (dbt Cloud)
-- Staging → intermediate → marts layering with surrogate keys and unknown members
-- Power BI semantic model as code (PBIP / TMDL): 11 data tables plus a measure table, 28 DAX measures, relationships
-- Power BI report: 7 pages built, connected to Snowflake in Import mode
-- GitHub Actions CI (data generation → local pipeline → dbt build + tests → pytest)
-- Medallion design, data quality and observability design, business metrics definitions
+1. Persist failed runs and telemetry history; implement publication gates for critical failures.
+2. Add dataset freshness and volume anomaly checks with alerting.
+3. Add incremental loading and explicit change-history retention.
+4. Validate a deployed Snowflake refresh and DAX results against the SQL metric queries.
+5. Implement and validate report access controls and row-level security.
+6. Automate cloud orchestration and deployment; benchmark larger datasets.
 
-## Ongoing
-
-- Learn dbt well enough to extend the existing models and explain design decisions in interviews
-- Add German localization to README once German improves (broadens visibility on local job boards)
+AI features remain a future extension. No AI service or Fabric notebook is implemented in this repository.

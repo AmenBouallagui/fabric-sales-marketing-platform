@@ -38,6 +38,12 @@ def test_local_medallion_pipeline_outputs(tmp_path: Path) -> None:
             "2024-03-31",
         ]
     )
+    # A valid order with unresolved dimension IDs must survive with unknown keys.
+    orders = pd.read_csv(source_dir / "orders.csv")
+    orphan = orders.iloc[0].copy()
+    orphan.update(pd.Series({"order_id": "ORPHAN-TEST", "customer_id": "MISSING-C", "product_id": "MISSING-P", "campaign_id": "MISSING-CMP", "order_date": "2024-02-01", "quantity": 1, "unit_price": 10, "discount_amount": 0, "tax_amount": 0, "total_amount": 10, "payment_status": "Paid", "refund_flag": False}))
+    pd.concat([orders, orphan.to_frame().T], ignore_index=True).to_csv(source_dir / "orders.csv", index=False)
+
     run_command(
         [
             sys.executable,
@@ -70,6 +76,9 @@ def test_local_medallion_pipeline_outputs(tmp_path: Path) -> None:
     fact_ad_spend = pd.read_parquet(output_dir / "gold" / "fact_ad_spend.parquet")
     fact_support_tickets = pd.read_parquet(output_dir / "gold" / "fact_support_tickets.parquet")
 
+    orphan_fact = fact_orders.loc[fact_orders["order_id"] == "ORPHAN-TEST"].iloc[0]
+    assert all(orphan_fact[key] == -1 for key in ["customer_key", "product_key", "campaign_key"])
+    assert pd.isna(orphan_fact["estimated_cost"])
     assert len(fact_orders) > 0
     assert len(fact_ad_spend) > 0
     assert len(fact_support_tickets) > 0
@@ -87,3 +96,18 @@ def test_local_medallion_pipeline_outputs(tmp_path: Path) -> None:
     )
     assert tracked_generated.returncode == 0
     assert tracked_generated.stdout.strip() == ""
+
+    # Every unresolved FK has a real unknown member, rather than a dangling -1.
+    for fact, dimension, key in [
+        (fact_orders, 'dim_customer', 'customer_key'),
+        (fact_orders, 'dim_product', 'product_key'),
+        (fact_orders, 'dim_campaign', 'campaign_key'),
+        (fact_orders, 'dim_date', 'order_date_key'),
+        (fact_ad_spend, 'dim_campaign', 'campaign_key'),
+        (fact_ad_spend, 'dim_channel', 'channel_key'),
+        (fact_support_tickets, 'dim_customer', 'customer_key'),
+    ]:
+        members = pd.read_parquet(output_dir / 'gold' / f'{dimension}.parquet')
+        dim_key = 'date_key' if dimension == 'dim_date' else key
+        assert -1 in set(members[dim_key])
+        assert set(fact[key]).issubset(set(members[dim_key]))

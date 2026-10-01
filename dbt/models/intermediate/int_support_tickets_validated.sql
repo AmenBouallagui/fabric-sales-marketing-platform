@@ -5,7 +5,8 @@ with deduplicated as (
             *,
             row_number() over (
                 partition by ticket_id
-                order by source_updated_at desc nulls last
+                order by source_updated_at desc nulls last,
+                         {{ dbt_utils.generate_surrogate_key(['ticket_id', 'customer_id', 'created_at', 'closed_at', 'priority', 'category', 'status', 'satisfaction_score', 'first_response_minutes', 'resolution_minutes', 'source_updated_at']) }} desc
             ) as _rn
         from {{ ref('stg_support_tickets') }}
     )
