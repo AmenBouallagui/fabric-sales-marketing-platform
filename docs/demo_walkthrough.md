@@ -41,7 +41,7 @@ The same medallion logic also runs as a dbt project against DuckDB (local, zero 
 - Set `DBT_PROFILES_DIR=dbt` (PowerShell: `$env:DBT_PROFILES_DIR = 'dbt'`).
 - `dbt deps --project-dir dbt`
 - `dbt seed --project-dir dbt` — load committed fixtures before source tests run.
-- `dbt build --project-dir dbt` — 21 models, 38 data tests
+- `dbt build --project-dir dbt` — 21 models, 39 data tests
 
 The pandas inputs are generated CSVs; dbt reads the separate committed seed fixtures.
 
@@ -64,7 +64,7 @@ See `assets/demo/gold_model.md` for a visual summary.
 
 ## Power BI
 
-The report is fully built and imports data from Snowflake via Power BI's native connector — no file export, no ODBC driver. 7 pages: Executive Overview, Revenue & Margin, Marketing Performance, Customer & Segment Analysis, Product Performance, Support Quality, Operations & Data Health.
+The report source defines a Snowflake Import connection and seven pages; current refresh, DAX execution, and rendering remain unverified. Pages: Executive Overview, Revenue & Margin, Marketing Performance, Customer & Segment Analysis, Product Performance, Support Quality, Operations & Data Health.
 
 ## Reviewer Takeaway
 

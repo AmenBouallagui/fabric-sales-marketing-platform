@@ -5,7 +5,8 @@ with deduplicated as (
             *,
             row_number() over (
                 partition by campaign_id
-                order by source_updated_at desc nulls last
+                order by source_updated_at desc nulls last,
+                         {{ dbt_utils.generate_surrogate_key(['campaign_id', 'campaign_name', 'channel', 'campaign_start_date', 'campaign_end_date', 'target_segment', 'objective', 'source_updated_at']) }} desc
             ) as _rn
         from {{ ref('stg_campaigns') }}
     )

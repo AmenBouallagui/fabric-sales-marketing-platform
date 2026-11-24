@@ -258,12 +258,12 @@ exposures:
     type: dashboard
     maturity: medium
     description: >
-      Planned Power BI semantic model and executive sales & marketing dashboard.
+      Power BI Import semantic model and seven-page sales & marketing report.
       Consumes the gold dimensions and facts as its star schema. See
       powerbi/semantic_model_notes.md.
     owner:
       name: Amen Bouallagui
-      email: amen.bouallagui@birdt.de
+      email: amenbouallagui@gmail.com
     depends_on:
       - ref('dim_customer')
       - ref('dim_product')

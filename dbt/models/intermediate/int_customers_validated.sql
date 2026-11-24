@@ -7,7 +7,8 @@ with deduplicated as (
             *,
             row_number() over (
                 partition by customer_id
-                order by source_updated_at desc nulls last
+                order by source_updated_at desc nulls last,
+                         {{ dbt_utils.generate_surrogate_key(['customer_id', 'account_id', 'customer_name', 'email', 'country', 'city', 'signup_date', 'acquisition_channel', 'customer_segment', 'company_size', 'industry', 'status', 'source_updated_at']) }} desc
             ) as _rn
         from {{ ref('stg_customers') }}
     )

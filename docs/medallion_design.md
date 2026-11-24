@@ -3,7 +3,7 @@
 This document is the single design reference for the medallion architecture. 
 The same Bronze → Silver → Gold logic is implemented two ways in this repo:
 
-- **dbt + DuckDB or Snowflake** — runnable warehouse project in [`dbt/`](../dbt/) (staging → intermediate → marts), portable across both targets.
+- **dbt + DuckDB** — runnable warehouse project in [`dbt/`](../dbt/) (staging → intermediate → marts), with Snowflake portability macros that still require cloud validation.
 - **Local pandas pipeline** — [`local_pipeline/run_local_medallion.py`](../local_pipeline/run_local_medallion.py).
 
 

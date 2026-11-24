@@ -5,7 +5,8 @@ with deduplicated as (
             *,
             row_number() over (
                 partition by spend_id
-                order by source_updated_at desc nulls last
+                order by source_updated_at desc nulls last,
+                         {{ dbt_utils.generate_surrogate_key(['spend_id', 'campaign_id', 'spend_date', 'channel', 'impressions', 'clicks', 'conversions', 'spend_amount', 'source_updated_at']) }} desc
             ) as _rn
         from {{ ref('stg_ad_spend') }}
     )
@@ -17,6 +18,7 @@ flagged as (
         * exclude (_rn),
         case
             when spend_id is null then 'missing spend_id'
+            when spend_date is null then 'missing spend_date'
             when campaign_id is null then 'missing campaign_id'
             when spend_amount is null or spend_amount < 0 then 'invalid spend_amount'
             when impressions is null or impressions < 0 then 'invalid impressions'

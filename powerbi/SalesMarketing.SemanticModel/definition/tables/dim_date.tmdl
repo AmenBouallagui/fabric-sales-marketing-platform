@@ -81,9 +81,9 @@ table dim_date
 		mode: import
 		source =
 				let
-				    Source = Snowflake.Databases("obbwcpp-nt11983.snowflakecomputing.com", "COMPUTE_WH", [Role="ACCOUNTADMIN"]),
-				    Db = Source{[Name="SALES_MARKETING",Kind="Database"]}[Data],
-				    Schema = Db{[Name="MARTS",Kind="Schema"]}[Data],
+				    Source = Snowflake.Databases(SnowflakeServer, SnowflakeWarehouse, [Role=SnowflakeRole]),
+				    Db = Source{[Name=SnowflakeDatabase,Kind="Database"]}[Data],
+				    Schema = Db{[Name=SnowflakeMartsSchema,Kind="Schema"]}[Data],
 				    Tbl = Schema{[Name="DIM_DATE",Kind="Table"]}[Data],
 				    Lowercase = Table.TransformColumnNames(Tbl, Text.Lower),
 				    #"Filtered Rows" = Table.SelectRows(Lowercase, each ([calendar_date] <> null))

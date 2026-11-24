@@ -89,9 +89,9 @@ table data_quality_results
 		mode: import
 		source =
 				let
-				    Source = Snowflake.Databases("obbwcpp-nt11983.snowflakecomputing.com", "COMPUTE_WH", [Role="ACCOUNTADMIN"]),
-				    Db = Source{[Name="SALES_MARKETING",Kind="Database"]}[Data],
-				    Schema = Db{[Name="OBSERVABILITY",Kind="Schema"]}[Data],
+				    Source = Snowflake.Databases(SnowflakeServer, SnowflakeWarehouse, [Role=SnowflakeRole]),
+				    Db = Source{[Name=SnowflakeDatabase,Kind="Database"]}[Data],
+				    Schema = Db{[Name=SnowflakeObservabilitySchema,Kind="Schema"]}[Data],
 				    Tbl = Schema{[Name="DATA_QUALITY_RESULTS",Kind="Table"]}[Data],
 				    Lowercase = Table.TransformColumnNames(Tbl, Text.Lower)
 				in

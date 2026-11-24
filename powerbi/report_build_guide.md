@@ -1,10 +1,11 @@
 # Power BI Report Build Guide
 
+Status: source definitions are included. Current Desktop rendering, DAX execution, Snowflake deployment/refresh, and access controls remain unverified. The credential-free local demo does not perform these checks.
+
 This repo ships the Power BI **semantic model as code** (PBIP / TMDL) in
 [`SalesMarketing.SemanticModel/`](SalesMarketing.SemanticModel/). The model defines
 the tables, relationships, and 28 DAX measures over the dbt **gold** star schema,
-and the report (`SalesMarketing.Report/`) ships fully built — 7 pages, all visuals,
-no assembly required.
+and the report (`SalesMarketing.Report/`) includes seven page definitions. Source completeness does not establish a successful refresh or visual rendering.
 
 The semantic model uses **Import mode** through Power BI's native Snowflake connector,
 loading the gold marts produced by the [dbt project](../dbt/) (see its README for
@@ -23,9 +24,7 @@ export is needed — Power BI's Snowflake connector is built in.
 
 ## Open and refresh
 
-1. Update the TMDL connection settings for your Snowflake account, warehouse,
-   database, and authorized reporting role before opening the project. The
-   committed model currently contains the original demo connection settings.
+1. Open the project and configure Transform data → Manage parameters: `SnowflakeServer`, `SnowflakeWarehouse`, `SnowflakeDatabase`, `SnowflakeRole`, `SnowflakeMartsSchema`, and `SnowflakeObservabilitySchema`. The server is a placeholder; the role defaults to `ANALYTICS_READER`. Your Snowflake administrator must provide a reporting role with warehouse usage, database/schema usage, and SELECT on the imported tables. No credentials are committed.
 2. Open `powerbi/SalesMarketing.pbip` in Power BI Desktop, then **Refresh**
    and authenticate with your own Snowflake credentials.
 3. Refresh imports eight business tables from `SALES_MARKETING.MARTS` and three
@@ -37,7 +36,7 @@ The model arrives with relationships and measures already defined (display folde
 Revenue and Margin, Customer, Marketing, Support). Technical keys are hidden, and
 `dim_date` is already marked as the model's date table.
 
-## Report pages (all built)
+## Report page definitions
 
 | Page | Key visuals | Primary measures |
 | --- | --- | --- |
@@ -53,6 +52,10 @@ Each page has a horizontal filter bar (month, plus two page-relevant dimensions)
 a dark sidebar with global navigation. Operations & Data Health uses the
 committed observability seeds. These are demonstration records, not current CI
 results or a live feed from the pandas pipeline.
+
+## Demo screenshot
+
+The README screenshot is a frame from the committed recording, with the Startup segment selected. It predates the KPI corrections; current values require a new Desktop refresh. Only Executive Overview is shown in that recording.
 
 ## Capture screenshots
 

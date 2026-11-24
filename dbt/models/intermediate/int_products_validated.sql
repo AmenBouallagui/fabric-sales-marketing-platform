@@ -5,7 +5,8 @@ with deduplicated as (
             *,
             row_number() over (
                 partition by product_id
-                order by source_updated_at desc nulls last
+                order by source_updated_at desc nulls last,
+                         {{ dbt_utils.generate_surrogate_key(['product_id', 'product_name', 'category', 'plan_tier', 'unit_price', 'unit_cost', 'is_subscription', 'valid_from', 'valid_to', 'source_updated_at']) }} desc
             ) as _rn
         from {{ ref('stg_products') }}
     )

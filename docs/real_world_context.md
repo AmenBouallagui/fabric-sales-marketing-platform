@@ -41,7 +41,7 @@ Worked across multiple client Power BI reports from data source to published vis
 | Local medallion pipeline observability | Reconciliation and run logging used in the Dataverse migration |
 | Metadata-driven pipeline pattern | Parameterized migration pipeline design |
 | Power BI semantic model (TMDL) | Hands-on Power Query, DAX, and report development |
-| Fabric notebook source + setup guides | Direct experience with Fabric workspace, SQL endpoints, lakehouse access |
+| Cloud architecture reference and SQL designs | Direct experience with Fabric workspace, SQL endpoints, lakehouse access |
 | SQL validation queries | Diagnostic queries used in production migration validation |
 
 The portfolio extends these patterns into a clean, runnable, fully documented reference implementation.

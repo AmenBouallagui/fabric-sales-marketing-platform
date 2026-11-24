@@ -8,7 +8,7 @@
 - Platform reviewers: model structure, data-quality outcomes, operational health.
 
 The model exposes the curated Gold star schema and hides technical fields. Report
-pages are detailed in [report_design.md](report_design.md); metric definitions in
+pages are detailed in [report_build_guide.md](report_build_guide.md); metric definitions in
 [../docs/business_metrics.md](../docs/business_metrics.md).
 
 ## Relationship Key Mapping
@@ -81,7 +81,7 @@ Suggested display folders:
 ## Formatting Conventions
 
 - Currency: Revenue, Net Revenue, Gross Margin, Average Order Value, Ad Spend, Cost Per Click, Cost Per Acquisition.
-- Percentage: Gross Margin %, Conversion Rate, ROAS where expressed as a percentage.
+- Percentage: Gross Margin %, Conversion Rate, Click-Through Rate. ROAS is a decimal multiple.
 - Whole numbers: Orders, Customers, New Customers, Impressions, Clicks, Conversions, Ticket Count.
 - Decimal: Average Satisfaction Score.
 - Duration: Average First Response Minutes and Average Resolution Minutes.

@@ -21,7 +21,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
           cache: pip
 
       - name: Install dependencies
@@ -29,29 +29,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Generate small source dataset
-        run: |
-          python data_generation/generate_source_data.py \
-            --customers 50 \
-            --orders 250 \
-            --seed 123 \
-            --start-date 2024-01-01 \
-            --end-date 2024-03-31
-
-      - name: Run local medallion prototype
-        run: |
-          python local_pipeline/run_local_medallion.py \
-            --load-date 2024-04-01 \
-            --run-id ci-run
-
-      - name: Build and test dbt warehouse (DuckDB)
-        env:
-          DBT_PROFILES_DIR: dbt
-        run: |
-          dbt deps --project-dir dbt
-          # Sources reference seeded tables, so load them before source tests run.
-          dbt seed --project-dir dbt
-          dbt build --project-dir dbt
+      - name: Run reproducible local demo
+        run: python scripts/run_local_demo.py
 
       - name: Verify generated data and dbt artifacts are not tracked
         run: |
@@ -59,8 +38,18 @@ jobs:
           test -z "$(git ls-files '**/*.duckdb')"
           test -z "$(git ls-files dbt/target dbt/dbt_packages)"
 
-      - name: Run tests
-        run: python -m pytest
+      - name: Upload local verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: local-demo-evidence
+          path: |
+            outputs/local_demo/verification.md
+            outputs/local_demo/execution.json
+            outputs/local_demo/metrics.json
+            outputs/local_demo/logs/
+          if-no-files-found: ignore
+          retention-days: 7
 
       - name: Upload dbt diagnostics
         if: always()
