@@ -1,6 +1,6 @@
 # Power BI
 
-Open [SalesMarketing.pbip](SalesMarketing.pbip), the single supported project. Its [report](SalesMarketing.Report/) contains seven pages; the [semantic model](SalesMarketing.SemanticModel/) contains 11 imported data tables and a disconnected measure table.
+Open [SalesMarketing.pbip](SalesMarketing.pbip), the single supported project. The corrected report has not been refreshed or rendered in the current environment. Its [report](SalesMarketing.Report/) contains seven pages; the [semantic model](SalesMarketing.SemanticModel/) contains 11 imported data tables and a disconnected measure table.
 
 Configure the Snowflake parameters and authenticate in Power BI Desktop before refreshing. Eight business tables come from marts, and three operations tables come from seeded observability fixtures. See the [build guide](report_build_guide.md), [model notes](semantic_model_notes.md), and [metric definitions](../docs/business_metrics.md).
 

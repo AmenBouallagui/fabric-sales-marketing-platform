@@ -1,10 +1,11 @@
 # Power BI Report Build Guide
 
+Status: source definitions are included. Current Desktop rendering, DAX execution, Snowflake deployment/refresh, and access controls remain unverified. The credential-free local demo does not perform these checks.
+
 This repo ships the Power BI **semantic model as code** (PBIP / TMDL) in
 [`SalesMarketing.SemanticModel/`](SalesMarketing.SemanticModel/). The model defines
 the tables, relationships, and 28 DAX measures over the dbt **gold** star schema,
-and the report (`SalesMarketing.Report/`) ships fully built — 7 pages, all visuals,
-no assembly required.
+and the report (`SalesMarketing.Report/`) includes seven page definitions. Source completeness does not establish a successful refresh or visual rendering.
 
 The semantic model uses **Import mode** through Power BI's native Snowflake connector,
 loading the gold marts produced by the [dbt project](../dbt/) (see its README for
@@ -35,7 +36,7 @@ The model arrives with relationships and measures already defined (display folde
 Revenue and Margin, Customer, Marketing, Support). Technical keys are hidden, and
 `dim_date` is already marked as the model's date table.
 
-## Report pages (all built)
+## Report page definitions
 
 | Page | Key visuals | Primary measures |
 | --- | --- | --- |

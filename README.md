@@ -1,6 +1,6 @@
 # Sales & Marketing Analytics Platform
 
-An end-to-end analytics engineering portfolio project: synthetic sales and marketing data modeled through a Bronze → Silver → Gold medallion pipeline, a tested dbt warehouse that runs on either DuckDB (local, zero credentials) or Snowflake (via dbt Cloud), and a Power BI semantic model authored as code — using the native Snowflake connector in Import mode, all 7 report pages built.
+A runnable analytics engineering portfolio using synthetic sales, marketing, and support data. A pandas medallion pipeline produces local parquet outputs, and a dbt warehouse builds a tested star schema in DuckDB without cloud credentials. Power BI report and semantic-model source is included; its corrected DAX and Snowflake refresh have not been executed in the current environment.
 
 Built by **Amen Bouallagui** — BI Developer and Analytics Engineer with 2 years of part-time experience in Microsoft Fabric, Power BI, and data migration on real client projects.
 
@@ -14,7 +14,7 @@ Built by **Amen Bouallagui** — BI Developer and Analytics Engineer with 2 year
 
 [Watch the Executive Overview demo recording](powerbi/report_screenshots/executive_overview.mp4)
 
-The screenshot (Startup segment selected) and recording predate the KPI corrections. Current measure definitions are in [business metrics](docs/business_metrics.md); refresh the project to see those changes.
+The screenshot (Startup segment selected) and recording predate the KPI corrections. Current measure definitions are in [business metrics](docs/business_metrics.md). The corrected model still needs a working Power BI environment for refresh and visual validation.
 
 Executive Overview page, using Power BI's native Snowflake connector in Import mode — 7 pages total covering revenue, margin, marketing, customer segments, product performance, support quality, and operations/data health. See [powerbi/report_build_guide.md](powerbi/report_build_guide.md) for the full page-by-page breakdown.
 
@@ -22,22 +22,20 @@ Executive Overview page, using Power BI's native Snowflake connector in Import m
 
 ## Quick Start
 
-Use Python 3.12. Dependencies are pinned to the versions verified by CI.
+Use Python 3.12. Run these commands from the repository root on macOS, Linux, or Windows:
 
 ```bash
+python -m venv .venv
+# macOS / Linux
+source .venv/bin/activate
+# Windows PowerShell alternative: .venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
-python data_generation/generate_source_data.py
-python local_pipeline/run_local_medallion.py
-
-# Bash / zsh
-export DBT_PROFILES_DIR=dbt
-# PowerShell alternative: $env:DBT_PROFILES_DIR = 'dbt'
-dbt deps  --project-dir dbt
-dbt seed --project-dir dbt          # load committed synthetic fixtures first
-dbt build --project-dir dbt         # 21 models and 39 data tests
-
-python -m pytest
+python scripts/run_local_demo.py
 ```
+
+The demo builds a **fresh DuckDB database**, runs the pandas pipeline, dbt and Python tests, and all eight metric SQL queries. It saves a verification summary, complete metric outputs, and command logs under ignored `outputs/local_demo/`. Choose `--output-dir outputs/another_demo` for another fresh run; existing warehouse files are preserved.
+
+See [verified local results](docs/local_verification.md) for the recorded run, [business case](docs/business_case.md) for purpose and design decisions, and [dbt setup](dbt/README.md) for individual commands.
 
 The pandas pipeline consumes the generated files in `data/source/`. The dbt
 warehouse consumes the committed fixtures in `dbt/seeds/`, loaded into `raw`
@@ -90,12 +88,14 @@ See [docs/architecture.md](docs/architecture.md) and [docs/medallion_design.md](
 
 ## Current Status
 
-**Runs today:**
-- Synthetic data generation (6 CSV sources: customers, products, campaigns, orders, ad spend, support tickets)
-- Local medallion pipeline (Bronze / Silver / Gold + observability parquet outputs)
-- dbt warehouse: 21 models, 39 data tests — runs on DuckDB (CI, zero credentials) or Snowflake (via dbt Cloud)
-- Pytest suite
-- Power BI report: 7 pages built, semantic model using the native Snowflake connector in Import mode
+| Component | Verification status |
+| --- | --- |
+| Synthetic generator and pandas medallion pipeline | Executed locally with a fixed seed; regression tests check outputs and key membership |
+| dbt warehouse | Fresh DuckDB seed/build and data tests; see the recorded verification |
+| SQL metrics | Eight queries executed against the DuckDB warehouse |
+| Power BI | Seven report pages and 28 DAX measures present as source; corrected measures and visual rendering unverified |
+| Snowflake | Parameterized connection design and portability macros; deployment and refresh unverified |
+| Operations page | Uses seeded demonstration telemetry; not current CI or pipeline health |
 
 ---
 
